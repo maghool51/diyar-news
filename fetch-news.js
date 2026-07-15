@@ -3,90 +3,91 @@ const Parser = require("rss-parser");
 
 const parser = new Parser();
 
+const sources = [
+  {
+    name: "ایرنا",
+    url: "https://www.irna.ir/rss"
+  },
+  {
+    name: "ایسنا",
+    url: "https://www.isna.ir/rss"
+  },
+  {
+    name: "مهر",
+    url: "https://www.mehrnews.com/rss"
+  },
+  {
+    name: "تسنیم",
+    url: "https://www.tasnimnews.com/fa/rss"
+  },
+  {
+    name: "فارس",
+    url: "https://www.farsnews.ir/rss"
+  }
+];
+
+
 async function getNews() {
 
-  console.log("Fetching Iran news...");
+  console.log("Fetching Iranian news...");
 
-  const query = encodeURIComponent(
-    "ایران OR خبر فوری OR اخبار ایران"
-  );
+  let allNews = [];
 
-  const url =
-    `https://news.google.com/rss/search?q=${query}&hl=fa&gl=IR&ceid=IR:fa`;
+  for (const source of sources) {
 
-  const feed = await parser.parseURL(url);
+    try {
 
-  const keywords = [
-    "ایران",
-    "فوری",
-    "لحظه",
-    "دولت",
-    "رئیس",
-    "وزیر",
-    "مجلس",
-    "بانک",
-    "اقتصاد",
-    "قیمت",
-    "بازار",
-    "استان",
-    "گرگان"
-  ];
+      const feed = await parser.parseURL(source.url);
 
-  const news = feed.items
-    .filter(item => {
-      const text = item.title || "";
+      feed.items.slice(0,10).forEach(item => {
 
-      // حذف خبرهای انگلیسی
-      if (!/[\u0600-\u06FF]/.test(text)) {
-        return false;
-      }
+        allNews.push({
+          title: item.title,
+          link: item.link,
+          date: item.pubDate || "",
+          source: source.name
+        });
 
-      return true;
-    })
-    .map(item => {
-
-      let score = 0;
-
-      keywords.forEach(k => {
-        if (item.title.includes(k)) {
-          score++;
-        }
       });
 
-      return {
-        title: item.title,
-        link: item.link,
-        date: item.pubDate,
-        score
-      };
+      console.log(source.name + " OK");
 
-    })
-    .sort((a,b)=> b.score - a.score)
-    .slice(0,12);
+    } catch(e) {
+
+      console.log(source.name + " failed");
+
+    }
+
+  }
 
 
-  let html = `
+  allNews = allNews
+    .filter(n => n.title && /[\u0600-\u06FF]/.test(n.title))
+    .slice(0,20);
+
+
+
+let html = `
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>اخبار فوری ایران</title>
+<title>اخبار ایران - دیار قدمگاه</title>
 
 <style>
 
 body{
-background:#f3f3f3;
 font-family:tahoma;
-margin:0;
+background:#f3f3f3;
 padding:10px;
 }
 
 .box{
-max-width:650px;
+max-width:700px;
 margin:auto;
 }
 
@@ -107,23 +108,30 @@ border-radius:12px;
 box-shadow:0 2px 6px #ccc;
 }
 
+.title{
+font-weight:bold;
+font-size:16px;
+}
+
+.source{
+color:#b30000;
+font-size:13px;
+margin-top:8px;
+}
+
+.date{
+color:#777;
+font-size:12px;
+}
+
 a{
 color:#222;
 text-decoration:none;
-font-size:16px;
-font-weight:bold;
-}
-
-.time{
-font-size:12px;
-color:#777;
-margin-top:8px;
 }
 
 </style>
 
 </head>
-
 
 <body>
 
@@ -135,18 +143,25 @@ margin-top:8px;
 
 `;
 
-news.forEach(n => {
+
+allNews.forEach(n => {
 
 html += `
 
 <div class="card">
 
+<div class="title">
 <a href="${n.link}" target="_blank">
 ${n.title}
 </a>
+</div>
 
-<div class="time">
-${n.date || ""}
+<div class="source">
+منبع: ${n.source}
+</div>
+
+<div class="date">
+${n.date}
 </div>
 
 </div>
@@ -158,7 +173,7 @@ ${n.date || ""}
 
 html += `
 
-<div class="time" style="text-align:center;margin:20px;">
+<div style="text-align:center;color:#777;margin:20px;">
 آخرین بروزرسانی:
 ${new Date().toLocaleString("fa-IR")}
 </div>
@@ -167,18 +182,17 @@ ${new Date().toLocaleString("fa-IR")}
 
 </body>
 </html>
-
 `;
 
 
 fs.writeFileSync(
-  "news.html",
-  html,
-  "utf8"
+"news.html",
+html,
+"utf8"
 );
 
 
-console.log("News updated successfully.");
+console.log("News created successfully");
 
 }
 
