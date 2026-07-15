@@ -21,7 +21,9 @@ jobs:
 
       - run: npm install rss-parser
 
-      - run: node news.js
+      - run: npm install
+
+- run: node fetch-news.js
 
       - name: Commit changes
         run: |
