@@ -27,6 +27,11 @@ jobs:
       - name: Fetch latest news
         run: node fetch-news.js
 
+      - name: Check generated file
+        run: |
+          ls -la
+          test -f news.html
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions"
