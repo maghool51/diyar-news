@@ -63,7 +63,9 @@ const categories = {
     "جهان", "بین‌الملل", "سازمان ملل", "یونسکو", "یورو", "اروپا",
     "آسیا", "آفریقا", "آمریکای لاتین", "کانادا", "استرالیا", "ژاپن",
     "کره", "هند", "پاکستان", "افغانستان", "عراق", "یمن", "قطر", "امارات",
-    "شیخ", "امیر", "پادشاه", "سلطان", "دبیرکل"
+    "شیخ", "امیر", "پادشاه", "سلطان", "دبیرکل", "بایدن", "ترامپ", "پوتین",
+    "شی جین پینگ", "ناتو", "اتحادیه اروپا", "بریتانیا", "فلسطین", "اسرائیل",
+    "آلمان", "فرانسه", "انگلیس", "ترامپ", "اروپا", "آمریکا"
   ]
 };
 
@@ -94,51 +96,72 @@ function detectCategory(title) {
   return maxScore > 0 ? bestCategory : "متفرقه";
 }
 
-// ================ منابع با آدرس‌های جدید ================
+// ================ منابع نهایی ================
 const sources = [
   {
     name: "ایرنا",
-    url: "https://www.irna.ir/rss"
+    url: "https://www.irna.ir/rss",
+    flag: "🇮🇷"
   },
   {
     name: "ایسنا",
-    url: "https://www.isna.ir/rss"
+    url: "https://www.isna.ir/rss",
+    flag: "🇮🇷"
   },
   {
     name: "مهر",
-    url: "https://www.mehrnews.com/rss"
+    url: "https://www.mehrnews.com/rss",
+    flag: "🇮🇷"
   },
   {
     name: "ایلنا",
-    url: "https://www.ilna.ir/fa/rss/allnews"
+    url: "https://www.ilna.ir/fa/rss/allnews",
+    flag: "🇮🇷"
   },
   {
     name: "خبرآنلاین",
-    url: "https://www.khabaronline.ir/rss"
+    url: "https://www.khabaronline.ir/rss",
+    flag: "🇮🇷"
   },
   {
     name: "ایمنا",
-    url: "https://www.imna.ir/rss"
+    url: "https://www.imna.ir/rss",
+    flag: "🇮🇷"
+  },
+  {
+    name: "بی‌بی‌سی فارسی",
+    url: "https://www.bbc.com/persia/rss",
+    flag: "🌍"
+  },
+  {
+    name: "دویچه‌وله فارسی",
+    url: "https://www.dw.com/fa-ir/rss",
+    flag: "🌍"
+  },
+  {
+    name: "رادیو فردا",
+    url: "https://www.radiofarda.com/rss",
+    flag: "🌍"
   }
 ];
 
-// منابع پشتیبان
+// ================ منابع پشتیبان ================
 const backupSources = [
   {
-    name: "تسنیم",
-    url: "https://www.tasnimnews.com/fa/rss"
+    name: "بی‌بی‌سی فارسی",
+    url: "https://www.bbc.com/persia"
   },
   {
-    name: "فارس",
-    url: "https://farsnews.ir/rss"
+    name: "دویچه‌وله فارسی",
+    url: "https://www.dw.com/fa-ir"
   },
   {
-    name: "خبرآنلاین",
-    url: "https://www.khabaronline.ir/rss/news"
+    name: "رادیو فردا",
+    url: "https://www.radiofarda.com"
   }
 ];
 
-async function fetchWithRetry(url, retries = 3) {
+async function fetchWithRetry(url, retries = 2) {
   for (let i = 0; i < retries; i++) {
     try {
       return await parser.parseURL(url);
@@ -150,17 +173,26 @@ async function fetchWithRetry(url, retries = 3) {
 }
 
 async function getNews() {
-  console.log("📰 در حال دریافت اخبار ایران...");
+  console.log("📰 در حال دریافت اخبار فوری ایران و جهان...");
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   
   let allNews = [];
   const failedSources = [];
 
-  // دریافت از منابع اصلی
+  // ================ دریافت از منابع اصلی ================
   for (const source of sources) {
     try {
+      console.log(`⏳ ${source.flag} در حال دریافت ${source.name}...`);
       const feed = await fetchWithRetry(source.url);
       
-      feed.items.slice(0, 20).forEach(item => {
+      if (!feed.items || feed.items.length === 0) {
+        console.log(`⚠️ ${source.name} هیچ خبری نداشت`);
+        failedSources.push(source.name);
+        continue;
+      }
+      
+      let count = 0;
+      feed.items.slice(0, 15).forEach(item => {
         if (!item.title || !item.link) return;
         
         const title = item.title.trim();
@@ -171,44 +203,66 @@ async function getNews() {
           link: item.link.startsWith("http") ? item.link : "#",
           date: item.pubDate || item.isoDate || "",
           source: source.name,
-          category: category
+          category: category,
+          flag: source.flag
         });
+        count++;
       });
       
-      console.log(`✅ ${source.name} دریافت شد`);
+      console.log(`✅ ${source.flag} ${source.name}: ${count} خبر دریافت شد`);
     } catch (e) {
-      console.log(`❌ ${source.name} ناموفق: ${e.message}`);
+      console.log(`❌ ${source.flag} ${source.name} ناموفق: ${e.message}`);
       failedSources.push(source.name);
+      continue;
     }
   }
 
-  // منابع پشتیبان
+  // ================ دریافت از منابع پشتیبان ================
+  console.log("\n🔄 بررسی منابع پشتیبان...");
   for (const backup of backupSources) {
-    if (failedSources.includes(backup.name)) {
+    if (failedSources.includes(backup.name) || !sources.find(s => s.name === backup.name)) {
       try {
+        console.log(`⏳ در حال دریافت ${backup.name} (پشتیبان)...`);
         const feed = await fetchWithRetry(backup.url);
-        feed.items.slice(0, 20).forEach(item => {
+        
+        if (!feed.items || feed.items.length === 0) {
+          console.log(`⚠️ ${backup.name} (پشتیبان) هیچ خبری نداشت`);
+          continue;
+        }
+        
+        let count = 0;
+        feed.items.slice(0, 15).forEach(item => {
           if (!item.title || !item.link) return;
           const title = item.title.trim();
           const category = detectCategory(title);
+          const flag = sources.find(s => s.name === backup.name)?.flag || "🌍";
           allNews.push({
             title: title,
             link: item.link.startsWith("http") ? item.link : "#",
             date: item.pubDate || item.isoDate || "",
             source: backup.name,
-            category: category
+            category: category,
+            flag: flag
           });
+          count++;
         });
-        console.log(`✅ ${backup.name} (پشتیبان) دریافت شد`);
+        
+        console.log(`✅ ${backup.name} (پشتیبان): ${count} خبر دریافت شد`);
         const index = failedSources.indexOf(backup.name);
         if (index > -1) failedSources.splice(index, 1);
       } catch (e) {
-        console.log(`❌ ${backup.name} (پشتیبان) نیز ناموفق بود`);
+        console.log(`❌ ${backup.name} (پشتیبان) نیز ناموفق بود: ${e.message}`);
+        continue;
       }
     }
   }
 
-  // پردازش نهایی
+  // ================ پردازش نهایی ================
+  if (allNews.length === 0) {
+    console.log("⚠️ هیچ خبری دریافت نشد!");
+    return;
+  }
+
   const seenTitles = new Set();
   allNews = allNews
     .filter(n => n.title && /[\u0600-\u06FF]/.test(n.title))
@@ -230,12 +284,9 @@ async function getNews() {
       if (isNaN(dateB.getTime())) return -1;
       return dateB - dateA;
     })
-    .slice(0, 60);
+    .slice(0, 80);
 
-  if (allNews.length === 0) {
-    console.log("⚠️ هیچ خبری دریافت نشد!");
-    return;
-  }
+  console.log(`\n📊 مجموع اخبار دریافتی: ${allNews.length}`);
 
   // ================ دسته‌بندی اخبار ================
   const categorizedNews = {};
@@ -260,13 +311,13 @@ async function getNews() {
   fs.writeFileSync("news.json", JSON.stringify(jsonData, null, 2), "utf8");
   console.log(`✅ news.json با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت index.html با دسته‌بندی و ایموجی ================
+  // ================ ساخت index.html ================
   let html = `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اخبار دسته‌بندی شده ایران - دیار قدمگاه</title>
+<title>🇮🇷 اخبار فوری ایران و جهان - دیار قدمگاه</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:tahoma;background:#f0f2f5;padding:10px}
@@ -283,19 +334,19 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 .card .title{font-weight:bold;font-size:15px;line-height:1.6}
 .card .title a{color:#222;text-decoration:none}
 .card .title a:hover{color:#b30000}
-.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px;flex-wrap:wrap;gap:5px}
 .card .source{color:#b30000}
 .card .date{color:#888}
 .footer{text-align:center;color:#888;margin:20px 0;font-size:13px}
 .count-badge{display:inline-block;background:#fff;color:#b30000;padding:2px 12px;border-radius:20px;font-size:14px;margin-right:10px}
-.hidden{display:none}
+.flag-badge{font-size:14px;margin-right:5px}
 @media(max-width:600px){.card{padding:10px}.card .title{font-size:13px}}
 </style>
 </head>
 <body>
 <div class="box">
 <div class="header">
-🇮🇷 اخبار مهم سراسری | دیار قدمگاه
+🇮🇷 اخبار فوری ایران و جهان | دیار قدمگاه
 <span class="count-badge">${allNews.length} خبر</span>
 </div>
 
@@ -323,7 +374,7 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
     <div class="card">
       <div class="title"><a href="${news.link}" target="_blank">${news.title}</a></div>
       <div class="meta">
-        <span class="source">📰 ${news.source}</span>
+        <span class="source">${news.flag || '📰'} ${news.source}</span>
         ${dateDisplay ? `<span class="date">🕐 ${dateDisplay}</span>` : ''}
       </div>
     </div>`;
@@ -337,7 +388,7 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 
 <div class="footer">
 🔄 آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}<br>
-${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس نیستند` : '✅ همه منابع فعال هستند'}
+${failedSources.length ? `⚠️ منابع ناموفق: ${failedSources.join('، ')}` : '✅ همه منابع فعال هستند'}
 </div>
 </div>
 
@@ -388,7 +439,7 @@ function filterCategory(category) {
 }
 .news-ticker-content {
   display: inline-block;
-  animation: tickerScroll 50s linear infinite;
+  animation: tickerScroll 70s linear infinite;
 }
 .news-ticker-content a {
   color: white;
@@ -424,7 +475,7 @@ function filterCategory(category) {
   <div class="news-ticker-content">
     ${allNews.map(n => {
       const emoji = categoryEmojis[n.category] || '📌';
-      return `<a href="${n.link}" target="_blank"><span class="category-badge">${emoji}</span> ${n.title}</a><span class="separator">|</span>`;
+      return `<a href="${n.link}" target="_blank"><span class="category-badge">${n.flag || '📰'}</span> ${n.title}</a><span class="separator">|</span>`;
     }).join('')}
     <span style="color:#ff6b6b;">●</span>
     آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
@@ -436,10 +487,11 @@ function filterCategory(category) {
   fs.writeFileSync("news-ticker.html", tickerHtml, "utf8");
   console.log(`✅ news-ticker.html با ${allNews.length} خبر ذخیره شد`);
   
-  console.log("🎉 عملیات با موفقیت کامل شد!");
+  console.log("\n🎉 عملیات با موفقیت کامل شد!");
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 }
 
 getNews().catch(err => {
-  console.error("❌ خطا:", err.message);
+  console.error("❌ خطای کلی:", err.message);
   process.exit(1);
 });
