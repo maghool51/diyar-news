@@ -8,7 +8,81 @@ const parser = new Parser({
   timeout: 15000
 });
 
-// ================ منابع اصلی ================
+// ================ دسته‌بندی با کلمات کلیدی ================
+const categories = {
+  "سیاسی": [
+    "سیاست", "رئیسی", "وزیر", "رئیس‌جمهور", "مجلس", "نماینده", "انتخابات",
+    "جنگ", "غزه", "فلسطین", "اسرائیل", "حماس", "حزب‌الله", "لبنان", "سوریه",
+    "آمریکا", "روسیه", "چین", "انگلیس", "فرانسه", "آلمان", "ترکیه", "عربستان",
+    "آتش‌بس", "صلح", "درگیری", "عملیات", "شهادت", "ترور", "موشک", "هواپیما",
+    "خارجی", "سفارت", "کنگره", "پارلمان", "تحریم", "مذاکره", "برجام"
+  ],
+  "اقتصادی": [
+    "اقتصاد", "دلار", "طلا", "سکه", "ارز", "بانک", "پول", "بورس", "سهام",
+    "قیمت", "تورم", "گرانی", "ارزان", "کالا", "صادرات", "واردات", "نفت",
+    "گاز", "پتروشیمی", "معادن", "صنعت", "کشاورزی", "بازار", "تجارت",
+    "بودجه", "مالیات", "یارانه", "فقر", "اشتغال"
+  ],
+  "ورزشی": [
+    "ورزش", "فوتبال", "تیم ملی", "استقلال", "پرسپولیس", "سپاهان", "تراکتور",
+    "لیگ برتر", "جام جهانی", "المپیک", "کشتی", "وزنه‌برداری", "والیبال",
+    "بسکتبال", "تنیس", "شطرنج", "قهرمانی", "مسابقه", "گل", "دربی",
+    "المپیک", "پارالمپیک", "مدال", "مربی", "داور"
+  ],
+  "فرهنگی و هنری": [
+    "فیلم", "سینما", "تلویزیون", "سریال", "هنر", "موسیقی", "کنسرت", "خواننده",
+    "بازیگر", "کارگردان", "نمایش", "تئاتر", "کتاب", "نویسنده", "شعر", "ادبیات",
+    "جشنواره", "فرهنگ", "هنرمند", "جوایز", "نگارخانه", "موزه", "عروسکی"
+  ],
+  "اجتماعی": [
+    "آموزش", "دانشگاه", "مدرسه", "دانش‌آموز", "دانشجو", "تحصیل", "کنکور",
+    "بیمه", "درمان", "سلامت", "بیمارستان", "پزشک", "دارو", "واکسن",
+    "حوادث", "تصادف", "زلزله", "سیل", "آتش‌سوزی", "نجات", "جاده",
+    "ازدواج", "طلاق", "جمعیت", "مهاجرت", "کار", "بیکاری", "حقوق",
+    "آسیب‌های اجتماعی", "اعتیاد", "فقر", "مسکن"
+  ],
+  "علمی و فناوری": [
+    "فناوری", "علم", "فضا", "ماهواره", "موشک", "رایانه", "هوش مصنوعی",
+    "پزشکی", "پژوهش", "تحقیق", "کشف", "اختراع", "نوآوری", "دانشگاه",
+    "اینترنت", "موبایل", "تلفن", "نرم‌افزار", "سخت‌افزار", "ربات",
+    "نانو", "زیست‌فناوری", "هسته‌ای", "انرژی", "نوین"
+  ],
+  "بین‌الملل": [
+    "جهان", "بین‌الملل", "سازمان ملل", "یونسکو", "یورو", "اروپا",
+    "آسیا", "آفریقا", "آمریکای لاتین", "کانادا", "استرالیا", "ژاپن",
+    "کره", "هند", "پاکستان", "افغانستان", "عراق", "یمن", "قطر", "امارات",
+    "شیخ", "امیر", "پادشاه", "سلطان", "دبیرکل"
+  ]
+};
+
+// تابع تشخیص دسته‌بندی خبر
+function detectCategory(title) {
+  const lowerTitle = title.toLowerCase();
+  const scores = {};
+  
+  for (const [category, keywords] of Object.entries(categories)) {
+    scores[category] = 0;
+    for (const keyword of keywords) {
+      if (lowerTitle.includes(keyword.toLowerCase())) {
+        scores[category] += 1;
+      }
+    }
+  }
+  
+  let bestCategory = "متفرقه";
+  let maxScore = 0;
+  
+  for (const [category, score] of Object.entries(scores)) {
+    if (score > maxScore) {
+      maxScore = score;
+      bestCategory = category;
+    }
+  }
+  
+  return maxScore > 0 ? bestCategory : "متفرقه";
+}
+
+// ================ منابع ================
 const sources = [
   {
     name: "ایرنا",
@@ -32,7 +106,7 @@ const sources = [
   }
 ];
 
-// ================ منابع پشتیبان ================
+// منابع پشتیبان
 const backupSources = [
   {
     name: "تسنیم",
@@ -61,7 +135,7 @@ async function getNews() {
   let allNews = [];
   const failedSources = [];
 
-  // ================ دریافت از منابع اصلی ================
+  // دریافت از منابع اصلی
   for (const source of sources) {
     try {
       const feed = await fetchWithRetry(source.url);
@@ -69,11 +143,15 @@ async function getNews() {
       feed.items.slice(0, 20).forEach(item => {
         if (!item.title || !item.link) return;
         
+        const title = item.title.trim();
+        const category = detectCategory(title);
+        
         allNews.push({
-          title: item.title.trim(),
+          title: title,
           link: item.link.startsWith("http") ? item.link : "#",
           date: item.pubDate || item.isoDate || "",
-          source: source.name
+          source: source.name,
+          category: category
         });
       });
       
@@ -84,22 +162,24 @@ async function getNews() {
     }
   }
 
-  // ================ اگر تسنیم یا فارس کار نکرد، از پشتیبان استفاده کن ================
+  // منابع پشتیبان
   for (const backup of backupSources) {
     if (failedSources.includes(backup.name)) {
       try {
         const feed = await fetchWithRetry(backup.url);
         feed.items.slice(0, 20).forEach(item => {
           if (!item.title || !item.link) return;
+          const title = item.title.trim();
+          const category = detectCategory(title);
           allNews.push({
-            title: item.title.trim(),
+            title: title,
             link: item.link.startsWith("http") ? item.link : "#",
             date: item.pubDate || item.isoDate || "",
-            source: backup.name
+            source: backup.name,
+            category: category
           });
         });
         console.log(`✅ ${backup.name} (پشتیبان) دریافت شد`);
-        // حذف از لیست ناموفق‌ها
         const index = failedSources.indexOf(backup.name);
         if (index > -1) failedSources.splice(index, 1);
       } catch (e) {
@@ -108,7 +188,7 @@ async function getNews() {
     }
   }
 
-  // ================ پردازش نهایی ================
+  // پردازش نهایی
   const seenTitles = new Set();
   allNews = allNews
     .filter(n => n.title && /[\u0600-\u06FF]/.test(n.title))
@@ -130,11 +210,20 @@ async function getNews() {
       if (isNaN(dateB.getTime())) return -1;
       return dateB - dateA;
     })
-    .slice(0, 30);
+    .slice(0, 50);
 
   if (allNews.length === 0) {
     console.log("⚠️ هیچ خبری دریافت نشد!");
     return;
+  }
+
+  // ================ دسته‌بندی اخبار ================
+  const categorizedNews = {};
+  for (const news of allNews) {
+    if (!categorizedNews[news.category]) {
+      categorizedNews[news.category] = [];
+    }
+    categorizedNews[news.category].push(news);
   }
 
   // ================ ساخت فایل news.json ================
@@ -143,78 +232,124 @@ async function getNews() {
     lastUpdatePersian: new Date().toLocaleString("fa-IR"),
     totalNews: allNews.length,
     failedSources: failedSources,
-    news: allNews.map(n => ({
-      title: n.title,
-      link: n.link,
-      date: n.date,
-      source: n.source
-    }))
+    categories: Object.keys(categorizedNews),
+    news: allNews,
+    categorizedNews: categorizedNews
   };
 
   fs.writeFileSync("news.json", JSON.stringify(jsonData, null, 2), "utf8");
   console.log(`✅ news.json با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت فایل index.html ================
+  // ================ ساخت index.html با دسته‌بندی ================
   let html = `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اخبار ایران - دیار قدمگاه</title>
+<title>اخبار دسته‌بندی شده ایران - دیار قدمگاه</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:tahoma;background:#f0f2f5;padding:10px}
-.box{max-width:700px;margin:auto}
+.box{max-width:900px;margin:auto}
 .header{background:#b30000;color:white;padding:15px;border-radius:12px;font-size:20px;font-weight:bold;text-align:center}
-.card{background:white;margin-top:12px;padding:15px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);transition:transform 0.2s}
+.category-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0;justify-content:center}
+.category-tab{background:#eee;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:13px;transition:all 0.3s;border:none}
+.category-tab:hover{background:#ddd}
+.category-tab.active{background:#b30000;color:white}
+.category-section{margin-top:15px}
+.category-title{background:#b30000;color:white;padding:10px 15px;border-radius:8px;font-size:16px;font-weight:bold;margin-bottom:10px}
+.card{background:white;margin-top:8px;padding:12px 15px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);transition:transform 0.2s}
 .card:hover{transform:scale(1.01)}
-.title{font-weight:bold;font-size:16px;line-height:1.6}
-.title a{color:#222;text-decoration:none}
-.title a:hover{color:#b30000}
-.source{color:#b30000;font-size:13px;margin-top:8px}
-.date{color:#888;font-size:12px;margin-top:4px}
+.card .title{font-weight:bold;font-size:15px;line-height:1.6}
+.card .title a{color:#222;text-decoration:none}
+.card .title a:hover{color:#b30000}
+.card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:12px}
+.card .source{color:#b30000}
+.card .date{color:#888}
 .footer{text-align:center;color:#888;margin:20px 0;font-size:13px}
 .count-badge{display:inline-block;background:#fff;color:#b30000;padding:2px 12px;border-radius:20px;font-size:14px;margin-right:10px}
-@media(max-width:600px){.card{padding:12px}.title{font-size:14px}}
+.hidden{display:none}
+@media(max-width:600px){.card{padding:10px}.card .title{font-size:13px}}
 </style>
 </head>
 <body>
 <div class="box">
 <div class="header">
-🚨 اخبار فوری ایران | دیار قدمگاه
+📰 اخبار دسته‌بندی شده ایران | دیار قدمگاه
 <span class="count-badge">${allNews.length} خبر</span>
-</div>`;
+</div>
 
-  allNews.forEach(n => {
-    const dateDisplay = n.date && !isNaN(new Date(n.date))
-      ? `<div class="date">🕐 ${new Date(n.date).toLocaleString("fa-IR")}</div>`
-      : "";
-    
+<div class="category-tabs">
+  <button class="category-tab active" onclick="filterCategory('all')">📋 همه</button>
+  ${Object.keys(categorizedNews).map(cat => 
+    `<button class="category-tab" onclick="filterCategory('${cat}')">${cat}</button>`
+  ).join('')}
+</div>
+
+<div id="news-container">`;
+
+  // نمایش همه اخبار
+  for (const [category, newsList] of Object.entries(categorizedNews)) {
     html += `
-<div class="card">
-<div class="title"><a href="${n.link}" target="_blank">${n.title}</a></div>
-<div class="source">📰 ${n.source}</div>
-${dateDisplay}
-</div>`;
-  });
+  <div class="category-section" data-category="${category}">
+    <div class="category-title">📌 ${category} <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">${newsList.length}</span></div>`;
+    
+    for (const news of newsList) {
+      const dateDisplay = news.date && !isNaN(new Date(news.date))
+        ? new Date(news.date).toLocaleString("fa-IR")
+        : "";
+      html += `
+    <div class="card">
+      <div class="title"><a href="${news.link}" target="_blank">${news.title}</a></div>
+      <div class="meta">
+        <span class="source">📰 ${news.source}</span>
+        ${dateDisplay ? `<span class="date">🕐 ${dateDisplay}</span>` : ''}
+      </div>
+    </div>`;
+    }
+    html += `
+  </div>`;
+  }
 
   html += `
+</div>
+
 <div class="footer">
 🔄 آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}<br>
 ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس نیستند` : '✅ همه منابع فعال هستند'}
 </div>
 </div>
+
+<script>
+function filterCategory(category) {
+  document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.category-tab').forEach(tab => {
+    if (tab.textContent.includes(category === 'all' ? 'همه' : category)) {
+      tab.classList.add('active');
+    }
+  });
+  
+  document.querySelectorAll('.category-section').forEach(section => {
+    if (category === 'all' || section.dataset.category === category) {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  });
+}
+</script>
+
 </body>
 </html>`;
 
   fs.writeFileSync("index.html", html, "utf8");
   console.log(`✅ index.html با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت فایل news.html ================
+  // ================ ساخت news.html ================
   fs.writeFileSync("news.html", html, "utf8");
   console.log(`✅ news.html با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت فایل news-ticker.html ================
+  // ================ ساخت news-ticker.html ================
   const tickerHtml = `<!DOCTYPE html>
 <html>
 <head>
@@ -232,20 +367,27 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
 }
 .news-ticker-content {
   display: inline-block;
-  animation: tickerScroll 30s linear infinite;
+  animation: tickerScroll 40s linear infinite;
 }
 .news-ticker-content a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 14px;
+  margin: 0 15px;
+  font-size: 13px;
 }
 .news-ticker-content a:hover {
   text-decoration: underline;
 }
+.news-ticker .category-badge {
+  background: rgba(255,255,255,0.2);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  margin-left: 5px;
+}
 .news-ticker .separator {
   color: #ff6b6b;
-  margin: 0 10px;
+  margin: 0 8px;
 }
 @keyframes tickerScroll {
   0% { transform: translateX(100%); }
@@ -260,7 +402,7 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
 <div class="news-ticker">
   <div class="news-ticker-content">
     ${allNews.map(n => 
-      `<a href="${n.link}" target="_blank">${n.title}</a><span class="separator">|</span>`
+      `<a href="${n.link}" target="_blank"><span class="category-badge">${n.category}</span> ${n.title}</a><span class="separator">|</span>`
     ).join('')}
     <span style="color:#ff6b6b;">●</span>
     آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
@@ -275,7 +417,6 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
   console.log("🎉 عملیات با موفقیت کامل شد!");
 }
 
-// ================ اجرا ================
 getNews().catch(err => {
   console.error("❌ خطا:", err.message);
   process.exit(1);
