@@ -3,7 +3,7 @@ const Parser = require("rss-parser");
 
 const parser = new Parser({
   headers: {
-    'User-Agent': 'Mozilla/5.0 (compatible; RSS Reader/1.0)'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
   },
   timeout: 15000
 });
@@ -43,7 +43,7 @@ async function fetchWithRetry(url, retries = 3) {
 }
 
 async function getNews() {
-  console.log("در حال دریافت اخبار ایران...");
+  console.log("📰 در حال دریافت اخبار ایران...");
   
   let allNews = [];
   const failedSources = [];
@@ -53,12 +53,11 @@ async function getNews() {
       const feed = await fetchWithRetry(source.url);
       
       feed.items.slice(0, 20).forEach(item => {
-        // پیشنهاد ۱: فیلتر کردن لینک‌های نامعتبر
         if (!item.title || !item.link) return;
         
         allNews.push({
           title: item.title.trim(),
-          link: item.link,
+          link: item.link.startsWith("http") ? item.link : "#",
           date: item.pubDate || item.isoDate || "",
           source: source.name
         });
@@ -66,12 +65,11 @@ async function getNews() {
       
       console.log(`✅ ${source.name} دریافت شد`);
     } catch (e) {
-      console.log(`❌ ${source.name} ناموفق`);
+      console.log(`❌ ${source.name} ناموفق: ${e.message}`);
       failedSources.push(source.name);
     }
   }
 
-  // حذف اخبار تکراری با روش پیشرفته
   const seenTitles = new Set();
   allNews = allNews
     .filter(n => n.title && /[\u0600-\u06FF]/.test(n.title))
@@ -117,7 +115,7 @@ async function getNews() {
   fs.writeFileSync("news.json", JSON.stringify(jsonData, null, 2), "utf8");
   console.log(`✅ news.json با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت فایل news.html ================
+  // ================ ساخت فایل index.html ================
   let html = `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -149,11 +147,15 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 </div>`;
 
   allNews.forEach(n => {
+    const dateDisplay = n.date && !isNaN(new Date(n.date))
+      ? `<div class="date">🕐 ${new Date(n.date).toLocaleString("fa-IR")}</div>`
+      : "";
+    
     html += `
 <div class="card">
 <div class="title"><a href="${n.link}" target="_blank">${n.title}</a></div>
 <div class="source">📰 ${n.source}</div>
-${n.date ? `<div class="date">🕐 ${new Date(n.date).toLocaleString("fa-IR")}</div>` : ''}
+${dateDisplay}
 </div>`;
   });
 
@@ -166,11 +168,75 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
 </body>
 </html>`;
 
+  fs.writeFileSync("index.html", html, "utf8");
+  console.log(`✅ index.html با ${allNews.length} خبر ذخیره شد`);
+
+  // ================ ساخت فایل news.html (برای سازگاری) ================
   fs.writeFileSync("news.html", html, "utf8");
   console.log(`✅ news.html با ${allNews.length} خبر ذخیره شد`);
+
+  // ================ ساخت فایل news-ticker.html ================
+  const tickerHtml = `<!DOCTYPE html>
+<html>
+<head>
+<style>
+.news-ticker {
+  direction: rtl;
+  font-family: Tahoma, sans-serif;
+  background: #b30000;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.news-ticker-content {
+  display: inline-block;
+  animation: tickerScroll 30s linear infinite;
+}
+.news-ticker-content a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 14px;
+}
+.news-ticker-content a:hover {
+  text-decoration: underline;
+}
+.news-ticker .separator {
+  color: #ff6b6b;
+  margin: 0 10px;
+}
+@keyframes tickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.news-ticker:hover .news-ticker-content {
+  animation-play-state: paused;
+}
+</style>
+</head>
+<body>
+<div class="news-ticker">
+  <div class="news-ticker-content">
+    ${allNews.map(n => 
+      `<a href="${n.link}" target="_blank">${n.title}</a><span class="separator">|</span>`
+    ).join('')}
+    <span style="color:#ff6b6b;">●</span>
+    آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
+  </div>
+</div>
+</body>
+</html>`;
+
+  fs.writeFileSync("news-ticker.html", tickerHtml, "utf8");
+  console.log(`✅ news-ticker.html با ${allNews.length} خبر ذخیره شد`);
+  
   console.log("🎉 عملیات با موفقیت کامل شد!");
 }
 
+// اجرای تابع
 getNews().catch(err => {
   console.error("❌ خطا:", err.message);
   process.exit(1);
