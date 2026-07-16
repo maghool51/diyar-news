@@ -5,6 +5,9 @@ on:
     - cron: '*/30 * * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-news:
     runs-on: ubuntu-latest
@@ -25,9 +28,11 @@ jobs:
         run: node fetch-news.js
       
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add index.html news.html news.json news-ticker.html
           git diff --staged --quiet || git commit -m "Auto-update news: $(date +'%Y-%m-%d %H:%M:%S')"
-          git push
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/maghool51/diyar-news.git HEAD:main
