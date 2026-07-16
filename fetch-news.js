@@ -8,6 +8,7 @@ const parser = new Parser({
   timeout: 15000
 });
 
+// ================ منابع اصلی ================
 const sources = [
   {
     name: "ایرنا",
@@ -23,11 +24,23 @@ const sources = [
   },
   {
     name: "تسنیم",
-    url: "https://www.tasnimnews.com/fa/rss"
+    url: "https://www.tasnimnews.com/fa/rss/feed/0/0/0/0"
   },
   {
     name: "فارس",
     url: "https://www.farsnews.ir/rss"
+  }
+];
+
+// ================ منابع پشتیبان ================
+const backupSources = [
+  {
+    name: "تسنیم",
+    url: "https://www.tasnimnews.com/fa/rss"
+  },
+  {
+    name: "فارس",
+    url: "https://farsnews.ir/rss"
   }
 ];
 
@@ -48,6 +61,7 @@ async function getNews() {
   let allNews = [];
   const failedSources = [];
 
+  // ================ دریافت از منابع اصلی ================
   for (const source of sources) {
     try {
       const feed = await fetchWithRetry(source.url);
@@ -70,6 +84,31 @@ async function getNews() {
     }
   }
 
+  // ================ اگر تسنیم یا فارس کار نکرد، از پشتیبان استفاده کن ================
+  for (const backup of backupSources) {
+    if (failedSources.includes(backup.name)) {
+      try {
+        const feed = await fetchWithRetry(backup.url);
+        feed.items.slice(0, 20).forEach(item => {
+          if (!item.title || !item.link) return;
+          allNews.push({
+            title: item.title.trim(),
+            link: item.link.startsWith("http") ? item.link : "#",
+            date: item.pubDate || item.isoDate || "",
+            source: backup.name
+          });
+        });
+        console.log(`✅ ${backup.name} (پشتیبان) دریافت شد`);
+        // حذف از لیست ناموفق‌ها
+        const index = failedSources.indexOf(backup.name);
+        if (index > -1) failedSources.splice(index, 1);
+      } catch (e) {
+        console.log(`❌ ${backup.name} (پشتیبان) نیز ناموفق بود`);
+      }
+    }
+  }
+
+  // ================ پردازش نهایی ================
   const seenTitles = new Set();
   allNews = allNews
     .filter(n => n.title && /[\u0600-\u06FF]/.test(n.title))
@@ -171,7 +210,7 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
   fs.writeFileSync("index.html", html, "utf8");
   console.log(`✅ index.html با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت فایل news.html (برای سازگاری) ================
+  // ================ ساخت فایل news.html ================
   fs.writeFileSync("news.html", html, "utf8");
   console.log(`✅ news.html با ${allNews.length} خبر ذخیره شد`);
 
@@ -236,7 +275,7 @@ ${failedSources.length ? `⚠️ ${failedSources.join('، ')} در دسترس ن
   console.log("🎉 عملیات با موفقیت کامل شد!");
 }
 
-// اجرای تابع
+// ================ اجرا ================
 getNews().catch(err => {
   console.error("❌ خطا:", err.message);
   process.exit(1);
