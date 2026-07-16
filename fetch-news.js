@@ -8,6 +8,18 @@ const parser = new Parser({
   timeout: 15000
 });
 
+// ================ دسته‌بندی با ایموجی ================
+const categoryEmojis = {
+  "سیاسی": "🏛",
+  "اقتصادی": "💰",
+  "ورزشی": "⚽",
+  "فرهنگی و هنری": "🎭",
+  "اجتماعی": "👥",
+  "علمی و فناوری": "🔬",
+  "بین‌الملل": "🌍",
+  "متفرقه": "📌"
+};
+
 // ================ دسته‌بندی با کلمات کلیدی ================
 const categories = {
   "سیاسی": [
@@ -82,7 +94,7 @@ function detectCategory(title) {
   return maxScore > 0 ? bestCategory : "متفرقه";
 }
 
-// ================ منابع ================
+// ================ منابع با آدرس‌های جدید ================
 const sources = [
   {
     name: "ایرنا",
@@ -97,12 +109,16 @@ const sources = [
     url: "https://www.mehrnews.com/rss"
   },
   {
-    name: "تسنیم",
-    url: "https://www.tasnimnews.com/fa/rss/feed/0/0/0/0"
+    name: "ایلنا",
+    url: "https://www.ilna.ir/fa/rss/allnews"
   },
   {
-    name: "فارس",
-    url: "https://www.farsnews.ir/rss"
+    name: "خبرآنلاین",
+    url: "https://www.khabaronline.ir/rss"
+  },
+  {
+    name: "ایمنا",
+    url: "https://www.imna.ir/rss"
   }
 ];
 
@@ -115,6 +131,10 @@ const backupSources = [
   {
     name: "فارس",
     url: "https://farsnews.ir/rss"
+  },
+  {
+    name: "خبرآنلاین",
+    url: "https://www.khabaronline.ir/rss/news"
   }
 ];
 
@@ -210,7 +230,7 @@ async function getNews() {
       if (isNaN(dateB.getTime())) return -1;
       return dateB - dateA;
     })
-    .slice(0, 50);
+    .slice(0, 60);
 
   if (allNews.length === 0) {
     console.log("⚠️ هیچ خبری دریافت نشد!");
@@ -240,7 +260,7 @@ async function getNews() {
   fs.writeFileSync("news.json", JSON.stringify(jsonData, null, 2), "utf8");
   console.log(`✅ news.json با ${allNews.length} خبر ذخیره شد`);
 
-  // ================ ساخت index.html با دسته‌بندی ================
+  // ================ ساخت index.html با دسته‌بندی و ایموجی ================
   let html = `<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -275,14 +295,14 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 <body>
 <div class="box">
 <div class="header">
-📰 اخبار دسته‌بندی شده ایران | دیار قدمگاه
+🇮🇷 اخبار مهم سراسری | دیار قدمگاه
 <span class="count-badge">${allNews.length} خبر</span>
 </div>
 
 <div class="category-tabs">
   <button class="category-tab active" onclick="filterCategory('all')">📋 همه</button>
   ${Object.keys(categorizedNews).map(cat => 
-    `<button class="category-tab" onclick="filterCategory('${cat}')">${cat}</button>`
+    `<button class="category-tab" onclick="filterCategory('${cat}')">${categoryEmojis[cat] || '📌'} ${cat}</button>`
   ).join('')}
 </div>
 
@@ -290,9 +310,10 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 
   // نمایش همه اخبار
   for (const [category, newsList] of Object.entries(categorizedNews)) {
+    const emoji = categoryEmojis[category] || '📌';
     html += `
   <div class="category-section" data-category="${category}">
-    <div class="category-title">📌 ${category} <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">${newsList.length}</span></div>`;
+    <div class="category-title">${emoji} ${category} <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">${newsList.length}</span></div>`;
     
     for (const news of newsList) {
       const dateDisplay = news.date && !isNaN(new Date(news.date))
@@ -367,7 +388,7 @@ function filterCategory(category) {
 }
 .news-ticker-content {
   display: inline-block;
-  animation: tickerScroll 40s linear infinite;
+  animation: tickerScroll 50s linear infinite;
 }
 .news-ticker-content a {
   color: white;
@@ -401,9 +422,10 @@ function filterCategory(category) {
 <body>
 <div class="news-ticker">
   <div class="news-ticker-content">
-    ${allNews.map(n => 
-      `<a href="${n.link}" target="_blank"><span class="category-badge">${n.category}</span> ${n.title}</a><span class="separator">|</span>`
-    ).join('')}
+    ${allNews.map(n => {
+      const emoji = categoryEmojis[n.category] || '📌';
+      return `<a href="${n.link}" target="_blank"><span class="category-badge">${emoji}</span> ${n.title}</a><span class="separator">|</span>`;
+    }).join('')}
     <span style="color:#ff6b6b;">●</span>
     آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
   </div>
