@@ -23,6 +23,7 @@ body{
 
 
 /* نوار اصلی */
+
 .news-ticker{
 
     width:100%;
@@ -38,6 +39,7 @@ body{
 
 
 /* عنوان ثابت */
+
 .ticker-title{
 
     height:100%;
@@ -63,6 +65,7 @@ body{
 
 
 /* محل حرکت */
+
 .ticker-box{
 
     flex:1;
@@ -74,31 +77,37 @@ body{
 
 
 
-/* محتوای متحرک */
+/* متن متحرک */
+
 .ticker-content{
 
     position:absolute;
+    right:0;
     height:100%;
     display:flex;
     align-items:center;
     white-space:nowrap;
 
-    animation:newsMove 220s linear infinite;
+    animation:newsMove 160s linear infinite;
 
 }
 
 
+
 /* هر خبر */
+
 .news-item{
 
     color:white;
     font-size:14px;
-    padding:0 45px;
+    padding:0 40px;
 
 }
 
 
+
 /* جداکننده */
+
 .separator{
 
     color:#ffd700;
@@ -108,12 +117,13 @@ body{
 
 
 /* حرکت راست به چپ */
+
 @keyframes newsMove{
 
 
 0%{
 
-    transform:translateX(-20%);
+    transform:translateX(0);
 
 }
 
@@ -129,7 +139,8 @@ body{
 
 
 
-/* چشمک چراغ */
+/* چراغ خبر */
+
 @keyframes blink{
 
 50%{
@@ -143,6 +154,7 @@ opacity:.25;
 
 
 /* توقف با موس */
+
 .ticker-content:hover{
 
 animation-play-state:paused;
@@ -191,6 +203,7 @@ padding:0 25px;
 </div>
 
 
+
 <div class="ticker-box">
 
 
@@ -219,7 +232,9 @@ const url =
 
 fetch(url+"?v="+Date.now())
 
+
 .then(response=>response.json())
+
 
 .then(data=>{
 
@@ -229,7 +244,7 @@ let news=data.news || [];
 let html="";
 
 
-// تعداد کمتر برای نمایش سریع‌تر
+// ۲۰ خبر اول برای سرعت بهتر
 
 news.slice(0,20).forEach(item=>{
 
@@ -239,10 +254,15 @@ if(item.title){
 
 html +=
 
-`<span class="news-item">
+`
+<span class="news-item">
 🔹 ${item.title}
 </span>
-<span class="separator">◆</span>`;
+
+<span class="separator">
+◆
+</span>
+`;
 
 }
 
@@ -250,10 +270,13 @@ html +=
 });
 
 
-
 // تکرار برای حرکت پیوسته
 
-document.getElementById("tickerContent").innerHTML =
+const ticker =
+document.getElementById("tickerContent");
+
+
+ticker.innerHTML =
 html + html;
 
 
@@ -261,15 +284,17 @@ html + html;
 })
 
 
+
 .catch(()=>{
 
 
 document.getElementById("tickerContent").innerHTML=
 
-`<span class="news-item">
+`
+<span class="news-item">
 اخبار در حال بروزرسانی است
-</span>`;
-
+</span>
+`;
 
 });
 
