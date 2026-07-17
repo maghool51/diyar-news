@@ -1,58 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>نوار اخبار فوری دیار قدمگاه</title>
+
 <style>
-.news-ticker {
-  direction: rtl;
-  font-family: Tahoma, sans-serif;
-  background: #b30000;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
-.news-ticker-content {
-  display: inline-block;
-  animation: tickerScroll 90s linear infinite;
+
+
+body{
+
+background:transparent;
+font-family:tahoma,Arial,sans-serif;
+direction:rtl;
+
 }
-.news-ticker-content a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 13px;
+
+
+.news-ticker{
+
+width:100%;
+height:45px;
+background:#b00000;
+color:white;
+display:flex;
+align-items:center;
+overflow:hidden;
+border-radius:8px;
+
 }
-.news-ticker-content a:hover {
-  text-decoration: underline;
+
+
+
+/* عنوان ثابت */
+
+.ticker-title{
+
+height:100%;
+background:#800000;
+display:flex;
+align-items:center;
+padding:0 15px;
+font-size:14px;
+font-weight:bold;
+white-space:nowrap;
+z-index:10;
+
 }
-.news-ticker .category-badge {
-  background: rgba(255,255,255,0.2);
-  padding: 2px 10px;
-  border-radius: 12px;
-  font-size: 11px;
-  margin-left: 5px;
+
+
+.blink{
+
+color:#ffd700;
+margin-left:8px;
+animation:blink 1s infinite;
+
 }
-.news-ticker .separator {
-  color: #ff6b6b;
-  margin: 0 8px;
+
+
+
+
+/* محل حرکت */
+
+.ticker-box{
+
+flex:1;
+height:100%;
+overflow:hidden;
+position:relative;
+
 }
-@keyframes tickerScroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+
+
+
+/* متن اخبار */
+
+.ticker-content{
+
+position:absolute;
+right:0;
+height:100%;
+
+display:flex;
+align-items:center;
+
+white-space:nowrap;
+
+animation:newsMove 140s linear infinite;
+
 }
-.news-ticker:hover .news-ticker-content {
-  animation-play-state: paused;
+
+
+
+.news-item{
+
+color:white;
+font-size:14px;
+padding:0 45px;
+
 }
+
+
+
+.separator{
+
+color:#ffd700;
+
+}
+
+
+
+
+/* حرکت خبر
+شروع با مکث کوتاه
+سپس حرکت راست به چپ
+*/
+
+@keyframes newsMove{
+
+
+0%{
+
+transform:translateX(0);
+
+}
+
+
+4%{
+
+transform:translateX(0);
+
+}
+
+
+100%{
+
+transform:translateX(100%);
+
+}
+
+
+}
+
+
+
+
+@keyframes blink{
+
+50%{
+
+opacity:.25;
+
+}
+
+}
+
+
+
+.ticker-content:hover{
+
+animation-play-state:paused;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+.ticker-title{
+
+font-size:12px;
+padding:0 10px;
+
+}
+
+
+.news-item{
+
+font-size:12px;
+padding:0 25px;
+
+}
+
+}
+
+
 </style>
+
 </head>
+
+
 <body>
+
+
 <div class="news-ticker">
-  <div class="news-ticker-content">
-    <a href="https://www.imna.ir/news/989098/%D9%88%D8%A7%D8%AF%D8%A7%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%BA%D8%B1%D8%A8-%D8%AE%D8%B7-%D9%82%D8%B1%D9%85%D8%B2-%D8%AC%D8%B1%DB%8C%D8%A7%D9%86-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> وادادگی در برابر غرب، خط قرمز جریان انقلابی است</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615289/%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86-%D8%B5%D8%A7%D8%AD%D8%A8-%D8%A7%D9%86%DA%AF%D8%B4%D8%AA%D8%B1-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> قهرمان صاحب «انگشتر قهرمانی» می‌شود</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211468/%D8%AF%D8%B1-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AC%D9%86%DA%AF%DB%8C-%D9%87%DB%8C%DA%86-%DA%A9%D8%B3-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%A7-%DA%AF%D9%81%D8%AA%D8%A7%D8%B1-%DB%8C%D8%A7-%D8%B1%D9%81%D8%AA%D8%A7%D8%B1-%D8%AE%D9%88%D8%AF-%D9%BE%DB%8C%D8%A7%D9%85-%D8%B6%D8%B9%D9%81-%D8%A8%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> در شرایط جنگی هیچ‌کس نباید با گفتار یا رفتار خود پیام ضعف به دشمن ارسال کند</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615311/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A8%D9%88%D8%B4%D9%87%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D8%AC%D9%86%D9%88%D8%A8-%D9%87%D8%B1%DA%AF%D8%B2-%D8%B2%DB%8C%D8%B1-%D8%A8%D8%A7%D8%B1-%D8%B0%D9%84%D8%AA-%D9%86%D8%B1%D9%81%D8%AA%D9%87-%D8%A7%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه بوشهر: مردم جنوب هرگز زیر بار ذلت نرفته‌اند</a><span class="separator">|</span><a href="https://www.imna.ir/news/989104/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B4%DB%B1-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%B3%DB%8C%D8%AF%D8%A7%D9%84%D8%B4%D9%87%D8%AF%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AF%D9%87%D9%87-%D9%86%D8%AE%D8%B3%D8%AA-%D9%85%D8%AD%D8%B1%D9%85" target="_blank"><span class="category-badge">🇮🇷</span> افزایش بیش از ۴۱ درصدی زائران سیدالشهدا (ع) در دهه نخست محرم</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890430/%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%A8%D9%87-%D8%AD%D8%A7%D9%84%D8%AA-%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D8%AC%D9%86%DA%AF-%D8%A8%D8%B1%D9%86%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%DA%AF%D8%B4%D8%AA-%D8%AA%D9%86%D9%87%D8%A7-%D8%B1%D8%A7%D9%87-%D9%86%D8%AC%D8%A7%D8%AA-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> تنگه هرمز به حالت قبل از جنگ برنخواهد گشت؛ تنها راه نجات مقاومت است</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211503/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%85%D9%88%D9%82%D8%AA-%D8%AE%D8%B1%D9%85-%D8%A2%D8%A8%D8%A7%D8%AF-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D9%88-%D8%AD%D9%81%D8%B8-%D9%88%D8%AD%D8%AF%D8%AA-%D9%85%D9%84%DB%8C-%D8%AA%D9%86%D9%87%D8%A7-%D8%B1%D8%A7%D9%87-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه موقت خرم‌آباد: مقاومت و حفظ وحدت ملی تنها راه مقابله با دشمن است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890467/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%BE%D8%A7%D8%B1%D8%B3%DB%8C%D8%A7%D9%86-%D8%AF%D8%B4%D9%85%D9%86%D8%A7%D9%86-%D9%87%DB%8C%DA%86-%D8%AC%D8%A7%DB%8C%DA%AF%D8%A7%D9%87%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%86%D8%AE%D9%88%D8%A7%D9%87%D9%86%D8%AF-%D8%AF%D8%A7%D8%B4%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه پارسیان: دشمنان هیچ جایگاهی در تنگه هرمز نخواهند داشت</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211526/%D8%B3%D9%BE%D8%A7%D9%87-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D8%B1%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A8%D8%B1%D8%AF-%D8%A8%D9%84%D9%86%D8%AF-%D9%88-%DA%86%D9%86%D8%AF%DB%8C%D9%86-%D9%81%D8%B1%D9%88%D9%86%D8%AF-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%B3%D9%88%D8%AE%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> سپاه: سامانه راداری برد بلند و چندین فروند هواپیمای راهبردی سوخت‌رسان آمریکا منهدم شد</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615310/%D8%B9%D8%B6%D9%88-%D8%AE%D8%A8%D8%B1%DA%AF%D8%A7%D9%86-%D8%B1%D9%87%D8%A8%D8%B1%DB%8C-%D8%AF%D9%88%D8%B1%D8%A7%D9%86-%DB%8C%D8%A7%D8%BA%DB%8C-%DA%AF%D8%B1%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AA%D9%85%D8%A7%D9%85-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> عضو خبرگان رهبری: دوران یاغی‌گری آمریکا تمام شده است</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211517/%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D8%A2%D8%B3%DB%8C%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%81%DB%8C%D9%86%D8%A7%D9%84%DB%8C%D8%B3%D8%AA-%D8%B4%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> والیبال قهرمانی نوجوانان آسیا؛ ایران فینالیست شد</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211428/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AA%D9%84%D9%81%DB%8C%D9%82-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%88-%D9%82%D8%AF%D8%B1%D8%AA-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%B2%D9%88%D8%B1%DA%AF%D9%88%DB%8C%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه شیراز: ایران با تلفیق دیپلماسی و قدرت نظامی، زورگویی دشمن را بی‌پاسخ نمی‌گذارد</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615309/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%AD%D9%82%D9%88%D9%82-%DA%A9%D8%A7%D8%B1%DA%A9%D9%86%D8%A7%D9%86-%DA%AF%D8%B1%D9%88%D9%87-%D9%85%D9%84%DB%8C-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D8%B1%D9%88%D8%B2-%D8%B4%D9%86%D8%A8%D9%87-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> استاندار خوزستان: حقوق کارکنان گروه ملی فولاد روز شنبه پرداخت می‌شود</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615308/%D8%B3%D9%BE%D8%A7%D9%87-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA-%D9%87%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%AA%D8%A7%D9%88%D8%A7%D9%86-%D8%A8%D8%B3%DB%8C%D8%A7%D8%B1-%D8%B3%D8%AE%D8%AA-%D9%88-%D8%A8%DB%8C%DA%86%D8%A7%D8%B1%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> سپاه: حمله به مردم و زیرساخت‌های غیرنظامی تاوان بسیار سخت و بیچاره کننده‌ای خواهد داشت</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890469/%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%87%D8%AF%DB%8C-%D9%82%D8%A7%D8%AA%D9%84-%D8%A7%D8%B5%D9%84%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%86%D8%B8%D8%A7%D9%85-%D8%B3%D9%84%D8%B7%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> علم الهدی: قاتل اصلی رهبر شهید نظام سلطه آمریکایی است</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211470/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A7%D9%87%D9%88%D8%A7%D8%B2-%D8%A8%D8%B9%D8%AB%D8%AA-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D9%85%D9%84%D8%AA-%D8%AB%D9%85%D8%B1%D9%87-%D8%AE%D9%88%D9%86-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه اهواز: بعثت امروز ملت ثمره خون رهبر شهید کشور است</a><span class="separator">|</span><a href="https://www.imna.ir/news/989099/%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D9%88-%D8%B4%D9%87%DB%8C%D8%AF%D8%A7%D9%86-%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%A7%D9%84%D9%87%DB%8C-%D9%88-%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D9%87-%D9%85%D9%84%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> خون‌خواهی رهبر و شهیدان، تکلیف الهی و مطالبه ملی است</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615307/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-%DA%A9%D8%A7%D9%84%D8%A7%D9%87%D8%A7%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3%DB%8C-%D8%AF%D8%B1-%D9%82%D8%B4%D9%85-%D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%D8%A8%D9%86%D8%AF%D8%B1-%D9%84%D8%A7%D9%81%D8%AA-%D8%A8%D8%AF%D9%88%D9%86-%D9%88%D9%82%D9%81%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> فعالیت بندر لافت بدون وقفه ادامه دارد / پل‌های آسیب‌دیده امروز ترمیم می‌شوند</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211511/%D8%AA%D8%A8%D8%B1%DB%8C%DA%A9-%D8%B9%D8%A7%D8%B1%D9%81-%D8%A8%D9%87-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%86%D8%B4%D8%B3%D8%AA%D9%87-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D9%87%D9%85%D9%87-%D8%AC%D8%A7%D9%86%D8%A8%D9%87-%D8%A7%D8%B2-%D8%A7%DB%8C%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> تبریک عارف به قهرمانان والیبال نشسته: حمایت همه‌جانبه از این تیم تکلیفی راهبردی است</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247547/%D9%87%D8%B2%DB%8C%D9%86%D9%87-%D8%B3%D9%81%D8%B1-%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86-%D8%A8%D8%A7-%D8%A7%D8%AA%D9%88%D8%A8%D9%88%D8%B3-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF-%D8%AC%D8%B2%DB%8C%DB%8C%D8%A7%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> هزینه سفر اربعین با اتوبوس اعلام شد/ جزییات</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211502/%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF-%D9%85%D9%82%D8%A7%D9%85-%D8%B1%D9%88%D8%B3-%D9%88-%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF%DB%8C%D9%87-%D8%B9%D8%B1%D8%A8-%D8%A8%D8%B1-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%B3%D8%B1%DB%8C%D8%B9-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AF%D8%B1" target="_blank"><span class="category-badge">🇮🇷</span> تاکید مقام روس و نماینده اتحادیه عرب بر پایان سریع درگیری در خلیج فارس</a><span class="separator">|</span><a href="https://www.imna.ir/news/989102/%D8%AC%D8%A8%D9%87%D9%87-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%DA%AF%D9%88%D8%B4-%D8%A8%D9%87-%D9%81%D8%B1%D9%85%D8%A7%D9%86-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%81%D9%82%DB%8C%D9%87-%D9%87%D8%B3%D8%AA%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> جبهه مقاومت گوش به فرمان ولایت فقیه هستند</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211041/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%BE%D8%A7%D9%88%D9%87-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%B9%D9%87%D8%AF%D8%B4%DA%A9%D9%86%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AE%D9%88%DB%8C%D8%B4%D8%AA%D9%86%D8%AF%D8%A7%D8%B1%DB%8C-%D9%88-%D8%AD%D9%81%D8%B8-%D9%85%D9%86%D8%A7%D9%81%D8%B9" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه پاوه: در برابر عهدشکنی آمریکا، خویشتنداری و حفظ منافع ملی اولویت کشور است</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211419/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A8%D8%B1%D9%88%D8%AC%D8%B1%D8%AF-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%AF%D8%B1-%DA%A9%D9%86%D8%A7%D8%B1-%D9%86%D9%82%D8%AF-%D8%B3%D8%A7%D8%B2%D9%86%D8%AF%D9%87-%D8%B6%D8%A7%D9%85%D9%86-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه بروجرد: اتحاد در کنار نقد سازنده، ضامن پیروزی است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890460/%D9%87%D9%88%D8%A7%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%DA%AF%D8%B1%D9%85%D8%A7-%D9%88-%D8%BA%D8%A8%D8%A7%D8%B1%D8%A2%D9%84%D9%88%D8%AF%DB%8C-%D9%87%D9%88%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> هواشناسی: گرما و غبارآلودی هوا در اصفهان ادامه دارد</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890465/%D9%87%D8%A7%D8%AF%DB%8C-%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C-%D8%A7%DB%8C%D9%86-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%B1%D8%A7-%D8%A8%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%AC%D9%86%D9%88%D8%A8-%D9%88-%D8%B4%D9%87%D8%AF%D8%A7-%D8%AA%D9%82%D8%AF%DB%8C%D9%85-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85" target="_blank"><span class="category-badge">🇮🇷</span> هادی رضایی: این قهرمانی را به مردم جنوب و شهدا تقدیم می کنیم</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211485/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%B2%D8%A7%D9%87%D8%AF%D8%A7%D9%86-%D8%B1%D8%A7%D9%87-%D8%B9%D8%A8%D9%88%D8%B1-%D8%A7%D8%B2-%D9%81%D8%B4%D8%A7%D8%B1%D9%87%D8%A7-%D8%AA%DA%A9%DB%8C%D9%87-%D8%A8%D8%B1-%D9%82%D8%AF%D8%B1%D8%AA-%D9%85%D9%84%D8%AA-%D9%88-%D9%88%D8%B9%D8%AF%D9%87-%D9%87%D8%A7%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه زاهدان: راه عبور از فشارها تکیه بر قدرت ملت و وعده‌های الهی است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890461/%D8%AF%D9%87%D8%B4%DB%8C%D8%B1%DB%8C-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%85-%D8%AE%D9%88%D9%86-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D9%87-%D8%AC%D8%AF%DB%8C-%D9%85%D9%84%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> دهشیری: انتقام خون رهبر شهید مطالبه جدی ملت ایران است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890464/%D9%85%D8%A7%D9%85%D9%88%D8%B3%D8%AA%D8%A7-%D9%85%D8%B1%D8%A7%D8%AF%DB%8C-%D8%AD%DB%8C%D8%A7-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D8%A7%D8%AE%D9%84%D8%A7%D9%82%DB%8C-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D9%88-%D9%86%D8%B4%D8%A7%D9%86%D9%87-%D9%BE%D8%A7%DB%8C%D8%A8%D9%86%D8%AF%DB%8C-%D8%A8%D9%87-%D8%A7%DB%8C%D9%85%D8%A7%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> ماموستا مرادی: حیا سرمایه اخلاقی جامعه و نشانه پایبندی به ایمان است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890436/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%84%D8%A7%D9%85%D8%B1%D8%AF-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%87%D8%B1%DA%AF%D8%B2-%D8%A8%D9%87-%D8%AF%D8%B3%D8%AA-%D8%A8%DB%8C%DA%AF%D8%A7%D9%86%DA%AF%D8%A7%D9%86-%D9%86%D9%85%DB%8C-%D8%A7%D9%81%D8%AA%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه لامرد: تنگه هرمز هرگز به دست بیگانگان نمی‌افتد</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211488/%D8%B1%D9%82%D8%A7%D8%A8%D8%AA-%DB%B3%DB%B2%DB%B2-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AF%D8%A7%D9%88%D8%B7%D9%84%D8%A8-%D8%AF%D8%B1-%D9%86%D9%88%D8%A8%D8%AA-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%A7%D8%B1%D8%B4%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%AA%D9%85%D9%87%DB%8C%D8%AF%D8%A7%D8%AA-%D9%88%DB%8C%DA%98%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> رقابت ۳۲۲ هزار داوطلب در نوبت پایانی ارشد ۱۴۰۵؛ تمهیدات ویژه برای ۲۴۹۷ توان‌خواه</a><span class="separator">|</span><a href="https://www.imna.ir/news/989101/%D8%AA%D8%A7%D9%85%DB%8C%D9%86-%D8%A8%D8%B1%D9%82-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%85%D8%A7%DB%8C-%D8%B7%D8%A7%D9%82%D8%AA-%D9%81%D8%B1%D8%B3%D8%A7%DB%8C-%D8%AC%D9%86%D9%88%D8%A8-%D8%A8%D8%A7-%DB%8C%DA%A9-%D8%B3%D8%A7%D8%B9%D8%AA-%D9%87%D9%85%D8%B1%D8%A7%D9%87%DB%8C-%D9%85%D8%B1%D8%AF%D9%85" target="_blank"><span class="category-badge">🇮🇷</span> تامین برق پایدار در گرمای طاقت‌فرسای جنوب با یک ساعت همراهی مردم</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890452/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%B1%D8%B4%D8%AA-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%85%D8%AA%D9%82%D8%A7%D8%A8%D9%84-%D8%A8%D9%87-%D8%AD%D9%85%D9%84%D8%A7%D8%AA-%D8%AF%D8%B4%D9%85%D9%86-%D9%88%D8%A7%D8%AC%D8%A8-%D8%B4%D8%B1%D8%B9%DB%8C-%D9%88-%D8%B9%D8%B1%D9%81%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه رشت: پاسخ متقابل به حملات دشمن واجب شرعی و عرفی است</a><span class="separator">|</span><a href="https://www.khabaronline.ir/live/2247570/%D8%A7%D8%B2-%D9%87%DB%8C%D8%A7%D9%87%D9%88%DB%8C-%D9%81%DA%A9%D8%B1%DB%8C-%D8%AA%D8%A7-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%B9%D9%82%D9%84%D8%A7%D9%86%DB%8C-%D8%A7%D9%85%D8%A7%D9%85-%D8%A8%D8%A7%D9%82%D8%B1-%D8%B9-%DA%86%D9%87-%D8%A7%D9%84%DA%AF%D9%88%DB%8C%DB%8C-%D9%BE%DB%8C%D8%B4" target="_blank"><span class="category-badge">🇮🇷</span> از هیاهوی فکری تا گفت‌وگوی عقلانی؛ امام باقر(ع) چه الگویی پیشِ رو می‌گذارد؟</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890462/%DB%B1%DB%B4-%D9%85%D8%B1%DA%A9%D8%B2-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D8%B9%D8%A7%D8%B1%D9%81-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%B4%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> ۱۴ مرکز آموزش معارف اسلامی در استان زنجان افتتاح شده است</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615305/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2-%D9%87%DB%8C%DA%86-%DA%A9%D8%B3-%D8%AD%D9%82-%D9%86%D8%AF%D8%A7%D8%B1%D8%AF-%D9%BE%DB%8C%D8%A7%D9%85-%D8%B6%D8%B9%D9%81-%D8%A8%D9%87-%D8%AF%D8%B4%D9%85%D9%86-%D9%85%D9%86%D8%AA%D9%82%D9%84-%DA%A9%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه شیراز: هیچ‌کس حق ندارد پیام ضعف به دشمن منتقل کند/ در دفاع از خود قاطعیم</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615304/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%85%D9%88%D9%82%D8%AA-%D8%B2%D9%86%D8%AC%D8%A7%D9%86-%D8%B9%D8%B2%D8%AA-%D9%85%D9%84%DB%8C-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%88-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%B3%D9%84%D8%B7%D9%87-%D8%B7%D9%84%D8%A8%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه موقت زنجان: عزت ملی در گرو ایستادگی در برابر سلطه‌طلبی است</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247566/%D8%B3%D9%BE%D8%A7%D9%87-%D8%A7%D8%B2-%D8%A7%D9%86%D9%87%D8%AF%D8%A7%D9%85-%DA%86%D9%86%D8%AF%DB%8C%D9%86-%D9%81%D8%B1%D9%88%D9%86%D8%AF-%D9%87%D9%88%D8%A7%D9%BE%DB%8C%D9%85%D8%A7%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%B3%D9%88%D8%AE%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7%DB%8C%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> سپاه از انهدام چندین فروند هواپیمای راهبردی سوخت‌رسان آمریکایی خبر داد + جزئیات</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247394/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AE%D9%86%D8%AF%D9%87-%D9%85%D8%AC%D8%B1%DB%8C-%D8%B2%D9%86-%D8%AA%D9%84%D9%88%DB%8C%D8%B2%DB%8C%D9%88%D9%86-%D8%A8%D9%87-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%DA%86%D9%87%D8%B1%D9%87-%D8%BA%DB%8C%D8%B1%D9%85%D9%86%D8%AA%D8%B8%D8%B1%D9%87-%D8%AE%D8%B3%D8%B1%D9%88-%D9%85%D8%B9%D8%AA%D8%B6%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> ببینید | خنده مجری زن تلویزیون به تغییر چهره غیرمنتظره خسرو معتضد</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890457/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%AF%D8%B4%D8%AA%D8%B3%D8%AA%D8%A7%D9%86-%D9%82%D8%A7%D8%AA%D9%84%D8%A7%D9%86-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%AD%D8%B3%D8%A7%D8%B3-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%DA%A9%D9%86%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه دشتستان: قاتلان امام شهید نباید احساس امنیت کنند</a><span class="separator">|</span><a href="https://www.irna.ir/news/86209714/%D8%B1%D8%AF-%D9%BE%D8%A7%DB%8C-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%88%D8%B1%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%A7%D8%A8-%D8%A2%D9%88%D8%B1%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> رد پای سیاست خارجی در تورم ایران؛ تاب‌آوری اقتصاد چقدر است؟</a><span class="separator">|</span><a href="https://www.irna.ir/news/86200817/%D8%B4%D8%A7%DB%8C%D8%B3%D8%AA%D9%87-%D8%B3%D8%A7%D9%84%D8%A7%D8%B1%DB%8C-%DA%A9%D9%84%DB%8C%D8%AF-%D9%88%D8%A7%DA%98%D9%87-%D8%AA%D8%B1%D8%A8%DB%8C%D8%AA-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%A7%D8%B2-%D9%86%D8%B8%D8%A7%D9%85" target="_blank"><span class="category-badge">🇮🇷</span> شایسته‌سالاری؛ کلید واژه تربیت کارگزاران تراز نظام</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615300/%D8%A7%D8%B1%D8%AF%D9%88%DB%8C-%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3-%D8%AF%D8%B1-%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D9%84%D8%BA%D9%88-%D8%B4%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> اردوی پرسپولیس در ترکیه لغو شد!</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247509/%D9%85%D9%82%D8%A7%D9%85-%D9%87%D8%A7%DB%8C-%D8%B1%D8%A3%D8%B3-%D8%A7%D9%84%D8%AD%D8%B3%DB%8C%D9%86-%D9%81%D8%A7%D9%86%D9%88%D8%B3-%D9%87%D8%A7%DB%8C-%D9%87%D9%85%DB%8C%D8%B4%D9%87-%D8%B1%D9%88%D8%B4%D9%86-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE" target="_blank"><span class="category-badge">🇮🇷</span> مقام‌های رأس الحسین، فانوس‌های همیشه روشن تاریخ</a><span class="separator">|</span><a href="https://www.irna.ir/news/86211483/%D8%B4%D9%81%D8%A7%D9%81-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1-%D8%AE%D8%A8%D8%B1-%DA%A9%D8%B0%D8%A8-%D9%BE%DB%8C%D8%B1%D8%A7%D9%85%D9%88%D9%86-%D8%A2%D9%87%D9%88%D9%87%D8%A7%DB%8C-%D8%AC%D8%B2%DB%8C%D8%B1%D9%87-%D8%AE%D8%A7%D8%B1%DA%AF" target="_blank"><span class="category-badge">🇮🇷</span> شفاف‌سازی درباره انتشار خبر کذب پیرامون آهوهای جزیره خارگ</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247519/%D9%BE%DA%98%D9%88%D9%87%D8%B4-%D8%B3%D8%B1%D8%A7%D9%87%D8%A7-%D9%BE%DB%8C%D8%B4%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%A8%DB%8C%D8%AA-%D9%86%D8%B3%D9%84-%D8%AE%D9%84%D8%A7%D9%82-%D9%88-%D9%85%D8%B3%D8%A6%D9%84%D9%87-%D9%85%D8%AD%D9%88%D8%B1-%D9%87%D8%B3%D8%AA%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> پژوهش‌سراها، پیشران تربیت نسل خلاق و مسئله‌محور هستند</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615303/%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D9%84%DB%8C%D8%A7-%D9%85%D8%B1%D8%A7%DA%A9%D8%B2-%D8%AF%D8%A7%D8%AF%D9%87-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C-%D8%B1%D8%A7-%D9%85%D9%84%D8%B2%D9%85-%D8%A8%D9%87-%D8%AA%D8%A7%D9%85%DB%8C%D9%86-%D9%87%D8%B2%DB%8C%D9%86%D9%87-%D8%A8%D8%B1%D9%82-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> استرالیا مراکز داده هوش مصنوعی را ملزم به تامین هزینه برق می‌کند</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890455/%D8%B9%D8%A7%D8%B1%D9%81-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D9%87%D9%85%D9%87-%D8%AC%D8%A7%D9%86%D8%A8%D9%87-%D8%A7%D8%B2-%D8%AA%DB%8C%D9%85-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%86%D8%B4%D8%B3%D8%AA%D9%87-%D8%AA%DA%A9%D9%84%DB%8C%D9%81%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> عارف: حمایت همه جانبه از تیم والیبال نشسته، تکلیفی راهبردی است</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890447/%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D8%A8%D9%87-%D8%A7%D8%B5%D9%88%D9%84-%D8%B1%D9%87%D8%A8%D8%B1-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8-%D8%AA%D9%86%D9%87%D8%A7-%D8%B1%D8%A7%D9%87-%D8%B9%D8%A8%D9%88%D8%B1-%D8%A7%D8%B2-%D8%AE%D8%B7%D8%A7%D9%87%D8%A7%DB%8C-%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> بازگشت به اصول رهبر انقلاب تنها راه عبور از خطاهای محاسباتی است</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615302/%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D8%AC%D9%85%D8%B9%DB%8C-%D8%A7%D8%B2-%D9%85%D8%AF%DB%8C%D8%B1%D8%A7%D9%86-%D9%88%D8%B1%D8%B2%D8%B4-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%AF%D9%88-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B4%D8%A7%D8%AE%D8%B5-%D9%88%D8%B1%D8%B2%D8%B4%DA%A9%D8%A7%D8%B1" target="_blank"><span class="category-badge">🇮🇷</span> دیدار جمعی از مدیران ورزش خوزستان با خانواده دو شهید شاخص ورزشکار در اندیمشک</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615301/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D8%B7%D8%AD-%D8%B2%D8%B1%D8%AF-%D9%87%D9%88%D8%A7%D8%B4%D9%86%D8%A7%D8%B3%DB%8C-%D8%AF%D8%B1-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D9%85%D9%88%D8%AC-%DA%AF%D8%B1%D9%85%D8%A7-%D8%AA%D8%A7-%D8%AF%D9%88%D8%B4%D9%86%D8%A8%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> تداوم موج گرما تا دوشنبه در لرستان</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890435/%D8%AD%D8%AC%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D9%86%D9%88%D8%B1%DB%8C-%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D9%87-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D9%88-%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%B4%D8%B1%D8%B9%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> حجت‌الاسلام نوری: خون‌خواهی رهبر شهید مطالبه عمومی و تکلیف شرعی است</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247565/%D9%88%D8%A7%D9%84%D8%AA%D8%B1-%D8%A8%D9%86%DB%8C%D8%A7%D9%85%DB%8C%D9%86-%D8%B3%D8%B9%DB%8C%D8%AF-%D8%B4%D8%A7%D9%87%D8%B3%D9%88%D9%86%D8%AF%DB%8C-%D9%88-%D9%85%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> والتر بنیامین، سعید شاهسوندی و من</a><span class="separator">|</span><a href="https://www.mehrnews.com/news/6890449/%D9%85%D8%A7%D9%85%D9%88%D8%B3%D8%AA%D8%A7-%D8%B1%D8%B3%D8%AA%D9%85%DB%8C-%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D8%B2-%D8%AD%D9%82%D9%88%D9%82-%D8%A8%D8%B4%D8%B1-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%AD%D8%AF-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%A8%D8%A7%D9%82%DB%8C-%D8%A8%D9%85%D8%A7%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> ماموستا رستمی: دفاع از حقوق بشر نباید در حد شعار باقی بماند</a><span class="separator">|</span><a href="https://www.imna.ir/news/989097/%D8%B3%D9%BE%D8%A7%D9%87-%D8%B1%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%B1%D8%AF-%D8%A8%D9%84%D9%86%D8%AF-%D9%88-%D8%B3%D9%88%D8%AE%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%D9%86%D9%87%D8%AF%D9%85-%D8%B4%D8%AF%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> سپاه: رادار برد بلند و سوخت‌رسان‌های راهبردی آمریکا منهدم شدند</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247517/%D9%82%D8%B1%D8%A2%D9%86-%DA%86%DA%AF%D9%88%D9%86%D9%87-%D8%B4%DB%8C%D9%88%D9%87-%D8%AA%D8%A8%D9%84%DB%8C%D8%BA-%D8%AF%DB%8C%D9%86-%D8%B1%D8%A7-%D8%AA%D8%B1%D8%B3%DB%8C%D9%85-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> قرآن چگونه شیوه تبلیغ دین را ترسیم می‌کند؟</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615299/%D8%AD%D9%81%D8%B8-%D8%A7%D9%86%D8%B3%D8%AC%D8%A7%D9%85-%D9%85%D9%84%DB%8C-%D9%88-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D9%85%D9%87%D9%85-%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1" target="_blank"><span class="category-badge">🇮🇷</span> حفظ انسجام ملی و سرمایه اجتماعی، مهم‌ترین راهبرد کشور در برابر جنگ نرم دشمن</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615298/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D9%82%D8%B1%D9%85%D8%B2-%D9%88%D9%82%D9%88%D8%B9-%D8%AF%D9%85%D8%A7%D9%87%D8%A7%DB%8C-%DB%B5%DB%B0-%D8%AF%D8%B1%D8%AC%D9%87-%D9%88-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D8%B1-%D8%AF%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> هشدار «قرمز» وقوع دماهای ۵۰ درجه و بالاتر در خوزستان</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247556/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D9%82%D9%85-%D8%A8%D8%B1%D8%AE%DB%8C-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%AA%D9%88%D9%87%D9%85-%D8%AF%D9%84%D8%A8%D8%B3%D8%AA%DA%AF%DB%8C-%D8%A8%D9%87-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A8%DB%8C-%D8%AD%D8%A7%D8%B5%D9%84-%D9%88" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه قم: برخی باید از توهم دلبستگی به مذاکرات بی‌حاصل و زیانبار خارج شوند</a><span class="separator">|</span><a href="https://www.isna.ir/news/1405042615297/%D8%AA%D9%88%D8%A7%D9%86%DB%8C%D8%B1-%D8%A7%D8%B2-%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%B4%D8%A8%DA%A9%D9%87-%D8%A8%D8%B1%D9%82-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D8%AC%D9%86%D9%88%D8%A8%DB%8C-%DA%AF%D8%B2%D8%A7%D8%B1%D8%B4-%D8%AF%D8%A7%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> توانیر از آخرین وضعیت شبکه برق در استان‌های جنوبی گزارش داد</a><span class="separator">|</span><a href="https://www.imna.ir/news/989096/%D9%85%D8%A7%D8%B2%D9%86%D8%AF%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7-%DB%B5%DB%B7-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AF%D8%A7%D9%88%D8%B7%D9%84%D8%A8-%D9%BE%DB%8C%D8%B4%D8%AA%D8%A7%D8%B2-%D9%85%D8%B4%D8%A7%D8%B1%DA%A9%D8%AA-%D9%85%D8%B1%D8%AF%D9%85%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> مازندران با ۵۷ هزار داوطلب، پیشتاز مشارکت مردمی</a><span class="separator">|</span><a href="https://www.imna.ir/news/989090/%D8%A7%D9%85%D8%A7%D9%86%D8%AA-%D8%AF%D8%A7%D8%B1%DB%8C-%D9%88-%D8%B9%D8%AF%D8%A7%D9%84%D8%AA-%D8%AF%D9%88-%D8%B1%DA%A9%D9%86-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D9%85%D8%AA%D9%85%D8%AF%D9%86-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> امانت‌داری و عدالت، دو رکن جامعه متمدن اسلامی است</a><span class="separator">|</span><a href="https://www.imna.ir/news/989094/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%86%D9%81%D9%88%D8%B0-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D8%A8%D8%B1-%D9%85%D9%84%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> عراقچی: نفوذ اسرائیل در آمریکا به زودی بر ملا خواهد شد</a><span class="separator">|</span><a href="https://www.imna.ir/news/989095/%D8%B1%D9%81%D8%B9-%D9%86%D9%82%D8%A7%D8%B7-%D8%AD%D8%A7%D8%AF%D8%AB%D9%87-%D8%AE%DB%8C%D8%B2-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B1%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%DB%B1%DB%B4-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%A8%D8%A7-%D9%87%D8%AF%D9%81-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7%DB%8C" target="_blank"><span class="category-badge">🇮🇷</span> رفع نقاط حادثه‌خیز بزرگراه‌های منطقه ۱۴ اصفهان با هدف ارتقای ایمنی رانندگان</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247560/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%B4%D8%A8%DA%A9%D9%87-%D9%86%D9%81%D9%88%D8%B0-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%AD%DA%A9%D9%88%D9%85%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%B2%D9%88%D8%AF%DB%8C-%D8%A8%D8%B1-%D9%85%D9%84%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> عراقچی: شبکه نفوذ اسرائیل در حکومت آمریکا به زودی بر ملا خواهد شد / اسرائیل با پول مالیات‌دهندگان آمریکایی صدای منتقدانش را خاموش می‌کند</a><span class="separator">|</span><a href="https://www.imna.ir/news/989089/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D9%85%D8%A7%D9%87%D9%88%D8%A7%D8%B1%D9%87-%D8%A7%DB%8C-%D8%A7%D8%B2-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%D9%85%D8%B1%DA%A9%D8%B2-%D8%A7%D8%B3%DA%A9%D8%A7%D9%86-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%AF%D8%B1-%D8%A7%D8%B1%D8%AF%D9%86" target="_blank"><span class="category-badge">🇮🇷</span> تصاویر ماهواره‌ای از حمله به مرکز اسکان نیروهای آمریکا در اردن</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247542/%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D9%85%D8%A7%D8%AF%D8%B1-%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C-%D9%88-%D9%82%D8%B7%D8%B9-%D8%AF%D8%B3%D8%AA-%DA%A9%D9%88%D8%AF%DA%A9-%DB%8C%DA%A9-%D8%B3%D8%A7%D9%84%D9%87-%D8%A7%D8%B4-%D8%AF%D8%B1-%D8%AD%D9%85%D9%84%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" target="_blank"><span class="category-badge">🇮🇷</span> شهادت مادر بندرعباسی و قطع دست کودک یک‌ساله‌اش در حمله آمریکا</a><span class="separator">|</span><a href="https://www.imna.ir/news/989092/%D9%87%D9%85%D9%87-%D9%85%D8%AD%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%88%D8%A7%D8%B5%D9%84%D8%A7%D8%AA%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7%D8%B2-%D8%A7%D8%B3%D8%AA" target="_blank"><span class="category-badge">🇮🇷</span> همه محورهای مواصلاتی کشور باز است</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247530/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1-%D9%85%D8%A7%D9%87%D9%88%D8%A7%D8%B1%D9%87-%D8%A7%DB%8C-%D8%A7%D8%B2-%D8%A7%D8%B5%D8%A7%D8%A8%D8%AA-%D8%A8%D9%87-%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87-%D9%BE%D8%A7%D8%AA%D8%B1%DB%8C%D9%88%D8%AA-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" target="_blank"><span class="category-badge">🇮🇷</span> ببینید | تصاویر ماهواره‌ای از اصابت به سامانه پاتریوت آمریکا در نزدیکی اربیل</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2246839/%D8%AC%D8%B2%DB%8C%D8%B1%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1-%DB%8C%D9%88%D9%86%D8%A7%D9%86-%DA%A9%D9%87-%D8%AA%D9%88%D9%84%D8%AF-%D9%88-%D9%85%D8%B1%DA%AF-%D8%AF%D8%B1-%D8%A2%D9%86-%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%A8%D9%88%D8%AF-%D8%B9%DA%A9%D8%B3" target="_blank"><span class="category-badge">🇮🇷</span> جزیره‌ای در یونان که تولد و مرگ در آن ممنوع بود + عکس</a><span class="separator">|</span><a href="https://www.imna.ir/news/989091/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%AC%D8%A7%D8%AF%D9%87-%DA%86%D8%A7%D9%84%D9%88%D8%B3-%D9%88-%D9%87%D8%B1%D8%A7%D8%B2-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%AC%D9%85%D8%B9%D9%87-%DB%B2%DB%B6-%D8%AA%DB%8C%D8%B1-%D8%AC%D8%A7%D8%AF%D9%87" target="_blank"><span class="category-badge">🇮🇷</span> آخرین وضعیت جاده چالوس و هراز آنلاین امروز جمعه ۲۶ تیر/ جاده چالوس امروز باز است؟</a><span class="separator">|</span><a href="https://www.imna.ir/news/989088/%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%86%D8%B4%D8%B3%D8%AA%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%D9%87%D9%85%DB%8C%D9%86-%D8%A8%D8%A7%D8%B1" target="_blank"><span class="category-badge">🇮🇷</span> قهرمانی تیم ملی والیبال نشسته ایران برای نهمین‌بار</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247554/%D8%B4%D8%A7%D9%87%DA%A9%D8%A7%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84" target="_blank"><span class="category-badge">🇮🇷</span> شاهکار جدید در باشگاه استقلال!</a><span class="separator">|</span><a href="https://www.khabaronline.ir/news/2247543/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D9%85%D8%A7-%D9%81%D9%82%D8%B7-%D8%A8%D9%87-%D9%81%D8%AA%D8%AD-%D9%82%D9%84%D9%87-%D9%87%D8%A7-%D9%85%DB%8C-%D8%A7%D9%86%D8%AF%DB%8C%D8%B4%DB%8C%D8%AF" target="_blank"><span class="category-badge">🇮🇷</span> امام جمعه تهران: امام شهید ما فقط به فتح قله‌ها می‌اندیشید</a><span class="separator">|</span>
-    <span style="color:#ff6b6b;">●</span>
-    آخرین بروزرسانی: ۱۴۰۵/۴/۲۶, ۱۰:۴۷:۵۳
-  </div>
+
+
+<div class="ticker-title">
+
+<span class="blink">🔴</span>
+
+خبر فوری
+
 </div>
+
+
+
+<div class="ticker-box">
+
+
+<div id="tickerContent" class="ticker-content">
+
+در حال دریافت اخبار...
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const url =
+"https://raw.githubusercontent.com/maghool51/diyar-news/main/news.json";
+
+
+
+fetch(url+"?v="+Date.now())
+
+
+.then(response=>response.json())
+
+
+.then(data=>{
+
+
+let html="";
+
+
+
+(data.news || []).slice(0,20).forEach(item=>{
+
+
+if(item.title){
+
+
+html += `
+
+<span class="news-item">
+🔹 ${item.title}
+</span>
+
+<span class="separator">
+◆
+</span>
+
+`;
+
+}
+
+
+});
+
+
+
+const ticker =
+document.getElementById("tickerContent");
+
+
+
+ticker.innerHTML = html + html;
+
+
+
+})
+
+
+.catch(()=>{
+
+
+document.getElementById("tickerContent").innerHTML=
+
+`
+<span class="news-item">
+اخبار در حال بروزرسانی است
+</span>
+`;
+
+});
+
+
+</script>
+
+
+
 </body>
+
 </html>
