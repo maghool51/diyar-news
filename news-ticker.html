@@ -3,9 +3,9 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>نوار اخبار | دیار قدمگاه</title>
+<title>نوار اخبار دیار قدمگاه</title>
 
 <style>
 
@@ -26,20 +26,20 @@ html,body{
 #ticker{
     width:100%;
     height:40px;
-    display:flex;
-    align-items:center;
     overflow:hidden;
     position:relative;
+    display:flex;
+    align-items:center;
 }
 
 #track{
-    display:flex;
-    align-items:center;
-    white-space:nowrap;
     position:absolute;
     right:0;
     top:0;
     height:40px;
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
     will-change:transform;
 }
 
@@ -48,9 +48,11 @@ html,body{
     display:inline-flex;
     align-items:center;
 
+    height:30px;
+
     margin:0 8px;
 
-    padding:3px 14px;
+    padding:3px 15px;
 
     background:rgba(255,255,255,.12);
 
@@ -58,13 +60,11 @@ html,body{
 
     border-right:3px solid #d4af37;
 
-    color:white;
-
-    font-size:13px;
+    color:#fff;
 
     text-decoration:none;
 
-    height:30px;
+    font-size:13px;
 
 }
 
@@ -86,6 +86,8 @@ html,body{
 
     margin-left:8px;
 
+    flex-shrink:0;
+
 }
 
 </style>
@@ -98,14 +100,14 @@ html,body{
 
 <div id="ticker">
 
-    <div id="track">
+<div id="track">
 
-        <span class="item">
-            <span class="dot"></span>
-            در حال دریافت اخبار...
-        </span>
+<span class="item">
+<span class="dot"></span>
+در حال دریافت اخبار...
+</span>
 
-    </div>
+</div>
 
 </div>
 
@@ -120,16 +122,18 @@ const jsonUrl =
 "https://maghool51.github.io/diyar-news/news.json?t=" + Date.now();
 
 
-
 let position = 0;
 
-let speed = 0.7;
+let speed = 0.8;
 
-let animation;
+let width = 0;
+
+
+let animationId;
 
 
 
-function createNews(news){
+function buildNews(news){
 
 
     let html="";
@@ -137,9 +141,10 @@ function createNews(news){
 
     news.forEach(item=>{
 
+
         html += `
 
-        <a class="item"
+        <a class="item" 
         href="${item.link || '#'}"
         target="_blank">
 
@@ -151,12 +156,24 @@ function createNews(news){
 
         `;
 
+
     });
 
 
-    // تکرار برای حرکت بدون پرش
+    // تکرار برای حرکت پیوسته
 
     track.innerHTML = html + html;
+
+
+    setTimeout(()=>{
+
+        width = track.scrollWidth / 2;
+
+        position = -width;
+
+        move();
+
+    },100);
 
 
 }
@@ -166,15 +183,14 @@ function createNews(news){
 function move(){
 
 
-    position -= speed;
+    // حرکت راست به چپ فارسی
+
+    position += speed;
 
 
-    const width = track.scrollWidth / 2;
+    if(position >= 0){
 
-
-    if(Math.abs(position) >= width){
-
-        position = 0;
+        position = -width;
 
     }
 
@@ -183,8 +199,9 @@ function move(){
     "translateX(" + position + "px)";
 
 
-    animation =
+    animationId =
     requestAnimationFrame(move);
+
 
 }
 
@@ -193,52 +210,59 @@ function move(){
 function loadNews(){
 
 
-fetch(jsonUrl,{cache:"no-store"})
+    fetch(jsonUrl,{cache:"no-store"})
 
-.then(r=>r.json())
+    .then(response=>{
 
-.then(data=>{
+        if(!response.ok)
+            throw new Error();
 
+        return response.json();
 
-    if(data.news && data.news.length){
+    })
 
-        createNews(data.news);
-
-    }
-
-
-    cancelAnimationFrame(animation);
+    .then(data=>{
 
 
-    position = 0;
+        cancelAnimationFrame(animationId);
 
 
-    move();
+        if(data.news && data.news.length){
+
+            buildNews(data.news);
+
+        }
 
 
-})
+    })
+
+    .catch(()=>{
 
 
-.catch(()=>{
+        track.innerHTML=
+
+        `
+
+        <span class="item">
+
+        <span class="dot"></span>
+
+        اخبار دیار قدمگاه
+
+        </span>
+
+        `;
 
 
-    track.innerHTML = `
+        width=track.scrollWidth;
 
-    <span class="item">
+        position=-width;
 
-    <span class="dot"></span>
-
-    اخبار دیار قدمگاه
-
-    </span>
-
-    `;
+        move();
 
 
-    move();
+    });
 
-
-});
 
 }
 
@@ -247,10 +271,9 @@ fetch(jsonUrl,{cache:"no-store"})
 loadNews();
 
 
-// هر ۵ دقیقه بروزرسانی
+// بروزرسانی هر ۵ دقیقه
 
 setInterval(loadNews,300000);
-
 
 
 </script>
