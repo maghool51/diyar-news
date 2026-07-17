@@ -305,7 +305,7 @@ function showTicker(){
         `;
 
     });
-
+n
 
     box.innerHTML = html;
 
