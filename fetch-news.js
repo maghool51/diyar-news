@@ -364,8 +364,29 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 <body>
 <div class="box">
 <div class="header">
-🇮🇷 اخبار فوری ایران و جهان | دیار قدمگاه
-<span class="count-badge">${allNews.length} خبر</span>
+<div style="font-size:24px;font-weight:bold;">
+📰 دیار قدمگاه | اخبار فوری ایران
+</div>
+
+<div style="font-size:13px;margin-top:8px;opacity:.95">
+آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
+</div>
+
+<div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px">
+
+<span class="count-badge">
+📰 ${allNews.length} خبر
+</span>
+
+<span class="count-badge">
+🗂 ${Object.keys(categorizedNews).length} دسته
+</span>
+
+<span class="count-badge">
+📡 ${sources.length} خبرگزاری
+</span>
+
+</div>
 </div>
 
 <div class="category-tabs">
