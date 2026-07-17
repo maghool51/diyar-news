@@ -2,6 +2,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,127 +11,140 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
+
 
 body{
-    background:transparent;
-    direction:rtl;
-    font-family:tahoma,Arial,sans-serif;
+
+background:transparent;
+font-family:tahoma,Arial,sans-serif;
+direction:rtl;
+
 }
 
-
-/* نوار اصلی */
 
 .news-ticker{
 
-    width:100%;
-    height:45px;
-    background:#b00000;
-    color:white;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    border-radius:8px;
+width:100%;
+height:45px;
+background:#b00000;
+color:white;
+display:flex;
+align-items:center;
+overflow:hidden;
+border-radius:8px;
 
 }
+
 
 
 /* عنوان ثابت */
 
 .ticker-title{
 
-    height:100%;
-    background:#800000;
-    padding:0 15px;
-    display:flex;
-    align-items:center;
-    font-size:14px;
-    font-weight:bold;
-    white-space:nowrap;
-    z-index:5;
+height:100%;
+background:#800000;
+display:flex;
+align-items:center;
+padding:0 15px;
+font-size:14px;
+font-weight:bold;
+white-space:nowrap;
+z-index:10;
 
 }
 
 
 .blink{
 
-    color:#ffd700;
-    margin-left:8px;
-    animation:blink 1s infinite;
+color:#ffd700;
+margin-left:8px;
+animation:blink 1s infinite;
 
 }
+
+
 
 
 /* محل حرکت */
 
 .ticker-box{
 
-    flex:1;
-    height:100%;
-    overflow:hidden;
-    position:relative;
+flex:1;
+height:100%;
+overflow:hidden;
+position:relative;
 
 }
 
 
 
-/* متن متحرک */
+/* متن اخبار */
 
 .ticker-content{
 
-    position:absolute;
-    right:0;
-    height:100%;
-    display:flex;
-    align-items:center;
-    white-space:nowrap;
+position:absolute;
+right:0;
+height:100%;
 
-    animation:newsMove 160s linear infinite;
+display:flex;
+align-items:center;
+
+white-space:nowrap;
+
+animation:newsMove 140s linear infinite;
 
 }
 
 
-
-/* هر خبر */
 
 .news-item{
 
-    color:white;
-    font-size:14px;
-    padding:0 40px;
+color:white;
+font-size:14px;
+padding:0 45px;
 
 }
 
 
-
-/* جداکننده */
 
 .separator{
 
-    color:#ffd700;
+color:#ffd700;
 
 }
 
 
 
-/* حرکت راست به چپ */
+
+/* حرکت خبر
+شروع با مکث کوتاه
+سپس حرکت راست به چپ
+*/
 
 @keyframes newsMove{
 
 
 0%{
 
-    transform:translateX(0);
+transform:translateX(0);
+
+}
+
+
+4%{
+
+transform:translateX(0);
 
 }
 
 
 100%{
 
-    transform:translateX(100%);
+transform:translateX(100%);
 
 }
 
@@ -139,7 +153,6 @@ body{
 
 
 
-/* چراغ خبر */
 
 @keyframes blink{
 
@@ -153,13 +166,12 @@ opacity:.25;
 
 
 
-/* توقف با موس */
-
 .ticker-content:hover{
 
 animation-play-state:paused;
 
 }
+
 
 
 
@@ -198,7 +210,7 @@ padding:0 25px;
 
 <span class="blink">🔴</span>
 
-خبر فوری
+اخبار دیار قدمگاه
 
 </div>
 
@@ -239,22 +251,18 @@ fetch(url+"?v="+Date.now())
 .then(data=>{
 
 
-let news=data.news || [];
-
 let html="";
 
 
-// ۲۰ خبر اول برای سرعت بهتر
 
-news.slice(0,20).forEach(item=>{
+(data.news || []).slice(0,20).forEach(item=>{
 
 
 if(item.title){
 
 
-html +=
+html += `
 
-`
 <span class="news-item">
 🔹 ${item.title}
 </span>
@@ -262,6 +270,7 @@ html +=
 <span class="separator">
 ◆
 </span>
+
 `;
 
 }
@@ -270,19 +279,17 @@ html +=
 });
 
 
-// تکرار برای حرکت پیوسته
 
 const ticker =
 document.getElementById("tickerContent");
 
 
-ticker.innerHTML =
-html + html;
+
+ticker.innerHTML = html + html;
 
 
 
 })
-
 
 
 .catch(()=>{
@@ -300,6 +307,7 @@ document.getElementById("tickerContent").innerHTML=
 
 
 </script>
+
 
 
 </body>
