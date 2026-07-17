@@ -263,8 +263,14 @@ if(item.title){
 
 html += `
 
-<span class="news-item">
+<span class="news-item"><a class="news-item"
+   href="${item.link}"
+   target="_top">
 🔹 ${item.title}
+</a>
+
+<span class="separator">
+◆
 </span>
 
 <span class="separator">
