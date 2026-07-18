@@ -236,30 +236,22 @@ padding:0 25px;
 
 <script>
 
-
 const url =
 "https://raw.githubusercontent.com/maghool51/diyar-news/main/news.json";
 
 
+fetch(url + "?v=" + Date.now())
 
-fetch(url+"?v="+Date.now())
+.then(response => response.json())
 
+.then(data => {
 
-.then(response=>response.json())
-
-
-.then(data=>{
-
-
-let html="";
+let html = "";
 
 
-
-(data.news || []).slice(0,20).forEach(item=>{
-
+(data.news || []).slice(0,40).forEach(item => {
 
 if(item.title){
-
 
 html += `
 
@@ -275,27 +267,35 @@ html += `
 
 }
 
-
 });
 
 
-
-const ticker =
-document.getElementById("tickerContent");
+const ticker = document.getElementById("tickerContent");
 
 
+if(html){
 
 ticker.innerHTML = html + html;
 
 
+// بازنشانی حرکت برای اجرای روان بعد از آپدیت
+ticker.style.animation = "none";
+
+setTimeout(() => {
+
+ticker.style.animation = "";
+
+}, 50);
+
+
+}
 
 })
 
 
-.catch(()=>{
+.catch(() => {
 
-
-document.getElementById("tickerContent").innerHTML=
+document.getElementById("tickerContent").innerHTML =
 
 `
 <span class="news-item">
