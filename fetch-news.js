@@ -461,7 +461,8 @@ function filterCategory(category) {
   console.log(`✅ news.html با ${allNews.length} خبر ذخیره شد`);
 
   // ================ ساخت news-ticker.html ================
-  const tickerHtml = `<!DOCTYPE html>
+// ================ ساخت news-ticker.html ================
+const tickerHtml = `<!DOCTYPE html>
 <html>
 <head>
 <style>
@@ -476,19 +477,23 @@ function filterCategory(category) {
   white-space: nowrap;
   position: relative;
 }
+
 .news-ticker-content {
   display: inline-block;
   animation: tickerScroll 90s linear infinite;
 }
+
 .news-ticker-content a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
   font-size: 13px;
 }
+
 .news-ticker-content a:hover {
   text-decoration: underline;
 }
+
 .news-ticker .category-badge {
   background: rgba(255,255,255,0.2);
   padding: 2px 10px;
@@ -496,35 +501,57 @@ function filterCategory(category) {
   font-size: 11px;
   margin-left: 5px;
 }
+
 .news-ticker .separator {
   color: #ff6b6b;
   margin: 0 8px;
 }
+
 @keyframes tickerScroll {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
+
 .news-ticker:hover .news-ticker-content {
   animation-play-state: paused;
 }
 </style>
 </head>
+
 <body>
+
 <div class="news-ticker">
   <div class="news-ticker-content">
     ${allNews.map(n => {
-      const emoji = categoryEmojis[n.category] || '📌';
-      return `<a href="${n.link}" target="_blank"><span class="category-badge">${n.flag || '📰'}</span> ${n.title}</a><span class="separator">|</span>`;
+      return `<a href="${n.link}" target="_blank">
+      <span class="category-badge">${n.flag || '📰'}</span>
+      ${n.title}
+      </a>
+      <span class="separator">|</span>`;
     }).join('')}
+
     <span style="color:#ff6b6b;">●</span>
     آخرین بروزرسانی: ${new Date().toLocaleString("fa-IR")}
   </div>
 </div>
+
 </body>
 </html>`;
 
+
+// فقط اگر فایل وجود نداشته باشد ساخته می‌شود
+// تغییرات دستی شما روی نیوزتیکر حفظ خواهد شد
+if (!fs.existsSync("news-ticker.html")) {
+
   fs.writeFileSync("news-ticker.html", tickerHtml, "utf8");
-  console.log(`✅ news-ticker.html با ${allNews.length} خبر ذخیره شد`);
+
+  console.log(`✅ news-ticker.html ساخته شد (${allNews.length} خبر)`);
+
+} else {
+
+  console.log("ℹ️ news-ticker.html موجود است؛ بازنویسی نشد.");
+
+}
   
   console.log("\n🎉 عملیات با موفقیت کامل شد!");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
