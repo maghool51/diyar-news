@@ -1,10 +1,10 @@
 // ============================================
-// گالری کامل دیار نیوز - پوشه‌های جداگانه v3.0 (سریع)
+// گالری کامل دیار نیوز - با نوار پیشرفت
 // ============================================
 
 // ========== تنظیمات ==========
 const CONFIG = {
-    repo: 'maghool51/diyar-widgets',
+    repo: 'maghool51/diyar-news',
     branch: 'main',
     folders: {
         picture: { path: 'gallery/picture', icon: '🖼️', label: 'عکس', exts: ['jpg','jpeg','png','webp','gif','svg','bmp','ico'] },
@@ -18,18 +18,8 @@ const CONFIG = {
     get apiUrl() {
         return `https://api.github.com/repos/${this.repo}/contents/`;
     },
-    maxFileSize: 10 * 1024 * 1024, // 10 مگابایت (بهینه)
-    chunkSize: 5, // آپلود همزمان ۵ فایل
-    getCategory(ext) {
-        ext = ext.toLowerCase();
-        for (const [key, folder] of Object.entries(this.folders)) {
-            if (folder.exts.includes(ext)) return key;
-        }
-        return 'file';
-    },
-    getFolderPath(category) {
-        return this.folders[category]?.path || 'gallery/file';
-    }
+    maxFileSize: 10 * 1024 * 1024,
+    chunkSize: 3
 };
 
 // ========== DOM ==========
@@ -114,7 +104,7 @@ async function loadAllFolders() {
                     allFiles = allFiles.concat(validFiles);
                 }
             } catch (e) {
-                // پوشه خالی است - خطا نیست
+                // پوشه خالی است
             }
         }
 
@@ -317,11 +307,11 @@ async function deleteSelected() {
     loadAllFolders();
 }
 
-// ========== آپلود همزمان (سریع) ==========
+// ========== آپلود با نوار پیشرفت ==========
 async function uploadFiles(files) {
     if (state.isUploading || !files?.length) return;
 
-    // فیلتر فایل‌های تکراری
+    // بررسی فایل‌های تکراری
     const existingNames = new Set(state.files.map(f => f.name));
     const newFiles = Array.from(files).filter(f => !existingNames.has(f.name));
     
@@ -331,10 +321,13 @@ async function uploadFiles(files) {
     }
 
     const token = getToken();
-    if (!token) { DOM.status.textContent = '❌ آپلود لغو شد'; return; }
+    if (!token) { 
+        DOM.status.textContent = '❌ آپلود لغو شد'; 
+        return; 
+    }
 
     state.isUploading = true;
-    DOM.status.textContent = `⏳ در حال آپلود ${newFiles.length} فایل...`;
+    DOM.status.textContent = `⏳ آماده‌سازی ${newFiles.length} فایل...`;
     DOM.progressContainer.classList.add('active');
     DOM.progress.style.width = '0%';
     DOM.progressText.textContent = '۰%';
@@ -355,10 +348,19 @@ async function uploadFiles(files) {
     let success = 0;
     const total = validFiles.length;
 
-    // آپلود همزمان (چند تا با هم)
+    // آپلود به صورت دسته‌ای
     const chunkSize = CONFIG.chunkSize;
     for (let i = 0; i < total; i += chunkSize) {
         const chunk = validFiles.slice(i, i + chunkSize);
+        
+        // به‌روزرسانی نوار پیشرفت برای هر دسته
+        const startPercent = Math.round((i / total) * 100);
+        const endPercent = Math.round(Math.min((i + chunkSize) / total * 100, 100));
+        
+        DOM.progress.style.width = `${startPercent}%`;
+        DOM.progressText.textContent = `${startPercent}%`;
+        DOM.status.textContent = `⏳ در حال آپلود ${Math.min(i + chunkSize, total)}/${total} ...`;
+
         const promises = chunk.map(async (file) => {
             const ext = file.name.split('.').pop().toLowerCase();
             const category = CONFIG.getCategory(ext);
@@ -394,18 +396,21 @@ async function uploadFiles(files) {
         const chunkSuccess = results.filter(r => r.success).length;
         success += chunkSuccess;
 
-        // نمایش نتیجه هر دسته
+        // به‌روزرسانی نوار پیشرفت بعد از اتمام دسته
+        const finalPercent = Math.round(Math.min((i + chunkSize) / total * 100, 100));
+        DOM.progress.style.width = `${finalPercent}%`;
+        DOM.progressText.textContent = `${finalPercent}%`;
+        
+        // نمایش وضعیت
         const failed = results.filter(r => !r.success);
         if (failed.length > 0) {
-            DOM.status.textContent = `⚠️ ${failed.length} فایل ناموفق: ${failed.map(f => f.file.name).join(', ')}`;
+            DOM.status.textContent = `⚠️ ${failed.length} فایل ناموفق`;
+        } else {
+            DOM.status.textContent = `✅ ${Math.min(i + chunkSize, total)}/${total} آپلود شد`;
         }
-
-        const pct = Math.round(Math.min((i + chunkSize) / total * 100, 100));
-        DOM.progress.style.width = `${pct}%`;
-        DOM.progressText.textContent = `${pct}%`;
-        DOM.status.textContent = `⏳ ${Math.min(i + chunkSize, total)}/${total} فایل`;
     }
 
+    // پایان آپلود
     DOM.progressContainer.classList.remove('active');
     DOM.progress.style.width = '0%';
     DOM.progressText.textContent = '۰%';
@@ -528,6 +533,4 @@ document.addEventListener('keydown', function(e) {
 // ========== شروع ==========
 loadAllFolders();
 
-console.log('🖼️ گالری دیار نیوز v3.0 (سریع) بارگذاری شد');
-console.log(`📁 ${Object.keys(CONFIG.folders).length} پوشه فعال`);
-console.log(`⚡ آپلود همزمان ${CONFIG.chunkSize} فایل`);
+console.log('🖼️ گالری دیار نیوز v3.0 بارگذاری شد');
