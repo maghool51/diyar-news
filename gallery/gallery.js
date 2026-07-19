@@ -1,10 +1,10 @@
 // ============================================
-// گالری کامل دیار نیوز - با نوار پیشرفت
+// گالری کامل دیار نیوز - نسخه تصحیح شده
 // ============================================
 
 // ========== تنظیمات ==========
 const CONFIG = {
-    repo: 'maghool51/diyar-news',
+    repo: 'maghool51/diyar-news',  // ← مخزن درست
     branch: 'main',
     folders: {
         picture: { path: 'gallery/picture', icon: '🖼️', label: 'عکس', exts: ['jpg','jpeg','png','webp','gif','svg','bmp','ico'] },
@@ -19,7 +19,17 @@ const CONFIG = {
         return `https://api.github.com/repos/${this.repo}/contents/`;
     },
     maxFileSize: 10 * 1024 * 1024,
-    chunkSize: 3
+    chunkSize: 3,
+    getCategory(ext) {
+        ext = ext.toLowerCase();
+        for (const [key, folder] of Object.entries(this.folders)) {
+            if (folder.exts.includes(ext)) return key;
+        }
+        return 'file';
+    },
+    getFolderPath(category) {
+        return this.folders[category]?.path || 'gallery/file';
+    }
 };
 
 // ========== DOM ==========
@@ -90,10 +100,14 @@ async function loadAllFolders() {
         DOM.grid.innerHTML = `<div class="loading-state"><span class="loader"></span><p>در حال بارگذاری...</p></div>`;
 
         let allFiles = [];
+        let loadedFolders = 0;
         
         for (const [key, folder] of Object.entries(CONFIG.folders)) {
             try {
-                const response = await fetch(`${CONFIG.apiUrl}${folder.path}`);
+                const url = `${CONFIG.apiUrl}${folder.path}`;
+                console.log(`📂 در حال بارگذاری: ${url}`);
+                
+                const response = await fetch(url);
                 if (response.ok) {
                     const files = await response.json();
                     const validFiles = files.filter(f => f.type === 'file');
@@ -102,27 +116,46 @@ async function loadAllFolders() {
                         f._folder = folder;
                     });
                     allFiles = allFiles.concat(validFiles);
+                    console.log(`✅ ${validFiles.length} فایل در ${folder.path} پیدا شد`);
+                    loadedFolders++;
+                } else {
+                    console.log(`⚠️ پوشه ${folder.path} وجود ندارد (${response.status})`);
                 }
             } catch (e) {
-                // پوشه خالی است
+                console.log(`❌ خطا در بارگذاری ${folder.path}:`, e.message);
             }
         }
 
+        console.log(`📊 مجموع: ${allFiles.length} فایل در ${loadedFolders} پوشه`);
+        
         state.files = allFiles;
         state.selected.clear();
         renderGallery();
         updateStats();
 
+        if (allFiles.length === 0) {
+            DOM.grid.innerHTML = `
+                <div class="empty-state">
+                    <div class="icon">📂</div>
+                    <h3>هیچ فایلی یافت نشد</h3>
+                    <p>برای شروع، یک فایل آپلود کنید.</p>
+                    <p style="font-size:12px;color:#999;margin-top:8px;">
+                        مسیر: ${CONFIG.folders.picture.path}
+                    </p>
+                </div>
+            `;
+        }
+
     } catch (error) {
         DOM.grid.innerHTML = `
             <div class="empty-state">
-                <div class="icon">📂</div>
-                <h3>گالری خالی است</h3>
+                <div class="icon">❌</div>
+                <h3>خطا در بارگذاری</h3>
                 <p>${error.message}</p>
             </div>
         `;
         DOM.count.textContent = '۰ فایل';
-        console.error('Gallery Error:', error);
+        console.error('❌ Gallery Error:', error);
     }
 }
 
@@ -307,11 +340,10 @@ async function deleteSelected() {
     loadAllFolders();
 }
 
-// ========== آپلود با نوار پیشرفت ==========
+// ========== آپلود ==========
 async function uploadFiles(files) {
     if (state.isUploading || !files?.length) return;
 
-    // بررسی فایل‌های تکراری
     const existingNames = new Set(state.files.map(f => f.name));
     const newFiles = Array.from(files).filter(f => !existingNames.has(f.name));
     
@@ -332,7 +364,6 @@ async function uploadFiles(files) {
     DOM.progress.style.width = '0%';
     DOM.progressText.textContent = '۰%';
 
-    // فیلتر فایل‌های بزرگ
     const validFiles = newFiles.filter(f => f.size <= CONFIG.maxFileSize);
     if (validFiles.length === 0) {
         DOM.status.textContent = '⚠️ همه فایل‌ها بزرگتر از ۱۰ مگابایت هستند';
@@ -341,25 +372,17 @@ async function uploadFiles(files) {
         return;
     }
 
-    if (validFiles.length < newFiles.length) {
-        DOM.status.textContent = `⚠️ ${newFiles.length - validFiles.length} فایل بزرگتر از ۱۰ مگابایت رد شدند`;
-    }
-
     let success = 0;
     const total = validFiles.length;
 
-    // آپلود به صورت دسته‌ای
     const chunkSize = CONFIG.chunkSize;
     for (let i = 0; i < total; i += chunkSize) {
         const chunk = validFiles.slice(i, i + chunkSize);
         
-        // به‌روزرسانی نوار پیشرفت برای هر دسته
         const startPercent = Math.round((i / total) * 100);
-        const endPercent = Math.round(Math.min((i + chunkSize) / total * 100, 100));
-        
         DOM.progress.style.width = `${startPercent}%`;
         DOM.progressText.textContent = `${startPercent}%`;
-        DOM.status.textContent = `⏳ در حال آپلود ${Math.min(i + chunkSize, total)}/${total} ...`;
+        DOM.status.textContent = `⏳ ${Math.min(i + chunkSize, total)}/${total} ...`;
 
         const promises = chunk.map(async (file) => {
             const ext = file.name.split('.').pop().toLowerCase();
@@ -396,21 +419,16 @@ async function uploadFiles(files) {
         const chunkSuccess = results.filter(r => r.success).length;
         success += chunkSuccess;
 
-        // به‌روزرسانی نوار پیشرفت بعد از اتمام دسته
         const finalPercent = Math.round(Math.min((i + chunkSize) / total * 100, 100));
         DOM.progress.style.width = `${finalPercent}%`;
         DOM.progressText.textContent = `${finalPercent}%`;
         
-        // نمایش وضعیت
         const failed = results.filter(r => !r.success);
-        if (failed.length > 0) {
-            DOM.status.textContent = `⚠️ ${failed.length} فایل ناموفق`;
-        } else {
-            DOM.status.textContent = `✅ ${Math.min(i + chunkSize, total)}/${total} آپلود شد`;
-        }
+        DOM.status.textContent = failed.length > 0 
+            ? `⚠️ ${failed.length} فایل ناموفق` 
+            : `✅ ${Math.min(i + chunkSize, total)}/${total}`;
     }
 
-    // پایان آپلود
     DOM.progressContainer.classList.remove('active');
     DOM.progress.style.width = '0%';
     DOM.progressText.textContent = '۰%';
@@ -453,19 +471,16 @@ function switchTab(tab) {
 
 // ========== Event Listeners ==========
 
-// تب‌ها
 DOM.tabs.forEach(btn => {
     btn.addEventListener('click', () => switchTab(btn.dataset.tab));
 });
 
-// فایل
 DOM.fileInput.addEventListener('change', function() { 
     if (this.files.length > 0) {
         uploadFiles(this.files);
     }
 });
 
-// درگ و دراپ
 DOM.dropZone.addEventListener('dragover', e => { 
     e.preventDefault(); 
     DOM.dropZone.classList.add('dragover'); 
@@ -483,20 +498,17 @@ DOM.dropZone.addEventListener('drop', e => {
 });
 DOM.dropZone.addEventListener('click', () => DOM.fileInput.click());
 
-// جستجو
 DOM.search.addEventListener('input', function() {
     state.filter = this.value.trim();
     renderGallery();
     updateStats();
 });
 
-// Refresh
 DOM.refreshBtn.addEventListener('click', function() {
     this.textContent = '⏳';
     loadAllFolders().finally(() => this.textContent = '🔄');
 });
 
-// Select All
 DOM.selectAllBtn.addEventListener('click', function() {
     const names = state.filtered.map(f => f.name);
     if (state.selected.size === names.length && names.length > 0) {
@@ -508,16 +520,13 @@ DOM.selectAllBtn.addEventListener('click', function() {
     updateStats();
 });
 
-// Delete Selected
 DOM.deleteSelectedBtn.addEventListener('click', deleteSelected);
 
-// کلیک روی لینک
 document.addEventListener('click', function(e) {
     const input = e.target.closest('.link-box input');
     if (input) copyLink(input.id);
 });
 
-// کیبورد
 document.addEventListener('keydown', function(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === 'a' && e.target.tagName !== 'INPUT') {
         e.preventDefault();
@@ -533,4 +542,6 @@ document.addEventListener('keydown', function(e) {
 // ========== شروع ==========
 loadAllFolders();
 
-console.log('🖼️ گالری دیار نیوز v3.0 بارگذاری شد');
+console.log('🖼️ گالری دیار نیوز v3.1 بارگذاری شد');
+console.log(`📁 مخزن: ${CONFIG.repo}`);
+console.log(`📂 پوشه عکس‌ها: ${CONFIG.folders.picture.path}`);
