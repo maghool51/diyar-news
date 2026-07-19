@@ -1,10 +1,11 @@
 // ============================================
-// گالری کامل دیار نیوز - نسخه تصحیح شده
+// گالری کامل دیار نیوز - نسخه نهایی
+// مخزن: maghool51/diyar-news
 // ============================================
 
 // ========== تنظیمات ==========
 const CONFIG = {
-    repo: 'maghool51/diyar-news',  // ← مخزن درست
+    repo: 'maghool51/diyar-news',
     branch: 'main',
     folders: {
         picture: { path: 'gallery/picture', icon: '🖼️', label: 'عکس', exts: ['jpg','jpeg','png','webp','gif','svg','bmp','ico'] },
