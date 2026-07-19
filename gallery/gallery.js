@@ -1,5 +1,5 @@
 // ============================================
-// گالری کامل دیار نیوز - پوشه‌های جداگانه v2.0
+// گالری کامل دیار نیوز - پوشه‌های جداگانه v3.0 (سریع)
 // ============================================
 
 // ========== تنظیمات ==========
@@ -18,7 +18,8 @@ const CONFIG = {
     get apiUrl() {
         return `https://api.github.com/repos/${this.repo}/contents/`;
     },
-    maxFileSize: 20 * 1024 * 1024, // 20MB
+    maxFileSize: 10 * 1024 * 1024, // 10 مگابایت (بهینه)
+    chunkSize: 5, // آپلود همزمان ۵ فایل
     getCategory(ext) {
         ext = ext.toLowerCase();
         for (const [key, folder] of Object.entries(this.folders)) {
@@ -63,7 +64,7 @@ let state = {
 };
 
 // ========== Toast ==========
-function showToast(msg, type = 'info', duration = 3500) {
+function showToast(msg, type = 'info', duration = 3000) {
     const t = DOM.toast;
     t.textContent = msg;
     t.className = `toast show ${type}`;
@@ -113,7 +114,7 @@ async function loadAllFolders() {
                     allFiles = allFiles.concat(validFiles);
                 }
             } catch (e) {
-                console.log(`پوشه ${folder.path} خالی است یا وجود ندارد`);
+                // پوشه خالی است - خطا نیست
             }
         }
 
@@ -175,7 +176,6 @@ function renderGallery() {
         item.style.animationDelay = `${(index % 20) * 0.04}s`;
         item.dataset.name = file.name;
 
-        // محتوای داخل فایل
         let contentHtml = '';
         if (category === 'picture') {
             contentHtml = `<img src="${url}" alt="${file.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23f0f2f5%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2240%22%3E❌%3C/text%3E%3C/svg%3E'">`;
@@ -317,53 +317,93 @@ async function deleteSelected() {
     loadAllFolders();
 }
 
-// ========== Upload ==========
+// ========== آپلود همزمان (سریع) ==========
 async function uploadFiles(files) {
     if (state.isUploading || !files?.length) return;
+
+    // فیلتر فایل‌های تکراری
+    const existingNames = new Set(state.files.map(f => f.name));
+    const newFiles = Array.from(files).filter(f => !existingNames.has(f.name));
+    
+    if (newFiles.length === 0) {
+        showToast('⚠️ همه فایل‌ها قبلاً آپلود شده‌اند', 'error');
+        return;
+    }
 
     const token = getToken();
     if (!token) { DOM.status.textContent = '❌ آپلود لغو شد'; return; }
 
     state.isUploading = true;
-    DOM.status.textContent = '⏳ در حال آپلود...';
+    DOM.status.textContent = `⏳ در حال آپلود ${newFiles.length} فایل...`;
     DOM.progressContainer.classList.add('active');
     DOM.progress.style.width = '0%';
     DOM.progressText.textContent = '۰%';
 
-    let success = 0, total = files.length;
+    // فیلتر فایل‌های بزرگ
+    const validFiles = newFiles.filter(f => f.size <= CONFIG.maxFileSize);
+    if (validFiles.length === 0) {
+        DOM.status.textContent = '⚠️ همه فایل‌ها بزرگتر از ۱۰ مگابایت هستند';
+        state.isUploading = false;
+        DOM.progressContainer.classList.remove('active');
+        return;
+    }
 
-    for (let i = 0; i < total; i++) {
-        const file = files[i];
-        const ext = file.name.split('.').pop().toLowerCase();
-        const category = CONFIG.getCategory(ext);
-        const folderPath = CONFIG.getFolderPath(category);
-        
-        if (file.size > CONFIG.maxFileSize) {
-            DOM.status.textContent = `⚠️ ${file.name} بزرگتر از ۲۰ مگابایت`;
-            continue;
+    if (validFiles.length < newFiles.length) {
+        DOM.status.textContent = `⚠️ ${newFiles.length - validFiles.length} فایل بزرگتر از ۱۰ مگابایت رد شدند`;
+    }
+
+    let success = 0;
+    const total = validFiles.length;
+
+    // آپلود همزمان (چند تا با هم)
+    const chunkSize = CONFIG.chunkSize;
+    for (let i = 0; i < total; i += chunkSize) {
+        const chunk = validFiles.slice(i, i + chunkSize);
+        const promises = chunk.map(async (file) => {
+            const ext = file.name.split('.').pop().toLowerCase();
+            const category = CONFIG.getCategory(ext);
+            const folderPath = CONFIG.getFolderPath(category);
+            
+            try {
+                const content = await fileToBase64(file);
+                const url = `${CONFIG.apiUrl}${folderPath}/${file.name}`;
+                const res = await fetch(url, {
+                    method: 'PUT',
+                    headers: { 
+                        'Authorization': `token ${token}`, 
+                        'Content-Type': 'application/json' 
+                    },
+                    body: JSON.stringify({
+                        message: `Upload: ${file.name}`,
+                        content: content,
+                        branch: CONFIG.branch
+                    })
+                });
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.message || 'خطا');
+                }
+                return { file, success: true };
+            } catch (err) {
+                console.error(`❌ ${file.name}:`, err);
+                return { file, success: false, error: err.message };
+            }
+        });
+
+        const results = await Promise.all(promises);
+        const chunkSuccess = results.filter(r => r.success).length;
+        success += chunkSuccess;
+
+        // نمایش نتیجه هر دسته
+        const failed = results.filter(r => !r.success);
+        if (failed.length > 0) {
+            DOM.status.textContent = `⚠️ ${failed.length} فایل ناموفق: ${failed.map(f => f.file.name).join(', ')}`;
         }
 
-        try {
-            const content = await fileToBase64(file);
-            const url = `${CONFIG.apiUrl}${folderPath}/${file.name}`;
-            const res = await fetch(url, {
-                method: 'PUT',
-                headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    message: `Upload: ${file.name} → ${folderPath}`,
-                    content: content,
-                    branch: CONFIG.branch
-                })
-            });
-            if (!res.ok) throw new Error(await res.text());
-            success++;
-            const pct = Math.round((i + 1) / total * 100);
-            DOM.progress.style.width = `${pct}%`;
-            DOM.progressText.textContent = `${pct}%`;
-            DOM.status.textContent = `⏳ ${i+1}/${total}: ${file.name} → ${folderPath}`;
-        } catch (err) {
-            DOM.status.textContent = `❌ ${file.name}: ${err.message}`;
-        }
+        const pct = Math.round(Math.min((i + chunkSize) / total * 100, 100));
+        DOM.progress.style.width = `${pct}%`;
+        DOM.progressText.textContent = `${pct}%`;
+        DOM.status.textContent = `⏳ ${Math.min(i + chunkSize, total)}/${total} فایل`;
     }
 
     DOM.progressContainer.classList.remove('active');
@@ -372,13 +412,14 @@ async function uploadFiles(files) {
     state.isUploading = false;
 
     if (success === total) {
-        showToast(`✅ ${success} فایل آپلود شد`, 'success');
+        showToast(`✅ ${success} فایل با موفقیت آپلود شد`, 'success');
         DOM.status.textContent = `✅ ${success} فایل آپلود شد`;
     } else if (success > 0) {
         showToast(`⚠️ ${success} از ${total} فایل آپلود شد`, 'error');
         DOM.status.textContent = `⚠️ ${success} از ${total} فایل آپلود شد`;
     } else {
         DOM.status.textContent = '❌ هیچ فایلی آپلود نشد';
+        showToast('❌ آپلود ناموفق بود', 'error');
     }
 
     DOM.fileInput.value = '';
@@ -413,15 +454,27 @@ DOM.tabs.forEach(btn => {
 });
 
 // فایل
-DOM.fileInput.addEventListener('change', function() { uploadFiles(this.files); });
+DOM.fileInput.addEventListener('change', function() { 
+    if (this.files.length > 0) {
+        uploadFiles(this.files);
+    }
+});
 
 // درگ و دراپ
-DOM.dropZone.addEventListener('dragover', e => { e.preventDefault(); DOM.dropZone.classList.add('dragover'); });
-DOM.dropZone.addEventListener('dragleave', e => { e.preventDefault(); DOM.dropZone.classList.remove('dragover'); });
+DOM.dropZone.addEventListener('dragover', e => { 
+    e.preventDefault(); 
+    DOM.dropZone.classList.add('dragover'); 
+});
+DOM.dropZone.addEventListener('dragleave', e => { 
+    e.preventDefault(); 
+    DOM.dropZone.classList.remove('dragover'); 
+});
 DOM.dropZone.addEventListener('drop', e => {
     e.preventDefault();
     DOM.dropZone.classList.remove('dragover');
-    uploadFiles(e.dataTransfer.files);
+    if (e.dataTransfer.files.length > 0) {
+        uploadFiles(e.dataTransfer.files);
+    }
 });
 DOM.dropZone.addEventListener('click', () => DOM.fileInput.click());
 
@@ -472,5 +525,9 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ========== Init ==========
+// ========== شروع ==========
 loadAllFolders();
+
+console.log('🖼️ گالری دیار نیوز v3.0 (سریع) بارگذاری شد');
+console.log(`📁 ${Object.keys(CONFIG.folders).length} پوشه فعال`);
+console.log(`⚡ آپلود همزمان ${CONFIG.chunkSize} فایل`);
