@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 <title>دیار پلیر | پخش‌کننده رسانه دیار قدمگاه</title>
 
-<!-- ===== PWA: نصب روی گوشی ===== -->
-<link rel="manifest" href="./manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0b3d2e">
-<meta name="background-color" content="#040f0b">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="دیار پلیر">
-<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 <link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
 
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -24,6 +23,7 @@
         --panel:#0a2018;
         --panel-2:#0e281e;
         --panel-3:#123326;
+        --panel-4:#173a29;
         --primary:#0b3d2e;
         --primary-light:#1c6b4c;
         --gold:#f0c040;
@@ -35,18 +35,13 @@
         --danger:#e0555a;
         --radius-lg:22px;
         --radius-md:14px;
-        --sidebar-w:300px;
-        --player-h:92px;
-        --topbar-h:64px;
+        --sidebar-w:290px;
+        --player-h:96px;
+        --topbar-h:60px;
     }
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
     ::selection{background:var(--gold);color:#12200f;}
-    html,body{
-        height:100%;
-        overflow-x:hidden;
-        width:100%;
-        max-width:100%;
-    }
+    html,body{height:100%;overflow-x:hidden;width:100%;max-width:100%;}
     body{
         font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
         background:
@@ -54,25 +49,19 @@
             radial-gradient(circle at 90% 90%, rgba(28,107,76,0.20), transparent 45%),
             var(--void);
         color:var(--text);
-        overflow:hidden;
-        position:fixed;
-        inset:0;
-        width:100%;
+        overflow:hidden;position:fixed;inset:0;width:100%;
     }
     button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer;}
-    input{font-family:inherit;}
+    input,select{font-family:inherit;}
     ::-webkit-scrollbar{width:7px;height:7px;}
     ::-webkit-scrollbar-thumb{background:rgba(240,192,64,0.28);border-radius:10px;}
     ::-webkit-scrollbar-thumb:hover{background:rgba(240,192,64,0.5);}
+    i.fa-solid,i.fas{font-weight:900;}
 
     .app{
         display:flex;flex-direction:column;
-        height:100vh;
-        height:calc(var(--vh, 1vh) * 100);
-        height:100dvh;
-        width:100%;
-        max-width:100vw;
-        overflow:hidden;
+        height:100vh;height:calc(var(--vh,1vh) * 100);height:100dvh;
+        width:100%;max-width:100vw;overflow:hidden;
         padding-bottom:env(safe-area-inset-bottom);
     }
 
@@ -80,337 +69,380 @@
     .topbar{
         height:var(--topbar-h);flex:0 0 auto;
         display:flex;align-items:center;justify-content:space-between;
-        padding:0 22px;
+        padding:0 18px;gap:10px;
         background:linear-gradient(180deg, rgba(10,32,24,.95), rgba(10,32,24,.75));
-        border-bottom:1px solid var(--line);
-        backdrop-filter:blur(6px);
-        z-index:40;
+        border-bottom:1px solid var(--line);backdrop-filter:blur(6px);z-index:40;
     }
-    .brand{display:flex;align-items:center;gap:12px;}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0;}
     .brand img{
-        width:38px;height:38px;border-radius:50%;object-fit:cover;
+        width:34px;height:34px;border-radius:50%;object-fit:cover;flex:0 0 auto;
         border:2px solid var(--gold);box-shadow:0 0 14px rgba(240,192,64,.35);
     }
-    .brand .names{display:flex;flex-direction:column;line-height:1.3;}
-    .brand .names b{font-size:15px;letter-spacing:.3px;color:var(--gold-soft);}
-    .brand .names span{font-size:11px;color:var(--text-dim);}
-    #menuToggle{
-        display:none;width:38px;height:38px;border-radius:10px;
-        align-items:center;justify-content:center;font-size:16px;
-        background:var(--panel-2);
+    .brand .names{display:flex;flex-direction:column;line-height:1.25;min-width:0;}
+    .brand .names b{font-size:14.5px;letter-spacing:.3px;color:var(--gold-soft);white-space:nowrap;}
+    .brand .names span{font-size:10.5px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .topbar-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;}
+    .icon-btn{
+        width:38px;height:38px;border-radius:11px;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;font-size:14px;
+        color:var(--text-dim);transition:.2s;flex:0 0 auto;position:relative;
     }
-    .topbar-actions{display:flex;align-items:center;gap:10px;}
-    .install-btn{
-        padding:9px 16px;font-size:12.5px;white-space:nowrap;
-        animation:installPulse 2.4s ease-in-out infinite;
+    .icon-btn:hover{color:var(--gold-soft);background:var(--panel-4);}
+    .icon-btn.on{color:var(--gold);background:rgba(240,192,64,.14);}
+    #menuToggle{display:none;}
+    .btn-gold{
+        display:flex;align-items:center;justify-content:center;gap:7px;
+        background:linear-gradient(135deg,var(--gold),#d9a52c);color:#1c1400;font-weight:700;
+        font-size:12.5px;padding:9px 16px;border-radius:30px;transition:.25s;
+        box-shadow:0 4px 14px rgba(240,192,64,.25);white-space:nowrap;
     }
-    @keyframes installPulse{
-        0%,100%{box-shadow:0 4px 14px rgba(240,192,64,.25);}
-        50%{box-shadow:0 4px 22px rgba(240,192,64,.55);}
+    .btn-gold:hover{filter:brightness(1.08);transform:translateY(-1px);}
+    .btn-ghost{
+        display:flex;align-items:center;gap:7px;background:var(--panel-3);color:var(--text);
+        font-size:12.5px;padding:9px 15px;border-radius:30px;transition:.2s;
     }
-
-    .install-modal{
-        position:fixed;inset:0;z-index:300;background:rgba(4,15,11,.82);
-        display:none;align-items:center;justify-content:center;padding:20px;
-        backdrop-filter:blur(4px);
-    }
-    .install-modal.show{display:flex;}
-    .install-box{
-        position:relative;max-width:360px;width:100%;
-        background:linear-gradient(180deg,var(--panel-2),var(--panel));
-        border:1px solid var(--line);border-radius:var(--radius-lg);
-        padding:28px 24px 22px;text-align:center;
-        box-shadow:0 20px 60px rgba(0,0,0,.5);
-    }
-    .install-box .emblem{
-        border-radius:50%;
-        background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);
-        border:3px solid var(--gold-dim);
-        display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
-    }
-    .install-box h3{color:var(--gold-soft);font-size:16.5px;margin-bottom:14px;}
-    .install-box ol{text-align:right;font-size:13.5px;color:var(--text);line-height:2;padding-right:18px;margin-bottom:14px;}
-    .install-box ol b{color:var(--gold-soft);}
-    .install-box .note-small{font-size:11.5px;color:var(--text-dim);}
-    .install-close{
-        position:absolute;top:12px;left:12px;width:30px;height:30px;border-radius:50%;
-        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
-        color:var(--text-dim);font-size:13px;
-    }
-    .install-close:hover{color:var(--gold-soft);}
-    @media(max-width:420px){
-        .install-btn span{display:none;}
-        .brand .names span{display:none;}
-    }
+    .btn-ghost:hover{background:var(--panel-4);color:var(--gold-soft);}
+    .install-btn{animation:installPulse 2.4s ease-in-out infinite;}
+    @keyframes installPulse{0%,100%{box-shadow:0 4px 14px rgba(240,192,64,.25);}50%{box-shadow:0 4px 22px rgba(240,192,64,.55);}}
 
     /* ===================== BODY GRID ===================== */
-    .body-grid{
-        flex:1 1 auto;display:flex;min-height:0;min-width:0;overflow:hidden;position:relative;
-    }
+    .body-grid{flex:1 1 auto;display:flex;min-height:0;min-width:0;overflow:hidden;position:relative;}
 
-    /* ---------- SIDEBAR ---------- */
+    /* ---------- SIDEBAR (LIBRARY) ---------- */
     .sidebar{
         width:var(--sidebar-w);flex:0 0 auto;
         background:linear-gradient(180deg,var(--panel),var(--panel-2));
         border-left:1px solid var(--line);
         display:flex;flex-direction:column;min-height:0;height:100%;
-        transition:transform .35s cubic-bezier(.25,.46,.45,.94);
-        z-index:35;
+        transition:transform .35s cubic-bezier(.25,.46,.45,.94);z-index:35;
     }
-    .sidebar-head{padding:16px 16px 10px;display:flex;gap:8px;align-items:center;}
-    .btn-gold{
-        flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
-        background:linear-gradient(135deg,var(--gold),#d9a52c);
-        color:#1c1400;font-weight:700;font-size:13.5px;
-        padding:10px 14px;border-radius:30px;
-        transition:.25s;box-shadow:0 4px 14px rgba(240,192,64,.25);
+    .sidebar-top{padding:14px 14px 6px;}
+    .lib-nav{padding:8px 10px 4px;display:flex;flex-direction:column;gap:2px;}
+    .lib-link{
+        display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;
+        font-size:13.5px;color:var(--text-dim);transition:.18s;text-align:right;
     }
-    .btn-gold:hover{filter:brightness(1.08);transform:translateY(-1px);}
-    .icon-btn{
-        width:40px;height:40px;border-radius:12px;background:var(--panel-3);
-        display:flex;align-items:center;justify-content:center;font-size:14px;
-        color:var(--text-dim);transition:.2s;flex:0 0 auto;
-    }
-    .icon-btn:hover{color:var(--gold-soft);background:#173727;}
-    .icon-btn.active{color:var(--gold);background:rgba(240,192,64,.14);}
+    .lib-link i{width:16px;text-align:center;font-size:14px;}
+    .lib-link:hover{background:var(--panel-3);color:var(--text);}
+    .lib-link.active{background:linear-gradient(90deg, rgba(240,192,64,.18), transparent);color:var(--gold-soft);}
 
-    .search-box{
-        margin:12px 16px;position:relative;
+    .playlists-head{
+        display:flex;align-items:center;justify-content:space-between;
+        padding:16px 16px 6px;font-size:11.5px;color:var(--text-dim);letter-spacing:.3px;
     }
-    .search-box i{position:absolute;top:50%;right:14px;transform:translateY(-50%);color:var(--text-dim);font-size:12px;}
-    .search-box input{
-        width:100%;background:var(--panel-3);border:1px solid transparent;
-        color:var(--text);padding:9px 36px 9px 14px;border-radius:20px;font-size:13px;
-        transition:.2s;
+    .playlists-head button{
+        width:26px;height:26px;border-radius:8px;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:12px;
     }
-    .search-box input:focus{outline:none;border-color:var(--gold-dim);background:#14392a;}
+    .playlists-head button:hover{color:var(--gold-soft);background:var(--panel-4);}
 
-    .queue-meta{
-        padding:0 18px 8px;display:flex;justify-content:space-between;align-items:baseline;
-        font-size:11.5px;color:var(--text-dim);
+    .playlist-list{flex:1;overflow-y:auto;padding:2px 10px 14px;min-height:0;}
+    .playlist-item{
+        display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;
+        cursor:pointer;transition:.16s;position:relative;
     }
-    .queue-meta b{color:var(--gold-soft);font-size:12.5px;}
+    .playlist-item:hover{background:rgba(240,192,64,.06);}
+    .playlist-item.active{background:linear-gradient(90deg, rgba(240,192,64,.16), transparent);}
+    .playlist-item .pl-ic{
+        width:30px;height:30px;border-radius:8px;flex:0 0 auto;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:12px;
+    }
+    .playlist-item .pl-t{flex:1;min-width:0;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .playlist-item.active .pl-t{color:var(--gold-soft);font-weight:600;}
+    .playlist-item .pl-menu{
+        width:24px;height:24px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+        color:var(--text-dim);opacity:0;font-size:11px;transition:.15s;flex:0 0 auto;
+    }
+    .playlist-item:hover .pl-menu{opacity:1;}
+    .playlist-item .pl-menu:hover{color:var(--gold-soft);background:var(--panel-4);}
+    .playlist-empty-hint{padding:14px 10px;font-size:11.5px;color:var(--text-dim);text-align:center;line-height:1.9;}
 
-    .queue-list{flex:1;overflow-y:auto;padding:2px 10px 16px;}
-    .queue-item{
-        display:flex;align-items:center;gap:10px;
-        padding:9px 10px;border-radius:12px;cursor:pointer;
-        transition:.18s;position:relative;
+    .sidebar-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;display:none;}
+    .sidebar-backdrop.show{display:block;}
+
+    /* ---------- MAIN VIEW ---------- */
+    .main-view{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden;}
+    .storage-banner{
+        background:linear-gradient(90deg, rgba(224,85,90,.16), transparent);
+        border-bottom:1px solid rgba(224,85,90,.25);
+        color:#ffd3d3;font-size:12px;padding:8px 20px;display:none;
     }
-    .queue-item:hover{background:rgba(240,192,64,.08);}
-    .queue-item.playing{background:linear-gradient(90deg, rgba(240,192,64,.16), transparent);}
-    .queue-item .idx{
-        width:26px;flex:0 0 auto;text-align:center;font-size:12px;color:var(--text-dim);
+    .storage-banner.show{display:block;}
+
+    .view-scroll{flex:1;overflow-y:auto;min-height:0;-webkit-overflow-scrolling:touch;padding:0 0 30px;}
+
+    .view-header{
+        display:flex;align-items:flex-end;gap:20px;padding:32px 26px 20px;
+        background:linear-gradient(180deg, rgba(28,107,76,.35), transparent);
     }
-    .queue-item.playing .idx{color:var(--gold);}
-    .queue-item .thumb{
-        width:34px;height:34px;border-radius:8px;flex:0 0 auto;
-        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
-        font-size:12px;color:var(--gold-dim);overflow:hidden;
+    .view-cover{
+        width:110px;height:110px;border-radius:16px;flex:0 0 auto;
+        background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);
+        border:3px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;
+        font-size:36px;color:var(--gold-soft);box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    .queue-item .thumb i{opacity:.85;}
-    .queue-item .info{flex:1;min-width:0;}
-    .queue-item .info .t{
-        font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    .view-meta{min-width:0;}
+    .view-eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px;}
+    .view-title{font-size:26px;font-weight:800;color:var(--text);margin-bottom:8px;max-width:520px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .view-sub{font-size:12.5px;color:var(--text-dim);}
+
+    .view-toolbar{display:flex;align-items:center;gap:14px;padding:6px 26px 18px;flex-wrap:wrap;}
+    .play-main{
+        width:52px;height:52px;border-radius:50%;background:var(--gold);color:#12200f;font-size:18px;
+        display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(240,192,64,.35);transition:.2s;flex:0 0 auto;
     }
-    .queue-item.playing .info .t{color:var(--gold-soft);font-weight:600;}
-    .queue-item .info .s{font-size:11px;color:var(--text-dim);}
-    .queue-item .dur{font-size:11px;color:var(--text-dim);flex:0 0 auto;}
-    .queue-item .rm{
-        flex:0 0 auto;width:24px;height:24px;border-radius:8px;
-        display:flex;align-items:center;justify-content:center;font-size:11px;
-        color:var(--text-dim);opacity:0;transition:.15s;
+    .play-main:hover{transform:scale(1.06);}
+    .play-main.small{width:42px;height:42px;font-size:15px;}
+    .view-search{position:relative;margin-right:auto;min-width:150px;max-width:240px;flex:1;}
+    .view-search i{position:absolute;top:50%;right:12px;transform:translateY(-50%);color:var(--text-dim);font-size:12px;}
+    .view-search input{
+        width:100%;background:var(--panel-3);border:1px solid transparent;color:var(--text);
+        padding:9px 34px 9px 12px;border-radius:20px;font-size:12.5px;transition:.2s;
     }
-    .queue-item:hover .rm{opacity:1;}
-    .queue-item .rm:hover{color:var(--danger);background:rgba(224,85,90,.12);}
-    .eq-bars{display:flex;align-items:flex-end;gap:2px;width:16px;height:14px;}
-    .eq-bars i{display:block;width:3px;background:var(--gold);border-radius:2px;animation:eqBounce 0.9s ease-in-out infinite;}
+    .view-search input:focus{outline:none;border-color:var(--gold-dim);background:var(--panel-4);}
+
+    .track-table{padding:0 26px;}
+    .track-row{
+        display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:10px;
+        cursor:pointer;transition:.16s;position:relative;
+    }
+    .track-row:hover{background:rgba(240,192,64,.07);}
+    .track-row.playing{background:linear-gradient(90deg, rgba(240,192,64,.14), transparent);}
+    .track-row .idx{width:22px;flex:0 0 auto;text-align:center;font-size:12px;color:var(--text-dim);}
+    .track-row.playing .idx{color:var(--gold);}
+    .track-row .thumb{
+        width:36px;height:36px;border-radius:8px;flex:0 0 auto;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;font-size:12.5px;color:var(--gold-dim);
+    }
+    .track-row .info{flex:1;min-width:0;}
+    .track-row .info .t{font-size:13.5px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .track-row.playing .info .t{color:var(--gold-soft);font-weight:600;}
+    .track-row .info .s{font-size:11px;color:var(--text-dim);}
+    .track-row .dur{font-size:11.5px;color:var(--text-dim);flex:0 0 auto;min-width:38px;text-align:center;}
+    .track-row .actions{display:flex;align-items:center;gap:4px;flex:0 0 auto;}
+    .track-row .actions button{
+        width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+        font-size:12.5px;color:var(--text-dim);opacity:0;transition:.15s;
+    }
+    .track-row:hover .actions button{opacity:1;}
+    .track-row .actions button.liked{opacity:1;color:var(--gold);}
+    .track-row .actions button:hover{color:var(--gold-soft);background:var(--panel-3);}
+    .track-row .actions button.danger:hover{color:var(--danger);background:rgba(224,85,90,.12);}
+    .eq-bars{display:flex;align-items:flex-end;gap:2px;width:14px;height:13px;margin:0 auto;}
+    .eq-bars i{display:block;width:3px;background:var(--gold);border-radius:2px;animation:eqBounce .9s ease-in-out infinite;}
     .eq-bars i:nth-child(2){animation-delay:.2s;}
     .eq-bars i:nth-child(3){animation-delay:.4s;}
-    @keyframes eqBounce{0%,100%{height:4px;}50%{height:14px;}}
+    @keyframes eqBounce{0%,100%{height:4px;}50%{height:13px;}}
 
-    .empty-queue{
-        text-align:center;color:var(--text-dim);font-size:12.5px;
-        padding:34px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;
-    }
-    .empty-queue i{font-size:26px;color:var(--gold-dim);}
-
-    /* ---------- STAGE ---------- */
-    .stage{
-        flex:1;min-width:0;min-height:0;position:relative;
-        display:flex;align-items:center;justify-content:center;
-        padding:26px;overflow-y:auto;overflow-x:hidden;
-        -webkit-overflow-scrolling:touch;
-    }
-    .stage-bg-art{
-        position:absolute;inset:0;
-        background-image:
-            radial-gradient(ellipse at 50% 15%, rgba(240,192,64,0.10), transparent 55%),
-            repeating-linear-gradient(180deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
-        pointer-events:none;
-    }
-    .dome-skyline{
-        position:absolute;bottom:0;right:0;left:0;height:120px;opacity:.16;pointer-events:none;
-    }
-
-    .empty-state{
-        text-align:center;color:var(--text-dim);max-width:380px;position:relative;z-index:2;
-    }
-    .empty-state .emblem{
-        width:96px;height:96px;margin:0 auto 20px;border-radius:50%;
+    .empty-lib{text-align:center;color:var(--text-dim);padding:50px 24px;max-width:380px;margin:0 auto;}
+    .empty-lib .em-ic{
+        width:88px;height:88px;margin:0 auto 18px;border-radius:50%;
         background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);
-        border:3px solid var(--gold-dim);
-        display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--gold-soft);
-        box-shadow:0 0 40px rgba(240,192,64,.12);
+        border:3px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;
+        font-size:30px;color:var(--gold-soft);
     }
-    .empty-state h2{color:var(--gold-soft);font-size:19px;margin-bottom:8px;}
-    .empty-state p{font-size:13.5px;line-height:1.9;margin-bottom:18px;}
+    .empty-lib h2{color:var(--gold-soft);font-size:17px;margin-bottom:8px;}
+    .empty-lib p{font-size:13px;line-height:1.9;margin-bottom:16px;}
 
-    .now-playing{
-        position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
-        gap:22px;width:100%;max-width:520px;
+    /* ===================== POPOVER: add to playlist ===================== */
+    .popover{
+        position:fixed;z-index:250;min-width:220px;max-width:260px;
+        background:var(--panel-2);border:1px solid var(--line);border-radius:14px;
+        box-shadow:0 16px 40px rgba(0,0,0,.5);padding:8px;display:none;
     }
-    .art-wrap{
-        position:relative;width:280px;height:280px;flex:0 0 auto;
-        display:flex;align-items:center;justify-content:center;
+    .popover.show{display:block;}
+    .popover .pop-head{font-size:11.5px;color:var(--text-dim);padding:6px 8px 8px;}
+    .popover .pop-item{
+        display:flex;align-items:center;gap:9px;padding:8px;border-radius:9px;font-size:13px;cursor:pointer;
     }
-    #visualizer{position:absolute;inset:0;width:100%;height:100%;}
-    .disc{
-        width:186px;height:186px;border-radius:50%;position:relative;z-index:2;
-        background:
-            radial-gradient(circle at 50% 50%, var(--panel-3) 0 30px, transparent 31px),
-            repeating-radial-gradient(circle at 50% 50%, #12271d 0px, #12271d 2px, #0d2018 3px, #0d2018 5px);
-        border:6px solid #0a1a13;
-        box-shadow:0 12px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(240,192,64,.15);
-        display:flex;align-items:center;justify-content:center;
-        transition:transform .3s;
+    .popover .pop-item:hover{background:var(--panel-3);}
+    .popover .pop-item .chk{
+        width:16px;height:16px;border-radius:5px;border:2px solid var(--gold-dim);
+        display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--gold);flex:0 0 auto;
     }
-    .disc.spin{animation:discSpin 7s linear infinite;}
-    @keyframes discSpin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
-    .disc img{
-        width:78px;height:78px;border-radius:50%;object-fit:cover;
-        border:3px solid var(--gold);
+    .popover .pop-item.checked .chk{background:var(--gold);color:#12200f;border-color:var(--gold);}
+    .popover .pop-new{
+        margin-top:4px;padding-top:8px;border-top:1px solid var(--line);
+        display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold-dim);padding:8px;border-radius:9px;
     }
-    .disc::after{
-        content:"";position:absolute;width:14px;height:14px;border-radius:50%;
-        background:var(--void);border:2px solid var(--gold-dim);
-    }
-
-    #videoStage{
-        width:100%;max-height:52vh;border-radius:var(--radius-lg);
-        background:#000;box-shadow:0 18px 50px rgba(0,0,0,.55);display:none;
-        border:1px solid var(--line);
-    }
-
-    .track-meta{text-align:center;}
-    .track-meta .eyebrow{
-        font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px;
-    }
-    .track-meta h2{
-        font-size:21px;color:var(--text);font-weight:700;margin-bottom:6px;
-        max-width:440px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-    }
-    .track-meta .sub{font-size:13px;color:var(--text-dim);}
+    .popover .pop-new:hover{background:var(--panel-3);color:var(--gold-soft);}
 
     /* ===================== PLAYER BAR ===================== */
     .player-bar{
-        height:var(--player-h);flex:0 0 auto;
-        display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;
-        gap:16px;padding:0 22px;
+        height:var(--player-h);flex:0 0 auto;display:grid;grid-template-columns:1fr 2fr 1fr;
+        align-items:center;gap:14px;padding:0 20px;
         background:linear-gradient(0deg, rgba(6,20,15,.97), rgba(10,32,24,.9));
-        border-top:1px solid var(--line);
-        z-index:40;
+        border-top:1px solid var(--line);z-index:40;
     }
-    .pb-left{display:flex;align-items:center;gap:12px;min-width:0;}
+    .pb-left{display:flex;align-items:center;gap:10px;min-width:0;cursor:pointer;}
     .pb-left .mini-thumb{
-        width:48px;height:48px;border-radius:10px;flex:0 0 auto;overflow:hidden;
-        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
-        color:var(--gold-dim);font-size:16px;
+        width:46px;height:46px;border-radius:9px;flex:0 0 auto;overflow:hidden;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:15px;
     }
-    .pb-left .mini-thumb img{width:100%;height:100%;object-fit:cover;}
     .pb-left .mini-info{min-width:0;}
-    .pb-left .mini-info .t{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;}
-    .pb-left .mini-info .s{font-size:11px;color:var(--text-dim);}
+    .pb-left .mini-info .t{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px;}
+    .pb-left .mini-info .s{font-size:10.5px;color:var(--text-dim);}
+    .pb-left .mini-like{
+        width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;
+        color:var(--text-dim);font-size:13px;flex:0 0 auto;
+    }
+    .pb-left .mini-like:hover{color:var(--gold-soft);}
+    .pb-left .mini-like.liked{color:var(--gold);}
 
     .pb-center{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;}
-    .pb-controls{display:flex;align-items:center;gap:18px;}
-    .pb-controls button{font-size:15px;color:var(--text-dim);transition:.2s;}
+    .pb-controls{display:flex;align-items:center;gap:16px;}
+    .pb-controls button{font-size:14.5px;color:var(--text-dim);transition:.2s;}
     .pb-controls button:hover{color:var(--gold-soft);}
     .pb-controls button.on{color:var(--gold);}
-    .play-main{
-        width:42px;height:42px;border-radius:50%;
-        background:var(--gold);color:#12200f;font-size:15px;
-        display:flex;align-items:center;justify-content:center;
-        box-shadow:0 4px 16px rgba(240,192,64,.35);transition:.2s;
-    }
-    .play-main:hover{transform:scale(1.06);}
     .pb-seek{display:flex;align-items:center;gap:10px;width:100%;max-width:520px;}
-    .pb-seek span{font-size:11px;color:var(--text-dim);min-width:34px;text-align:center;}
+    .pb-seek span{font-size:10.5px;color:var(--text-dim);min-width:34px;text-align:center;}
 
-    input[type=range]{
-        -webkit-appearance:none;appearance:none;height:4px;border-radius:4px;
-        background:var(--panel-3);flex:1;cursor:pointer;
-    }
-    input[type=range]::-webkit-slider-thumb{
-        -webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--gold);
-        box-shadow:0 0 8px rgba(240,192,64,.5);
-        transition:.15s;
-    }
+    input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:4px;background:var(--panel-3);flex:1;cursor:pointer;}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(240,192,64,.5);transition:.15s;}
     input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);}
-    input[type=range]::-moz-range-thumb{
-        width:13px;height:13px;border-radius:50%;background:var(--gold);border:none;
-    }
-    #seekBar{ }
-    #seekBar::-webkit-slider-runnable-track{
-        background:linear-gradient(90deg, var(--gold) var(--fill,0%), var(--panel-3) 0);
-        height:4px;border-radius:4px;
-    }
+    input[type=range]::-moz-range-thumb{width:13px;height:13px;border-radius:50%;background:var(--gold);border:none;}
+    #seekBar::-webkit-slider-runnable-track{background:linear-gradient(90deg, var(--gold) var(--fill,0%), var(--panel-3) 0);height:4px;border-radius:4px;}
 
-    .pb-right{display:flex;align-items:center;gap:12px;justify-self:end;}
-    .pb-right #volumeBar{width:90px;}
-    .pb-right button{font-size:14px;color:var(--text-dim);}
+    .pb-right{display:flex;align-items:center;gap:8px;justify-self:end;}
+    .pb-right #volumeBar{width:80px;}
+    .pb-right button{font-size:13px;color:var(--text-dim);}
     .pb-right button:hover{color:var(--gold-soft);}
-
-    /* ---------- drop overlay ---------- */
-    .drop-overlay{
-        position:fixed;inset:0;z-index:200;
-        background:rgba(4,15,11,.88);
-        display:none;align-items:center;justify-content:center;
-        border:3px dashed var(--gold);
-        margin:14px;border-radius:24px;
+    .speed-badge{
+        font-size:11px;font-weight:700;color:var(--text-dim);background:var(--panel-3);
+        padding:6px 9px;border-radius:20px;min-width:40px;text-align:center;transition:.2s;
     }
+    .speed-badge:hover{color:var(--gold-soft);background:var(--panel-4);}
+
+    /* ===================== NOW PLAYING OVERLAY ===================== */
+    .now-overlay{
+        position:fixed;inset:0;z-index:150;background:
+            radial-gradient(circle at 15% 8%, rgba(240,192,64,0.08), transparent 40%),
+            radial-gradient(circle at 90% 90%, rgba(28,107,76,0.28), transparent 45%),
+            var(--void);
+        display:none;flex-direction:column;
+        padding:env(safe-area-inset-top) 20px env(safe-area-inset-bottom);
+    }
+    .now-overlay.show{display:flex;}
+    .now-head{display:flex;align-items:center;justify-content:space-between;padding:16px 6px;flex:0 0 auto;}
+    .now-collapse{width:38px;height:38px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:15px;}
+    .now-collapse:hover{color:var(--gold-soft);}
+    .now-head .now-title{font-size:11.5px;color:var(--text-dim);letter-spacing:1px;}
+    .now-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:10px 0 20px;}
+    .art-wrap{position:relative;width:260px;height:260px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+    #visualizer{position:absolute;inset:0;width:100%;height:100%;}
+    .disc{
+        width:172px;height:172px;border-radius:50%;position:relative;z-index:2;
+        background:radial-gradient(circle at 50% 50%, var(--panel-3) 0 30px, transparent 31px),
+                   repeating-radial-gradient(circle at 50% 50%, #12271d 0px, #12271d 2px, #0d2018 3px, #0d2018 5px);
+        border:6px solid #0a1a13;box-shadow:0 12px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(240,192,64,.15);
+        display:flex;align-items:center;justify-content:center;transition:transform .3s;
+    }
+    .disc.spin{animation:discSpin 7s linear infinite;}
+    @keyframes discSpin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+    .disc img{width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);}
+    .disc::after{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--void);border:2px solid var(--gold-dim);}
+    #videoStage{width:100%;max-width:640px;max-height:48vh;border-radius:var(--radius-lg);background:#000;box-shadow:0 18px 50px rgba(0,0,0,.55);display:none;border:1px solid var(--line);}
+    .now-meta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;}
+    .now-meta .eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;}
+    .now-meta h2{font-size:21px;color:var(--text);font-weight:700;max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .now-meta .sub{font-size:13px;color:var(--text-dim);}
+    .now-like{width:40px;height:40px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:15px;}
+    .now-like.liked{color:var(--gold);}
+    .now-controls{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:480px;margin:0 auto;padding-bottom:10px;}
+    .now-controls .pb-controls button{font-size:17px;}
+    .now-controls .play-main{width:58px;height:58px;font-size:19px;}
+
+    /* ===================== SIDE PANEL (queue / eq) ===================== */
+    .side-panel{
+        position:fixed;top:0;bottom:0;left:0;width:320px;max-width:88vw;z-index:180;
+        background:linear-gradient(180deg,var(--panel-2),var(--panel));
+        border-right:1px solid var(--line);box-shadow:10px 0 40px rgba(0,0,0,.4);
+        transform:translateX(-105%);transition:transform .3s cubic-bezier(.25,.46,.45,.94);
+        display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom);
+    }
+    .side-panel.show{transform:translateX(0);}
+    .sp-head{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 12px;border-bottom:1px solid var(--line);flex:0 0 auto;}
+    .sp-head b{color:var(--gold-soft);font-size:15px;}
+    .sp-body{flex:1;overflow-y:auto;padding:10px 14px;min-height:0;}
+    .sp-close{width:32px;height:32px;border-radius:9px;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);}
+    .sp-close:hover{color:var(--gold-soft);}
+
+    .qitem{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;margin-bottom:4px;}
+    .qitem.current{background:rgba(240,192,64,.12);}
+    .qitem .thumb{width:32px;height:32px;border-radius:7px;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:11px;flex:0 0 auto;}
+    .qitem .t{flex:1;min-width:0;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .qitem .qbtns{display:flex;gap:2px;flex:0 0 auto;}
+    .qitem .qbtns button{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:11px;}
+    .qitem .qbtns button:hover{color:var(--gold-soft);background:var(--panel-3);}
+    .sp-empty{text-align:center;color:var(--text-dim);font-size:12.5px;padding:30px 14px;}
+    .sp-footer{padding:12px 14px;border-top:1px solid var(--line);flex:0 0 auto;}
+
+    .eq-row{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+    .eq-row label{font-size:12.5px;color:var(--text-dim);width:56px;flex:0 0 auto;}
+    .eq-row input[type=range]{writing-mode:horizontal-tb;}
+    .eq-row .val{font-size:11px;color:var(--gold-dim);width:36px;text-align:left;flex:0 0 auto;}
+    .eq-presets{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
+    .eq-presets button{font-size:11.5px;padding:6px 12px;border-radius:16px;background:var(--panel-3);color:var(--text-dim);}
+    .eq-presets button:hover{color:var(--gold-soft);background:var(--panel-4);}
+    .sleep-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .sleep-row button{font-size:11.5px;padding:7px 12px;border-radius:16px;background:var(--panel-3);color:var(--text-dim);}
+    .sleep-row button.on{background:rgba(240,192,64,.18);color:var(--gold-soft);}
+    .sp-section-title{font-size:12px;color:var(--gold-dim);letter-spacing:.5px;margin:4px 0 14px;text-transform:uppercase;}
+
+    /* ===================== INSTALL MODAL ===================== */
+    .install-modal{position:fixed;inset:0;z-index:300;background:rgba(4,15,11,.82);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);}
+    .install-modal.show{display:flex;}
+    .install-box{position:relative;max-width:360px;width:100%;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+    .install-box .emblem{width:64px;height:64px;font-size:22px;margin:0 auto 14px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);border:3px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;color:var(--gold-soft);}
+    .install-box h3{color:var(--gold-soft);font-size:16.5px;margin-bottom:14px;}
+    .install-box ol{text-align:right;font-size:13.5px;color:var(--text);line-height:2;padding-right:18px;margin-bottom:14px;}
+    .install-box ol b{color:var(--gold-soft);}
+    .install-box .note-small{font-size:11.5px;color:var(--text-dim);}
+    .install-close{position:absolute;top:12px;left:12px;width:30px;height:30px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:13px;}
+    .install-close:hover{color:var(--gold-soft);}
+
+    /* ===================== DROP OVERLAY ===================== */
+    .drop-overlay{position:fixed;inset:0;z-index:200;background:rgba(4,15,11,.88);display:none;align-items:center;justify-content:center;border:3px dashed var(--gold);margin:14px;border-radius:24px;}
     .drop-overlay.show{display:flex;}
     .drop-overlay .box{text-align:center;color:var(--gold-soft);}
     .drop-overlay .box i{font-size:44px;margin-bottom:14px;display:block;}
 
-    .sidebar-backdrop{
-        position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;display:none;
+    .toast{
+        position:fixed;bottom:calc(var(--player-h) + 16px);left:50%;transform:translateX(-50%) translateY(20px);
+        background:var(--panel-2);border:1px solid var(--line);color:var(--text);padding:10px 20px;
+        border-radius:30px;font-size:12.5px;z-index:400;opacity:0;transition:.3s;pointer-events:none;
+        box-shadow:0 10px 30px rgba(0,0,0,.4);white-space:nowrap;
     }
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
     /* ===================== RESPONSIVE ===================== */
-    @media(max-width:860px){
+    @media(max-width:900px){
         :root{--sidebar-w:260px;}
-        .track-meta h2{max-width:280px;font-size:18px;}
-        .art-wrap{width:220px;height:220px;}
-        .disc{width:150px;height:150px;}
     }
     @media(max-width:680px){
         #menuToggle{display:flex;}
-        .sidebar{
-            position:fixed;top:var(--topbar-h);bottom:0;right:0;width:280px;
-            transform:translateX(105%);box-shadow:-10px 0 30px rgba(0,0,0,.4);
-        }
+        .sidebar{position:fixed;top:var(--topbar-h);bottom:0;right:0;width:270px;box-shadow:-10px 0 30px rgba(0,0,0,.4);transform:translateX(105%);}
         .sidebar.open{transform:translateX(0);}
-        .sidebar.open ~ .sidebar-backdrop, .sidebar-backdrop.show{display:block;}
-        .player-bar{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;padding:10px 14px 12px;gap:8px;}
-        .pb-left{display:none;}
+        .view-header{padding:22px 16px 14px;gap:14px;}
+        .view-cover{width:78px;height:78px;font-size:26px;}
+        .view-title{font-size:19px;max-width:60vw;}
+        .view-toolbar{padding:4px 16px 14px;}
+        .track-table{padding:0 12px;}
+        .track-row .dur{display:none;}
+        .player-bar{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;padding:10px 12px 10px;gap:6px;}
+        .pb-left .mini-info .t{max-width:130px;}
         .pb-right{justify-self:center;}
+        .pb-right #volumeBar{display:none;}
         .pb-seek{max-width:100%;}
-        .stage{padding:16px;}
-        .art-wrap{width:170px;height:170px;}
-        .disc{width:120px;height:120px;}
-        .disc img{width:56px;height:56px;}
-        .track-meta h2{font-size:15.5px;max-width:220px;}
+        .art-wrap{width:190px;height:190px;}
+        .disc{width:128px;height:128px;}
+        .disc img{width:52px;height:52px;}
+        .now-meta h2{font-size:17px;max-width:260px;}
+        .side-panel{width:290px;}
+    }
+    @media(max-width:420px){
+        .brand .names span{display:none;}
+        .btn-gold span{display:none;}
     }
 </style>
 </head>
@@ -424,87 +456,71 @@
             <img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="لوگو دیار قدمگاه" onerror="this.style.display='none'">
             <div class="names">
                 <b>دیار پلیر</b>
-                <span>پخش‌کننده رسانه دیار قدمگاه</span>
+                <span>کتابخانه رسانه شخصی شما</span>
             </div>
         </div>
         <div class="topbar-actions">
-            <button id="installBtn" class="btn-gold install-btn" hidden><i class="fas fa-download"></i> نصب اپ</button>
-            <button id="menuToggle" class="icon-btn" title="فهرست پخش"><i class="fas fa-bars"></i></button>
+            <button id="installBtn" class="btn-gold install-btn"><i class="fas fa-download"></i><span> نصب اپ</span></button>
+            <button id="menuToggle" class="icon-btn" title="کتابخانه"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- ===== راهنمای نصب برای آیفون/سافاری ===== -->
-    <div class="install-modal" id="installModal">
-        <div class="install-box">
-            <button class="install-close" id="installModalClose"><i class="fas fa-xmark"></i></button>
-            <div class="emblem" style="width:64px;height:64px;font-size:22px;margin:0 auto 14px;"><i class="fas fa-mobile-screen"></i></div>
-            <h3>نصب دیار پلیر روی آیفون</h3>
-            <ol>
-                <li>در نوار پایین صفحه‌ی Safari، روی آیکون <b>اشتراک‌گذاری</b> <i class="fas fa-arrow-up-from-bracket"></i> بزنید.</li>
-                <li>گزینه‌ی <b>«Add to Home Screen»</b> (افزودن به صفحه اصلی) را انتخاب کنید.</li>
-                <li>روی <b>«Add»</b> بزنید. آیکون دیار پلیر روی صفحه اصلی گوشی شما اضافه می‌شود.</li>
-            </ol>
-            <div class="note-small">این راهنما فقط برای مرورگر Safari روی آیفون/آیپد کار می‌کند.</div>
-        </div>
-    </div>
     <div class="body-grid">
 
-        <!-- ===== SIDEBAR ===== -->
+        <!-- ===== SIDEBAR (LIBRARY) ===== -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-head">
-                <button class="btn-gold" id="addFilesBtn"><i class="fas fa-folder-open"></i> افزودن فایل</button>
-                <button class="icon-btn" id="shuffleAllBtn" title="پخش تصادفی همه"><i class="fas fa-shuffle"></i></button>
-                <button class="icon-btn" id="clearBtn" title="پاک کردن فهرست"><i class="fas fa-trash"></i></button>
-            </div>
-            <input type="file" id="fileInput" accept="audio/*,video/*" multiple hidden>
-
-            <div class="search-box">
-                <i class="fas fa-magnifying-glass"></i>
-                <input type="text" id="searchInput" placeholder="جستجو در فهرست پخش...">
+            <div class="sidebar-top">
+                <button class="btn-gold" id="addFilesBtn" style="width:100%;"><i class="fas fa-folder-open"></i> افزودن فایل</button>
+                <input type="file" id="fileInput" accept="audio/*,video/*" multiple hidden>
             </div>
 
-            <div class="queue-meta">
-                <b id="queueCount">۰ فایل</b>
-                <span id="queueDuration">۰:۰۰</span>
-            </div>
+            <nav class="lib-nav">
+                <button class="lib-link active" data-view="all"><i class="fas fa-record-vinyl"></i> همه‌ی فایل‌ها</button>
+                <button class="lib-link" data-view="liked"><i class="fas fa-heart"></i> پسندیده‌ها</button>
+                <button class="lib-link" data-view="recent"><i class="fas fa-clock-rotate-left"></i> اخیراً پخش‌شده</button>
+            </nav>
 
-            <div class="queue-list" id="queueList">
-                <div class="empty-queue" id="emptyQueue">
-                    <i class="fas fa-music"></i>
-                    هنوز فایلی اضافه نشده.<br>از دکمه‌ی «افزودن فایل» یا کشیدن‌ورهاکردن استفاده کنید.
-                </div>
+            <div class="playlists-head">
+                <span>پلی‌لیست‌های من</span>
+                <button id="newPlaylistBtn" title="پلی‌لیست جدید"><i class="fas fa-plus"></i></button>
             </div>
+            <div class="playlist-list" id="playlistList"></div>
         </aside>
 
         <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-        <!-- ===== STAGE ===== -->
-        <main class="stage" id="stage">
-            <div class="stage-bg-art"></div>
-
-            <svg class="dome-skyline" viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,120 L0,95 L60,95 L60,75 A40,40 0 0,1 140,75 L140,95 L220,95 L220,60 L232,60 L232,40 L244,60 L256,60 L256,95 L400,95 L400,70 A60,60 0 0,1 520,70 L520,95 L640,95 L640,80 A30,30 0 0,1 700,80 L700,95 L800,95 L800,120 Z" fill="#f0c040"></path>
-            </svg>
-
-            <div class="empty-state" id="emptyState">
-                <div class="emblem"><i class="fas fa-mosque"></i></div>
-                <h2>پخش رسانه آماده است</h2>
-                <p>فایل‌های صوتی یا تصویری روی دستگاه خود را انتخاب کنید تا اینجا پخش شوند. هیچ فایلی به سرور ارسال نمی‌شود؛ همه‌چیز فقط روی مرورگر خودتان اجرا می‌شود.</p>
-                <button class="btn-gold" id="emptyAddBtn" style="display:inline-flex;padding:11px 26px;"><i class="fas fa-folder-open"></i> انتخاب فایل</button>
+        <!-- ===== MAIN VIEW ===== -->
+        <main class="main-view">
+            <div class="storage-banner" id="storageBanner">
+                ذخیره‌سازی دائمی در این محیط در دسترس نیست؛ فایل‌ها فقط تا پایان همین جلسه باقی می‌مانند.
             </div>
 
-            <div class="now-playing" id="nowPlaying" hidden>
-                <div class="art-wrap" id="artWrap">
-                    <canvas id="visualizer"></canvas>
-                    <div class="disc" id="disc">
-                        <img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="" onerror="this.style.display='none'">
+            <div class="view-scroll" id="viewScroll">
+                <div class="view-header">
+                    <div class="view-cover" id="viewCover"><i class="fas fa-compact-disc"></i></div>
+                    <div class="view-meta">
+                        <div class="view-eyebrow">کتابخانه</div>
+                        <div class="view-title" id="viewTitle">همه‌ی فایل‌ها</div>
+                        <div class="view-sub" id="viewSub">۰ مورد</div>
                     </div>
                 </div>
-                <video id="videoStage" playsinline></video>
-                <div class="track-meta">
-                    <div class="eyebrow" id="typeLabel">در حال پخش</div>
-                    <h2 id="trackTitle">—</h2>
-                    <div class="sub" id="trackSub">—</div>
+
+                <div class="view-toolbar">
+                    <button class="play-main" id="viewPlayBtn" title="پخش همه"><i class="fas fa-play"></i></button>
+                    <button class="icon-btn" id="viewShuffleBtn" title="پخش تصادفی"><i class="fas fa-shuffle"></i></button>
+                    <div class="view-search">
+                        <i class="fas fa-magnifying-glass"></i>
+                        <input type="text" id="viewSearch" placeholder="جستجو در این فهرست...">
+                    </div>
+                </div>
+
+                <div class="track-table" id="trackTable"></div>
+
+                <div class="empty-lib" id="emptyLib" hidden>
+                    <div class="em-ic"><i class="fas fa-mosque"></i></div>
+                    <h2 id="emptyTitle">کتابخانه خالی است</h2>
+                    <p id="emptyText">فایل‌های صوتی یا تصویری روی دستگاه خود را اضافه کنید. هیچ فایلی به سرور ارسال نمی‌شود.</p>
+                    <button class="btn-gold" id="emptyAddBtn" style="display:inline-flex;padding:11px 24px;"><i class="fas fa-folder-open"></i> انتخاب فایل</button>
                 </div>
             </div>
         </main>
@@ -512,19 +528,20 @@
 
     <!-- ===== PLAYER BAR ===== -->
     <footer class="player-bar">
-        <div class="pb-left">
+        <div class="pb-left" id="pbLeft" title="نمایش صفحه پخش">
             <div class="mini-thumb" id="miniThumb"><i class="fas fa-music"></i></div>
             <div class="mini-info">
                 <div class="t" id="miniTitle">هیچ فایلی پخش نمی‌شود</div>
                 <div class="s" id="miniSub">فایلی اضافه کنید</div>
             </div>
+            <button class="mini-like" id="miniLikeBtn" title="پسندیدن"><i class="far fa-heart"></i></button>
         </div>
 
         <div class="pb-center">
             <div class="pb-controls">
                 <button id="shuffleBtn" title="پخش تصادفی"><i class="fas fa-shuffle"></i></button>
                 <button id="prevBtn" title="قبلی"><i class="fas fa-backward-step"></i></button>
-                <button id="playBtn" class="play-main" title="پخش/توقف"><i class="fas fa-play"></i></button>
+                <button id="playBtn" class="play-main small" title="پخش/توقف"><i class="fas fa-play"></i></button>
                 <button id="nextBtn" title="بعدی"><i class="fas fa-forward-step"></i></button>
                 <button id="repeatBtn" title="تکرار"><i class="fas fa-repeat"></i></button>
             </div>
@@ -536,6 +553,9 @@
         </div>
 
         <div class="pb-right">
+            <button class="speed-badge" id="speedBtn" title="سرعت پخش">۱x</button>
+            <button id="queueBtn" title="صف پخش"><i class="fas fa-list"></i></button>
+            <button id="eqBtn" title="اکولایزر"><i class="fas fa-sliders"></i></button>
             <button id="fullscreenBtn" title="تمام‌صفحه (ویدیو)"><i class="fas fa-expand"></i></button>
             <button id="muteBtn" title="بی‌صدا"><i class="fas fa-volume-high"></i></button>
             <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.9">
@@ -545,113 +565,279 @@
 
 <audio id="audioEl" preload="auto"></audio>
 
-<div class="drop-overlay" id="dropOverlay">
-    <div class="box">
-        <i class="fas fa-cloud-arrow-down"></i>
-        فایل را رها کنید تا به فهرست پخش اضافه شود
+<!-- ===== NOW PLAYING OVERLAY ===== -->
+<div class="now-overlay" id="nowOverlay">
+    <div class="now-head">
+        <button class="now-collapse" id="nowCollapse"><i class="fas fa-chevron-down"></i></button>
+        <div class="now-title">در حال پخش</div>
+        <button class="now-collapse" id="nowQueueBtn"><i class="fas fa-list"></i></button>
+    </div>
+    <div class="now-body">
+        <div class="art-wrap" id="artWrap">
+            <canvas id="visualizer"></canvas>
+            <div class="disc" id="disc">
+                <img id="discImg" src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="" style="width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);" onerror="this.style.display='none'">
+            </div>
+        </div>
+        <video id="videoStage" playsinline></video>
+        <div class="now-meta">
+            <div class="eyebrow" id="typeLabel">در حال پخش صوت</div>
+            <h2 id="trackTitle">—</h2>
+            <div class="sub" id="trackSub">—</div>
+            <button class="now-like" id="nowLikeBtn"><i class="far fa-heart"></i></button>
+        </div>
     </div>
 </div>
+
+<!-- ===== QUEUE PANEL ===== -->
+<div class="side-panel" id="queuePanel">
+    <div class="sp-head"><b>صف پخش بعدی</b><button class="sp-close" id="queueCloseBtn"><i class="fas fa-xmark"></i></button></div>
+    <div class="sp-body" id="queueBody"></div>
+    <div class="sp-footer"><button class="btn-ghost" id="clearQueueSideBtn" style="width:100%;justify-content:center;"><i class="fas fa-trash"></i> پاک کردن صف</button></div>
+</div>
+
+<!-- ===== EQ PANEL ===== -->
+<div class="side-panel" id="eqPanel">
+    <div class="sp-head"><b>اکولایزر و تنظیمات</b><button class="sp-close" id="eqCloseBtn"><i class="fas fa-xmark"></i></button></div>
+    <div class="sp-body">
+        <div class="sp-section-title">اکولایزر</div>
+        <div class="eq-row"><label>بم (Bass)</label><input type="range" id="eqBass" min="-12" max="12" step="1" value="0"><span class="val" id="eqBassVal">۰</span></div>
+        <div class="eq-row"><label>میانی</label><input type="range" id="eqMid" min="-12" max="12" step="1" value="0"><span class="val" id="eqMidVal">۰</span></div>
+        <div class="eq-row"><label>زیر (Treble)</label><input type="range" id="eqTreble" min="-12" max="12" step="1" value="0"><span class="val" id="eqTrebleVal">۰</span></div>
+        <div class="eq-presets">
+            <button data-preset="flat">صاف</button>
+            <button data-preset="bass">بم‌تقویت</button>
+            <button data-preset="vocal">صدای انسان</button>
+            <button data-preset="bright">درخشان</button>
+        </div>
+        <div class="sp-section-title">سرعت پخش</div>
+        <div class="sleep-row" id="speedRow">
+            <button data-speed="0.75">۰.۷۵x</button>
+            <button data-speed="1" class="on">۱x</button>
+            <button data-speed="1.25">۱.۲۵x</button>
+            <button data-speed="1.5">۱.۵x</button>
+            <button data-speed="2">۲x</button>
+        </div>
+        <div class="sp-section-title" style="margin-top:22px;">تایمر خواب</div>
+        <div class="sleep-row" id="sleepRow">
+            <button data-min="0" class="on">خاموش</button>
+            <button data-min="15">۱۵ دقیقه</button>
+            <button data-min="30">۳۰ دقیقه</button>
+            <button data-min="60">۶۰ دقیقه</button>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ADD TO PLAYLIST POPOVER ===== -->
+<div class="popover" id="addToPlaylistPopover">
+    <div class="pop-head">افزودن به پلی‌لیست</div>
+    <div id="popList"></div>
+    <div class="pop-new" id="popNewPlaylist"><i class="fas fa-plus"></i> پلی‌لیست جدید…</div>
+</div>
+
+<!-- ===== INSTALL MODAL ===== -->
+<div class="install-modal" id="installModal">
+    <div class="install-box">
+        <button class="install-close" id="installModalClose"><i class="fas fa-xmark"></i></button>
+        <div class="emblem"><i class="fas fa-mobile-screen"></i></div>
+        <h3 id="installTitle">نصب دیار پلیر روی آیفون</h3>
+        <ol id="installSteps">
+            <li>در نوار پایین صفحه‌ی Safari، روی آیکون <b>اشتراک‌گذاری</b> بزنید.</li>
+            <li>گزینه‌ی <b>«Add to Home Screen»</b> را انتخاب کنید.</li>
+            <li>روی <b>«Add»</b> بزنید.</li>
+        </ol>
+        <div class="note-small" id="installNote">این راهنما فقط برای مرورگر Safari کار می‌کند.</div>
+    </div>
+</div>
+
+<div class="drop-overlay" id="dropOverlay">
+    <div class="box"><i class="fas fa-cloud-arrow-down"></i>فایل را رها کنید تا به کتابخانه اضافه شود</div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <script>
 (function(){
     'use strict';
 
-    /* ---------------- mobile viewport height fix ---------------- */
-    function setVh(){
-        document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+    /* ============================================================
+       ۰) ابزارهای کمکی عمومی
+    ============================================================ */
+    var $ = function(id){ return document.getElementById(id); };
+    function uid(){ return 'id' + Date.now().toString(36) + Math.random().toString(36).slice(2,9); }
+    var faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+    function toFa(str){ return String(str).replace(/[0-9]/g, function(d){ return faDigits[d]; }); }
+    function fmtTime(sec){
+        if(!isFinite(sec) || sec == null || sec < 0) sec = 0;
+        var m = Math.floor(sec/60), s = Math.floor(sec%60);
+        return toFa(m + ':' + (s<10?'0':'') + s);
     }
-    setVh();
-    window.addEventListener('resize', setVh);
-    window.addEventListener('orientationchange', function(){ setTimeout(setVh, 200); });
+    function escapeHtml(str){ var d = document.createElement('div'); d.textContent = str; return d.innerHTML; }
+    function cleanTitle(filename){ return filename.replace(/\.[^/.]+$/, '').replace(/[_\-]+/g, ' ').trim() || filename; }
 
-    /* ---------------- state ---------------- */
-    var queue = [];              // {id,name,sub,file,url,type,duration,el(temp)}
+    var toastEl = $('toast'); var toastTimer = null;
+    function toast(msg){
+        toastEl.textContent = msg;
+        toastEl.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+    }
+
+    /* ============================================================
+       ۱) لایه ذخیره‌سازی: IndexedDB با پشتیبان حافظه‌ی موقت
+    ============================================================ */
+    var USE_IDB = !!window.indexedDB;
+    var idb = null;
+    var memStores = { tracks:new Map(), playlists:new Map(), settings:new Map() };
+
+    function dbOpen(){
+        return new Promise(function(resolve, reject){
+            var req = indexedDB.open('diyarPlayerDB', 1);
+            req.onupgradeneeded = function(e){
+                var db = e.target.result;
+                if(!db.objectStoreNames.contains('tracks')) db.createObjectStore('tracks', {keyPath:'id'});
+                if(!db.objectStoreNames.contains('playlists')) db.createObjectStore('playlists', {keyPath:'id'});
+                if(!db.objectStoreNames.contains('settings')) db.createObjectStore('settings', {keyPath:'key'});
+            };
+            req.onsuccess = function(e){ resolve(e.target.result); };
+            req.onerror = function(){ reject(req.error); };
+        });
+    }
+    function idbOp(storeName, mode, fn){
+        return new Promise(function(resolve, reject){
+            var tx = idb.transaction(storeName, mode);
+            var store = tx.objectStore(storeName);
+            var req = fn(store);
+            req.onsuccess = function(){ resolve(req.result); };
+            req.onerror = function(){ reject(req.error); };
+        });
+    }
+    function storePut(storeName, value){
+        if(USE_IDB) return idbOp(storeName, 'readwrite', function(s){ return s.put(value); }).catch(function(){ return value; });
+        memStores[storeName].set(value.id || value.key, value);
+        return Promise.resolve(value);
+    }
+    function storeDelete(storeName, key){
+        if(USE_IDB) return idbOp(storeName, 'readwrite', function(s){ return s.delete(key); }).catch(function(){});
+        memStores[storeName]['delete'](key);
+        return Promise.resolve();
+    }
+    function storeGetAll(storeName){
+        if(USE_IDB) return idbOp(storeName, 'readonly', function(s){ return s.getAll(); }).catch(function(){ return []; });
+        return Promise.resolve(Array.from(memStores[storeName].values()));
+    }
+    function storeGet(storeName, key){
+        if(USE_IDB) return idbOp(storeName, 'readonly', function(s){ return s.get(key); }).catch(function(){ return undefined; });
+        return Promise.resolve(memStores[storeName].get(key));
+    }
+
+    function initStorage(){
+        if(!USE_IDB) return Promise.resolve();
+        return dbOpen().then(function(database){ idb = database; }).catch(function(){ USE_IDB = false; });
+    }
+
+    /* ============================================================
+       ۲) وضعیت برنامه
+    ============================================================ */
+    var libraryTracks = [];      // {id,name,type,blob,url,duration,liked,addedAt}
+    var playlists = [];          // {id,name,trackIds:[],createdAt}
+    var recentIds = [];          // آخرین آهنگ‌های پخش‌شده
+    var currentView = { type:'all', playlistId:null };
+
+    var queue = [];              // آرایه‌ای از خودِ آبجکت‌های track در نوبت پخش فعلی
     var currentIndex = -1;
     var isPlaying = false;
     var shuffleOn = false;
     var repeatMode = 'off';      // off | all | one
-    var shuffleHistory = [];
-    var rafId = null;
+    var playbackRate = 1;
+    var sleepTimerId = null;
+    var sleepMinutes = 0;
 
-    /* ---------------- elements ---------------- */
-    var $ = function(id){ return document.getElementById(id); };
+    var settings = { volume:0.9, eq:{bass:0,mid:0,treble:0}, speed:1, shuffle:false, repeat:'off' };
 
-    var fileInput      = $('fileInput');
-    var addFilesBtn     = $('addFilesBtn');
-    var emptyAddBtn     = $('emptyAddBtn');
-    var shuffleAllBtn   = $('shuffleAllBtn');
-    var clearBtn        = $('clearBtn');
-    var searchInput     = $('searchInput');
-    var queueList       = $('queueList');
-    var emptyQueue      = $('emptyQueue');
-    var queueCountEl    = $('queueCount');
-    var queueDurationEl = $('queueDuration');
+    /* ============================================================
+       ۳) المان‌های DOM
+    ============================================================ */
+    var sidebar = $('sidebar'), sidebarBackdrop = $('sidebarBackdrop'), menuToggle = $('menuToggle');
+    var addFilesBtn = $('addFilesBtn'), fileInput = $('fileInput');
+    var libLinks = document.querySelectorAll('.lib-link');
+    var newPlaylistBtn = $('newPlaylistBtn'), playlistList = $('playlistList');
 
-    var stage        = $('stage');
-    var emptyState    = $('emptyState');
-    var nowPlaying    = $('nowPlaying');
-    var artWrap       = $('artWrap');
-    var disc          = $('disc');
-    var canvas        = $('visualizer');
-    var videoStage    = $('videoStage');
-    var typeLabel     = $('typeLabel');
-    var trackTitle    = $('trackTitle');
-    var trackSub      = $('trackSub');
+    var storageBanner = $('storageBanner');
+    var viewScroll = $('viewScroll'), viewCover = $('viewCover'), viewTitle = $('viewTitle'), viewSub = $('viewSub');
+    var viewPlayBtn = $('viewPlayBtn'), viewShuffleBtn = $('viewShuffleBtn'), viewSearch = $('viewSearch');
+    var trackTable = $('trackTable');
+    var emptyLib = $('emptyLib'), emptyTitle = $('emptyTitle'), emptyText = $('emptyText'), emptyAddBtn = $('emptyAddBtn');
 
-    var audioEl       = $('audioEl');
+    var pbLeft = $('pbLeft'), miniThumb = $('miniThumb'), miniTitle = $('miniTitle'), miniSub = $('miniSub'), miniLikeBtn = $('miniLikeBtn');
+    var shuffleBtn = $('shuffleBtn'), prevBtn = $('prevBtn'), playBtn = $('playBtn'), nextBtn = $('nextBtn'), repeatBtn = $('repeatBtn');
+    var seekBar = $('seekBar'), curTimeEl = $('curTime'), durTimeEl = $('durTime');
+    var speedBtn = $('speedBtn'), queueBtn = $('queueBtn'), eqBtn = $('eqBtn'), fullscreenBtn = $('fullscreenBtn');
+    var muteBtn = $('muteBtn'), volumeBar = $('volumeBar');
 
-    var playBtn       = $('playBtn');
-    var prevBtn       = $('prevBtn');
-    var nextBtn       = $('nextBtn');
-    var shuffleBtn    = $('shuffleBtn');
-    var repeatBtn     = $('repeatBtn');
-    var seekBar       = $('seekBar');
-    var curTimeEl     = $('curTime');
-    var durTimeEl     = $('durTime');
-    var volumeBar     = $('volumeBar');
-    var muteBtn       = $('muteBtn');
-    var fullscreenBtn = $('fullscreenBtn');
-
-    var miniThumb  = $('miniThumb');
-    var miniTitle  = $('miniTitle');
-    var miniSub    = $('miniSub');
-
-    var menuToggle      = $('menuToggle');
-    var sidebar          = $('sidebar');
-    var sidebarBackdrop  = $('sidebarBackdrop');
-
-    var dropOverlay = $('dropOverlay');
-
+    var audioEl = $('audioEl'), videoStage = $('videoStage');
+    var nowOverlay = $('nowOverlay'), nowCollapse = $('nowCollapse'), nowQueueBtn = $('nowQueueBtn');
+    var artWrap = $('artWrap'), disc = $('disc'), canvas = $('visualizer');
+    var typeLabel = $('typeLabel'), trackTitle = $('trackTitle'), trackSub = $('trackSub'), nowLikeBtn = $('nowLikeBtn');
     var ctx = canvas.getContext('2d');
 
-    /* ---------------- persian digit helper ---------------- */
-    var faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
-    function toFa(str){
-        return String(str).replace(/[0-9]/g, function(d){ return faDigits[d]; });
-    }
-    function fmtTime(sec){
-        if(!isFinite(sec) || sec == null || sec < 0) sec = 0;
-        var m = Math.floor(sec/60);
-        var s = Math.floor(sec%60);
-        return toFa(m + ':' + (s<10?'0':'') + s);
-    }
+    var queuePanel = $('queuePanel'), queueBody = $('queueBody'), queueCloseBtn = $('queueCloseBtn'), clearQueueSideBtn = $('clearQueueSideBtn');
+    var eqPanel = $('eqPanel'), eqCloseBtn = $('eqCloseBtn');
+    var eqBass = $('eqBass'), eqMid = $('eqMid'), eqTreble = $('eqTreble');
+    var eqBassVal = $('eqBassVal'), eqMidVal = $('eqMidVal'), eqTrebleVal = $('eqTrebleVal');
+    var speedRow = $('speedRow'), sleepRow = $('sleepRow');
 
-    /* ---------------- audio graph (visualizer) ---------------- */
+    var popover = $('addToPlaylistPopover'), popList = $('popList'), popNewPlaylist = $('popNewPlaylist');
+    var installBtn = $('installBtn'), installModal = $('installModal'), installModalClose = $('installModalClose');
+    var installBoxTitle = $('installTitle'), installBoxSteps = $('installSteps'), installBoxNote = $('installNote');
+    var dropOverlay = $('dropOverlay');
+
+    /* ============================================================
+       ۴) رفع باگ ارتفاع صفحه موبایل
+    ============================================================ */
+    function setVh(){ document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px'); }
+    setVh();
+    window.addEventListener('resize', setVh);
+    window.addEventListener('orientationchange', function(){ setTimeout(setVh, 200); });
+
+    /* ============================================================
+       ۵) گراف صوتی: اکولایزر + ویژوالایزر
+    ============================================================ */
     var audioCtxObj = null, analyser = null, dataArray = null, sourceNode = null;
+    var filterBass = null, filterMid = null, filterTreble = null;
+
     function ensureAudioGraph(){
         if(audioCtxObj) return;
         try{
             var AC = window.AudioContext || window.webkitAudioContext;
             audioCtxObj = new AC();
+            sourceNode = audioCtxObj.createMediaElementSource(audioEl);
+
+            filterBass = audioCtxObj.createBiquadFilter();
+            filterBass.type = 'lowshelf'; filterBass.frequency.value = 200;
+            filterMid = audioCtxObj.createBiquadFilter();
+            filterMid.type = 'peaking'; filterMid.frequency.value = 1000; filterMid.Q.value = 0.9;
+            filterTreble = audioCtxObj.createBiquadFilter();
+            filterTreble.type = 'highshelf'; filterTreble.frequency.value = 3000;
+
             analyser = audioCtxObj.createAnalyser();
             analyser.fftSize = 128;
             dataArray = new Uint8Array(analyser.frequencyBinCount);
-            sourceNode = audioCtxObj.createMediaElementSource(audioEl);
-            sourceNode.connect(analyser);
+
+            sourceNode.connect(filterBass);
+            filterBass.connect(filterMid);
+            filterMid.connect(filterTreble);
+            filterTreble.connect(analyser);
             analyser.connect(audioCtxObj.destination);
-        }catch(e){
-            analyser = null;
-        }
+
+            applyEqToFilters();
+        }catch(e){ analyser = null; }
+    }
+    function applyEqToFilters(){
+        if(!filterBass) return;
+        filterBass.gain.value = settings.eq.bass;
+        filterMid.gain.value = settings.eq.mid;
+        filterTreble.gain.value = settings.eq.treble;
     }
 
     function resizeCanvas(){
@@ -661,251 +847,687 @@
     }
     window.addEventListener('resize', resizeCanvas);
 
+    var rafId = null;
     function drawVisualizer(){
         rafId = requestAnimationFrame(drawVisualizer);
         var w = canvas.width, h = canvas.height;
         ctx.clearRect(0,0,w,h);
-        var cx = w/2, cy = h/2;
-        var baseR = Math.min(w,h) * 0.30;
+        var cx = w/2, cy = h/2, baseR = Math.min(w,h) * 0.30;
 
-        if(analyser && isPlaying && queue[currentIndex] && queue[currentIndex].type === 'audio'){
+        var current = (currentIndex >= 0 && queue[currentIndex]) ? queue[currentIndex] : null;
+        if(analyser && isPlaying && current && current.type === 'audio'){
             analyser.getByteFrequencyData(dataArray);
             var bars = 48;
             for(var i=0;i<bars;i++){
                 var val = dataArray[i % dataArray.length] / 255;
                 var angle = (i / bars) * Math.PI * 2;
                 var len = baseR * 0.22 + val * baseR * 0.62;
-                var x1 = cx + Math.cos(angle) * baseR;
-                var y1 = cy + Math.sin(angle) * baseR;
-                var x2 = cx + Math.cos(angle) * (baseR + len);
-                var y2 = cy + Math.sin(angle) * (baseR + len);
-                ctx.beginPath();
-                ctx.moveTo(x1,y1);
-                ctx.lineTo(x2,y2);
-                ctx.lineWidth = Math.max(2, w*0.006);
-                ctx.lineCap = 'round';
+                var x1 = cx + Math.cos(angle) * baseR, y1 = cy + Math.sin(angle) * baseR;
+                var x2 = cx + Math.cos(angle) * (baseR + len), y2 = cy + Math.sin(angle) * (baseR + len);
+                ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+                ctx.lineWidth = Math.max(2, w*0.006); ctx.lineCap = 'round';
                 var grad = ctx.createLinearGradient(x1,y1,x2,y2);
-                grad.addColorStop(0, 'rgba(240,192,64,0.9)');
-                grad.addColorStop(1, 'rgba(255,224,130,0.15)');
-                ctx.strokeStyle = grad;
-                ctx.stroke();
+                grad.addColorStop(0, 'rgba(240,192,64,0.9)'); grad.addColorStop(1, 'rgba(255,224,130,0.15)');
+                ctx.strokeStyle = grad; ctx.stroke();
             }
         } else {
-            // idle ring
-            ctx.beginPath();
-            ctx.arc(cx,cy,baseR,0,Math.PI*2);
-            ctx.lineWidth = Math.max(2, w*0.004);
-            ctx.strokeStyle = 'rgba(240,192,64,0.18)';
-            ctx.stroke();
+            ctx.beginPath(); ctx.arc(cx,cy,baseR,0,Math.PI*2);
+            ctx.lineWidth = Math.max(2, w*0.004); ctx.strokeStyle = 'rgba(240,192,64,0.18)'; ctx.stroke();
         }
     }
 
-    /* ---------------- queue rendering ---------------- */
-    function updateQueueMeta(){
-        queueCountEl.textContent = toFa(queue.length) + (queue.length === 1 ? ' فایل' : ' فایل');
-        var total = queue.reduce(function(sum, it){ return sum + (it.duration || 0); }, 0);
-        queueDurationEl.textContent = fmtTime(total);
-    }
-
-    function renderQueue(filterText){
-        filterText = (filterText || '').trim().toLowerCase();
-        queueList.innerHTML = '';
-
-        var visibleItems = queue.filter(function(it){
-            return !filterText || it.name.toLowerCase().indexOf(filterText) !== -1;
-        });
-
-        if(queue.length === 0){
-            var ph = document.createElement('div');
-            ph.className = 'empty-queue';
-            ph.id = 'emptyQueue';
-            ph.innerHTML = '<i class="fas fa-music"></i>هنوز فایلی اضافه نشده.<br>از دکمه‌ی «افزودن فایل» یا کشیدن‌ورهاکردن استفاده کنید.';
-            queueList.appendChild(ph);
-            updateQueueMeta();
-            return;
-        }
-
-        if(visibleItems.length === 0){
-            var noRes = document.createElement('div');
-            noRes.className = 'empty-queue';
-            noRes.innerHTML = '<i class="fas fa-magnifying-glass"></i>نتیجه‌ای یافت نشد.';
-            queueList.appendChild(noRes);
-            updateQueueMeta();
-            return;
-        }
-
-        visibleItems.forEach(function(item){
-            var realIndex = queue.indexOf(item);
-            var row = document.createElement('div');
-            row.className = 'queue-item' + (realIndex === currentIndex ? ' playing' : '');
-            row.dataset.index = realIndex;
-
-            var idxHtml = (realIndex === currentIndex && isPlaying)
-                ? '<div class="eq-bars"><i></i><i></i><i></i></div>'
-                : toFa(realIndex + 1);
-
-            row.innerHTML =
-                '<div class="idx">' + idxHtml + '</div>' +
-                '<div class="thumb"><i class="fas ' + (item.type === 'video' ? 'fa-clapperboard' : 'fa-compact-disc') + '"></i></div>' +
-                '<div class="info">' +
-                    '<div class="t">' + escapeHtml(item.name) + '</div>' +
-                    '<div class="s">' + (item.type === 'video' ? 'ویدیو' : 'صوت') + '</div>' +
-                '</div>' +
-                '<div class="dur">' + fmtTime(item.duration) + '</div>' +
-                '<button class="rm" title="حذف"><i class="fas fa-xmark"></i></button>';
-
-            row.addEventListener('click', function(e){
-                if(e.target.closest('.rm')) return;
-                playIndex(realIndex);
+    /* ============================================================
+       ۶) بارگذاری کتابخانه از حافظه دائمی
+    ============================================================ */
+    function loadAll(){
+        return Promise.all([
+            storeGetAll('tracks'),
+            storeGetAll('playlists'),
+            storeGet('settings', 'app')
+        ]).then(function(results){
+            libraryTracks = results[0] || [];
+            libraryTracks.forEach(function(t){
+                try{ t.url = URL.createObjectURL(t.blob); }catch(e){ t.url = null; }
+                if(t.coverBlob){
+                    try{ t.coverUrl = URL.createObjectURL(t.coverBlob); }catch(e){ t.coverUrl = null; }
+                }
             });
-            row.querySelector('.rm').addEventListener('click', function(e){
-                e.stopPropagation();
-                removeIndex(realIndex);
-            });
-
-            queueList.appendChild(row);
-        });
-
-        updateQueueMeta();
-    }
-
-    function escapeHtml(str){
-        var d = document.createElement('div');
-        d.textContent = str;
-        return d.innerHTML;
-    }
-
-    /* ---------------- adding files ---------------- */
-    function cleanTitle(filename){
-        return filename.replace(/\.[^/.]+$/, '').replace(/[_\-]+/g, ' ').trim() || filename;
-    }
-
-    function addFiles(fileList){
-        var added = [];
-        Array.prototype.forEach.call(fileList, function(file){
-            var isAudio = file.type.indexOf('audio') === 0;
-            var isVideo = file.type.indexOf('video') === 0;
-            if(!isAudio && !isVideo){
-                // fallback by extension when mime type is empty
-                var ext = (file.name.split('.').pop() || '').toLowerCase();
-                var videoExts = ['mp4','webm','ogg','mov','mkv'];
-                var audioExts = ['mp3','wav','m4a','aac','flac','ogg'];
-                if(videoExts.indexOf(ext) !== -1) isVideo = true;
-                else if(audioExts.indexOf(ext) !== -1) isAudio = true;
-                else return;
+            playlists = results[1] || [];
+            var saved = results[2];
+            if(saved && saved.value){
+                var v = saved.value;
+                if(v.volume != null) settings.volume = v.volume;
+                if(v.eq) settings.eq = v.eq;
+                if(v.speed) settings.speed = v.speed;
+                if(v.shuffle != null) shuffleOn = v.shuffle;
+                if(v.repeat) repeatMode = v.repeat;
+                if(v.recentIds) recentIds = v.recentIds;
             }
-            var url = URL.createObjectURL(file);
-            var item = {
-                id: 'm' + Date.now() + Math.random().toString(36).slice(2),
-                name: cleanTitle(file.name),
-                file: file,
-                url: url,
-                type: isVideo ? 'video' : 'audio',
-                duration: null
-            };
-            queue.push(item);
-            added.push(item);
-            probeDuration(item);
         });
-        if(added.length){
-            renderQueue(searchInput.value);
-            toggleEmptyState();
+    }
+
+    var saveSettingsDebounced = (function(){
+        var t = null;
+        return function(){
+            clearTimeout(t);
+            t = setTimeout(function(){
+                storePut('settings', { key:'app', value:{
+                    volume: audioEl.volume, eq: settings.eq, speed: playbackRate,
+                    shuffle: shuffleOn, repeat: repeatMode, recentIds: recentIds
+                }});
+            }, 400);
+        };
+    })();
+
+    /* ============================================================
+       ۷) رندر سایدبار (پلی‌لیست‌ها)
+    ============================================================ */
+    function renderPlaylists(){
+        playlistList.innerHTML = '';
+        if(playlists.length === 0){
+            var hint = document.createElement('div');
+            hint.className = 'playlist-empty-hint';
+            hint.textContent = 'هنوز پلی‌لیستی نساخته‌اید.';
+            playlistList.appendChild(hint);
+            return;
+        }
+        playlists.forEach(function(pl){
+            var row = document.createElement('div');
+            row.className = 'playlist-item' + (currentView.type === 'playlist' && currentView.playlistId === pl.id ? ' active' : '');
+            row.innerHTML =
+                '<div class="pl-ic"><i class="fas fa-list-music"></i></div>' +
+                '<div class="pl-t">' + escapeHtml(pl.name) + '</div>' +
+                '<button class="pl-menu" title="گزینه‌ها"><i class="fas fa-ellipsis-vertical"></i></button>';
+            row.addEventListener('click', function(e){
+                if(e.target.closest('.pl-menu')) return;
+                setView('playlist', pl.id);
+            });
+            row.querySelector('.pl-menu').addEventListener('click', function(e){
+                e.stopPropagation();
+                openPlaylistMenu(pl);
+            });
+            playlistList.appendChild(row);
+        });
+    }
+
+    function openPlaylistMenu(pl){
+        var action = window.prompt('برای تغییر نام، نام جدید را بنویسید.\nبرای حذف پلی‌لیست، کلمه‌ی «حذف» را بنویسید.\nبرای انصراف، خالی بگذارید و تأیید کنید.', pl.name);
+        if(action == null) return;
+        action = action.trim();
+        if(action === '') return;
+        if(action === 'حذف' || action.toLowerCase() === 'delete'){
+            if(confirm('پلی‌لیست «' + pl.name + '» حذف شود؟ (فایل‌های داخل کتابخانه پاک نمی‌شوند)')){
+                playlists = playlists.filter(function(p){ return p.id !== pl.id; });
+                storeDelete('playlists', pl.id);
+                if(currentView.type === 'playlist' && currentView.playlistId === pl.id) setView('all');
+                else { renderPlaylists(); }
+                toast('پلی‌لیست حذف شد');
+            }
+            return;
+        }
+        pl.name = action;
+        storePut('playlists', pl);
+        renderPlaylists();
+        if(currentView.type === 'playlist' && currentView.playlistId === pl.id) renderView();
+    }
+
+    newPlaylistBtn.addEventListener('click', function(){ createPlaylistFlow(); });
+    function createPlaylistFlow(preselectTrackId){
+        var name = window.prompt('نام پلی‌لیست جدید را وارد کنید:', '');
+        if(name == null) return null;
+        name = name.trim();
+        if(!name) return null;
+        var pl = { id: uid(), name: name, trackIds: preselectTrackId ? [preselectTrackId] : [], createdAt: Date.now() };
+        playlists.push(pl);
+        storePut('playlists', pl);
+        renderPlaylists();
+        toast('پلی‌لیست «' + name + '» ساخته شد');
+        return pl;
+    }
+
+    libLinks.forEach(function(btn){
+        btn.addEventListener('click', function(){ setView(btn.dataset.view); });
+    });
+
+    function setView(type, playlistId){
+        currentView = { type:type, playlistId: playlistId || null };
+        libLinks.forEach(function(b){ b.classList.toggle('active', type !== 'playlist' && b.dataset.view === type); });
+        renderPlaylists();
+        viewSearch.value = '';
+        renderView();
+        if(window.innerWidth <= 680){ closeSidebar(); }
+    }
+
+    function closeSidebar(){ sidebar.classList.remove('open'); sidebarBackdrop.classList.remove('show'); }
+    menuToggle.addEventListener('click', function(){ sidebar.classList.toggle('open'); sidebarBackdrop.classList.toggle('show'); });
+    sidebarBackdrop.addEventListener('click', closeSidebar);
+
+    /* ============================================================
+       ۸) محاسبه‌ی لیست فعلی و رندر ناحیه اصلی
+    ============================================================ */
+    function getCurrentPlaylist(){
+        if(currentView.type !== 'playlist') return null;
+        return playlists.filter(function(p){ return p.id === currentView.playlistId; })[0] || null;
+    }
+
+    function getViewTracks(){
+        if(currentView.type === 'all'){
+            return libraryTracks.slice().sort(function(a,b){ return b.addedAt - a.addedAt; });
+        }
+        if(currentView.type === 'liked'){
+            return libraryTracks.filter(function(t){ return t.liked; });
+        }
+        if(currentView.type === 'recent'){
+            return recentIds.map(function(id){ return libraryTracks.filter(function(t){ return t.id === id; })[0]; }).filter(Boolean);
+        }
+        if(currentView.type === 'playlist'){
+            var pl = getCurrentPlaylist();
+            if(!pl) return [];
+            return pl.trackIds.map(function(id){ return libraryTracks.filter(function(t){ return t.id === id; })[0]; }).filter(Boolean);
+        }
+        return [];
+    }
+
+    function viewMeta(){
+        if(currentView.type === 'all') return { icon:'fa-record-vinyl', title:'همه‌ی فایل‌ها' };
+        if(currentView.type === 'liked') return { icon:'fa-heart', title:'پسندیده‌ها' };
+        if(currentView.type === 'recent') return { icon:'fa-clock-rotate-left', title:'اخیراً پخش‌شده' };
+        if(currentView.type === 'playlist'){
+            var pl = getCurrentPlaylist();
+            return { icon:'fa-list-music', title: pl ? pl.name : 'پلی‌لیست' };
+        }
+        return { icon:'fa-music', title:'کتابخانه' };
+    }
+
+    function renderView(){
+        var meta = viewMeta();
+        viewCover.innerHTML = '<i class="fas ' + meta.icon + '"></i>';
+        viewTitle.textContent = meta.title;
+
+        var tracks = getViewTracks();
+        var filterText = (viewSearch.value || '').trim().toLowerCase();
+        var visible = filterText ? tracks.filter(function(t){ return t.name.toLowerCase().indexOf(filterText) !== -1; }) : tracks;
+
+        var totalDur = tracks.reduce(function(s,t){ return s + (t.duration || 0); }, 0);
+        viewSub.textContent = toFa(tracks.length) + ' مورد' + (totalDur ? ' · ' + fmtTime(totalDur) : '');
+
+        trackTable.innerHTML = '';
+
+        var libraryEmpty = libraryTracks.length === 0;
+        var viewEmpty = tracks.length === 0;
+
+        if(libraryEmpty){
+            emptyTitle.textContent = 'کتابخانه خالی است';
+            emptyText.textContent = 'فایل‌های صوتی یا تصویری روی دستگاه خود را اضافه کنید. هیچ فایلی به سرور ارسال نمی‌شود.';
+            emptyAddBtn.style.display = 'inline-flex';
+            emptyLib.hidden = false;
+        } else if(viewEmpty){
+            emptyTitle.textContent = currentView.type === 'liked' ? 'هنوز چیزی نپسندیده‌اید' : (currentView.type === 'recent' ? 'هنوز چیزی پخش نکرده‌اید' : 'این پلی‌لیست خالی است');
+            emptyText.textContent = currentView.type === 'liked' ? 'روی آیکون قلب کنار هر فایل بزنید تا اینجا اضافه شود.' : (currentView.type === 'recent' ? 'بعد از پخش اولین فایل، اینجا نمایش داده می‌شود.' : 'از «همه‌ی فایل‌ها» یک مورد را به این پلی‌لیست اضافه کنید.');
+            emptyAddBtn.style.display = 'none';
+            emptyLib.hidden = false;
+        } else {
+            emptyLib.hidden = true;
+        }
+
+        if(visible.length === 0 && !libraryEmpty && !viewEmpty){
+            var noRes = document.createElement('div');
+            noRes.style.cssText = 'text-align:center;color:var(--text-dim);font-size:12.5px;padding:24px;';
+            noRes.textContent = 'نتیجه‌ای برای این جستجو یافت نشد.';
+            trackTable.appendChild(noRes);
+        }
+
+        visible.forEach(function(track, i){
+            trackTable.appendChild(buildTrackRow(track, i));
+        });
+    }
+
+    function buildTrackRow(track, i){
+        var row = document.createElement('div');
+        var isCurrent = queue[currentIndex] === track;
+        row.className = 'track-row' + (isCurrent ? ' playing' : '');
+
+        var idxHtml = (isCurrent && isPlaying) ? '<div class="eq-bars"><i></i><i></i><i></i></div>' : toFa(i+1);
+        var heartClass = track.liked ? 'fas' : 'far';
+        var thumbHtml = track.coverUrl
+            ? '<img src="' + track.coverUrl + '" style="width:100%;height:100%;object-fit:cover;border-radius:8px;" alt="">'
+            : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-compact-disc') + '"></i>';
+        var subLine = track.artist ? escapeHtml(track.artist) : (track.type === 'video' ? 'ویدیو' : 'صوت');
+
+        row.innerHTML =
+            '<div class="idx">' + idxHtml + '</div>' +
+            '<div class="thumb">' + thumbHtml + '</div>' +
+            '<div class="info">' +
+                '<div class="t">' + escapeHtml(track.name) + '</div>' +
+                '<div class="s">' + subLine + '</div>' +
+            '</div>' +
+            '<div class="dur">' + fmtTime(track.duration) + '</div>' +
+            '<div class="actions">' +
+                '<button class="like-btn' + (track.liked ? ' liked' : '') + '" title="پسندیدن"><i class="' + heartClass + ' fa-heart"></i></button>' +
+                '<button class="q-btn" title="افزودن به صف بعدی"><i class="fas fa-list"></i></button>' +
+                '<button class="add-btn" title="افزودن به پلی‌لیست"><i class="fas fa-plus"></i></button>' +
+                '<button class="rm-btn danger" title="حذف"><i class="fas fa-xmark"></i></button>' +
+            '</div>';
+
+        row.addEventListener('click', function(e){
+            if(e.target.closest('.actions')) return;
+            playFromView(i);
+        });
+        row.querySelector('.like-btn').addEventListener('click', function(e){ e.stopPropagation(); toggleLike(track); });
+        row.querySelector('.q-btn').addEventListener('click', function(e){ e.stopPropagation(); addToQueueNext(track); });
+        row.querySelector('.add-btn').addEventListener('click', function(e){ e.stopPropagation(); openAddToPlaylistPopover(e.currentTarget, track); });
+        row.querySelector('.rm-btn').addEventListener('click', function(e){ e.stopPropagation(); removeTrackContextual(track); });
+
+        return row;
+    }
+
+    function removeTrackContextual(track){
+        if(currentView.type === 'playlist'){
+            var pl = getCurrentPlaylist();
+            if(!pl) return;
+            pl.trackIds = pl.trackIds.filter(function(id){ return id !== track.id; });
+            storePut('playlists', pl);
+            renderView();
+            toast('از پلی‌لیست حذف شد');
+            return;
+        }
+        if(currentView.type === 'liked'){
+            track.liked = false;
+            storePut('tracks', track);
+            renderView();
+            return;
+        }
+        if(currentView.type === 'recent'){
+            recentIds = recentIds.filter(function(id){ return id !== track.id; });
+            saveSettingsDebounced();
+            renderView();
+            return;
+        }
+        if(confirm('«' + track.name + '» برای همیشه از کتابخانه حذف شود؟')){
+            deleteTrackEverywhere(track);
         }
     }
 
-    function probeDuration(item){
-        var probe = item.type === 'video' ? document.createElement('video') : document.createElement('audio');
+    function deleteTrackEverywhere(track){
+        libraryTracks = libraryTracks.filter(function(t){ return t.id !== track.id; });
+        try{ URL.revokeObjectURL(track.url); }catch(e){}
+        storeDelete('tracks', track.id);
+        playlists.forEach(function(pl){
+            var before = pl.trackIds.length;
+            pl.trackIds = pl.trackIds.filter(function(id){ return id !== track.id; });
+            if(pl.trackIds.length !== before) storePut('playlists', pl);
+        });
+        recentIds = recentIds.filter(function(id){ return id !== track.id; });
+        var qi = queue.indexOf(track);
+        if(qi !== -1){
+            if(qi === currentIndex){ stopPlayback(); currentIndex = -1; }
+            else if(qi < currentIndex){ currentIndex--; }
+            queue.splice(qi, 1);
+            renderQueuePanel();
+        }
+        renderView();
+        toast('فایل حذف شد');
+    }
+
+    function toggleLike(track){
+        track.liked = !track.liked;
+        storePut('tracks', track);
+        renderView();
+        updateNowPlayingLikeIcons();
+    }
+
+    /* ============================================================
+       ۹) افزودن فایل به کتابخانه
+    ============================================================ */
+    function detectType(file){
+        if(file.type.indexOf('audio') === 0) return 'audio';
+        if(file.type.indexOf('video') === 0) return 'video';
+        var ext = (file.name.split('.').pop() || '').toLowerCase();
+        var videoExts = ['mp4','webm','ogg','mov','mkv'];
+        var audioExts = ['mp3','wav','m4a','aac','flac'];
+        if(videoExts.indexOf(ext) !== -1) return 'video';
+        if(audioExts.indexOf(ext) !== -1) return 'audio';
+        return null;
+    }
+
+    function addFilesToLibrary(fileList){
+        var added = 0;
+        Array.prototype.forEach.call(fileList, function(file){
+            var type = detectType(file);
+            if(!type) return;
+            var track = { id: uid(), name: cleanTitle(file.name), artist:null, type:type, blob:file, url:null, coverBlob:null, coverUrl:null, duration:null, liked:false, addedAt: Date.now() };
+            try{ track.url = URL.createObjectURL(file); }catch(e){}
+            libraryTracks.push(track);
+            storePut('tracks', track);
+            probeDuration(track);
+            extractArtwork(track, file);
+            added++;
+        });
+        if(added){
+            if(currentView.type !== 'all') setView('all'); else renderView();
+            toast(toFa(added) + ' فایل به کتابخانه اضافه شد');
+        }
+    }
+
+    function probeDuration(track){
+        if(!track.url) return;
+        var probe = track.type === 'video' ? document.createElement('video') : document.createElement('audio');
         probe.preload = 'metadata';
-        probe.src = item.url;
+        probe.src = track.url;
         probe.addEventListener('loadedmetadata', function(){
-            item.duration = probe.duration;
-            renderQueue(searchInput.value);
+            track.duration = probe.duration;
+            storePut('tracks', track);
+            renderView();
         });
     }
 
-    function removeIndex(i){
-        var item = queue[i];
-        if(!item) return;
-        URL.revokeObjectURL(item.url);
-        var wasCurrent = (i === currentIndex);
-        queue.splice(i, 1);
-        if(i < currentIndex) currentIndex--;
-        else if(wasCurrent){
-            stopPlayback();
-            currentIndex = -1;
+    /* ---- استخراج کاور/عنوان/هنرمند از تگ ID3 (mp3) یا فریم ویدیو ---- */
+    function extractArtwork(track, file){
+        if(track.type === 'audio'){
+            extractID3(file).then(function(meta){
+                if(!meta) return;
+                var changed = false;
+                if(meta.title){ track.name = meta.title; changed = true; }
+                if(meta.artist){ track.artist = meta.artist; changed = true; }
+                if(meta.picture && meta.picture.data && meta.picture.data.length){
+                    try{
+                        var blob = new Blob([meta.picture.data], { type: meta.picture.mime || 'image/jpeg' });
+                        track.coverBlob = blob;
+                        track.coverUrl = URL.createObjectURL(blob);
+                        changed = true;
+                    }catch(e){}
+                }
+                if(changed){
+                    storePut('tracks', track);
+                    renderView();
+                    refreshNowPlayingArt(track);
+                }
+            })['catch'](function(){});
+        } else if(track.type === 'video'){
+            captureVideoFrame(track.url).then(function(blob){
+                if(!blob) return;
+                track.coverBlob = blob;
+                track.coverUrl = URL.createObjectURL(blob);
+                storePut('tracks', track);
+                renderView();
+                refreshNowPlayingArt(track);
+            })['catch'](function(){});
         }
-        renderQueue(searchInput.value);
-        toggleEmptyState();
     }
 
-    function clearQueue(){
-        stopPlayback();
-        queue.forEach(function(it){ URL.revokeObjectURL(it.url); });
-        queue = [];
-        currentIndex = -1;
-        renderQueue('');
-        toggleEmptyState();
+    function captureVideoFrame(url){
+        return new Promise(function(resolve){
+            var v = document.createElement('video');
+            v.muted = true; v.preload = 'metadata'; v.src = url; v.playsInline = true;
+            var settled = false;
+            function done(blob){ if(settled) return; settled = true; resolve(blob); }
+            v.addEventListener('loadeddata', function(){
+                try{ v.currentTime = Math.min(1, (v.duration || 2) / 2); }
+                catch(e){ done(null); }
+            });
+            v.addEventListener('seeked', function(){
+                try{
+                    var cv = document.createElement('canvas');
+                    var ratio = (v.videoHeight && v.videoWidth) ? (v.videoHeight / v.videoWidth) : 0.6;
+                    cv.width = 160; cv.height = Math.max(90, Math.round(160 * ratio));
+                    var c = cv.getContext('2d');
+                    c.drawImage(v, 0, 0, cv.width, cv.height);
+                    cv.toBlob(function(blob){ done(blob); }, 'image/jpeg', 0.82);
+                }catch(e){ done(null); }
+            });
+            v.addEventListener('error', function(){ done(null); });
+            setTimeout(function(){ done(null); }, 6000);
+        });
     }
 
-    function toggleEmptyState(){
-        var has = queue.length > 0;
-        if(!has){
-            emptyState.hidden = false;
-            nowPlaying.hidden = true;
+    /* ---- خواندن تگ ID3v2 (نسخه ۲.۳ و ۲.۴) شامل عنوان، هنرمند و تصویر کاور ---- */
+    function extractID3(file){
+        if(!file || !file.slice) return Promise.resolve(null);
+        return file.slice(0, 10).arrayBuffer().then(function(headerBuf){
+            var hv = new DataView(headerBuf);
+            if(headerBuf.byteLength < 10) return null;
+            if(String.fromCharCode(hv.getUint8(0), hv.getUint8(1), hv.getUint8(2)) !== 'ID3') return null;
+            var majorVersion = hv.getUint8(3);
+            var tagSize = synchsafeToInt(hv, 6);
+            var totalLen = Math.min(10 + tagSize, file.size, 20 * 1024 * 1024);
+            return file.slice(0, totalLen).arrayBuffer().then(function(buf){
+                return parseID3Frames(buf, majorVersion, 10 + tagSize);
+            });
+        })['catch'](function(){ return null; });
+    }
+    function synchsafeToInt(view, offset){
+        return ((view.getUint8(offset) & 0x7f) << 21) | ((view.getUint8(offset+1) & 0x7f) << 14) |
+               ((view.getUint8(offset+2) & 0x7f) << 7) | (view.getUint8(offset+3) & 0x7f);
+    }
+    function parseID3Frames(buf, majorVersion, tagEnd){
+        var view = new DataView(buf);
+        var offset = 10;
+        var result = { title:null, artist:null, picture:null };
+        var end = Math.min(tagEnd, buf.byteLength);
+        while(offset + 10 <= end){
+            var frameId = String.fromCharCode(view.getUint8(offset), view.getUint8(offset+1), view.getUint8(offset+2), view.getUint8(offset+3));
+            if(!/^[A-Z0-9]{4}$/.test(frameId)) break;
+            var frameSize = (majorVersion >= 4) ? synchsafeToInt(view, offset+4) : view.getUint32(offset+4);
+            var frameStart = offset + 10;
+            if(frameSize <= 0 || frameStart + frameSize > buf.byteLength) break;
+            var frameBytes = new Uint8Array(buf, frameStart, frameSize);
+
+            if(frameId === 'TIT2' && !result.title) result.title = decodeID3Text(frameBytes);
+            else if(frameId === 'TPE1' && !result.artist) result.artist = decodeID3Text(frameBytes);
+            else if(frameId === 'APIC' && !result.picture) result.picture = decodeAPIC(frameBytes);
+
+            offset = frameStart + frameSize;
         }
+        return result;
+    }
+    function decodeByEnc(bytes, enc){
+        try{
+            if(enc === 1){
+                var b = bytes;
+                if(b.length >= 2 && ((b[0]===0xFF && b[1]===0xFE) || (b[0]===0xFE && b[1]===0xFF))) b = b.subarray(2);
+                return new TextDecoder('utf-16le').decode(b);
+            }
+            if(enc === 2) return new TextDecoder('utf-16be').decode(bytes);
+            if(enc === 3) return new TextDecoder('utf-8').decode(bytes);
+            return new TextDecoder('windows-1252').decode(bytes);
+        }catch(e){ return ''; }
+    }
+    function decodeID3Text(bytes){
+        if(bytes.length < 1) return null;
+        var enc = bytes[0];
+        var body = bytes.subarray(1);
+        var text = decodeByEnc(body, enc).replace(/\u0000+$/, '').trim();
+        return text || null;
+    }
+    function decodeAPIC(bytes){
+        if(bytes.length < 2) return null;
+        var enc = bytes[0];
+        var i = 1;
+        var mimeEnd = i;
+        while(mimeEnd < bytes.length && bytes[mimeEnd] !== 0) mimeEnd++;
+        var mime = decodeByEnc(bytes.subarray(i, mimeEnd), 0) || 'image/jpeg';
+        i = mimeEnd + 1;
+        i++; // picture type byte
+        var descEnd = i;
+        if(enc === 1 || enc === 2){
+            while(descEnd + 1 < bytes.length && !(bytes[descEnd] === 0 && bytes[descEnd+1] === 0)) descEnd += 2;
+            descEnd += 2;
+        } else {
+            while(descEnd < bytes.length && bytes[descEnd] !== 0) descEnd++;
+            descEnd += 1;
+        }
+        if(descEnd >= bytes.length) return null;
+        var imgBytes = bytes.subarray(descEnd);
+        if(imgBytes.length < 100) return null; // احتمالاً تصویر معتبر نیست
+        return { mime: mime, data: new Uint8Array(imgBytes) };
     }
 
-    /* ---------------- playback ---------------- */
+    addFilesBtn.addEventListener('click', function(){ fileInput.click(); });
+    emptyAddBtn.addEventListener('click', function(){ fileInput.click(); });
+    fileInput.addEventListener('change', function(){
+        if(fileInput.files && fileInput.files.length) addFilesToLibrary(fileInput.files);
+        fileInput.value = '';
+    });
+
+    var dragCounter = 0;
+    window.addEventListener('dragenter', function(e){ e.preventDefault(); dragCounter++; dropOverlay.classList.add('show'); });
+    window.addEventListener('dragover', function(e){ e.preventDefault(); });
+    window.addEventListener('dragleave', function(){ dragCounter--; if(dragCounter <= 0){ dragCounter = 0; dropOverlay.classList.remove('show'); } });
+    window.addEventListener('drop', function(e){
+        e.preventDefault(); dragCounter = 0; dropOverlay.classList.remove('show');
+        if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) addFilesToLibrary(e.dataTransfer.files);
+    });
+
+    /* ============================================================
+       ۱۰) افزودن به پلی‌لیست (پاپ‌آور)
+    ============================================================ */
+    var popoverTrack = null;
+    function openAddToPlaylistPopover(anchorBtn, track){
+        popoverTrack = track;
+        var rect = anchorBtn.getBoundingClientRect();
+        popover.style.top = Math.min(rect.bottom + 6, window.innerHeight - 220) + 'px';
+        popover.style.right = (window.innerWidth - rect.right) + 'px';
+        renderPopoverList();
+        popover.classList.add('show');
+    }
+    function renderPopoverList(){
+        popList.innerHTML = '';
+        if(playlists.length === 0){
+            var hint = document.createElement('div');
+            hint.style.cssText = 'padding:10px 8px;font-size:12px;color:var(--text-dim);';
+            hint.textContent = 'هنوز پلی‌لیستی ندارید.';
+            popList.appendChild(hint);
+        }
+        playlists.forEach(function(pl){
+            var checked = popoverTrack && pl.trackIds.indexOf(popoverTrack.id) !== -1;
+            var item = document.createElement('div');
+            item.className = 'pop-item' + (checked ? ' checked' : '');
+            item.innerHTML = '<div class="chk"><i class="fas fa-check" style="' + (checked ? '' : 'display:none;') + '"></i></div><div>' + escapeHtml(pl.name) + '</div>';
+            item.addEventListener('click', function(){
+                if(!popoverTrack) return;
+                var idx = pl.trackIds.indexOf(popoverTrack.id);
+                if(idx === -1){ pl.trackIds.push(popoverTrack.id); }
+                else { pl.trackIds.splice(idx, 1); }
+                storePut('playlists', pl);
+                renderPopoverList();
+                if(currentView.type === 'playlist' && currentView.playlistId === pl.id) renderView();
+            });
+            popList.appendChild(item);
+        });
+    }
+    popNewPlaylist.addEventListener('click', function(){
+        var pl = createPlaylistFlow(popoverTrack ? popoverTrack.id : null);
+        if(pl) renderPopoverList();
+    });
+    document.addEventListener('click', function(e){
+        if(!popover.classList.contains('show')) return;
+        if(popover.contains(e.target)) return;
+        if(e.target.closest('.add-btn')) return;
+        popover.classList.remove('show');
+    });
+
+    /* ============================================================
+       ۱۱) پخش، صف، و کنترل‌ها
+    ============================================================ */
+    function playFromView(indexInView){
+        var tracks = getViewTracks();
+        var filterText = (viewSearch.value || '').trim().toLowerCase();
+        var visible = filterText ? tracks.filter(function(t){ return t.name.toLowerCase().indexOf(filterText) !== -1; }) : tracks;
+        queue = visible.slice();
+        playIndex(indexInView);
+    }
+
+    viewPlayBtn.addEventListener('click', function(){
+        var tracks = getViewTracks();
+        if(tracks.length === 0) return;
+        queue = tracks.slice();
+        playIndex(shuffleOn ? Math.floor(Math.random() * queue.length) : 0);
+    });
+    viewShuffleBtn.addEventListener('click', function(){
+        var tracks = getViewTracks();
+        if(tracks.length === 0) return;
+        shuffleOn = true; updateShuffleUI();
+        queue = tracks.slice();
+        playIndex(Math.floor(Math.random() * queue.length));
+    });
+    viewSearch.addEventListener('input', renderView);
+
+    function activeMedia(){
+        if(currentIndex === -1) return null;
+        var track = queue[currentIndex];
+        if(!track) return null;
+        return track.type === 'video' ? videoStage : audioEl;
+    }
+
     function playIndex(i){
         if(i < 0 || i >= queue.length) return;
         ensureAudioGraph();
         if(audioCtxObj && audioCtxObj.state === 'suspended') audioCtxObj.resume();
 
         currentIndex = i;
-        var item = queue[i];
+        var track = queue[i];
+        if(!track || !track.url) return;
 
-        emptyState.hidden = true;
-        nowPlaying.hidden = false;
+        pushRecent(track.id);
 
-        if(item.type === 'video'){
+        var discImg = $('discImg');
+        var miniThumbHtml = track.coverUrl
+            ? '<img src="' + track.coverUrl + '" style="width:100%;height:100%;object-fit:cover;" alt="">'
+            : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i>';
+
+        if(track.type === 'video'){
             audioEl.pause();
-            videoStage.style.display = 'block';
-            artWrap.style.display = 'none';
-            videoStage.src = item.url;
-            videoStage.currentTime = 0;
-            videoStage.volume = audioEl.volume;
+            videoStage.style.display = 'block'; artWrap.style.display = 'none';
+            videoStage.src = track.url; videoStage.currentTime = 0;
+            videoStage.volume = audioEl.volume; videoStage.playbackRate = playbackRate;
             videoStage.play();
             typeLabel.textContent = 'در حال پخش ویدیو';
-            miniThumb.innerHTML = '<i class="fas fa-clapperboard"></i>';
+            miniThumb.innerHTML = miniThumbHtml;
         } else {
             videoStage.pause();
-            videoStage.style.display = 'none';
-            artWrap.style.display = 'flex';
-            audioEl.src = item.url;
-            audioEl.currentTime = 0;
+            videoStage.style.display = 'none'; artWrap.style.display = 'flex';
+            audioEl.src = track.url; audioEl.currentTime = 0; audioEl.playbackRate = playbackRate;
             audioEl.play();
             typeLabel.textContent = 'در حال پخش صوت';
-            miniThumb.innerHTML = '<img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" onerror="this.parentNode.innerHTML=\'<i class=&quot;fas fa-music&quot;></i>\'">';
+            miniThumb.innerHTML = miniThumbHtml;
+            if(discImg) discImg.src = track.coverUrl || 'https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png';
         }
 
-        trackTitle.textContent = item.name;
-        trackSub.textContent = item.type === 'video' ? 'فایل ویدیویی' : 'فایل صوتی';
-        miniTitle.textContent = item.name;
-        miniSub.textContent = item.type === 'video' ? 'ویدیو' : 'صوت';
+        trackTitle.textContent = track.name;
+        trackSub.textContent = track.artist ? track.artist : (track.type === 'video' ? 'فایل ویدیویی' : 'فایل صوتی');
+        miniTitle.textContent = track.name;
+        miniSub.textContent = track.artist ? track.artist : (track.type === 'video' ? 'ویدیو' : 'صوت');
 
-        renderQueue(searchInput.value);
+        updateNowPlayingLikeIcons();
+        renderView();
+        renderQueuePanel();
     }
 
-    function activeMedia(){
-        if(currentIndex === -1) return null;
-        var item = queue[currentIndex];
-        if(!item) return null;
-        return item.type === 'video' ? videoStage : audioEl;
+    function refreshNowPlayingArt(track){
+        if(currentIndex === -1 || queue[currentIndex] !== track) return;
+        var miniThumbHtml = track.coverUrl
+            ? '<img src="' + track.coverUrl + '" style="width:100%;height:100%;object-fit:cover;" alt="">'
+            : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i>';
+        miniThumb.innerHTML = miniThumbHtml;
+        if(track.type !== 'video'){
+            var discImg = $('discImg');
+            if(discImg) discImg.src = track.coverUrl || 'https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png';
+        }
+        if(track.artist){ trackSub.textContent = track.artist; miniSub.textContent = track.artist; }
+    }
+
+    function pushRecent(id){
+        recentIds = recentIds.filter(function(x){ return x !== id; });
+        recentIds.unshift(id);
+        if(recentIds.length > 30) recentIds = recentIds.slice(0,30);
+        saveSettingsDebounced();
+        if(currentView.type === 'recent') renderView();
     }
 
     function togglePlay(){
         if(currentIndex === -1){
-            if(queue.length) playIndex(0);
+            var tracks = getViewTracks();
+            if(tracks.length){ queue = tracks.slice(); playIndex(0); }
             return;
         }
         var media = activeMedia();
@@ -914,25 +1536,16 @@
             ensureAudioGraph();
             if(audioCtxObj && audioCtxObj.state === 'suspended') audioCtxObj.resume();
             media.play();
-        } else {
-            media.pause();
-        }
+        } else { media.pause(); }
     }
-
-    function stopPlayback(){
-        audioEl.pause();
-        videoStage.pause();
-        isPlaying = false;
-        updatePlayIcon();
-    }
+    function stopPlayback(){ audioEl.pause(); videoStage.pause(); isPlaying = false; updatePlayIcons(); }
 
     function pickNextIndex(){
         if(queue.length === 0) return -1;
         if(shuffleOn){
             if(queue.length === 1) return 0;
-            var next;
-            do{ next = Math.floor(Math.random() * queue.length); }while(next === currentIndex);
-            return next;
+            var n; do{ n = Math.floor(Math.random()*queue.length); }while(n === currentIndex);
+            return n;
         }
         return (currentIndex + 1) % queue.length;
     }
@@ -940,110 +1553,94 @@
         if(queue.length === 0) return -1;
         if(shuffleOn){
             if(queue.length === 1) return 0;
-            var prev;
-            do{ prev = Math.floor(Math.random() * queue.length); }while(prev === currentIndex);
-            return prev;
+            var p; do{ p = Math.floor(Math.random()*queue.length); }while(p === currentIndex);
+            return p;
         }
         return (currentIndex - 1 + queue.length) % queue.length;
     }
-
     function goNext(){ var n = pickNextIndex(); if(n !== -1) playIndex(n); }
     function goPrev(){ var p = pickPrevIndex(); if(p !== -1) playIndex(p); }
 
     function onEnded(){
-        if(repeatMode === 'one'){
-            var media = activeMedia();
-            if(media){ media.currentTime = 0; media.play(); }
-            return;
-        }
-        if(repeatMode === 'off' && !shuffleOn && currentIndex === queue.length - 1){
-            stopPlayback();
-            return;
-        }
+        if(repeatMode === 'one'){ var m = activeMedia(); if(m){ m.currentTime = 0; m.play(); } return; }
+        if(repeatMode === 'off' && !shuffleOn && currentIndex === queue.length - 1){ stopPlayback(); return; }
         goNext();
     }
 
-    /* ---------------- UI sync ---------------- */
-    function updatePlayIcon(){
+    function updatePlayIcons(){
         var icon = playBtn.querySelector('i');
         icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
-        disc.classList.toggle('spin', isPlaying && queue[currentIndex] && queue[currentIndex].type === 'audio');
-        renderQueue(searchInput.value);
+        var current = queue[currentIndex];
+        disc.classList.toggle('spin', isPlaying && current && current.type === 'audio');
+        renderView();
+        renderQueuePanel();
     }
-
     function updateSeek(media){
         if(!media) return;
-        var dur = media.duration || (queue[currentIndex] ? queue[currentIndex].duration : 0) || 0;
+        var current = queue[currentIndex];
+        var dur = media.duration || (current ? current.duration : 0) || 0;
         var cur = media.currentTime || 0;
         var pct = dur ? (cur/dur*100) : 0;
-        seekBar.value = pct;
-        seekBar.style.setProperty('--fill', pct + '%');
-        curTimeEl.textContent = fmtTime(cur);
-        durTimeEl.textContent = fmtTime(dur);
+        seekBar.value = pct; seekBar.style.setProperty('--fill', pct + '%');
+        curTimeEl.textContent = fmtTime(cur); durTimeEl.textContent = fmtTime(dur);
     }
-
     function wireMediaEvents(media){
-        media.addEventListener('play', function(){ isPlaying = true; updatePlayIcon(); if(!rafId) drawVisualizer(); });
-        media.addEventListener('pause', function(){ isPlaying = false; updatePlayIcon(); });
+        media.addEventListener('play', function(){ isPlaying = true; updatePlayIcons(); if(!rafId) drawVisualizer(); });
+        media.addEventListener('pause', function(){ isPlaying = false; updatePlayIcons(); });
         media.addEventListener('timeupdate', function(){ updateSeek(media); });
         media.addEventListener('ended', onEnded);
         media.addEventListener('volumechange', function(){
             audioEl.volume = media.volume; videoStage.volume = media.volume;
-            volumeBar.value = media.volume;
-            updateMuteIcon();
+            volumeBar.value = media.volume; updateMuteIcon(); saveSettingsDebounced();
         });
     }
-    wireMediaEvents(audioEl);
-    wireMediaEvents(videoStage);
+    wireMediaEvents(audioEl); wireMediaEvents(videoStage);
 
     function updateMuteIcon(){
-        var icon = muteBtn.querySelector('i');
-        var vol = audioEl.volume;
+        var icon = muteBtn.querySelector('i'); var vol = audioEl.volume;
         icon.className = vol === 0 ? 'fas fa-volume-xmark' : (vol < 0.5 ? 'fas fa-volume-low' : 'fas fa-volume-high');
     }
+    function updateShuffleUI(){
+        shuffleBtn.classList.toggle('on', shuffleOn);
+        viewShuffleBtn.classList.toggle('on', shuffleOn);
+    }
+    function updateNowPlayingLikeIcons(){
+        var current = queue[currentIndex];
+        var liked = current && current.liked;
+        miniLikeBtn.classList.toggle('liked', !!liked);
+        miniLikeBtn.querySelector('i').className = liked ? 'fas fa-heart' : 'far fa-heart';
+        nowLikeBtn.classList.toggle('liked', !!liked);
+        nowLikeBtn.querySelector('i').className = liked ? 'fas fa-heart' : 'far fa-heart';
+    }
 
-    /* ---------------- controls wiring ---------------- */
     playBtn.addEventListener('click', togglePlay);
     nextBtn.addEventListener('click', goNext);
     prevBtn.addEventListener('click', goPrev);
-
-    shuffleBtn.addEventListener('click', function(){
-        shuffleOn = !shuffleOn;
-        shuffleBtn.classList.toggle('on', shuffleOn);
-        shuffleAllBtn.classList.toggle('active', shuffleOn);
-    });
-
+    shuffleBtn.addEventListener('click', function(){ shuffleOn = !shuffleOn; updateShuffleUI(); saveSettingsDebounced(); });
     repeatBtn.addEventListener('click', function(){
         var order = ['off','all','one'];
         repeatMode = order[(order.indexOf(repeatMode) + 1) % order.length];
         repeatBtn.classList.toggle('on', repeatMode !== 'off');
-        var icon = repeatBtn.querySelector('i');
-        icon.className = repeatMode === 'one' ? 'fas fa-1' : 'fas fa-repeat';
         repeatBtn.title = repeatMode === 'off' ? 'تکرار: خاموش' : (repeatMode === 'all' ? 'تکرار: همه' : 'تکرار: یکی');
+        saveSettingsDebounced();
     });
+    miniLikeBtn.addEventListener('click', function(e){ e.stopPropagation(); var c = queue[currentIndex]; if(c) toggleLike(c); });
+    nowLikeBtn.addEventListener('click', function(){ var c = queue[currentIndex]; if(c) toggleLike(c); });
 
     seekBar.addEventListener('input', function(){
-        var media = activeMedia();
-        if(!media) return;
+        var media = activeMedia(); if(!media) return;
         var dur = media.duration || 0;
         media.currentTime = (seekBar.value/100) * dur;
         seekBar.style.setProperty('--fill', seekBar.value + '%');
     });
-
     volumeBar.addEventListener('input', function(){
-        audioEl.volume = parseFloat(volumeBar.value);
-        videoStage.volume = parseFloat(volumeBar.value);
-        updateMuteIcon();
+        var v = parseFloat(volumeBar.value);
+        audioEl.volume = v; videoStage.volume = v; updateMuteIcon(); saveSettingsDebounced();
     });
-
     var lastVolume = 0.9;
     muteBtn.addEventListener('click', function(){
-        if(audioEl.volume > 0){
-            lastVolume = audioEl.volume;
-            audioEl.volume = 0; videoStage.volume = 0; volumeBar.value = 0;
-        } else {
-            audioEl.volume = lastVolume; videoStage.volume = lastVolume; volumeBar.value = lastVolume;
-        }
+        if(audioEl.volume > 0){ lastVolume = audioEl.volume; audioEl.volume = 0; videoStage.volume = 0; volumeBar.value = 0; }
+        else { audioEl.volume = lastVolume; videoStage.volume = lastVolume; volumeBar.value = lastVolume; }
         updateMuteIcon();
     });
 
@@ -1051,81 +1648,225 @@
         var p = null;
         if(el.requestFullscreen) p = el.requestFullscreen();
         else if(el.webkitRequestFullscreen) p = el.webkitRequestFullscreen();
-        else if(el.webkitEnterFullscreen) { el.webkitEnterFullscreen(); return; } // iPhone Safari (video only)
+        else if(el.webkitEnterFullscreen){ el.webkitEnterFullscreen(); return; }
         else if(el.mozRequestFullScreen) p = el.mozRequestFullScreen();
         else if(el.msRequestFullscreen) p = el.msRequestFullscreen();
-        if(p && p.catch) p.catch(function(){
-            // fallback: try fullscreening the whole stage container instead
-            if(el !== stage) requestFs(stage);
-        });
+        if(p && p['catch']) p['catch'](function(){});
     }
-
     fullscreenBtn.addEventListener('click', function(){
-        if(!(queue[currentIndex] && queue[currentIndex].type === 'video')){
+        var current = queue[currentIndex];
+        if(!(current && current.type === 'video')) return;
+        if(videoStage.webkitEnterFullscreen) videoStage.webkitEnterFullscreen();
+        else requestFs(videoStage);
+    });
+
+    /* ============================================================
+       ۱۲) صف پخش (Up Next)
+    ============================================================ */
+    function addToQueueNext(track){
+        if(currentIndex === -1){ queue = [track]; playIndex(0); toast('در حال پخش'); return; }
+        queue.splice(currentIndex + 1, 0, track);
+        renderQueuePanel();
+        toast('به صف بعدی اضافه شد');
+    }
+    function renderQueuePanel(){
+        queueBody.innerHTML = '';
+        var upcoming = queue.map(function(t,idx){ return {t:t, idx:idx}; }).slice(currentIndex + 1);
+        if(currentIndex >= 0 && queue[currentIndex]){
+            var curWrap = document.createElement('div');
+            curWrap.style.cssText = 'font-size:11px;color:var(--text-dim);margin:4px 4px 8px;';
+            curWrap.textContent = 'در حال پخش';
+            queueBody.appendChild(curWrap);
+            queueBody.appendChild(buildQItem(queue[currentIndex], currentIndex, true));
+        }
+        var nextWrap = document.createElement('div');
+        nextWrap.style.cssText = 'font-size:11px;color:var(--text-dim);margin:14px 4px 8px;';
+        nextWrap.textContent = shuffleOn ? 'بعدی در صف (پخش تصادفی فعال است)' : 'بعدی در صف';
+        queueBody.appendChild(nextWrap);
+
+        if(upcoming.length === 0){
+            var e = document.createElement('div');
+            e.className = 'sp-empty';
+            e.textContent = 'چیزی در صف نیست.';
+            queueBody.appendChild(e);
             return;
         }
-        if(videoStage.webkitEnterFullscreen){
-            // iPhone Safari: only the <video> element itself supports native fullscreen
-            videoStage.webkitEnterFullscreen();
+        upcoming.forEach(function(entry){ queueBody.appendChild(buildQItem(entry.t, entry.idx, false)); });
+    }
+    function buildQItem(track, realIdx, isCurrent){
+        var row = document.createElement('div');
+        row.className = 'qitem' + (isCurrent ? ' current' : '');
+        row.innerHTML =
+            '<div class="thumb"><i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i></div>' +
+            '<div class="t">' + escapeHtml(track.name) + '</div>' +
+            '<div class="qbtns">' +
+                (isCurrent ? '' : '<button class="qup" title="بالاتر"><i class="fas fa-arrow-up"></i></button><button class="qdown" title="پایین‌تر"><i class="fas fa-arrow-down"></i></button><button class="qrm" title="حذف از صف"><i class="fas fa-xmark"></i></button>') +
+            '</div>';
+        if(!isCurrent){
+            row.querySelector('.qup').addEventListener('click', function(){ moveQueueItem(realIdx, -1); });
+            row.querySelector('.qdown').addEventListener('click', function(){ moveQueueItem(realIdx, 1); });
+            row.querySelector('.qrm').addEventListener('click', function(){ removeFromQueue(realIdx); });
+        }
+        return row;
+    }
+    function moveQueueItem(idx, dir){
+        var newIdx = idx + dir;
+        if(newIdx <= currentIndex || newIdx >= queue.length || newIdx < 0) return;
+        var tmp = queue[idx]; queue[idx] = queue[newIdx]; queue[newIdx] = tmp;
+        renderQueuePanel();
+    }
+    function removeFromQueue(idx){
+        queue.splice(idx, 1);
+        if(idx < currentIndex) currentIndex--;
+        renderQueuePanel();
+    }
+    clearQueueSideBtn.addEventListener('click', function(){
+        if(queue.length === 0) return;
+        var current = queue[currentIndex];
+        queue = current ? [current] : [];
+        currentIndex = current ? 0 : -1;
+        renderQueuePanel();
+        toast('صف پاک شد');
+    });
+
+    /* ============================================================
+       ۱۳) پنل‌های کناری (صف / اکولایزر) و صفحه Now Playing
+    ============================================================ */
+    function openPanel(panel){ panel.classList.add('show'); }
+    function closePanel(panel){ panel.classList.remove('show'); }
+
+    queueBtn.addEventListener('click', function(){ renderQueuePanel(); openPanel(queuePanel); });
+    nowQueueBtn.addEventListener('click', function(){ renderQueuePanel(); openPanel(queuePanel); });
+    queueCloseBtn.addEventListener('click', function(){ closePanel(queuePanel); });
+
+    eqBtn.addEventListener('click', function(){ openPanel(eqPanel); });
+    eqCloseBtn.addEventListener('click', function(){ closePanel(eqPanel); });
+
+    pbLeft.addEventListener('click', function(e){
+        if(e.target.closest('.mini-like')) return;
+        if(currentIndex === -1) return;
+        resizeCanvas();
+        openPanel2(nowOverlay);
+    });
+    function openPanel2(el){ el.classList.add('show'); resizeCanvas(); }
+    nowCollapse.addEventListener('click', function(){ nowOverlay.classList.remove('show'); });
+
+    /* ============================================================
+       ۱۴) اکولایزر UI
+    ============================================================ */
+    function eqValToText(v){ return (v > 0 ? '+' : '') + toFa(v); }
+    function syncEqUI(){
+        eqBass.value = settings.eq.bass; eqMid.value = settings.eq.mid; eqTreble.value = settings.eq.treble;
+        eqBassVal.textContent = eqValToText(settings.eq.bass);
+        eqMidVal.textContent = eqValToText(settings.eq.mid);
+        eqTrebleVal.textContent = eqValToText(settings.eq.treble);
+    }
+    eqBass.addEventListener('input', function(){ settings.eq.bass = parseFloat(eqBass.value); syncEqUI(); applyEqToFilters(); saveSettingsDebounced(); });
+    eqMid.addEventListener('input', function(){ settings.eq.mid = parseFloat(eqMid.value); syncEqUI(); applyEqToFilters(); saveSettingsDebounced(); });
+    eqTreble.addEventListener('input', function(){ settings.eq.treble = parseFloat(eqTreble.value); syncEqUI(); applyEqToFilters(); saveSettingsDebounced(); });
+
+    var eqPresets = {
+        flat:{bass:0,mid:0,treble:0},
+        bass:{bass:8,mid:0,treble:-2},
+        vocal:{bass:-2,mid:6,treble:2},
+        bright:{bass:0,mid:2,treble:7}
+    };
+    eqPanel.querySelectorAll('.eq-presets button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            var p = eqPresets[btn.dataset.preset];
+            if(!p) return;
+            settings.eq = { bass:p.bass, mid:p.mid, treble:p.treble };
+            syncEqUI(); applyEqToFilters(); saveSettingsDebounced();
+        });
+    });
+
+    speedRow.querySelectorAll('button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            playbackRate = parseFloat(btn.dataset.speed);
+            speedRow.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+            btn.classList.add('on');
+            audioEl.playbackRate = playbackRate; videoStage.playbackRate = playbackRate;
+            speedBtn.textContent = toFa(playbackRate) + 'x';
+            saveSettingsDebounced();
+        });
+    });
+    speedBtn.addEventListener('click', function(){
+        var rates = [0.75, 1, 1.25, 1.5, 2];
+        var idx = rates.indexOf(playbackRate);
+        var next = rates[(idx + 1) % rates.length];
+        var btn = speedRow.querySelector('[data-speed="' + next + '"]');
+        if(btn) btn.click();
+    });
+
+    sleepRow.querySelectorAll('button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            sleepMinutes = parseFloat(btn.dataset.min);
+            sleepRow.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+            btn.classList.add('on');
+            clearTimeout(sleepTimerId);
+            if(sleepMinutes > 0){
+                sleepTimerId = setTimeout(function(){
+                    stopPlayback();
+                    toast('تایمر خواب فعال شد؛ پخش متوقف شد');
+                    sleepRow.querySelector('[data-min="0"]').click();
+                }, sleepMinutes * 60 * 1000);
+                toast('تایمر خواب برای ' + toFa(sleepMinutes) + ' دقیقه تنظیم شد');
+            }
+        });
+    });
+
+    /* ============================================================
+       ۱۵) نصب PWA
+    ============================================================ */
+    var deferredPrompt = null;
+    function isIos(){ return /iphone|ipad|ipod/i.test(window.navigator.userAgent) && !window.MSStream; }
+    function isStandalone(){ return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
+    function notHosted(){
+        var isSecureWeb = location.protocol === 'https:';
+        var isLocalhostHttp = location.protocol === 'http:' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1');
+        return !isSecureWeb && !isLocalhostHttp;
+    }
+    if(isStandalone()) installBtn.hidden = true;
+
+    window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferredPrompt = e; });
+    window.addEventListener('appinstalled', function(){ installBtn.hidden = true; deferredPrompt = null; });
+
+    function setInstallHelp(title, stepsHtml, note){
+        installBoxTitle.textContent = title; installBoxSteps.innerHTML = stepsHtml; installBoxNote.textContent = note || '';
+    }
+    installBtn.addEventListener('click', function(){
+        if(deferredPrompt){ deferredPrompt.prompt(); deferredPrompt.userChoice['finally'](function(){ deferredPrompt = null; }); return; }
+        if(notHosted()){
+            setInstallHelp('اول باید فایل را میزبانی کنید',
+                '<li>الان این صفحه مستقیم از روی گوشی (بدون آدرس اینترنتی https) باز شده؛ در این حالت هیچ مرورگری اجازه‌ی نصب واقعی نمی‌دهد.</li>' +
+                '<li>طبق فایل «راهنمای-نصب.md»، فایل‌ها را روی یک آدرس واقعی (مثلاً GitHub Pages رایگان) میزبانی کنید.</li>' +
+                '<li>سپس همان آدرس اینترنتی را با مرورگر گوشی باز کنید.</li>',
+                'به‌صورت موقت می‌توانید از منوی مرورگر «افزودن به صفحه اصلی» را برای ساخت یک میان‌بر ساده بزنید.');
+        } else if(isIos()){
+            setInstallHelp('نصب دیار پلیر روی آیفون',
+                '<li>روی آیکون <b>اشتراک‌گذاری</b> در نوار Safari بزنید.</li>' +
+                '<li>گزینه‌ی <b>«Add to Home Screen»</b> را انتخاب کنید.</li>' +
+                '<li>روی <b>«Add»</b> بزنید.</li>',
+                'این مراحل فقط در Safari کار می‌کند.');
         } else {
-            requestFs(videoStage);
+            setInstallHelp('نصب دستی برنامه',
+                '<li>روی منوی سه‌نقطه (⋮) بالای مرورگر بزنید.</li>' +
+                '<li>گزینه‌ی <b>«Install app»</b> یا <b>«Add to Home screen»</b> را انتخاب کنید.</li>' +
+                '<li>نصب را تأیید کنید.</li>',
+                'اگر این گزینه دیده نشد، صفحه را رفرش کرده و دوباره امتحان کنید.');
         }
+        installModal.classList.add('show');
     });
+    installModalClose.addEventListener('click', function(){ installModal.classList.remove('show'); });
+    installModal.addEventListener('click', function(e){ if(e.target === installModal) installModal.classList.remove('show'); });
 
-    /* ---------------- file adding ---------------- */
-    addFilesBtn.addEventListener('click', function(){ fileInput.click(); });
-    emptyAddBtn.addEventListener('click', function(){ fileInput.click(); });
-    fileInput.addEventListener('change', function(){
-        if(fileInput.files && fileInput.files.length) addFiles(fileInput.files);
-        fileInput.value = '';
-    });
+    if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+        window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js')['catch'](function(){}); });
+    }
 
-    shuffleAllBtn.addEventListener('click', function(){
-        if(!queue.length) return;
-        shuffleOn = true;
-        shuffleBtn.classList.add('on');
-        shuffleAllBtn.classList.add('active');
-        playIndex(Math.floor(Math.random() * queue.length));
-    });
-
-    clearBtn.addEventListener('click', function(){
-        if(queue.length && confirm('فهرست پخش پاک شود؟')) clearQueue();
-    });
-
-    searchInput.addEventListener('input', function(){ renderQueue(searchInput.value); });
-
-    /* ---------------- drag & drop ---------------- */
-    var dragCounter = 0;
-    window.addEventListener('dragenter', function(e){
-        e.preventDefault();
-        dragCounter++;
-        dropOverlay.classList.add('show');
-    });
-    window.addEventListener('dragover', function(e){ e.preventDefault(); });
-    window.addEventListener('dragleave', function(e){
-        dragCounter--;
-        if(dragCounter <= 0){ dragCounter = 0; dropOverlay.classList.remove('show'); }
-    });
-    window.addEventListener('drop', function(e){
-        e.preventDefault();
-        dragCounter = 0;
-        dropOverlay.classList.remove('show');
-        if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length){
-            addFiles(e.dataTransfer.files);
-        }
-    });
-
-    /* ---------------- mobile sidebar ---------------- */
-    menuToggle.addEventListener('click', function(){
-        sidebar.classList.toggle('open');
-        sidebarBackdrop.classList.toggle('show');
-    });
-    sidebarBackdrop.addEventListener('click', function(){
-        sidebar.classList.remove('open');
-        sidebarBackdrop.classList.remove('show');
-    });
-
-    /* ---------------- keyboard shortcuts ---------------- */
+    /* ============================================================
+       ۱۶) میانبرهای صفحه‌کلید
+    ============================================================ */
     window.addEventListener('keydown', function(e){
         var tag = (e.target.tagName || '').toLowerCase();
         if(tag === 'input' || tag === 'textarea') return;
@@ -1134,64 +1875,31 @@
         else if(e.code === 'ArrowLeft'){ var m2 = activeMedia(); if(m2) m2.currentTime = Math.max(0, m2.currentTime - 5); }
         else if(e.code === 'ArrowUp'){ e.preventDefault(); volumeBar.value = Math.min(1, parseFloat(volumeBar.value) + 0.05); volumeBar.dispatchEvent(new Event('input')); }
         else if(e.code === 'ArrowDown'){ e.preventDefault(); volumeBar.value = Math.max(0, parseFloat(volumeBar.value) - 0.05); volumeBar.dispatchEvent(new Event('input')); }
+        else if(e.key === 'Escape'){ nowOverlay.classList.remove('show'); closePanel(queuePanel); closePanel(eqPanel); }
     });
 
-    /* ---------------- PWA: نصب روی گوشی ---------------- */
-    var installBtn      = $('installBtn');
-    var installModal      = $('installModal');
-    var installModalClose = $('installModalClose');
-    var deferredPrompt    = null;
-
-    function isIos(){
-        return /iphone|ipad|ipod/i.test(window.navigator.userAgent) && !window.MSStream;
-    }
-    function isStandalone(){
-        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-    }
-
-    if(!isStandalone()){
-        if(isIos()){
-            installBtn.hidden = false;
-            installBtn.addEventListener('click', function(){
-                installModal.classList.add('show');
-            });
-        } else {
-            window.addEventListener('beforeinstallprompt', function(e){
-                e.preventDefault();
-                deferredPrompt = e;
-                installBtn.hidden = false;
-            });
-            installBtn.addEventListener('click', function(){
-                if(!deferredPrompt) return;
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.finally(function(){ deferredPrompt = null; });
-            });
-        }
-    }
-
-    window.addEventListener('appinstalled', function(){
-        installBtn.hidden = true;
+    /* ============================================================
+       ۱۷) راه‌اندازی اولیه
+    ============================================================ */
+    initStorage().then(loadAll).then(function(){
+        if(!USE_IDB) storageBanner.classList.add('show');
+        audioEl.volume = settings.volume; videoStage.volume = settings.volume; volumeBar.value = settings.volume;
+        playbackRate = settings.speed || 1;
+        audioEl.playbackRate = playbackRate; videoStage.playbackRate = playbackRate;
+        var sBtn = speedRow.querySelector('[data-speed="' + playbackRate + '"]');
+        if(sBtn){ speedRow.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); }); sBtn.classList.add('on'); }
+        speedBtn.textContent = toFa(playbackRate) + 'x';
+        updateShuffleUI();
+        repeatBtn.classList.toggle('on', repeatMode !== 'off');
+        syncEqUI();
+        updateMuteIcon();
+        renderPlaylists();
+        renderView();
+        resizeCanvas();
+        drawVisualizer();
     });
-
-    installModalClose.addEventListener('click', function(){ installModal.classList.remove('show'); });
-    installModal.addEventListener('click', function(e){
-        if(e.target === installModal) installModal.classList.remove('show');
-    });
-
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js');
-        });
-    }
-
-    /* ---------------- init ---------------- */
-    audioEl.volume = 0.9;
-    videoStage.volume = 0.9;
-    resizeCanvas();
-    drawVisualizer();
-    updateMuteIcon();
 })();
 </script>
 
 </body>
-                                                               </html>
+</html>
