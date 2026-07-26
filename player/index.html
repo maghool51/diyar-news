@@ -11,9 +11,10 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="دیار پلیر">
-<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
 <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32.png">
 
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -453,7 +454,7 @@
     <!-- ===== TOPBAR ===== -->
     <header class="topbar">
         <div class="brand">
-            <img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="لوگو دیار قدمگاه" onerror="this.style.display='none'">
+            <img src="./logo.png" alt="لوگو دیار قدمگاه" onerror="this.style.display='none'">
             <div class="names">
                 <b>دیار پلیر</b>
                 <span>کتابخانه رسانه شخصی شما</span>
@@ -576,7 +577,7 @@
         <div class="art-wrap" id="artWrap">
             <canvas id="visualizer"></canvas>
             <div class="disc" id="disc">
-                <img id="discImg" src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="" style="width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);" onerror="this.style.display='none'">
+                <img id="discImg" src="./logo.png" alt="" style="width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);" onerror="this.style.display='none'">
             </div>
         </div>
         <video id="videoStage" playsinline></video>
@@ -1490,7 +1491,7 @@
             audioEl.play();
             typeLabel.textContent = 'در حال پخش صوت';
             miniThumb.innerHTML = miniThumbHtml;
-            if(discImg) discImg.src = track.coverUrl || 'https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png';
+            if(discImg) discImg.src = track.coverUrl || './logo.png';
         }
 
         trackTitle.textContent = track.name;
@@ -1511,7 +1512,7 @@
         miniThumb.innerHTML = miniThumbHtml;
         if(track.type !== 'video'){
             var discImg = $('discImg');
-            if(discImg) discImg.src = track.coverUrl || 'https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png';
+            if(discImg) discImg.src = track.coverUrl || './logo.png';
         }
         if(track.artist){ trackSub.textContent = track.artist; miniSub.textContent = track.artist; }
     }

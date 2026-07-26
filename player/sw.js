@@ -1,9 +1,15 @@
 // سرویس‌ورکر دیار پلیر — کش کردن پوسته‌ی برنامه برای بازکردن سریع‌تر و کار نیمه‌آفلاین
-const CACHE_NAME = 'diyar-player-v4';
+const CACHE_NAME = 'diyar-player-v8';
 const APP_SHELL = [
     './',
     './index.html',
-    './manifest.json'
+    './manifest.json',
+    './icons/icon-192.png',
+    './icons/icon-512.png',
+    './icons/icon-512-maskable.png',
+    './icons/icon-180.png',
+    './icons/icon-32.png',
+    './logo.png'
 ];
 
 self.addEventListener('install', function(event){
