@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+<title>دیار پلیر | پخش‌کننده رسانه دیار قدمگاه</title>
+
+<!-- ===== PWA: نصب روی گوشی ===== -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b3d2e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="دیار پلیر">
+<link rel="apple-touch-icon" href="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png">
+<link rel="icon" href="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png">
+
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    :root{
+        --void:#040f0b;
+        --panel:#0a2018;
+        --panel-2:#0e281e;
+        --panel-3:#123326;
+        --primary:#0b3d2e;
+        --primary-light:#1c6b4c;
+        --gold:#f0c040;
+        --gold-soft:#ffe082;
+        --gold-dim:#a9822f;
+        --text:#f2eee1;
+        --text-dim:#93a89f;
+        --line:rgba(240,192,64,0.12);
+        --danger:#e0555a;
+        --radius-lg:22px;
+        --radius-md:14px;
+        --sidebar-w:300px;
+        --player-h:92px;
+        --topbar-h:64px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+    ::selection{background:var(--gold);color:#12200f;}
+    html,body{
+        height:100%;
+        overflow-x:hidden;
+        width:100%;
+        max-width:100%;
+    }
+    body{
+        font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+        background:
+            radial-gradient(circle at 15% 8%, rgba(240,192,64,0.06), transparent 40%),
+            radial-gradient(circle at 90% 90%, rgba(28,107,76,0.20), transparent 45%),
+            var(--void);
+        color:var(--text);
+        overflow:hidden;
+        position:fixed;
+        inset:0;
+        width:100%;
+    }
+    button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer;}
+    input{font-family:inherit;}
+    ::-webkit-scrollbar{width:7px;height:7px;}
+    ::-webkit-scrollbar-thumb{background:rgba(240,192,64,0.28);border-radius:10px;}
+    ::-webkit-scrollbar-thumb:hover{background:rgba(240,192,64,0.5);}
+
+    .app{
+        display:flex;flex-direction:column;
+        height:100vh;
+        height:calc(var(--vh, 1vh) * 100);
+        height:100dvh;
+        width:100%;
+        max-width:100vw;
+        overflow:hidden;
+        padding-bottom:env(safe-area-inset-bottom);
+    }
+
+    /* ===================== TOPBAR ===================== */
+    .topbar{
+        height:var(--topbar-h);flex:0 0 auto;
+        display:flex;align-items:center;justify-content:space-between;
+        padding:0 22px;
+        background:linear-gradient(180deg, rgba(10,32,24,.95), rgba(10,32,24,.75));
+        border-bottom:1px solid var(--line);
+        backdrop-filter:blur(6px);
+        z-index:40;
+    }
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand img{
+        width:38px;height:38px;border-radius:50%;object-fit:cover;
+        border:2px solid var(--gold);box-shadow:0 0 14px rgba(240,192,64,.35);
+    }
+    .brand .names{display:flex;flex-direction:column;line-height:1.3;}
+    .brand .names b{font-size:15px;letter-spacing:.3px;color:var(--gold-soft);}
+    .brand .names span{font-size:11px;color:var(--text-dim);}
+    #menuToggle{
+        display:none;width:38px;height:38px;border-radius:10px;
+        align-items:center;justify-content:center;font-size:16px;
+        background:var(--panel-2);
+    }
+    .topbar-actions{display:flex;align-items:center;gap:10px;}
+    .install-btn{
+        padding:9px 16px;font-size:12.5px;white-space:nowrap;
+        animation:installPulse 2.4s ease-in-out infinite;
+    }
+    @keyframes installPulse{
+        0%,100%{box-shadow:0 4px 14px rgba(240,192,64,.25);}
+        50%{box-shadow:0 4px 22px rgba(240,192,64,.55);}
+    }
+
+    .install-modal{
+        position:fixed;inset:0;z-index:300;background:rgba(4,15,11,.82);
+        display:none;align-items:center;justify-content:center;padding:20px;
+        backdrop-filter:blur(4px);
+    }
+    .install-modal.show{display:flex;}
+    .install-box{
+        position:relative;max-width:360px;width:100%;
+        background:linear-gradient(180deg,var(--panel-2),var(--panel));
+        border:1px solid var(--line);border-radius:var(--radius-lg);
+        padding:28px 24px 22px;text-align:center;
+        box-shadow:0 20px 60px rgba(0,0,0,.5);
+    }
+    .install-box .emblem{
+        border-radius:50%;
+        background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);
+        border:3px solid var(--gold-dim);
+        display:flex;align-items:center;justify-content:center;color:var(--gold-soft);
+    }
+    .install-box h3{color:var(--gold-soft);font-size:16.5px;margin-bottom:14px;}
+    .install-box ol{text-align:right;font-size:13.5px;color:var(--text);line-height:2;padding-right:18px;margin-bottom:14px;}
+    .install-box ol b{color:var(--gold-soft);}
+    .install-box .note-small{font-size:11.5px;color:var(--text-dim);}
+    .install-close{
+        position:absolute;top:12px;left:12px;width:30px;height:30px;border-radius:50%;
+        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
+        color:var(--text-dim);font-size:13px;
+    }
+    .install-close:hover{color:var(--gold-soft);}
+    @media(max-width:420px){
+        .install-btn span{display:none;}
+        .brand .names span{display:none;}
+    }
+
+    /* ===================== BODY GRID ===================== */
+    .body-grid{
+        flex:1 1 auto;display:flex;min-height:0;min-width:0;overflow:hidden;position:relative;
+    }
+
+    /* ---------- SIDEBAR ---------- */
+    .sidebar{
+        width:var(--sidebar-w);flex:0 0 auto;
+        background:linear-gradient(180deg,var(--panel),var(--panel-2));
+        border-left:1px solid var(--line);
+        display:flex;flex-direction:column;min-height:0;height:100%;
+        transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+        z-index:35;
+    }
+    .sidebar-head{padding:16px 16px 10px;display:flex;gap:8px;align-items:center;}
+    .btn-gold{
+        flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+        background:linear-gradient(135deg,var(--gold),#d9a52c);
+        color:#1c1400;font-weight:700;font-size:13.5px;
+        padding:10px 14px;border-radius:30px;
+        transition:.25s;box-shadow:0 4px 14px rgba(240,192,64,.25);
+    }
+    .btn-gold:hover{filter:brightness(1.08);transform:translateY(-1px);}
+    .icon-btn{
+        width:40px;height:40px;border-radius:12px;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;font-size:14px;
+        color:var(--text-dim);transition:.2s;flex:0 0 auto;
+    }
+    .icon-btn:hover{color:var(--gold-soft);background:#173727;}
+    .icon-btn.active{color:var(--gold);background:rgba(240,192,64,.14);}
+
+    .search-box{
+        margin:12px 16px;position:relative;
+    }
+    .search-box i{position:absolute;top:50%;right:14px;transform:translateY(-50%);color:var(--text-dim);font-size:12px;}
+    .search-box input{
+        width:100%;background:var(--panel-3);border:1px solid transparent;
+        color:var(--text);padding:9px 36px 9px 14px;border-radius:20px;font-size:13px;
+        transition:.2s;
+    }
+    .search-box input:focus{outline:none;border-color:var(--gold-dim);background:#14392a;}
+
+    .queue-meta{
+        padding:0 18px 8px;display:flex;justify-content:space-between;align-items:baseline;
+        font-size:11.5px;color:var(--text-dim);
+    }
+    .queue-meta b{color:var(--gold-soft);font-size:12.5px;}
+
+    .queue-list{flex:1;overflow-y:auto;padding:2px 10px 16px;}
+    .queue-item{
+        display:flex;align-items:center;gap:10px;
+        padding:9px 10px;border-radius:12px;cursor:pointer;
+        transition:.18s;position:relative;
+    }
+    .queue-item:hover{background:rgba(240,192,64,.08);}
+    .queue-item.playing{background:linear-gradient(90deg, rgba(240,192,64,.16), transparent);}
+    .queue-item .idx{
+        width:26px;flex:0 0 auto;text-align:center;font-size:12px;color:var(--text-dim);
+    }
+    .queue-item.playing .idx{color:var(--gold);}
+    .queue-item .thumb{
+        width:34px;height:34px;border-radius:8px;flex:0 0 auto;
+        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
+        font-size:12px;color:var(--gold-dim);overflow:hidden;
+    }
+    .queue-item .thumb i{opacity:.85;}
+    .queue-item .info{flex:1;min-width:0;}
+    .queue-item .info .t{
+        font-size:13px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .queue-item.playing .info .t{color:var(--gold-soft);font-weight:600;}
+    .queue-item .info .s{font-size:11px;color:var(--text-dim);}
+    .queue-item .dur{font-size:11px;color:var(--text-dim);flex:0 0 auto;}
+    .queue-item .rm{
+        flex:0 0 auto;width:24px;height:24px;border-radius:8px;
+        display:flex;align-items:center;justify-content:center;font-size:11px;
+        color:var(--text-dim);opacity:0;transition:.15s;
+    }
+    .queue-item:hover .rm{opacity:1;}
+    .queue-item .rm:hover{color:var(--danger);background:rgba(224,85,90,.12);}
+    .eq-bars{display:flex;align-items:flex-end;gap:2px;width:16px;height:14px;}
+    .eq-bars i{display:block;width:3px;background:var(--gold);border-radius:2px;animation:eqBounce 0.9s ease-in-out infinite;}
+    .eq-bars i:nth-child(2){animation-delay:.2s;}
+    .eq-bars i:nth-child(3){animation-delay:.4s;}
+    @keyframes eqBounce{0%,100%{height:4px;}50%{height:14px;}}
+
+    .empty-queue{
+        text-align:center;color:var(--text-dim);font-size:12.5px;
+        padding:34px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;
+    }
+    .empty-queue i{font-size:26px;color:var(--gold-dim);}
+
+    /* ---------- STAGE ---------- */
+    .stage{
+        flex:1;min-width:0;min-height:0;position:relative;
+        display:flex;align-items:center;justify-content:center;
+        padding:26px;overflow-y:auto;overflow-x:hidden;
+        -webkit-overflow-scrolling:touch;
+    }
+    .stage-bg-art{
+        position:absolute;inset:0;
+        background-image:
+            radial-gradient(ellipse at 50% 15%, rgba(240,192,64,0.10), transparent 55%),
+            repeating-linear-gradient(180deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);
+        pointer-events:none;
+    }
+    .dome-skyline{
+        position:absolute;bottom:0;right:0;left:0;height:120px;opacity:.16;pointer-events:none;
+    }
+
+    .empty-state{
+        text-align:center;color:var(--text-dim);max-width:380px;position:relative;z-index:2;
+    }
+    .empty-state .emblem{
+        width:96px;height:96px;margin:0 auto 20px;border-radius:50%;
+        background:radial-gradient(circle at 35% 30%, var(--primary-light), var(--primary) 70%);
+        border:3px solid var(--gold-dim);
+        display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--gold-soft);
+        box-shadow:0 0 40px rgba(240,192,64,.12);
+    }
+    .empty-state h2{color:var(--gold-soft);font-size:19px;margin-bottom:8px;}
+    .empty-state p{font-size:13.5px;line-height:1.9;margin-bottom:18px;}
+
+    .now-playing{
+        position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+        gap:22px;width:100%;max-width:520px;
+    }
+    .art-wrap{
+        position:relative;width:280px;height:280px;flex:0 0 auto;
+        display:flex;align-items:center;justify-content:center;
+    }
+    #visualizer{position:absolute;inset:0;width:100%;height:100%;}
+    .disc{
+        width:186px;height:186px;border-radius:50%;position:relative;z-index:2;
+        background:
+            radial-gradient(circle at 50% 50%, var(--panel-3) 0 30px, transparent 31px),
+            repeating-radial-gradient(circle at 50% 50%, #12271d 0px, #12271d 2px, #0d2018 3px, #0d2018 5px);
+        border:6px solid #0a1a13;
+        box-shadow:0 12px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(240,192,64,.15);
+        display:flex;align-items:center;justify-content:center;
+        transition:transform .3s;
+    }
+    .disc.spin{animation:discSpin 7s linear infinite;}
+    @keyframes discSpin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
+    .disc img{
+        width:78px;height:78px;border-radius:50%;object-fit:cover;
+        border:3px solid var(--gold);
+    }
+    .disc::after{
+        content:"";position:absolute;width:14px;height:14px;border-radius:50%;
+        background:var(--void);border:2px solid var(--gold-dim);
+    }
+
+    #videoStage{
+        width:100%;max-height:52vh;border-radius:var(--radius-lg);
+        background:#000;box-shadow:0 18px 50px rgba(0,0,0,.55);display:none;
+        border:1px solid var(--line);
+    }
+
+    .track-meta{text-align:center;}
+    .track-meta .eyebrow{
+        font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px;
+    }
+    .track-meta h2{
+        font-size:21px;color:var(--text);font-weight:700;margin-bottom:6px;
+        max-width:440px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+    }
+    .track-meta .sub{font-size:13px;color:var(--text-dim);}
+
+    /* ===================== PLAYER BAR ===================== */
+    .player-bar{
+        height:var(--player-h);flex:0 0 auto;
+        display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;
+        gap:16px;padding:0 22px;
+        background:linear-gradient(0deg, rgba(6,20,15,.97), rgba(10,32,24,.9));
+        border-top:1px solid var(--line);
+        z-index:40;
+    }
+    .pb-left{display:flex;align-items:center;gap:12px;min-width:0;}
+    .pb-left .mini-thumb{
+        width:48px;height:48px;border-radius:10px;flex:0 0 auto;overflow:hidden;
+        background:var(--panel-3);display:flex;align-items:center;justify-content:center;
+        color:var(--gold-dim);font-size:16px;
+    }
+    .pb-left .mini-thumb img{width:100%;height:100%;object-fit:cover;}
+    .pb-left .mini-info{min-width:0;}
+    .pb-left .mini-info .t{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px;}
+    .pb-left .mini-info .s{font-size:11px;color:var(--text-dim);}
+
+    .pb-center{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;}
+    .pb-controls{display:flex;align-items:center;gap:18px;}
+    .pb-controls button{font-size:15px;color:var(--text-dim);transition:.2s;}
+    .pb-controls button:hover{color:var(--gold-soft);}
+    .pb-controls button.on{color:var(--gold);}
+    .play-main{
+        width:42px;height:42px;border-radius:50%;
+        background:var(--gold);color:#12200f;font-size:15px;
+        display:flex;align-items:center;justify-content:center;
+        box-shadow:0 4px 16px rgba(240,192,64,.35);transition:.2s;
+    }
+    .play-main:hover{transform:scale(1.06);}
+    .pb-seek{display:flex;align-items:center;gap:10px;width:100%;max-width:520px;}
+    .pb-seek span{font-size:11px;color:var(--text-dim);min-width:34px;text-align:center;}
+
+    input[type=range]{
+        -webkit-appearance:none;appearance:none;height:4px;border-radius:4px;
+        background:var(--panel-3);flex:1;cursor:pointer;
+    }
+    input[type=range]::-webkit-slider-thumb{
+        -webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--gold);
+        box-shadow:0 0 8px rgba(240,192,64,.5);
+        transition:.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);}
+    input[type=range]::-moz-range-thumb{
+        width:13px;height:13px;border-radius:50%;background:var(--gold);border:none;
+    }
+    #seekBar{ }
+    #seekBar::-webkit-slider-runnable-track{
+        background:linear-gradient(90deg, var(--gold) var(--fill,0%), var(--panel-3) 0);
+        height:4px;border-radius:4px;
+    }
+
+    .pb-right{display:flex;align-items:center;gap:12px;justify-self:end;}
+    .pb-right #volumeBar{width:90px;}
+    .pb-right button{font-size:14px;color:var(--text-dim);}
+    .pb-right button:hover{color:var(--gold-soft);}
+
+    /* ---------- drop overlay ---------- */
+    .drop-overlay{
+        position:fixed;inset:0;z-index:200;
+        background:rgba(4,15,11,.88);
+        display:none;align-items:center;justify-content:center;
+        border:3px dashed var(--gold);
+        margin:14px;border-radius:24px;
+    }
+    .drop-overlay.show{display:flex;}
+    .drop-overlay .box{text-align:center;color:var(--gold-soft);}
+    .drop-overlay .box i{font-size:44px;margin-bottom:14px;display:block;}
+
+    .sidebar-backdrop{
+        position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;display:none;
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media(max-width:860px){
+        :root{--sidebar-w:260px;}
+        .track-meta h2{max-width:280px;font-size:18px;}
+        .art-wrap{width:220px;height:220px;}
+        .disc{width:150px;height:150px;}
+    }
+    @media(max-width:680px){
+        #menuToggle{display:flex;}
+        .sidebar{
+            position:fixed;top:var(--topbar-h);bottom:0;right:0;width:280px;
+            transform:translateX(105%);box-shadow:-10px 0 30px rgba(0,0,0,.4);
+        }
+        .sidebar.open{transform:translateX(0);}
+        .sidebar.open ~ .sidebar-backdrop, .sidebar-backdrop.show{display:block;}
+        .player-bar{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;padding:10px 14px 12px;gap:8px;}
+        .pb-left{display:none;}
+        .pb-right{justify-self:center;}
+        .pb-seek{max-width:100%;}
+        .stage{padding:16px;}
+        .art-wrap{width:170px;height:170px;}
+        .disc{width:120px;height:120px;}
+        .disc img{width:56px;height:56px;}
+        .track-meta h2{font-size:15.5px;max-width:220px;}
+    }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+    <!-- ===== TOPBAR ===== -->
+    <header class="topbar">
+        <div class="brand">
+            <img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="لوگو دیار قدمگاه" onerror="this.style.display='none'">
+            <div class="names">
+                <b>دیار پلیر</b>
+                <span>پخش‌کننده رسانه دیار قدمگاه</span>
+            </div>
+        </div>
+        <div class="topbar-actions">
+            <button id="installBtn" class="btn-gold install-btn" hidden><i class="fas fa-download"></i> نصب اپ</button>
+            <button id="menuToggle" class="icon-btn" title="فهرست پخش"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- ===== راهنمای نصب برای آیفون/سافاری ===== -->
+    <div class="install-modal" id="installModal">
+        <div class="install-box">
+            <button class="install-close" id="installModalClose"><i class="fas fa-xmark"></i></button>
+            <div class="emblem" style="width:64px;height:64px;font-size:22px;margin:0 auto 14px;"><i class="fas fa-mobile-screen"></i></div>
+            <h3>نصب دیار پلیر روی آیفون</h3>
+            <ol>
+                <li>در نوار پایین صفحه‌ی Safari، روی آیکون <b>اشتراک‌گذاری</b> <i class="fas fa-arrow-up-from-bracket"></i> بزنید.</li>
+                <li>گزینه‌ی <b>«Add to Home Screen»</b> (افزودن به صفحه اصلی) را انتخاب کنید.</li>
+                <li>روی <b>«Add»</b> بزنید. آیکون دیار پلیر روی صفحه اصلی گوشی شما اضافه می‌شود.</li>
+            </ol>
+            <div class="note-small">این راهنما فقط برای مرورگر Safari روی آیفون/آیپد کار می‌کند.</div>
+        </div>
+    </div>
+    <div class="body-grid">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-head">
+                <button class="btn-gold" id="addFilesBtn"><i class="fas fa-folder-open"></i> افزودن فایل</button>
+                <button class="icon-btn" id="shuffleAllBtn" title="پخش تصادفی همه"><i class="fas fa-shuffle"></i></button>
+                <button class="icon-btn" id="clearBtn" title="پاک کردن فهرست"><i class="fas fa-trash"></i></button>
+            </div>
+            <input type="file" id="fileInput" accept="audio/*,video/*" multiple hidden>
+
+            <div class="search-box">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="جستجو در فهرست پخش...">
+            </div>
+
+            <div class="queue-meta">
+                <b id="queueCount">۰ فایل</b>
+                <span id="queueDuration">۰:۰۰</span>
+            </div>
+
+            <div class="queue-list" id="queueList">
+                <div class="empty-queue" id="emptyQueue">
+                    <i class="fas fa-music"></i>
+                    هنوز فایلی اضافه نشده.<br>از دکمه‌ی «افزودن فایل» یا کشیدن‌ورهاکردن استفاده کنید.
+                </div>
+            </div>
+        </aside>
+
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+        <!-- ===== STAGE ===== -->
+        <main class="stage" id="stage">
+            <div class="stage-bg-art"></div>
+
+            <svg class="dome-skyline" viewBox="0 0 800 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,120 L0,95 L60,95 L60,75 A40,40 0 0,1 140,75 L140,95 L220,95 L220,60 L232,60 L232,40 L244,60 L256,60 L256,95 L400,95 L400,70 A60,60 0 0,1 520,70 L520,95 L640,95 L640,80 A30,30 0 0,1 700,80 L700,95 L800,95 L800,120 Z" fill="#f0c040"></path>
+            </svg>
+
+            <div class="empty-state" id="emptyState">
+                <div class="emblem"><i class="fas fa-mosque"></i></div>
+                <h2>پخش رسانه آماده است</h2>
+                <p>فایل‌های صوتی یا تصویری روی دستگاه خود را انتخاب کنید تا اینجا پخش شوند. هیچ فایلی به سرور ارسال نمی‌شود؛ همه‌چیز فقط روی مرورگر خودتان اجرا می‌شود.</p>
+                <button class="btn-gold" id="emptyAddBtn" style="display:inline-flex;padding:11px 26px;"><i class="fas fa-folder-open"></i> انتخاب فایل</button>
+            </div>
+
+            <div class="now-playing" id="nowPlaying" hidden>
+                <div class="art-wrap" id="artWrap">
+                    <canvas id="visualizer"></canvas>
+                    <div class="disc" id="disc">
+                        <img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" alt="" onerror="this.style.display='none'">
+                    </div>
+                </div>
+                <video id="videoStage" playsinline></video>
+                <div class="track-meta">
+                    <div class="eyebrow" id="typeLabel">در حال پخش</div>
+                    <h2 id="trackTitle">—</h2>
+                    <div class="sub" id="trackSub">—</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== PLAYER BAR ===== -->
+    <footer class="player-bar">
+        <div class="pb-left">
+            <div class="mini-thumb" id="miniThumb"><i class="fas fa-music"></i></div>
+            <div class="mini-info">
+                <div class="t" id="miniTitle">هیچ فایلی پخش نمی‌شود</div>
+                <div class="s" id="miniSub">فایلی اضافه کنید</div>
+            </div>
+        </div>
+
+        <div class="pb-center">
+            <div class="pb-controls">
+                <button id="shuffleBtn" title="پخش تصادفی"><i class="fas fa-shuffle"></i></button>
+                <button id="prevBtn" title="قبلی"><i class="fas fa-backward-step"></i></button>
+                <button id="playBtn" class="play-main" title="پخش/توقف"><i class="fas fa-play"></i></button>
+                <button id="nextBtn" title="بعدی"><i class="fas fa-forward-step"></i></button>
+                <button id="repeatBtn" title="تکرار"><i class="fas fa-repeat"></i></button>
+            </div>
+            <div class="pb-seek">
+                <span id="curTime">۰:۰۰</span>
+                <input type="range" id="seekBar" min="0" max="100" value="0" step="0.1">
+                <span id="durTime">۰:۰۰</span>
+            </div>
+        </div>
+
+        <div class="pb-right">
+            <button id="fullscreenBtn" title="تمام‌صفحه (ویدیو)"><i class="fas fa-expand"></i></button>
+            <button id="muteBtn" title="بی‌صدا"><i class="fas fa-volume-high"></i></button>
+            <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.9">
+        </div>
+    </footer>
+</div>
+
+<audio id="audioEl" preload="auto"></audio>
+
+<div class="drop-overlay" id="dropOverlay">
+    <div class="box">
+        <i class="fas fa-cloud-arrow-down"></i>
+        فایل را رها کنید تا به فهرست پخش اضافه شود
+    </div>
+</div>
+
+<script>
+(function(){
+    'use strict';
+
+    /* ---------------- mobile viewport height fix ---------------- */
+    function setVh(){
+        document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+    }
+    setVh();
+    window.addEventListener('resize', setVh);
+    window.addEventListener('orientationchange', function(){ setTimeout(setVh, 200); });
+
+    /* ---------------- state ---------------- */
+    var queue = [];              // {id,name,sub,file,url,type,duration,el(temp)}
+    var currentIndex = -1;
+    var isPlaying = false;
+    var shuffleOn = false;
+    var repeatMode = 'off';      // off | all | one
+    var shuffleHistory = [];
+    var rafId = null;
+
+    /* ---------------- elements ---------------- */
+    var $ = function(id){ return document.getElementById(id); };
+
+    var fileInput      = $('fileInput');
+    var addFilesBtn     = $('addFilesBtn');
+    var emptyAddBtn     = $('emptyAddBtn');
+    var shuffleAllBtn   = $('shuffleAllBtn');
+    var clearBtn        = $('clearBtn');
+    var searchInput     = $('searchInput');
+    var queueList       = $('queueList');
+    var emptyQueue      = $('emptyQueue');
+    var queueCountEl    = $('queueCount');
+    var queueDurationEl = $('queueDuration');
+
+    var stage        = $('stage');
+    var emptyState    = $('emptyState');
+    var nowPlaying    = $('nowPlaying');
+    var artWrap       = $('artWrap');
+    var disc          = $('disc');
+    var canvas        = $('visualizer');
+    var videoStage    = $('videoStage');
+    var typeLabel     = $('typeLabel');
+    var trackTitle    = $('trackTitle');
+    var trackSub      = $('trackSub');
+
+    var audioEl       = $('audioEl');
+
+    var playBtn       = $('playBtn');
+    var prevBtn       = $('prevBtn');
+    var nextBtn       = $('nextBtn');
+    var shuffleBtn    = $('shuffleBtn');
+    var repeatBtn     = $('repeatBtn');
+    var seekBar       = $('seekBar');
+    var curTimeEl     = $('curTime');
+    var durTimeEl     = $('durTime');
+    var volumeBar     = $('volumeBar');
+    var muteBtn       = $('muteBtn');
+    var fullscreenBtn = $('fullscreenBtn');
+
+    var miniThumb  = $('miniThumb');
+    var miniTitle  = $('miniTitle');
+    var miniSub    = $('miniSub');
+
+    var menuToggle      = $('menuToggle');
+    var sidebar          = $('sidebar');
+    var sidebarBackdrop  = $('sidebarBackdrop');
+
+    var dropOverlay = $('dropOverlay');
+
+    var ctx = canvas.getContext('2d');
+
+    /* ---------------- persian digit helper ---------------- */
+    var faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+    function toFa(str){
+        return String(str).replace(/[0-9]/g, function(d){ return faDigits[d]; });
+    }
+    function fmtTime(sec){
+        if(!isFinite(sec) || sec == null || sec < 0) sec = 0;
+        var m = Math.floor(sec/60);
+        var s = Math.floor(sec%60);
+        return toFa(m + ':' + (s<10?'0':'') + s);
+    }
+
+    /* ---------------- audio graph (visualizer) ---------------- */
+    var audioCtxObj = null, analyser = null, dataArray = null, sourceNode = null;
+    function ensureAudioGraph(){
+        if(audioCtxObj) return;
+        try{
+            var AC = window.AudioContext || window.webkitAudioContext;
+            audioCtxObj = new AC();
+            analyser = audioCtxObj.createAnalyser();
+            analyser.fftSize = 128;
+            dataArray = new Uint8Array(analyser.frequencyBinCount);
+            sourceNode = audioCtxObj.createMediaElementSource(audioEl);
+            sourceNode.connect(analyser);
+            analyser.connect(audioCtxObj.destination);
+        }catch(e){
+            analyser = null;
+        }
+    }
+
+    function resizeCanvas(){
+        var rect = artWrap.getBoundingClientRect();
+        canvas.width = rect.width * devicePixelRatio;
+        canvas.height = rect.height * devicePixelRatio;
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    function drawVisualizer(){
+        rafId = requestAnimationFrame(drawVisualizer);
+        var w = canvas.width, h = canvas.height;
+        ctx.clearRect(0,0,w,h);
+        var cx = w/2, cy = h/2;
+        var baseR = Math.min(w,h) * 0.30;
+
+        if(analyser && isPlaying && queue[currentIndex] && queue[currentIndex].type === 'audio'){
+            analyser.getByteFrequencyData(dataArray);
+            var bars = 48;
+            for(var i=0;i<bars;i++){
+                var val = dataArray[i % dataArray.length] / 255;
+                var angle = (i / bars) * Math.PI * 2;
+                var len = baseR * 0.22 + val * baseR * 0.62;
+                var x1 = cx + Math.cos(angle) * baseR;
+                var y1 = cy + Math.sin(angle) * baseR;
+                var x2 = cx + Math.cos(angle) * (baseR + len);
+                var y2 = cy + Math.sin(angle) * (baseR + len);
+                ctx.beginPath();
+                ctx.moveTo(x1,y1);
+                ctx.lineTo(x2,y2);
+                ctx.lineWidth = Math.max(2, w*0.006);
+                ctx.lineCap = 'round';
+                var grad = ctx.createLinearGradient(x1,y1,x2,y2);
+                grad.addColorStop(0, 'rgba(240,192,64,0.9)');
+                grad.addColorStop(1, 'rgba(255,224,130,0.15)');
+                ctx.strokeStyle = grad;
+                ctx.stroke();
+            }
+        } else {
+            // idle ring
+            ctx.beginPath();
+            ctx.arc(cx,cy,baseR,0,Math.PI*2);
+            ctx.lineWidth = Math.max(2, w*0.004);
+            ctx.strokeStyle = 'rgba(240,192,64,0.18)';
+            ctx.stroke();
+        }
+    }
+
+    /* ---------------- queue rendering ---------------- */
+    function updateQueueMeta(){
+        queueCountEl.textContent = toFa(queue.length) + (queue.length === 1 ? ' فایل' : ' فایل');
+        var total = queue.reduce(function(sum, it){ return sum + (it.duration || 0); }, 0);
+        queueDurationEl.textContent = fmtTime(total);
+    }
+
+    function renderQueue(filterText){
+        filterText = (filterText || '').trim().toLowerCase();
+        queueList.innerHTML = '';
+
+        var visibleItems = queue.filter(function(it){
+            return !filterText || it.name.toLowerCase().indexOf(filterText) !== -1;
+        });
+
+        if(queue.length === 0){
+            var ph = document.createElement('div');
+            ph.className = 'empty-queue';
+            ph.id = 'emptyQueue';
+            ph.innerHTML = '<i class="fas fa-music"></i>هنوز فایلی اضافه نشده.<br>از دکمه‌ی «افزودن فایل» یا کشیدن‌ورهاکردن استفاده کنید.';
+            queueList.appendChild(ph);
+            updateQueueMeta();
+            return;
+        }
+
+        if(visibleItems.length === 0){
+            var noRes = document.createElement('div');
+            noRes.className = 'empty-queue';
+            noRes.innerHTML = '<i class="fas fa-magnifying-glass"></i>نتیجه‌ای یافت نشد.';
+            queueList.appendChild(noRes);
+            updateQueueMeta();
+            return;
+        }
+
+        visibleItems.forEach(function(item){
+            var realIndex = queue.indexOf(item);
+            var row = document.createElement('div');
+            row.className = 'queue-item' + (realIndex === currentIndex ? ' playing' : '');
+            row.dataset.index = realIndex;
+
+            var idxHtml = (realIndex === currentIndex && isPlaying)
+                ? '<div class="eq-bars"><i></i><i></i><i></i></div>'
+                : toFa(realIndex + 1);
+
+            row.innerHTML =
+                '<div class="idx">' + idxHtml + '</div>' +
+                '<div class="thumb"><i class="fas ' + (item.type === 'video' ? 'fa-clapperboard' : 'fa-compact-disc') + '"></i></div>' +
+                '<div class="info">' +
+                    '<div class="t">' + escapeHtml(item.name) + '</div>' +
+                    '<div class="s">' + (item.type === 'video' ? 'ویدیو' : 'صوت') + '</div>' +
+                '</div>' +
+                '<div class="dur">' + fmtTime(item.duration) + '</div>' +
+                '<button class="rm" title="حذف"><i class="fas fa-xmark"></i></button>';
+
+            row.addEventListener('click', function(e){
+                if(e.target.closest('.rm')) return;
+                playIndex(realIndex);
+            });
+            row.querySelector('.rm').addEventListener('click', function(e){
+                e.stopPropagation();
+                removeIndex(realIndex);
+            });
+
+            queueList.appendChild(row);
+        });
+
+        updateQueueMeta();
+    }
+
+    function escapeHtml(str){
+        var d = document.createElement('div');
+        d.textContent = str;
+        return d.innerHTML;
+    }
+
+    /* ---------------- adding files ---------------- */
+    function cleanTitle(filename){
+        return filename.replace(/\.[^/.]+$/, '').replace(/[_\-]+/g, ' ').trim() || filename;
+    }
+
+    function addFiles(fileList){
+        var added = [];
+        Array.prototype.forEach.call(fileList, function(file){
+            var isAudio = file.type.indexOf('audio') === 0;
+            var isVideo = file.type.indexOf('video') === 0;
+            if(!isAudio && !isVideo){
+                // fallback by extension when mime type is empty
+                var ext = (file.name.split('.').pop() || '').toLowerCase();
+                var videoExts = ['mp4','webm','ogg','mov','mkv'];
+                var audioExts = ['mp3','wav','m4a','aac','flac','ogg'];
+                if(videoExts.indexOf(ext) !== -1) isVideo = true;
+                else if(audioExts.indexOf(ext) !== -1) isAudio = true;
+                else return;
+            }
+            var url = URL.createObjectURL(file);
+            var item = {
+                id: 'm' + Date.now() + Math.random().toString(36).slice(2),
+                name: cleanTitle(file.name),
+                file: file,
+                url: url,
+                type: isVideo ? 'video' : 'audio',
+                duration: null
+            };
+            queue.push(item);
+            added.push(item);
+            probeDuration(item);
+        });
+        if(added.length){
+            renderQueue(searchInput.value);
+            toggleEmptyState();
+        }
+    }
+
+    function probeDuration(item){
+        var probe = item.type === 'video' ? document.createElement('video') : document.createElement('audio');
+        probe.preload = 'metadata';
+        probe.src = item.url;
+        probe.addEventListener('loadedmetadata', function(){
+            item.duration = probe.duration;
+            renderQueue(searchInput.value);
+        });
+    }
+
+    function removeIndex(i){
+        var item = queue[i];
+        if(!item) return;
+        URL.revokeObjectURL(item.url);
+        var wasCurrent = (i === currentIndex);
+        queue.splice(i, 1);
+        if(i < currentIndex) currentIndex--;
+        else if(wasCurrent){
+            stopPlayback();
+            currentIndex = -1;
+        }
+        renderQueue(searchInput.value);
+        toggleEmptyState();
+    }
+
+    function clearQueue(){
+        stopPlayback();
+        queue.forEach(function(it){ URL.revokeObjectURL(it.url); });
+        queue = [];
+        currentIndex = -1;
+        renderQueue('');
+        toggleEmptyState();
+    }
+
+    function toggleEmptyState(){
+        var has = queue.length > 0;
+        if(!has){
+            emptyState.hidden = false;
+            nowPlaying.hidden = true;
+        }
+    }
+
+    /* ---------------- playback ---------------- */
+    function playIndex(i){
+        if(i < 0 || i >= queue.length) return;
+        ensureAudioGraph();
+        if(audioCtxObj && audioCtxObj.state === 'suspended') audioCtxObj.resume();
+
+        currentIndex = i;
+        var item = queue[i];
+
+        emptyState.hidden = true;
+        nowPlaying.hidden = false;
+
+        if(item.type === 'video'){
+            audioEl.pause();
+            videoStage.style.display = 'block';
+            artWrap.style.display = 'none';
+            videoStage.src = item.url;
+            videoStage.currentTime = 0;
+            videoStage.volume = audioEl.volume;
+            videoStage.play();
+            typeLabel.textContent = 'در حال پخش ویدیو';
+            miniThumb.innerHTML = '<i class="fas fa-clapperboard"></i>';
+        } else {
+            videoStage.pause();
+            videoStage.style.display = 'none';
+            artWrap.style.display = 'flex';
+            audioEl.src = item.url;
+            audioEl.currentTime = 0;
+            audioEl.play();
+            typeLabel.textContent = 'در حال پخش صوت';
+            miniThumb.innerHTML = '<img src="https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png" onerror="this.parentNode.innerHTML=\'<i class=&quot;fas fa-music&quot;></i>\'">';
+        }
+
+        trackTitle.textContent = item.name;
+        trackSub.textContent = item.type === 'video' ? 'فایل ویدیویی' : 'فایل صوتی';
+        miniTitle.textContent = item.name;
+        miniSub.textContent = item.type === 'video' ? 'ویدیو' : 'صوت';
+
+        renderQueue(searchInput.value);
+    }
+
+    function activeMedia(){
+        if(currentIndex === -1) return null;
+        var item = queue[currentIndex];
+        if(!item) return null;
+        return item.type === 'video' ? videoStage : audioEl;
+    }
+
+    function togglePlay(){
+        if(currentIndex === -1){
+            if(queue.length) playIndex(0);
+            return;
+        }
+        var media = activeMedia();
+        if(!media) return;
+        if(media.paused){
+            ensureAudioGraph();
+            if(audioCtxObj && audioCtxObj.state === 'suspended') audioCtxObj.resume();
+            media.play();
+        } else {
+            media.pause();
+        }
+    }
+
+    function stopPlayback(){
+        audioEl.pause();
+        videoStage.pause();
+        isPlaying = false;
+        updatePlayIcon();
+    }
+
+    function pickNextIndex(){
+        if(queue.length === 0) return -1;
+        if(shuffleOn){
+            if(queue.length === 1) return 0;
+            var next;
+            do{ next = Math.floor(Math.random() * queue.length); }while(next === currentIndex);
+            return next;
+        }
+        return (currentIndex + 1) % queue.length;
+    }
+    function pickPrevIndex(){
+        if(queue.length === 0) return -1;
+        if(shuffleOn){
+            if(queue.length === 1) return 0;
+            var prev;
+            do{ prev = Math.floor(Math.random() * queue.length); }while(prev === currentIndex);
+            return prev;
+        }
+        return (currentIndex - 1 + queue.length) % queue.length;
+    }
+
+    function goNext(){ var n = pickNextIndex(); if(n !== -1) playIndex(n); }
+    function goPrev(){ var p = pickPrevIndex(); if(p !== -1) playIndex(p); }
+
+    function onEnded(){
+        if(repeatMode === 'one'){
+            var media = activeMedia();
+            if(media){ media.currentTime = 0; media.play(); }
+            return;
+        }
+        if(repeatMode === 'off' && !shuffleOn && currentIndex === queue.length - 1){
+            stopPlayback();
+            return;
+        }
+        goNext();
+    }
+
+    /* ---------------- UI sync ---------------- */
+    function updatePlayIcon(){
+        var icon = playBtn.querySelector('i');
+        icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+        disc.classList.toggle('spin', isPlaying && queue[currentIndex] && queue[currentIndex].type === 'audio');
+        renderQueue(searchInput.value);
+    }
+
+    function updateSeek(media){
+        if(!media) return;
+        var dur = media.duration || (queue[currentIndex] ? queue[currentIndex].duration : 0) || 0;
+        var cur = media.currentTime || 0;
+        var pct = dur ? (cur/dur*100) : 0;
+        seekBar.value = pct;
+        seekBar.style.setProperty('--fill', pct + '%');
+        curTimeEl.textContent = fmtTime(cur);
+        durTimeEl.textContent = fmtTime(dur);
+    }
+
+    function wireMediaEvents(media){
+        media.addEventListener('play', function(){ isPlaying = true; updatePlayIcon(); if(!rafId) drawVisualizer(); });
+        media.addEventListener('pause', function(){ isPlaying = false; updatePlayIcon(); });
+        media.addEventListener('timeupdate', function(){ updateSeek(media); });
+        media.addEventListener('ended', onEnded);
+        media.addEventListener('volumechange', function(){
+            audioEl.volume = media.volume; videoStage.volume = media.volume;
+            volumeBar.value = media.volume;
+            updateMuteIcon();
+        });
+    }
+    wireMediaEvents(audioEl);
+    wireMediaEvents(videoStage);
+
+    function updateMuteIcon(){
+        var icon = muteBtn.querySelector('i');
+        var vol = audioEl.volume;
+        icon.className = vol === 0 ? 'fas fa-volume-xmark' : (vol < 0.5 ? 'fas fa-volume-low' : 'fas fa-volume-high');
+    }
+
+    /* ---------------- controls wiring ---------------- */
+    playBtn.addEventListener('click', togglePlay);
+    nextBtn.addEventListener('click', goNext);
+    prevBtn.addEventListener('click', goPrev);
+
+    shuffleBtn.addEventListener('click', function(){
+        shuffleOn = !shuffleOn;
+        shuffleBtn.classList.toggle('on', shuffleOn);
+        shuffleAllBtn.classList.toggle('active', shuffleOn);
+    });
+
+    repeatBtn.addEventListener('click', function(){
+        var order = ['off','all','one'];
+        repeatMode = order[(order.indexOf(repeatMode) + 1) % order.length];
+        repeatBtn.classList.toggle('on', repeatMode !== 'off');
+        var icon = repeatBtn.querySelector('i');
+        icon.className = repeatMode === 'one' ? 'fas fa-1' : 'fas fa-repeat';
+        repeatBtn.title = repeatMode === 'off' ? 'تکرار: خاموش' : (repeatMode === 'all' ? 'تکرار: همه' : 'تکرار: یکی');
+    });
+
+    seekBar.addEventListener('input', function(){
+        var media = activeMedia();
+        if(!media) return;
+        var dur = media.duration || 0;
+        media.currentTime = (seekBar.value/100) * dur;
+        seekBar.style.setProperty('--fill', seekBar.value + '%');
+    });
+
+    volumeBar.addEventListener('input', function(){
+        audioEl.volume = parseFloat(volumeBar.value);
+        videoStage.volume = parseFloat(volumeBar.value);
+        updateMuteIcon();
+    });
+
+    var lastVolume = 0.9;
+    muteBtn.addEventListener('click', function(){
+        if(audioEl.volume > 0){
+            lastVolume = audioEl.volume;
+            audioEl.volume = 0; videoStage.volume = 0; volumeBar.value = 0;
+        } else {
+            audioEl.volume = lastVolume; videoStage.volume = lastVolume; volumeBar.value = lastVolume;
+        }
+        updateMuteIcon();
+    });
+
+    function requestFs(el){
+        var p = null;
+        if(el.requestFullscreen) p = el.requestFullscreen();
+        else if(el.webkitRequestFullscreen) p = el.webkitRequestFullscreen();
+        else if(el.webkitEnterFullscreen) { el.webkitEnterFullscreen(); return; } // iPhone Safari (video only)
+        else if(el.mozRequestFullScreen) p = el.mozRequestFullScreen();
+        else if(el.msRequestFullscreen) p = el.msRequestFullscreen();
+        if(p && p.catch) p.catch(function(){
+            // fallback: try fullscreening the whole stage container instead
+            if(el !== stage) requestFs(stage);
+        });
+    }
+
+    fullscreenBtn.addEventListener('click', function(){
+        if(!(queue[currentIndex] && queue[currentIndex].type === 'video')){
+            return;
+        }
+        if(videoStage.webkitEnterFullscreen){
+            // iPhone Safari: only the <video> element itself supports native fullscreen
+            videoStage.webkitEnterFullscreen();
+        } else {
+            requestFs(videoStage);
+        }
+    });
+
+    /* ---------------- file adding ---------------- */
+    addFilesBtn.addEventListener('click', function(){ fileInput.click(); });
+    emptyAddBtn.addEventListener('click', function(){ fileInput.click(); });
+    fileInput.addEventListener('change', function(){
+        if(fileInput.files && fileInput.files.length) addFiles(fileInput.files);
+        fileInput.value = '';
+    });
+
+    shuffleAllBtn.addEventListener('click', function(){
+        if(!queue.length) return;
+        shuffleOn = true;
+        shuffleBtn.classList.add('on');
+        shuffleAllBtn.classList.add('active');
+        playIndex(Math.floor(Math.random() * queue.length));
+    });
+
+    clearBtn.addEventListener('click', function(){
+        if(queue.length && confirm('فهرست پخش پاک شود؟')) clearQueue();
+    });
+
+    searchInput.addEventListener('input', function(){ renderQueue(searchInput.value); });
+
+    /* ---------------- drag & drop ---------------- */
+    var dragCounter = 0;
+    window.addEventListener('dragenter', function(e){
+        e.preventDefault();
+        dragCounter++;
+        dropOverlay.classList.add('show');
+    });
+    window.addEventListener('dragover', function(e){ e.preventDefault(); });
+    window.addEventListener('dragleave', function(e){
+        dragCounter--;
+        if(dragCounter <= 0){ dragCounter = 0; dropOverlay.classList.remove('show'); }
+    });
+    window.addEventListener('drop', function(e){
+        e.preventDefault();
+        dragCounter = 0;
+        dropOverlay.classList.remove('show');
+        if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length){
+            addFiles(e.dataTransfer.files);
+        }
+    });
+
+    /* ---------------- mobile sidebar ---------------- */
+    menuToggle.addEventListener('click', function(){
+        sidebar.classList.toggle('open');
+        sidebarBackdrop.classList.toggle('show');
+    });
+    sidebarBackdrop.addEventListener('click', function(){
+        sidebar.classList.remove('open');
+        sidebarBackdrop.classList.remove('show');
+    });
+
+    /* ---------------- keyboard shortcuts ---------------- */
+    window.addEventListener('keydown', function(e){
+        var tag = (e.target.tagName || '').toLowerCase();
+        if(tag === 'input' || tag === 'textarea') return;
+        if(e.code === 'Space'){ e.preventDefault(); togglePlay(); }
+        else if(e.code === 'ArrowRight'){ var m = activeMedia(); if(m) m.currentTime = Math.min((m.duration||0), m.currentTime + 5); }
+        else if(e.code === 'ArrowLeft'){ var m2 = activeMedia(); if(m2) m2.currentTime = Math.max(0, m2.currentTime - 5); }
+        else if(e.code === 'ArrowUp'){ e.preventDefault(); volumeBar.value = Math.min(1, parseFloat(volumeBar.value) + 0.05); volumeBar.dispatchEvent(new Event('input')); }
+        else if(e.code === 'ArrowDown'){ e.preventDefault(); volumeBar.value = Math.max(0, parseFloat(volumeBar.value) - 0.05); volumeBar.dispatchEvent(new Event('input')); }
+    });
+
+    /* ---------------- PWA: نصب روی گوشی ---------------- */
+    var installBtn      = $('installBtn');
+    var installModal      = $('installModal');
+    var installModalClose = $('installModalClose');
+    var deferredPrompt    = null;
+
+    function isIos(){
+        return /iphone|ipad|ipod/i.test(window.navigator.userAgent) && !window.MSStream;
+    }
+    function isStandalone(){
+        return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    if(!isStandalone()){
+        if(isIos()){
+            installBtn.hidden = false;
+            installBtn.addEventListener('click', function(){
+                installModal.classList.add('show');
+            });
+        } else {
+            window.addEventListener('beforeinstallprompt', function(e){
+                e.preventDefault();
+                deferredPrompt = e;
+                installBtn.hidden = false;
+            });
+            installBtn.addEventListener('click', function(){
+                if(!deferredPrompt) return;
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.finally(function(){ deferredPrompt = null; });
+            });
+        }
+    }
+
+    window.addEventListener('appinstalled', function(){
+        installBtn.hidden = true;
+    });
+
+    installModalClose.addEventListener('click', function(){ installModal.classList.remove('show'); });
+    installModal.addEventListener('click', function(e){
+        if(e.target === installModal) installModal.classList.remove('show');
+    });
+
+    if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+        window.addEventListener('load', function(){
+            navigator.serviceWorker.register('sw.js').catch(function(){ /* بدون هاستینگ HTTPS، سرویس‌ورکر ثبت نمی‌شود */ });
+        });
+    }
+
+    /* ---------------- init ---------------- */
+    audioEl.volume = 0.9;
+    videoStage.volume = 0.9;
+    resizeCanvas();
+    drawVisualizer();
+    updateMuteIcon();
+})();
+</script>
+
+</body>
+</html>

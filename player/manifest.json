@@ -1,0 +1,33 @@
+{
+    "name": "دیار پلیر - پخش‌کننده رسانه دیار قدمگاه",
+    "short_name": "دیار پلیر",
+    "description": "پخش‌کننده صوتی و تصویری دیار قدمگاه؛ فایل‌های خود را افزوده و پخش کنید.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#040f0b",
+    "theme_color": "#0b3d2e",
+    "dir": "rtl",
+    "lang": "fa",
+    "icons": [
+        {
+            "src": "https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "https://cdn.imgurl.ir/uploads/h57835_file_00000000d03c722faa5edd563d180e89.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
