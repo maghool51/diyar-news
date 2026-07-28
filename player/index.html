@@ -193,7 +193,7 @@
         display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(240,192,64,.35);transition:.2s;flex:0 0 auto;
     }
     .play-main:hover{transform:scale(1.06);}
-    .play-main.small{width:42px;height:42px;font-size:15px;}
+    .play-main.small{width:46px;height:46px;font-size:17px;}
     .view-search{position:relative;margin-right:auto;min-width:150px;max-width:240px;flex:1;}
     .view-search i{position:absolute;top:50%;right:12px;transform:translateY(-50%);color:var(--text-dim);font-size:12px;}
     .view-search input{
@@ -277,8 +277,8 @@
     }
     .pb-left{display:flex;align-items:center;gap:10px;min-width:0;cursor:pointer;}
     .pb-left .mini-thumb{
-        width:46px;height:46px;border-radius:9px;flex:0 0 auto;overflow:hidden;background:var(--panel-3);
-        display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:15px;
+        width:50px;height:50px;border-radius:9px;flex:0 0 auto;overflow:hidden;background:var(--panel-3);
+        display:flex;align-items:center;justify-content:center;color:var(--gold-dim);font-size:16px;
     }
     .pb-left .mini-info{min-width:0;}
     .pb-left .mini-info .t{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px;}
@@ -291,10 +291,14 @@
     .pb-left .mini-like.liked{color:var(--gold);}
 
     .pb-center{display:flex;flex-direction:column;align-items:center;gap:6px;width:100%;}
-    .pb-controls{display:flex;align-items:center;gap:16px;}
-    .pb-controls button{font-size:14.5px;color:var(--text-dim);transition:.2s;}
-    .pb-controls button:hover{color:var(--gold-soft);}
-    .pb-controls button.on{color:var(--gold);}
+    .pb-controls{display:flex;align-items:center;gap:20px;}
+    .pb-controls button{
+        font-size:16.5px;color:var(--text-dim);transition:.18s;
+        width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    }
+    .pb-controls button:hover{color:var(--gold-soft);background:var(--panel-3);transform:scale(1.08);}
+    .pb-controls button:active{transform:scale(0.94);}
+    .pb-controls button.on{color:var(--gold);background:rgba(240,192,64,.12);}
     .pb-seek{display:flex;align-items:center;gap:10px;width:100%;max-width:520px;}
     .pb-seek span{font-size:10.5px;color:var(--text-dim);min-width:34px;text-align:center;}
 
@@ -328,11 +332,22 @@
     .now-collapse{width:38px;height:38px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:15px;}
     .now-collapse:hover{color:var(--gold-soft);}
     .now-head .now-title{font-size:11.5px;color:var(--text-dim);letter-spacing:1px;}
-    .now-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:10px 0 20px;}
-    .art-wrap{position:relative;width:260px;height:260px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
+    .now-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:10px 0 20px;}
+
+    /* کاور بزرگ (وقتی عکس واقعی آهنگ موجود باشد) — مثل صفحه‌ی اسپاتیفای */
+    .big-cover{
+        width:min(86vw, 400px);height:min(86vw, 400px);flex:0 0 auto;
+        border-radius:20px;overflow:hidden;position:relative;
+        box-shadow:0 26px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(240,192,64,.12);
+        background:var(--panel-3);
+    }
+    .big-cover img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    /* حالت دیسک طلایی (وقتی عکس واقعی در دسترس نیست) */
+    .art-wrap{position:relative;width:min(78vw, 340px);height:min(78vw, 340px);flex:0 0 auto;display:flex;align-items:center;justify-content:center;}
     #visualizer{position:absolute;inset:0;width:100%;height:100%;}
     .disc{
-        width:172px;height:172px;border-radius:50%;position:relative;z-index:2;
+        width:66%;height:66%;border-radius:50%;position:relative;z-index:2;
         background:radial-gradient(circle at 50% 50%, var(--panel-3) 0 30px, transparent 31px),
                    repeating-radial-gradient(circle at 50% 50%, #12271d 0px, #12271d 2px, #0d2018 3px, #0d2018 5px);
         border:6px solid #0a1a13;box-shadow:0 12px 40px rgba(0,0,0,.55), 0 0 0 1px rgba(240,192,64,.15);
@@ -340,18 +355,40 @@
     }
     .disc.spin{animation:discSpin 7s linear infinite;}
     @keyframes discSpin{from{transform:rotate(0);}to{transform:rotate(360deg);}}
-    .disc img{width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);}
+    .disc img{width:42%;height:42%;border-radius:50%;object-fit:cover;border:3px solid var(--gold);}
     .disc::after{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--void);border:2px solid var(--gold-dim);}
+
     #videoStage{width:100%;max-width:640px;max-height:48vh;border-radius:var(--radius-lg);background:#000;box-shadow:0 18px 50px rgba(0,0,0,.55);display:none;border:1px solid var(--line);}
-    .now-meta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;}
-    .now-meta .eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;}
-    .now-meta h2{font-size:21px;color:var(--text);font-weight:700;max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-    .now-meta .sub{font-size:13px;color:var(--text-dim);}
-    .now-like{width:40px;height:40px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:15px;}
+    .now-meta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;}
+    .now-meta .eyebrow{font-size:11.5px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;}
+    .now-meta h2{font-size:27px;color:var(--text);font-weight:800;max-width:460px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .now-meta .sub{font-size:15px;color:var(--text-dim);}
+    .now-like{width:50px;height:50px;border-radius:50%;background:var(--panel-3);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:19px;transition:.2s;}
+    .now-like:hover{background:var(--panel-4);transform:scale(1.08);}
     .now-like.liked{color:var(--gold);}
-    .now-controls{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:480px;margin:0 auto;padding-bottom:10px;}
-    .now-controls .pb-controls button{font-size:17px;}
-    .now-controls .play-main{width:58px;height:58px;font-size:19px;}
+
+    .now-controls{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;max-width:520px;margin:0 auto;padding-bottom:10px;}
+    .now-controls .pb-controls{gap:30px;}
+    .now-controls .pb-controls button{
+        font-size:23px;width:56px;height:56px;border-radius:50%;
+        display:flex;align-items:center;justify-content:center;transition:.18s;
+        color:var(--text);
+    }
+    .now-controls .pb-controls button:hover{background:var(--panel-3);color:var(--gold-soft);transform:scale(1.08);}
+    .now-controls .pb-controls button:active{transform:scale(0.95);}
+    .now-controls .pb-controls button.on{background:rgba(240,192,64,.16);color:var(--gold);}
+    .now-controls .play-main{
+        width:92px;height:92px;font-size:34px;
+        background:radial-gradient(circle at 35% 30%, var(--gold-soft), var(--gold) 65%);
+        box-shadow:0 14px 38px rgba(240,192,64,.45), 0 0 0 1px rgba(255,255,255,.08) inset;
+    }
+    .now-controls .play-main:hover{transform:scale(1.06);background:radial-gradient(circle at 35% 30%, var(--gold-soft), var(--gold) 65%);filter:brightness(1.04);}
+    .now-controls .play-main:active{transform:scale(0.97);}
+    .now-controls .pb-seek{max-width:480px;gap:12px;}
+    .now-controls .pb-seek span{font-size:12px;min-width:38px;}
+    .now-controls #nowSeekBar::-webkit-slider-runnable-track{background:linear-gradient(90deg, var(--gold) var(--fill,0%), var(--panel-3) 0);height:5px;border-radius:5px;}
+    .now-controls input[type=range]{height:5px;}
+    .now-controls input[type=range]::-webkit-slider-thumb{width:15px;height:15px;}
 
     /* ===================== SIDE PANEL (queue / eq) ===================== */
     .side-panel{
@@ -435,10 +472,13 @@
         .pb-right{justify-self:center;}
         .pb-right #volumeBar{display:none;}
         .pb-seek{max-width:100%;}
-        .art-wrap{width:190px;height:190px;}
-        .disc{width:128px;height:128px;}
-        .disc img{width:52px;height:52px;}
-        .now-meta h2{font-size:17px;max-width:260px;}
+        .big-cover{width:min(88vw, 320px);height:min(88vw, 320px);}
+        .art-wrap{width:min(80vw, 280px);height:min(80vw, 280px);}
+        .now-meta h2{font-size:19px;max-width:280px;}
+        .now-controls{gap:16px;}
+        .now-controls .pb-controls{gap:18px;}
+        .now-controls .pb-controls button{width:46px;height:46px;font-size:19px;}
+        .now-controls .play-main{width:76px;height:76px;font-size:27px;}
         .side-panel{width:290px;}
     }
     @media(max-width:420px){
@@ -574,10 +614,13 @@
         <button class="now-collapse" id="nowQueueBtn"><i class="fas fa-list"></i></button>
     </div>
     <div class="now-body">
+        <div class="big-cover" id="bigCover" hidden>
+            <img id="bigCoverImg" src="" alt="" onerror="this.parentNode.hidden=true;">
+        </div>
         <div class="art-wrap" id="artWrap">
             <canvas id="visualizer"></canvas>
             <div class="disc" id="disc">
-                <img id="discImg" src="./logo.png" alt="" style="width:74px;height:74px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);" onerror="this.style.display='none'">
+                <img id="discImg" src="./logo.png" alt="" onerror="this.style.display='none'">
             </div>
         </div>
         <video id="videoStage" playsinline></video>
@@ -586,6 +629,20 @@
             <h2 id="trackTitle">—</h2>
             <div class="sub" id="trackSub">—</div>
             <button class="now-like" id="nowLikeBtn"><i class="far fa-heart"></i></button>
+        </div>
+        <div class="now-controls">
+            <div class="pb-seek">
+                <span id="nowCurTime">۰:۰۰</span>
+                <input type="range" id="nowSeekBar" min="0" max="100" value="0" step="0.1">
+                <span id="nowDurTime">۰:۰۰</span>
+            </div>
+            <div class="pb-controls">
+                <button id="nowShuffleBtn" title="پخش تصادفی"><i class="fas fa-shuffle"></i></button>
+                <button id="nowPrevBtn" title="قبلی"><i class="fas fa-backward-step"></i></button>
+                <button id="nowPlayBtn" class="play-main" title="پخش/توقف"><i class="fas fa-play"></i></button>
+                <button id="nowNextBtn" title="بعدی"><i class="fas fa-forward-step"></i></button>
+                <button id="nowRepeatBtn" title="تکرار"><i class="fas fa-repeat"></i></button>
+            </div>
         </div>
     </div>
 </div>
@@ -778,8 +835,11 @@
 
     var audioEl = $('audioEl'), videoStage = $('videoStage');
     var nowOverlay = $('nowOverlay'), nowCollapse = $('nowCollapse'), nowQueueBtn = $('nowQueueBtn');
-    var artWrap = $('artWrap'), disc = $('disc'), canvas = $('visualizer');
+    var artWrap = $('artWrap'), disc = $('disc'), canvas = $('visualizer'), discImg = $('discImg');
+    var bigCover = $('bigCover'), bigCoverImg = $('bigCoverImg');
     var typeLabel = $('typeLabel'), trackTitle = $('trackTitle'), trackSub = $('trackSub'), nowLikeBtn = $('nowLikeBtn');
+    var nowShuffleBtn = $('nowShuffleBtn'), nowPrevBtn = $('nowPrevBtn'), nowPlayBtn = $('nowPlayBtn'), nowNextBtn = $('nowNextBtn'), nowRepeatBtn = $('nowRepeatBtn');
+    var nowSeekBar = $('nowSeekBar'), nowCurTimeEl = $('nowCurTime'), nowDurTimeEl = $('nowDurTime');
     var ctx = canvas.getContext('2d');
 
     var queuePanel = $('queuePanel'), queueBody = $('queueBody'), queueCloseBtn = $('queueCloseBtn'), clearQueueSideBtn = $('clearQueueSideBtn');
@@ -1460,6 +1520,22 @@
         return track.type === 'video' ? videoStage : audioEl;
     }
 
+    function applyNowPlayingArt(track){
+        if(track.type === 'video'){
+            bigCover.hidden = true; artWrap.style.display = 'none';
+            return;
+        }
+        if(track.coverUrl){
+            bigCoverImg.src = track.coverUrl;
+            bigCover.hidden = false;
+            artWrap.style.display = 'none';
+        } else {
+            bigCover.hidden = true;
+            artWrap.style.display = 'flex';
+            discImg.src = './logo.png';
+        }
+    }
+
     function playIndex(i){
         if(i < 0 || i >= queue.length) return;
         ensureAudioGraph();
@@ -1470,15 +1546,15 @@
         if(!track || !track.url) return;
 
         pushRecent(track.id);
+        applyNowPlayingArt(track);
 
-        var discImg = $('discImg');
         var miniThumbHtml = track.coverUrl
             ? '<img src="' + track.coverUrl + '" style="width:100%;height:100%;object-fit:cover;" alt="">'
             : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i>';
 
         if(track.type === 'video'){
             audioEl.pause();
-            videoStage.style.display = 'block'; artWrap.style.display = 'none';
+            videoStage.style.display = 'block';
             videoStage.src = track.url; videoStage.currentTime = 0;
             videoStage.volume = audioEl.volume; videoStage.playbackRate = playbackRate;
             videoStage.play();
@@ -1486,12 +1562,11 @@
             miniThumb.innerHTML = miniThumbHtml;
         } else {
             videoStage.pause();
-            videoStage.style.display = 'none'; artWrap.style.display = 'flex';
+            videoStage.style.display = 'none';
             audioEl.src = track.url; audioEl.currentTime = 0; audioEl.playbackRate = playbackRate;
             audioEl.play();
             typeLabel.textContent = 'در حال پخش صوت';
             miniThumb.innerHTML = miniThumbHtml;
-            if(discImg) discImg.src = track.coverUrl || './logo.png';
         }
 
         trackTitle.textContent = track.name;
@@ -1510,10 +1585,7 @@
             ? '<img src="' + track.coverUrl + '" style="width:100%;height:100%;object-fit:cover;" alt="">'
             : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i>';
         miniThumb.innerHTML = miniThumbHtml;
-        if(track.type !== 'video'){
-            var discImg = $('discImg');
-            if(discImg) discImg.src = track.coverUrl || './logo.png';
-        }
+        applyNowPlayingArt(track);
         if(track.artist){ trackSub.textContent = track.artist; miniSub.textContent = track.artist; }
     }
 
@@ -1571,6 +1643,8 @@
     function updatePlayIcons(){
         var icon = playBtn.querySelector('i');
         icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
+        var nowIcon = nowPlayBtn.querySelector('i');
+        nowIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
         var current = queue[currentIndex];
         disc.classList.toggle('spin', isPlaying && current && current.type === 'audio');
         renderView();
@@ -1584,6 +1658,8 @@
         var pct = dur ? (cur/dur*100) : 0;
         seekBar.value = pct; seekBar.style.setProperty('--fill', pct + '%');
         curTimeEl.textContent = fmtTime(cur); durTimeEl.textContent = fmtTime(dur);
+        nowSeekBar.value = pct; nowSeekBar.style.setProperty('--fill', pct + '%');
+        nowCurTimeEl.textContent = fmtTime(cur); nowDurTimeEl.textContent = fmtTime(dur);
     }
     function wireMediaEvents(media){
         media.addEventListener('play', function(){ isPlaying = true; updatePlayIcons(); if(!rafId) drawVisualizer(); });
@@ -1604,6 +1680,7 @@
     function updateShuffleUI(){
         shuffleBtn.classList.toggle('on', shuffleOn);
         viewShuffleBtn.classList.toggle('on', shuffleOn);
+        nowShuffleBtn.classList.toggle('on', shuffleOn);
     }
     function updateNowPlayingLikeIcons(){
         var current = queue[currentIndex];
@@ -1617,23 +1694,36 @@
     playBtn.addEventListener('click', togglePlay);
     nextBtn.addEventListener('click', goNext);
     prevBtn.addEventListener('click', goPrev);
-    shuffleBtn.addEventListener('click', function(){ shuffleOn = !shuffleOn; updateShuffleUI(); saveSettingsDebounced(); });
-    repeatBtn.addEventListener('click', function(){
+    nowPlayBtn.addEventListener('click', togglePlay);
+    nowNextBtn.addEventListener('click', goNext);
+    nowPrevBtn.addEventListener('click', goPrev);
+
+    function toggleShuffle(){ shuffleOn = !shuffleOn; updateShuffleUI(); saveSettingsDebounced(); }
+    shuffleBtn.addEventListener('click', toggleShuffle);
+    nowShuffleBtn.addEventListener('click', toggleShuffle);
+
+    function cycleRepeat(){
         var order = ['off','all','one'];
         repeatMode = order[(order.indexOf(repeatMode) + 1) % order.length];
-        repeatBtn.classList.toggle('on', repeatMode !== 'off');
-        repeatBtn.title = repeatMode === 'off' ? 'تکرار: خاموش' : (repeatMode === 'all' ? 'تکرار: همه' : 'تکرار: یکی');
+        var title = repeatMode === 'off' ? 'تکرار: خاموش' : (repeatMode === 'all' ? 'تکرار: همه' : 'تکرار: یکی');
+        repeatBtn.classList.toggle('on', repeatMode !== 'off'); repeatBtn.title = title;
+        nowRepeatBtn.classList.toggle('on', repeatMode !== 'off'); nowRepeatBtn.title = title;
         saveSettingsDebounced();
-    });
+    }
+    repeatBtn.addEventListener('click', cycleRepeat);
+    nowRepeatBtn.addEventListener('click', cycleRepeat);
+
     miniLikeBtn.addEventListener('click', function(e){ e.stopPropagation(); var c = queue[currentIndex]; if(c) toggleLike(c); });
     nowLikeBtn.addEventListener('click', function(){ var c = queue[currentIndex]; if(c) toggleLike(c); });
 
-    seekBar.addEventListener('input', function(){
+    function seekTo(barEl){
         var media = activeMedia(); if(!media) return;
         var dur = media.duration || 0;
-        media.currentTime = (seekBar.value/100) * dur;
-        seekBar.style.setProperty('--fill', seekBar.value + '%');
-    });
+        media.currentTime = (barEl.value/100) * dur;
+        barEl.style.setProperty('--fill', barEl.value + '%');
+    }
+    seekBar.addEventListener('input', function(){ seekTo(seekBar); });
+    nowSeekBar.addEventListener('input', function(){ seekTo(nowSeekBar); });
     volumeBar.addEventListener('input', function(){
         var v = parseFloat(volumeBar.value);
         audioEl.volume = v; videoStage.volume = v; updateMuteIcon(); saveSettingsDebounced();
@@ -1892,6 +1982,7 @@
         speedBtn.textContent = toFa(playbackRate) + 'x';
         updateShuffleUI();
         repeatBtn.classList.toggle('on', repeatMode !== 'off');
+        nowRepeatBtn.classList.toggle('on', repeatMode !== 'off');
         syncEqUI();
         updateMuteIcon();
         renderPlaylists();
