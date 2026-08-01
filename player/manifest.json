@@ -1,15 +1,18 @@
 {
+    "id": "./",
     "name": "دیار پلیر - پخش‌کننده رسانه دیار قدمگاه",
     "short_name": "دیار پلیر",
     "description": "پخش‌کننده صوتی و تصویری دیار قدمگاه؛ فایل‌های خود را افزوده و پخش کنید.",
     "start_url": "./index.html",
     "scope": "./",
     "display": "standalone",
-    "orientation": "portrait-primary",
+    "orientation": "any",
     "background_color": "#040f0b",
     "theme_color": "#0b3d2e",
     "dir": "rtl",
     "lang": "fa",
+    "categories": ["music", "entertainment", "lifestyle"],
+    "prefer_related_applications": false,
     "icons": [
         {
             "src": "./icons/icon-192.png",
@@ -29,6 +32,25 @@
             "type": "image/png",
             "purpose": "maskable"
         }
+    ],
+    "shortcuts": [
+        {
+            "name": "افزودن فایل",
+            "short_name": "افزودن",
+            "description": "افزودن سریع فایل صوتی یا تصویری به کتابخانه",
+            "url": "./index.html?action=add",
+            "icons": [
+                { "src": "./icons/icon-192.png", "sizes": "192x192" }
+            ]
+        },
+        {
+            "name": "پسندیده‌ها",
+            "short_name": "پسندیده‌ها",
+            "description": "باز کردن مستقیم فهرست پسندیده‌ها",
+            "url": "./index.html?view=liked",
+            "icons": [
+                { "src": "./icons/icon-192.png", "sizes": "192x192" }
+            ]
+        }
     ]
 }
-

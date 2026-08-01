@@ -497,6 +497,23 @@
         .brand .names span{display:none;}
         .btn-gold span{display:none;}
     }
+
+    /* حالت افقی (چرخاندن گوشی) — عمدتاً برای دیدن بهتر ویدیو */
+    @media(orientation:landscape) and (max-height:520px){
+        .now-head{padding:8px 6px;}
+        .now-body{flex-direction:row;gap:16px;padding:6px 0;}
+        #videoStage{max-width:none;max-height:88vh;width:auto;flex:1 1 auto;}
+        .big-cover{width:min(40vh,220px);height:min(40vh,220px);}
+        .art-wrap{width:min(36vh,200px);height:min(36vh,200px);}
+        .now-meta{gap:6px;}
+        .now-meta h2{font-size:16px;max-width:34vw;}
+        .now-meta .sub{font-size:12px;}
+        .now-controls{gap:10px;max-width:280px;}
+        .now-controls .pb-controls{gap:14px;}
+        .now-controls .pb-controls button{width:38px;height:38px;font-size:16px;}
+        .now-controls .play-main{width:56px;height:56px;font-size:21px;}
+        .now-controls .pb-seek{max-width:260px;}
+    }
 </style>
 </head>
 <body>
@@ -529,6 +546,8 @@
 
             <nav class="lib-nav">
                 <button class="lib-link active" data-view="all"><i class="fas fa-record-vinyl"></i> همه‌ی فایل‌ها</button>
+                <button class="lib-link" data-view="audio-lib"><i class="fas fa-music"></i> فایل‌های صوتی</button>
+                <button class="lib-link" data-view="video-lib"><i class="fas fa-clapperboard"></i> فایل‌های تصویری</button>
                 <button class="lib-link" data-view="liked"><i class="fas fa-heart"></i> پسندیده‌ها</button>
                 <button class="lib-link" data-view="recent"><i class="fas fa-clock-rotate-left"></i> اخیراً پخش‌شده</button>
             </nav>
@@ -843,6 +862,7 @@
     var storageBanner = $('storageBanner');
     var viewScroll = $('viewScroll'), viewCover = $('viewCover'), viewTitle = $('viewTitle'), viewSub = $('viewSub');
     var viewPlayBtn = $('viewPlayBtn'), viewShuffleBtn = $('viewShuffleBtn'), viewSearch = $('viewSearch');
+    var typeFilterRow = $('typeFilterRow');
     var trackTable = $('trackTable');
     var emptyLib = $('emptyLib'), emptyTitle = $('emptyTitle'), emptyText = $('emptyText'), emptyAddBtn = $('emptyAddBtn');
 
@@ -1074,6 +1094,14 @@
         libLinks.forEach(function(b){ b.classList.toggle('active', type !== 'playlist' && b.dataset.view === type); });
         renderPlaylists();
         viewSearch.value = '';
+
+        // در نماهای اختصاصی «فایل‌های صوتی» و «فایل‌های تصویری»، نوع از قبل مشخص است؛
+        // پس فیلتر همه/صوت/ویدیو دیگر لازم نیست و برای جلوگیری از سردرگمی مخفی می‌شود.
+        var dedicatedTypeView = (type === 'audio-lib' || type === 'video-lib');
+        typeFilter = 'all';
+        typeFilterRow.querySelectorAll('.tf-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.type === 'all'); });
+        typeFilterRow.style.display = dedicatedTypeView ? 'none' : 'flex';
+
         renderView();
         if(window.innerWidth <= 680){ closeSidebar(); }
     }
@@ -1093,6 +1121,12 @@
     function getViewTracks(){
         if(currentView.type === 'all'){
             return libraryTracks.slice().sort(function(a,b){ return b.addedAt - a.addedAt; });
+        }
+        if(currentView.type === 'audio-lib'){
+            return libraryTracks.filter(function(t){ return t.type === 'audio'; }).sort(function(a,b){ return b.addedAt - a.addedAt; });
+        }
+        if(currentView.type === 'video-lib'){
+            return libraryTracks.filter(function(t){ return t.type === 'video'; }).sort(function(a,b){ return b.addedAt - a.addedAt; });
         }
         if(currentView.type === 'liked'){
             return libraryTracks.filter(function(t){ return t.liked; });
@@ -1124,6 +1158,8 @@
 
     function viewMeta(){
         if(currentView.type === 'all') return { icon:'fa-record-vinyl', title:'همه‌ی فایل‌ها' };
+        if(currentView.type === 'audio-lib') return { icon:'fa-music', title:'فایل‌های صوتی' };
+        if(currentView.type === 'video-lib') return { icon:'fa-clapperboard', title:'فایل‌های تصویری' };
         if(currentView.type === 'liked') return { icon:'fa-heart', title:'پسندیده‌ها' };
         if(currentView.type === 'recent') return { icon:'fa-clock-rotate-left', title:'اخیراً پخش‌شده' };
         if(currentView.type === 'playlist'){
@@ -1158,9 +1194,15 @@
             emptyAddBtn.style.display = 'inline-flex';
             emptyLib.hidden = false;
         } else if(viewEmpty){
-            emptyTitle.textContent = currentView.type === 'liked' ? 'هنوز چیزی نپسندیده‌اید' : (currentView.type === 'recent' ? 'هنوز چیزی پخش نکرده‌اید' : 'این پلی‌لیست خالی است');
-            emptyText.textContent = currentView.type === 'liked' ? 'روی آیکون قلب کنار هر فایل بزنید تا اینجا اضافه شود.' : (currentView.type === 'recent' ? 'بعد از پخش اولین فایل، اینجا نمایش داده می‌شود.' : 'از «همه‌ی فایل‌ها» یک مورد را به این پلی‌لیست اضافه کنید.');
-            emptyAddBtn.style.display = 'none';
+            var emptyMsgs = {
+                'audio-lib': ['هنوز فایل صوتی اضافه نکرده‌اید', 'فایل‌های صوتی (mp3, wav, m4a و ...) که اضافه می‌کنید، اینجا جمع می‌شوند.'],
+                'video-lib': ['هنوز فایل ویدیویی اضافه نکرده‌اید', 'فایل‌های ویدیویی (mp4, mov و ...) که اضافه می‌کنید، اینجا جمع می‌شوند.'],
+                'liked':     ['هنوز چیزی نپسندیده‌اید', 'روی آیکون قلب کنار هر فایل بزنید تا اینجا اضافه شود.'],
+                'recent':    ['هنوز چیزی پخش نکرده‌اید', 'بعد از پخش اولین فایل، اینجا نمایش داده می‌شود.']
+            };
+            var m = emptyMsgs[currentView.type] || ['این پلی‌لیست خالی است', 'از «همه‌ی فایل‌ها» یک مورد را به این پلی‌لیست اضافه کنید.'];
+            emptyTitle.textContent = m[0]; emptyText.textContent = m[1];
+            emptyAddBtn.style.display = (currentView.type === 'audio-lib' || currentView.type === 'video-lib') ? 'inline-flex' : 'none';
             emptyLib.hidden = false;
         } else if(typeEmpty){
             emptyTitle.textContent = typeFilter === 'audio' ? 'فایل صوتی در این فهرست نیست' : 'فایل ویدیویی در این فهرست نیست';
@@ -1550,7 +1592,6 @@
     });
     viewSearch.addEventListener('input', renderView);
 
-    var typeFilterRow = $('typeFilterRow');
     typeFilterRow.querySelectorAll('.tf-btn').forEach(function(btn){
         btn.addEventListener('click', function(){
             typeFilter = btn.dataset.type;
@@ -1607,6 +1648,9 @@
             videoStage.play();
             typeLabel.textContent = 'در حال پخش ویدیو';
             miniThumb.innerHTML = miniThumbHtml;
+            // برای ویدیو، تصویر خودش هدف اصلی است؛ پس صفحه‌ی تمام‌صفحه به‌صورت خودکار باز می‌شود
+            // تا کاربر مجبور نباشد دوباره دستی روی نوار پایین بزند تا تصویر را ببیند.
+            openPanel2(nowOverlay);
         } else {
             videoStage.pause();
             videoStage.style.display = 'none';
@@ -2036,7 +2080,24 @@
         renderView();
         resizeCanvas();
         drawVisualizer();
+        handleShortcutParams();
     });
+
+    // اگر برنامه از طریق میان‌برهای نصب‌شده (Shortcuts) باز شده باشد، همان کار خواسته‌شده را انجام می‌دهد
+    function handleShortcutParams(){
+        try{
+            var params = new URLSearchParams(location.search);
+            if(params.get('view') === 'liked'){
+                setView('liked');
+            }
+            if(params.get('action') === 'add'){
+                setTimeout(function(){ fileInput.click(); }, 400);
+            }
+            if(params.toString()){
+                history.replaceState(null, '', location.pathname);
+            }
+        }catch(e){}
+    }
 })();
 </script>
 
