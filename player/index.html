@@ -188,6 +188,17 @@
     .view-sub{font-size:12.5px;color:var(--text-dim);}
 
     .view-toolbar{display:flex;align-items:center;gap:14px;padding:6px 26px 18px;flex-wrap:wrap;}
+    .type-filter{display:flex;align-items:center;gap:8px;padding:0 26px 16px;flex-wrap:wrap;}
+    .tf-btn{
+        display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--text-dim);
+        background:var(--panel-3);padding:8px 16px;border-radius:20px;transition:.18s;
+        border:1px solid transparent;
+    }
+    .tf-btn:hover{color:var(--text);background:var(--panel-4);}
+    .tf-btn.active{
+        background:linear-gradient(135deg, var(--gold), #d9a52c);color:#1c1400;font-weight:700;
+        box-shadow:0 4px 14px rgba(240,192,64,.28);
+    }
     .play-main{
         width:52px;height:52px;border-radius:50%;background:var(--gold);color:#12200f;font-size:18px;
         display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(240,192,64,.35);transition:.2s;flex:0 0 auto;
@@ -465,6 +476,7 @@
         .view-cover{width:78px;height:78px;font-size:26px;}
         .view-title{font-size:19px;max-width:60vw;}
         .view-toolbar{padding:4px 16px 14px;}
+        .type-filter{padding:0 16px 12px;}
         .track-table{padding:0 12px;}
         .track-row .dur{display:none;}
         .player-bar{grid-template-columns:1fr;grid-template-rows:auto auto;height:auto;padding:10px 12px 10px;gap:6px;}
@@ -553,6 +565,12 @@
                         <i class="fas fa-magnifying-glass"></i>
                         <input type="text" id="viewSearch" placeholder="جستجو در این فهرست...">
                     </div>
+                </div>
+
+                <div class="type-filter" id="typeFilterRow">
+                    <button class="tf-btn active" data-type="all"><i class="fas fa-layer-group"></i> همه</button>
+                    <button class="tf-btn" data-type="audio"><i class="fas fa-music"></i> صوت</button>
+                    <button class="tf-btn" data-type="video"><i class="fas fa-clapperboard"></i> ویدیو</button>
                 </div>
 
                 <div class="track-table" id="trackTable"></div>
@@ -801,6 +819,7 @@
     var playlists = [];          // {id,name,trackIds:[],createdAt}
     var recentIds = [];          // آخرین آهنگ‌های پخش‌شده
     var currentView = { type:'all', playlistId:null };
+    var typeFilter = 'all'; // all | audio | video
 
     var queue = [];              // آرایه‌ای از خودِ آبجکت‌های track در نوبت پخش فعلی
     var currentIndex = -1;
@@ -1089,6 +1108,20 @@
         return [];
     }
 
+    function filterByType(tracks){
+        if(typeFilter === 'all') return tracks;
+        return tracks.filter(function(t){ return t.type === typeFilter; });
+    }
+    function filterBySearch(tracks){
+        var q = (viewSearch.value || '').trim().toLowerCase();
+        if(!q) return tracks;
+        return tracks.filter(function(t){ return t.name.toLowerCase().indexOf(q) !== -1; });
+    }
+    // فهرست نهایی همان‌طور که کاربر واقعاً می‌بیند: نمای فعلی + فیلتر نوع فایل + جستجو
+    function getFilteredViewTracks(){
+        return filterBySearch(filterByType(getViewTracks()));
+    }
+
     function viewMeta(){
         if(currentView.type === 'all') return { icon:'fa-record-vinyl', title:'همه‌ی فایل‌ها' };
         if(currentView.type === 'liked') return { icon:'fa-heart', title:'پسندیده‌ها' };
@@ -1105,17 +1138,19 @@
         viewCover.innerHTML = '<i class="fas ' + meta.icon + '"></i>';
         viewTitle.textContent = meta.title;
 
-        var tracks = getViewTracks();
-        var filterText = (viewSearch.value || '').trim().toLowerCase();
-        var visible = filterText ? tracks.filter(function(t){ return t.name.toLowerCase().indexOf(filterText) !== -1; }) : tracks;
+        var tracks = getViewTracks();                 // فقط بر اساس نمای فعلی (همه/پسندیده/پلی‌لیست و ...)
+        var typeFiltered = filterByType(tracks);        // + فیلتر همه/صوت/ویدیو
+        var visible = filterBySearch(typeFiltered);      // + جستجو
 
-        var totalDur = tracks.reduce(function(s,t){ return s + (t.duration || 0); }, 0);
-        viewSub.textContent = toFa(tracks.length) + ' مورد' + (totalDur ? ' · ' + fmtTime(totalDur) : '');
+        var totalDur = typeFiltered.reduce(function(s,t){ return s + (t.duration || 0); }, 0);
+        viewSub.textContent = toFa(typeFiltered.length) + ' مورد' + (totalDur ? ' · ' + fmtTime(totalDur) : '');
 
         trackTable.innerHTML = '';
 
         var libraryEmpty = libraryTracks.length === 0;
         var viewEmpty = tracks.length === 0;
+        var typeEmpty = !viewEmpty && typeFiltered.length === 0;
+        var searchEmpty = !viewEmpty && !typeEmpty && visible.length === 0;
 
         if(libraryEmpty){
             emptyTitle.textContent = 'کتابخانه خالی است';
@@ -1127,11 +1162,16 @@
             emptyText.textContent = currentView.type === 'liked' ? 'روی آیکون قلب کنار هر فایل بزنید تا اینجا اضافه شود.' : (currentView.type === 'recent' ? 'بعد از پخش اولین فایل، اینجا نمایش داده می‌شود.' : 'از «همه‌ی فایل‌ها» یک مورد را به این پلی‌لیست اضافه کنید.');
             emptyAddBtn.style.display = 'none';
             emptyLib.hidden = false;
+        } else if(typeEmpty){
+            emptyTitle.textContent = typeFilter === 'audio' ? 'فایل صوتی در این فهرست نیست' : 'فایل ویدیویی در این فهرست نیست';
+            emptyText.textContent = 'برای دیدن بقیه‌ی فایل‌ها، فیلتر «همه» را انتخاب کنید.';
+            emptyAddBtn.style.display = 'none';
+            emptyLib.hidden = false;
         } else {
             emptyLib.hidden = true;
         }
 
-        if(visible.length === 0 && !libraryEmpty && !viewEmpty){
+        if(searchEmpty){
             var noRes = document.createElement('div');
             noRes.style.cssText = 'text-align:center;color:var(--text-dim);font-size:12.5px;padding:24px;';
             noRes.textContent = 'نتیجه‌ای برای این جستجو یافت نشد.';
@@ -1491,27 +1531,34 @@
        ۱۱) پخش، صف، و کنترل‌ها
     ============================================================ */
     function playFromView(indexInView){
-        var tracks = getViewTracks();
-        var filterText = (viewSearch.value || '').trim().toLowerCase();
-        var visible = filterText ? tracks.filter(function(t){ return t.name.toLowerCase().indexOf(filterText) !== -1; }) : tracks;
-        queue = visible.slice();
+        queue = getFilteredViewTracks();
         playIndex(indexInView);
     }
 
     viewPlayBtn.addEventListener('click', function(){
-        var tracks = getViewTracks();
+        var tracks = getFilteredViewTracks();
         if(tracks.length === 0) return;
         queue = tracks.slice();
         playIndex(shuffleOn ? Math.floor(Math.random() * queue.length) : 0);
     });
     viewShuffleBtn.addEventListener('click', function(){
-        var tracks = getViewTracks();
+        var tracks = getFilteredViewTracks();
         if(tracks.length === 0) return;
         shuffleOn = true; updateShuffleUI();
         queue = tracks.slice();
         playIndex(Math.floor(Math.random() * queue.length));
     });
     viewSearch.addEventListener('input', renderView);
+
+    var typeFilterRow = $('typeFilterRow');
+    typeFilterRow.querySelectorAll('.tf-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            typeFilter = btn.dataset.type;
+            typeFilterRow.querySelectorAll('.tf-btn').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            renderView();
+        });
+    });
 
     function activeMedia(){
         if(currentIndex === -1) return null;
@@ -1599,7 +1646,7 @@
 
     function togglePlay(){
         if(currentIndex === -1){
-            var tracks = getViewTracks();
+            var tracks = getFilteredViewTracks();
             if(tracks.length){ queue = tracks.slice(); playIndex(0); }
             return;
         }

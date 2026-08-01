@@ -1,5 +1,5 @@
 // سرویس‌ورکر دیار پلیر — کش کردن پوسته‌ی برنامه برای بازکردن سریع‌تر و کار نیمه‌آفلاین
-const CACHE_NAME = 'diyar-player-v10';
+const CACHE_NAME = 'diyar-player-v13';
 const APP_SHELL = [
     './',
     './index.html',
@@ -36,18 +36,17 @@ self.addEventListener('activate', function(event){
 self.addEventListener('fetch', function(event){
     if(event.request.method !== 'GET') return;
 
+    // استراتژی «اول اینترنت»: همیشه تازه‌ترین نسخه را از سرور می‌گیرد؛
+    // فقط وقتی اینترنت در دسترس نباشد (آفلاین)، به کش قبلی برمی‌گردد.
     event.respondWith(
-        caches.match(event.request).then(function(cached){
-            const fetchPromise = fetch(event.request).then(function(response){
-                // فقط درخواست‌های موفق و از نوع basic (هم‌مبدأ) کش می‌شوند
-                if(response && response.status === 200 && response.type === 'basic'){
-                    const clone = response.clone();
-                    caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, clone); });
-                }
-                return response;
-            }).catch(function(){ return cached; });
-
-            return cached || fetchPromise;
+        fetch(event.request).then(function(response){
+            if(response && response.status === 200 && response.type === 'basic'){
+                var clone = response.clone();
+                caches.open(CACHE_NAME).then(function(cache){ cache.put(event.request, clone); });
+            }
+            return response;
+        }).catch(function(){
+            return caches.match(event.request);
         })
     );
 });
