@@ -376,6 +376,14 @@
     .disc::after{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--void);border:2px solid var(--gold-dim);}
 
     #videoStage{width:100%;max-width:640px;max-height:48vh;border-radius:var(--radius-lg);background:#000;box-shadow:0 18px 50px rgba(0,0,0,.55);display:none;border:1px solid var(--line);}
+
+    /* وقتی کل صفحه‌ی «در حال پخش» با Fullscreen API فول‌اسکرین شده، ویدیو بیشترین فضای ممکن را بگیرد */
+    .now-overlay:fullscreen, .now-overlay:-webkit-full-screen{background:#000;}
+    .now-overlay:fullscreen #videoStage, .now-overlay:-webkit-full-screen #videoStage{
+        max-width:100vw;max-height:none;width:auto;height:100%;flex:1 1 auto;
+        border-radius:0;border:none;box-shadow:none;
+    }
+    .now-overlay:fullscreen .now-body, .now-overlay:-webkit-full-screen .now-body{padding:0;gap:12px;}
     #videoStage:fullscreen, #videoStage:-webkit-full-screen{width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;border-radius:0;border:none;}
     .big-cover img:fullscreen, .big-cover img:-webkit-full-screen{object-fit:contain;background:#000;width:100%;height:100%;}
     .now-meta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;}
@@ -1873,8 +1881,7 @@
         var current = queue[currentIndex];
         if(!current){ return; }
         if(current.type === 'video'){
-            if(videoStage.webkitEnterFullscreen) videoStage.webkitEnterFullscreen();
-            else requestFs(videoStage);
+            enterVideoFullscreen();
         } else if(current.coverUrl){
             requestFs(bigCoverImg);
         } else {
@@ -1882,23 +1889,32 @@
         }
     });
 
-    // وقتی ویدیو وارد یا خارج از حالت تمام‌صفحه می‌شود: کنترل‌های بومی مرورگر را
-    // فقط در حالت تمام‌صفحه فعال می‌کنیم (چون کنترل‌های سفارشی ما بیرون از ویدیو هستند
-    // و در فول‌اسکرین موبایل قابل‌دسترس نمی‌مانند؛ بدون این کار کاربر گیر می‌افتد)
+    // برای ویدیو، به‌جای فول‌اسکرین‌کردن فقط تگ <video> (که مرورگر/اندروید بجایش
+    // کنترل‌های بومی محدود و فقط پخش/توقف نشان می‌دهد)، کل صفحه‌ی «در حال پخش» را
+    // فول‌اسکرین می‌کنیم تا کنترل‌های بزرگ و کامل خودمان (قبلی/بعدی/تصادفی/تکرار/سیک) در دسترس بمانند.
+    function enterVideoFullscreen(){
+        if(isIos() && videoStage.webkitEnterFullscreen){
+            // سافاری آیفون فقط فول‌اسکرین بومی خودِ ویدیو را پشتیبانی می‌کند؛ گزینه‌ی دیگری نیست
+            videoStage.webkitEnterFullscreen();
+        } else {
+            requestFs(nowOverlay);
+        }
+    }
+
+    // در فول‌اسکرین، کل صفحه‌ی «در حال پخش» (با کنترل‌های سفارشی خودمان) فول‌اسکرین می‌شود؛
+    // بنابراین دیگر نیازی به کنترل‌های محدود بومی مرورگر روی خودِ تگ ویدیو نیست.
     function onFsChange(){
         var active = isFsActive();
         var fsEl = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
-        if(fsEl === videoStage){
-            videoStage.controls = true;
-        } else {
-            videoStage.controls = false;
-        }
+        videoStage.controls = false;
         var icon = fullscreenBtn.querySelector('i');
         icon.className = active ? 'fas fa-compress' : 'fas fa-expand';
 
         // روی موبایل، برای ویدیو، تلاش برای چرخش به حالت افقی (در صورت پشتیبانی مرورگر)
         try{
-            if(active && fsEl === videoStage && screen.orientation && screen.orientation.lock){
+            var current = queue[currentIndex];
+            var isVideoFs = active && fsEl === nowOverlay && current && current.type === 'video';
+            if(isVideoFs && screen.orientation && screen.orientation.lock){
                 screen.orientation.lock('landscape').catch(function(){});
             } else if(!active && screen.orientation && screen.orientation.unlock){
                 screen.orientation.unlock();
@@ -1911,7 +1927,7 @@
 
     // دابل‌کلیک/دابل‌تپ روی ویدیو هم مثل یوتیوب فول‌اسکرین را باز/بسته می‌کند
     videoStage.addEventListener('dblclick', function(){
-        if(isFsActive()) exitFs(); else requestFs(videoStage);
+        if(isFsActive()) exitFs(); else enterVideoFullscreen();
     });
     // ضربه روی خودِ تصویر کاور بزرگ هم آن را تمام‌صفحه نشان می‌دهد
     bigCoverImg.addEventListener('click', function(){
@@ -2008,7 +2024,10 @@
         openPanel2(nowOverlay);
     });
     function openPanel2(el){ el.classList.add('show'); resizeCanvas(); }
-    nowCollapse.addEventListener('click', function(){ nowOverlay.classList.remove('show'); });
+    nowCollapse.addEventListener('click', function(){
+        if(isFsActive()) exitFs();
+        nowOverlay.classList.remove('show');
+    });
 
     /* ============================================================
        ۱۴) اکولایزر UI
