@@ -413,7 +413,11 @@
     .now-controls .play-main:active{transform:scale(0.97);}
     .now-controls .pb-seek{max-width:480px;gap:12px;}
     .now-controls .pb-seek span{font-size:12px;min-width:38px;}
-    .now-controls #nowSeekBar::-webkit-slider-runnable-track{background:linear-gradient(90deg, var(--gold) var(--fill,0%), var(--panel-3) 0);height:5px;border-radius:5px;}
+    .seek-wrap{position:relative;flex:1;display:flex;align-items:center;height:32px;}
+    #nowWaveform{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+    .now-controls #nowSeekBar{position:relative;z-index:2;background:transparent;}
+    .now-controls #nowSeekBar::-webkit-slider-runnable-track{background:transparent;height:5px;border-radius:5px;}
+    .now-controls #nowSeekBar::-moz-range-track{background:transparent;height:5px;border-radius:5px;}
     .now-controls input[type=range]{height:5px;}
     .now-controls input[type=range]::-webkit-slider-thumb{width:15px;height:15px;}
 
@@ -655,6 +659,8 @@
             <button class="speed-badge" id="speedBtn" title="سرعت پخش">۱x</button>
             <button id="queueBtn" title="صف پخش"><i class="fas fa-list"></i></button>
             <button id="eqBtn" title="اکولایزر"><i class="fas fa-sliders"></i></button>
+            <button id="pipBtn" title="پنجره‌ی شناور" hidden><i class="fas fa-clone"></i></button>
+            <button id="castBtn" title="پخش روی دستگاه دیگر" hidden><i class="fas fa-tv"></i></button>
             <button id="fullscreenBtn" title="تمام‌صفحه (ویدیو)"><i class="fas fa-expand"></i></button>
             <button id="muteBtn" title="بی‌صدا"><i class="fas fa-volume-high"></i></button>
             <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="0.9">
@@ -691,7 +697,10 @@
         <div class="now-controls">
             <div class="pb-seek">
                 <span id="nowCurTime">۰:۰۰</span>
-                <input type="range" id="nowSeekBar" min="0" max="100" value="0" step="0.1">
+                <div class="seek-wrap">
+                    <canvas id="nowWaveform"></canvas>
+                    <input type="range" id="nowSeekBar" min="0" max="100" value="0" step="0.1">
+                </div>
                 <span id="nowDurTime">۰:۰۰</span>
             </div>
             <div class="pb-controls">
@@ -867,6 +876,7 @@
     var shuffleOn = false;
     var repeatMode = 'off';      // off | all | one
     var playbackRate = 1;
+    var lastSeekPct = 0;
     var sleepTimerId = null;
     var sleepMinutes = 0;
 
@@ -891,6 +901,7 @@
     var shuffleBtn = $('shuffleBtn'), prevBtn = $('prevBtn'), playBtn = $('playBtn'), nextBtn = $('nextBtn'), repeatBtn = $('repeatBtn');
     var seekBar = $('seekBar'), curTimeEl = $('curTime'), durTimeEl = $('durTime');
     var speedBtn = $('speedBtn'), queueBtn = $('queueBtn'), eqBtn = $('eqBtn'), fullscreenBtn = $('fullscreenBtn');
+    var pipBtn = $('pipBtn'), castBtn = $('castBtn');
     var muteBtn = $('muteBtn'), volumeBar = $('volumeBar');
 
     var audioEl = $('audioEl'), videoStage = $('videoStage');
@@ -901,6 +912,7 @@
     var nowShuffleBtn = $('nowShuffleBtn'), nowPrevBtn = $('nowPrevBtn'), nowPlayBtn = $('nowPlayBtn'), nowNextBtn = $('nowNextBtn'), nowRepeatBtn = $('nowRepeatBtn');
     var nowSeekBar = $('nowSeekBar'), nowCurTimeEl = $('nowCurTime'), nowDurTimeEl = $('nowDurTime');
     var ctx = canvas.getContext('2d');
+    var nowWaveform = $('nowWaveform'), waveCtx = nowWaveform.getContext('2d');
 
     var queuePanel = $('queuePanel'), queueBody = $('queueBody'), queueCloseBtn = $('queueCloseBtn'), clearQueueSideBtn = $('clearQueueSideBtn');
     var eqPanel = $('eqPanel'), eqCloseBtn = $('eqCloseBtn');
@@ -961,12 +973,95 @@
         filterTreble.gain.value = settings.eq.treble;
     }
 
+    /* ============================================================
+       موج صوتی (Waveform) پشت نوار سیک — مثل اسپاتیفای/ساندکلاود.
+       فقط برای فایل‌های صوتی محاسبه می‌شود (نه ویدیو) و فقط یک‌بار
+       به‌ازای هر آهنگ در همین جلسه (روی خودِ آبجکت track کش می‌شود).
+    ============================================================ */
+    function computeWaveform(track){
+        if(track.waveform) return Promise.resolve(track.waveform);
+        if(track.waveformPromise) return track.waveformPromise;
+        track.waveformPromise = track.blob.arrayBuffer().then(function(buf){
+            ensureAudioGraph();
+            var decodeCtx = audioCtxObj || new (window.AudioContext || window.webkitAudioContext)();
+            return decodeCtx.decodeAudioData(buf.slice(0));
+        }).then(function(audioBuffer){
+            var raw = audioBuffer.getChannelData(0);
+            var samples = 100;
+            var blockSize = Math.max(1, Math.floor(raw.length / samples));
+            var peaks = [];
+            for(var i=0;i<samples;i++){
+                var start = i * blockSize, max = 0;
+                for(var j=0;j<blockSize && (start+j)<raw.length;j++){
+                    var v = Math.abs(raw[start+j]);
+                    if(v > max) max = v;
+                }
+                peaks.push(max);
+            }
+            var peakMax = Math.max.apply(null, peaks) || 1;
+            peaks = peaks.map(function(p){ return p / peakMax; });
+            track.waveform = peaks;
+            return peaks;
+        })['catch'](function(){ track.waveform = null; return null; });
+        return track.waveformPromise;
+    }
+
+    function loadWaveformFor(track){
+        drawWaveform(0);
+        if(!track || track.type !== 'audio') return;
+        computeWaveform(track).then(function(peaks){
+            if(peaks && queue[currentIndex] === track) drawWaveform(lastSeekPct);
+        });
+    }
+
+    function roundedBar(c, x, y, w, h, r){
+        r = Math.max(0, Math.min(r, w/2, h/2));
+        c.beginPath();
+        c.moveTo(x+r, y);
+        c.arcTo(x+w, y, x+w, y+h, r);
+        c.arcTo(x+w, y+h, x, y+h, r);
+        c.arcTo(x, y+h, x, y, r);
+        c.arcTo(x, y, x+w, y, r);
+        c.closePath();
+        c.fill();
+    }
+
+    function drawWaveform(pct){
+        lastSeekPct = pct || 0;
+        var w = nowWaveform.width, h = nowWaveform.height;
+        if(!w || !h) return;
+        waveCtx.clearRect(0, 0, w, h);
+        var current = queue[currentIndex];
+        var peaks = current && current.type === 'audio' ? current.waveform : null;
+        var barCount = peaks ? peaks.length : 46;
+        var gap = w * 0.006;
+        var barWidth = (w - gap * (barCount - 1)) / barCount;
+        var progressIndex = Math.floor((lastSeekPct/100) * barCount);
+        for(var i=0;i<barCount;i++){
+            var amp = peaks ? Math.max(0.06, peaks[i]) : 0.20;
+            var barH = Math.max(2, amp * h);
+            var x = i * (barWidth + gap);
+            var y = (h - barH) / 2;
+            waveCtx.fillStyle = i <= progressIndex ? 'rgba(240,192,64,0.95)' : 'rgba(240,192,64,0.22)';
+            roundedBar(waveCtx, x, y, barWidth, barH, barWidth/2);
+        }
+    }
+
     function resizeCanvas(){
         var rect = artWrap.getBoundingClientRect();
         canvas.width = rect.width * devicePixelRatio;
         canvas.height = rect.height * devicePixelRatio;
     }
     window.addEventListener('resize', resizeCanvas);
+
+    function resizeWaveformCanvas(){
+        var rect = nowWaveform.getBoundingClientRect();
+        if(rect.width === 0 || rect.height === 0) return;
+        nowWaveform.width = rect.width * devicePixelRatio;
+        nowWaveform.height = rect.height * devicePixelRatio;
+        drawWaveform(lastSeekPct);
+    }
+    window.addEventListener('resize', resizeWaveformCanvas);
 
     var rafId = null;
     function drawVisualizer(){
@@ -1690,8 +1785,65 @@
         miniSub.textContent = track.artist ? track.artist : (track.type === 'video' ? 'ویدیو' : 'صوت');
 
         updateNowPlayingLikeIcons();
+        updateMediaSessionMetadata(track);
         renderView();
         renderQueuePanel();
+        updateFullscreenAvailability();
+        updatePipAvailability();
+        updateCastAvailability();
+        loadWaveformFor(track);
+    }
+
+    /* ============================================================
+       کنترل از صفحه‌قفل / نوتیفیکیشن گوشی (Media Session API)
+       این همان چیزی است که به دکمه‌های هدفون، بلوتوث ماشین و صفحه‌قفل
+       اجازه می‌دهد پخش را کنترل کنند — دقیقاً مثل اسپاتیفای/یوتیوب‌موزیک.
+    ============================================================ */
+    function setupMediaSession(){
+        if(!('mediaSession' in navigator)) return;
+        try{
+            navigator.mediaSession.setActionHandler('play', function(){ togglePlay(); });
+            navigator.mediaSession.setActionHandler('pause', function(){ togglePlay(); });
+            navigator.mediaSession.setActionHandler('previoustrack', goPrev);
+            navigator.mediaSession.setActionHandler('nexttrack', goNext);
+            navigator.mediaSession.setActionHandler('seekbackward', function(details){
+                var m = activeMedia(); if(m) m.currentTime = Math.max(0, m.currentTime - (details.seekOffset || 10));
+            });
+            navigator.mediaSession.setActionHandler('seekforward', function(details){
+                var m = activeMedia(); if(m) m.currentTime = Math.min(m.duration || 0, m.currentTime + (details.seekOffset || 10));
+            });
+            navigator.mediaSession.setActionHandler('seekto', function(details){
+                var m = activeMedia(); if(m && details.seekTime != null) m.currentTime = details.seekTime;
+            });
+            navigator.mediaSession.setActionHandler('stop', function(){ stopPlayback(); });
+        }catch(e){ /* برخی مرورگرها همه‌ی این اکشن‌ها را پشتیبانی نمی‌کنند؛ بی‌خطر نادیده می‌گیریم */ }
+    }
+    function updateMediaSessionMetadata(track){
+        if(!('mediaSession' in navigator) || !window.MediaMetadata) return;
+        var art = track.coverUrl || './logo.png';
+        try{
+            navigator.mediaSession.metadata = new MediaMetadata({
+                title: track.name || 'دیار پلیر',
+                artist: track.artist || 'دیار قدمگاه',
+                album: track.type === 'video' ? 'ویدیو' : 'صوت',
+                artwork: [
+                    { src: art, sizes: '192x192', type: 'image/png' },
+                    { src: art, sizes: '512x512', type: 'image/png' }
+                ]
+            });
+        }catch(e){}
+    }
+    function updateMediaSessionPlaybackState(){
+        if(!('mediaSession' in navigator)) return;
+        try{ navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused'; }catch(e){}
+    }
+    function updateMediaSessionPosition(media){
+        if(!('mediaSession' in navigator) || !navigator.mediaSession.setPositionState || !media) return;
+        var dur = media.duration;
+        if(!isFinite(dur) || dur <= 0) return;
+        try{
+            navigator.mediaSession.setPositionState({ duration: dur, playbackRate: media.playbackRate || 1, position: Math.min(media.currentTime || 0, dur) });
+        }catch(e){}
     }
 
     function refreshNowPlayingArt(track){
@@ -1764,6 +1916,7 @@
         disc.classList.toggle('spin', isPlaying && current && current.type === 'audio');
         renderView();
         renderQueuePanel();
+        updateMediaSessionPlaybackState();
     }
     function updateSeek(media){
         if(!media) return;
@@ -1775,6 +1928,8 @@
         curTimeEl.textContent = fmtTime(cur); durTimeEl.textContent = fmtTime(dur);
         nowSeekBar.value = pct; nowSeekBar.style.setProperty('--fill', pct + '%');
         nowCurTimeEl.textContent = fmtTime(cur); nowDurTimeEl.textContent = fmtTime(dur);
+        updateMediaSessionPosition(media);
+        drawWaveform(pct);
     }
     function wireMediaEvents(media){
         media.addEventListener('play', function(){ isPlaying = true; updatePlayIcons(); if(!rafId) drawVisualizer(); });
@@ -1877,6 +2032,56 @@
         fullscreenBtn.title = current && current.type === 'video' ? 'تمام‌صفحه (ویدیو)' : (canFs ? 'تمام‌صفحه (تصویر کاور)' : 'برای این فایل تمام‌صفحه‌ای وجود ندارد');
     }
 
+    /* ============================================================
+       پنجره‌ی شناور ویدیو (Picture-in-Picture) — مثل حالت پاپ‌آپ یوتیوب
+    ============================================================ */
+    var pipSupported = !!(document.pictureInPictureEnabled && videoStage.requestPictureInPicture);
+    function updatePipAvailability(){
+        if(!pipSupported){ pipBtn.hidden = true; return; }
+        var current = queue[currentIndex];
+        var canPip = !!(current && current.type === 'video');
+        pipBtn.hidden = false;
+        pipBtn.style.opacity = canPip ? '1' : '.35';
+        pipBtn.title = canPip ? 'پنجره‌ی شناور' : 'پنجره‌ی شناور فقط برای ویدیو در دسترس است';
+    }
+    pipBtn.addEventListener('click', function(){
+        var current = queue[currentIndex];
+        if(!(current && current.type === 'video')){ toast('پنجره‌ی شناور فقط برای ویدیو در دسترس است'); return; }
+        if(document.pictureInPictureElement){
+            document.exitPictureInPicture()['catch'](function(){});
+        } else {
+            videoStage.requestPictureInPicture()['catch'](function(){ toast('نمایش پنجره‌ی شناور ممکن نشد'); });
+        }
+    });
+    videoStage.addEventListener('enterpictureinpicture', function(){
+        pipBtn.classList.add('on');
+        var icon = pipBtn.querySelector('i'); icon.className = 'fas fa-clone';
+    });
+    videoStage.addEventListener('leavepictureinpicture', function(){
+        pipBtn.classList.remove('on');
+    });
+
+    /* ============================================================
+       پخش روی دستگاه دیگر (Cast / AirPlay) — از طریق Remote Playback API استاندارد مرورگر
+    ============================================================ */
+    function updateCastAvailability(){
+        var current = queue[currentIndex];
+        var media = current ? (current.type === 'video' ? videoStage : audioEl) : null;
+        var supported = !!(media && 'remote' in media && media.remote && media.remote.watchAvailability);
+        castBtn.hidden = !supported;
+        if(!supported) return;
+        media.remote.watchAvailability(function(available){
+            castBtn.style.opacity = available ? '1' : '.35';
+        })['catch'](function(){});
+    }
+    castBtn.addEventListener('click', function(){
+        var current = queue[currentIndex];
+        var media = current ? (current.type === 'video' ? videoStage : audioEl) : null;
+        if(!(media && media.remote)){ toast('پخش روی دستگاه دیگر در این مرورگر پشتیبانی نمی‌شود'); return; }
+        media.remote.prompt()['catch'](function(){ toast('اتصال به دستگاه دیگر لغو شد یا ممکن نشد'); });
+    });
+
+    // فول‌اسکرین می‌کنیم تا کنترل‌های بزرگ و کامل خودمان (قبلی/بعدی/تصادفی/تکرار/سیک) در دسترس بمانند.
     fullscreenBtn.addEventListener('click', function(){
         var current = queue[currentIndex];
         if(!current){ return; }
@@ -1888,10 +2093,6 @@
             toast('این فایل تصویر کاور یا ویدیو ندارد');
         }
     });
-
-    // برای ویدیو، به‌جای فول‌اسکرین‌کردن فقط تگ <video> (که مرورگر/اندروید بجایش
-    // کنترل‌های بومی محدود و فقط پخش/توقف نشان می‌دهد)، کل صفحه‌ی «در حال پخش» را
-    // فول‌اسکرین می‌کنیم تا کنترل‌های بزرگ و کامل خودمان (قبلی/بعدی/تصادفی/تکرار/سیک) در دسترس بمانند.
     function enterVideoFullscreen(){
         if(isIos() && videoStage.webkitEnterFullscreen){
             // سافاری آیفون فقط فول‌اسکرین بومی خودِ ویدیو را پشتیبانی می‌کند؛ گزینه‌ی دیگری نیست
@@ -2023,7 +2224,7 @@
         resizeCanvas();
         openPanel2(nowOverlay);
     });
-    function openPanel2(el){ el.classList.add('show'); resizeCanvas(); }
+    function openPanel2(el){ el.classList.add('show'); resizeCanvas(); resizeWaveformCanvas(); }
     nowCollapse.addEventListener('click', function(){
         if(isFsActive()) exitFs();
         nowOverlay.classList.remove('show');
@@ -2177,6 +2378,8 @@
         resizeCanvas();
         drawVisualizer();
         updateFullscreenAvailability();
+        updatePipAvailability();
+        setupMediaSession();
         handleShortcutParams();
     });
 
