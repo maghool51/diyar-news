@@ -1077,12 +1077,28 @@
         waveCtx.clearRect(0, 0, w, h);
         var current = queue[currentIndex];
         var peaks = current && current.type === 'audio' ? current.waveform : null;
-        var barCount = peaks ? peaks.length : 46;
+
+        if(!peaks){
+            // بدون داده‌ی موج صوتی (مثلاً ویدیو، یا صوتی که هنوز محاسبه نشده):
+            // به‌جای نقطه‌های ریز یکنواخت، یک نوار ساده و تمیز نشان بده
+            var barH2 = Math.max(3, h * 0.16);
+            var y2 = (h - barH2) / 2;
+            var splitX = (lastSeekPct/100) * w;
+            waveCtx.fillStyle = 'rgba(240,192,64,0.22)';
+            roundedBar(waveCtx, 0, y2, w, barH2, barH2/2);
+            if(splitX > 0){
+                waveCtx.fillStyle = 'rgba(240,192,64,0.95)';
+                roundedBar(waveCtx, 0, y2, Math.max(barH2, splitX), barH2, barH2/2);
+            }
+            return;
+        }
+
+        var barCount = peaks.length;
         var gap = w * 0.006;
         var barWidth = (w - gap * (barCount - 1)) / barCount;
         var progressIndex = Math.floor((lastSeekPct/100) * barCount);
         for(var i=0;i<barCount;i++){
-            var amp = peaks ? Math.max(0.06, peaks[i]) : 0.20;
+            var amp = Math.max(0.06, peaks[i]);
             var barH = Math.max(2, amp * h);
             var x = i * (barWidth + gap);
             var y = (h - barH) / 2;
