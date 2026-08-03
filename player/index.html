@@ -2400,8 +2400,35 @@
     installModalClose.addEventListener('click', function(){ installModal.classList.remove('show'); });
     installModal.addEventListener('click', function(e){ if(e.target === installModal) installModal.classList.remove('show'); });
 
+    // ثبت سرویس‌ورکر + به‌روزرسانی کاملاً خودکار (بدون نیاز به پاک کردن دستی کش هر بار).
+    // مشکل قبلی این بود که مرورگر/اپ نصب‌شده گاهی مدت‌ها متوجه نسخه‌ی تازه‌ی sw.js نمی‌شد؛
+    // اینجا به‌طور فعال هر دقیقه بررسی می‌کنیم و به‌محض فعال‌شدن نسخه‌ی جدید، صفحه خودش رفرش می‌شود.
     if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
-        window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js')['catch'](function(){}); });
+        window.addEventListener('load', function(){
+            navigator.serviceWorker.register('sw.js').then(function(reg){
+                reg.update()['catch'](function(){});
+                setInterval(function(){ reg.update()['catch'](function(){}); }, 60 * 1000);
+            })['catch'](function(){});
+
+            var refreshedOnce = false;
+            var pendingReload = false;
+            function applyPendingReloadIfSafe(){
+                if(pendingReload && !refreshedOnce && !isPlaying){
+                    refreshedOnce = true;
+                    window.location.reload();
+                }
+            }
+            navigator.serviceWorker.addEventListener('controllerchange', function(){
+                if(refreshedOnce) return;
+                if(isPlaying){ pendingReload = true; return; } // پخش را قطع نکن؛ بعد از توقف/تمام‌شدن رفرش می‌شود
+                refreshedOnce = true;
+                window.location.reload();
+            });
+            audioEl.addEventListener('pause', applyPendingReloadIfSafe);
+            audioEl.addEventListener('ended', applyPendingReloadIfSafe);
+            videoStage.addEventListener('pause', applyPendingReloadIfSafe);
+            videoStage.addEventListener('ended', applyPendingReloadIfSafe);
+        });
     }
 
     /* ============================================================
