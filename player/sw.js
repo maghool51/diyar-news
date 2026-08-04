@@ -1,5 +1,5 @@
 // سرویس‌ورکر دیار پلیر — کش کردن پوسته‌ی برنامه برای بازکردن سریع‌تر و کار نیمه‌آفلاین
-const CACHE_NAME = 'diyar-player-v22';
+const CACHE_NAME = 'diyar-player-v24';
 const APP_SHELL = [
     './',
     './index.html',

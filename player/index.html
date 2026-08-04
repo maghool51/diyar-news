@@ -41,6 +41,11 @@
         --topbar-h:60px;
     }
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+    /* رفع یک باگ واقعی: چون خیلی از کلاس‌های اجزا (btn-gold, pb-right button, ...) خودشان
+       display:flex دارند، این قانون‌های نویسنده طبق ترتیب cascade روی قانون پیش‌فرض مرورگر
+       برای ویژگی hidden (که فقط display:none تعریف می‌کند) اولویت می‌گیرند و عملاً hidden را
+       بی‌اثر می‌کنند. این قانون سراسری تضمین می‌کند hidden همیشه واقعاً مخفی کند. */
+    [hidden]{display:none !important;}
     ::selection{background:var(--gold);color:#12200f;}
     html,body{height:100%;overflow-x:hidden;width:100%;max-width:100%;}
     body{
@@ -397,12 +402,22 @@
         position:absolute;top:0;left:0;right:0;z-index:5;
         padding-top:calc(16px + env(safe-area-inset-top));
         background:linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+        transition:opacity .3s ease;
     }
     .now-overlay.video-mode:fullscreen .now-controls,
     .now-overlay.video-mode:-webkit-full-screen .now-controls{
         position:absolute;bottom:0;left:0;right:0;z-index:5;max-width:none;margin:0;
         background:linear-gradient(0deg, rgba(0,0,0,.82), rgba(0,0,0,.4) 65%, transparent);
         padding:28px calc(24px + env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+        transition:opacity .3s ease;
+    }
+    /* بعد از چند ثانیه بی‌حرکتی در حین پخش ویدیو، کنترل‌ها محو می‌شوند تا مزاحم دید نباشند؛
+       با هر لمس/حرکت دوباره ظاهر می‌شوند (دقیقاً مثل یوتیوب) */
+    .now-overlay.video-mode.controls-hidden:fullscreen .now-head,
+    .now-overlay.video-mode.controls-hidden:-webkit-full-screen .now-head,
+    .now-overlay.video-mode.controls-hidden:fullscreen .now-controls,
+    .now-overlay.video-mode.controls-hidden:-webkit-full-screen .now-controls{
+        opacity:0;pointer-events:none;
     }
     .big-cover img:fullscreen, .big-cover img:-webkit-full-screen{object-fit:contain;background:#000;width:100%;height:100%;}
     .now-meta{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;}
@@ -574,13 +589,19 @@
             position:absolute;top:0;left:0;right:0;z-index:5;
             padding-top:calc(8px + env(safe-area-inset-top));
             background:linear-gradient(180deg, rgba(0,0,0,.6), transparent);
+            transition:opacity .3s ease;
         }
         .now-overlay.video-mode .now-controls{
             position:absolute;bottom:0;left:0;right:0;z-index:5;max-width:none;margin:0;gap:8px;
             background:linear-gradient(0deg, rgba(0,0,0,.82), rgba(0,0,0,.4) 65%, transparent);
             padding:16px calc(20px + env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));
+            transition:opacity .3s ease;
         }
         .now-overlay.video-mode .now-controls .pb-seek{max-width:none;}
+        .now-overlay.video-mode.controls-hidden .now-head,
+        .now-overlay.video-mode.controls-hidden .now-controls{
+            opacity:0;pointer-events:none;
+        }
     }
 </style>
 </head>
@@ -921,6 +942,7 @@
     var repeatMode = 'off';      // off | all | one
     var playbackRate = 1;
     var lastSeekPct = 0;
+    var controlsHideTimer = null;
     var sleepTimerId = null;
     var sleepMinutes = 0;
 
@@ -1853,6 +1875,8 @@
         updatePipAvailability();
         updateCastAvailability();
         loadWaveformFor(track);
+        nowOverlay.classList.remove('controls-hidden');
+        scheduleControlsHide();
     }
 
     /* ============================================================
@@ -1882,14 +1906,16 @@
     function updateMediaSessionMetadata(track){
         if(!('mediaSession' in navigator) || !window.MediaMetadata) return;
         var art = track.coverUrl || './logo.png';
+        // نوع واقعی تصویر کاور (معمولاً jpeg از تگ ID3) را استفاده کن، نه همیشه png فرضی
+        var artMime = (track.coverBlob && track.coverBlob.type) ? track.coverBlob.type : 'image/png';
         try{
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: track.name || 'دیار پلیر',
                 artist: track.artist || 'دیار قدمگاه',
                 album: track.type === 'video' ? 'ویدیو' : 'صوت',
                 artwork: [
-                    { src: art, sizes: '192x192', type: 'image/png' },
-                    { src: art, sizes: '512x512', type: 'image/png' }
+                    { src: art, sizes: '192x192', type: artMime },
+                    { src: art, sizes: '512x512', type: artMime }
                 ]
             });
         }catch(e){}
@@ -1914,7 +1940,12 @@
             : '<i class="fas ' + (track.type === 'video' ? 'fa-clapperboard' : 'fa-music') + '"></i>';
         miniThumb.innerHTML = miniThumbHtml;
         applyNowPlayingArt(track);
+        // عنوان و هنرمند ممکن است با تاخیر (بعد از شروع پخش) از تگ ID3/فریم ویدیو استخراج شوند؛
+        // باید نمایش «در حال پخش» و نوتیفیکیشن صفحه‌قفل هم با همین مقادیر تازه هماهنگ شوند.
+        trackTitle.textContent = track.name;
+        miniTitle.textContent = track.name;
         if(track.artist){ trackSub.textContent = track.artist; miniSub.textContent = track.artist; }
+        updateMediaSessionMetadata(track);
     }
 
     function pushRecent(id){
@@ -1978,6 +2009,12 @@
         renderView();
         renderQueuePanel();
         updateMediaSessionPlaybackState();
+        if(isPlaying){
+            scheduleControlsHide();
+        } else {
+            clearTimeout(controlsHideTimer);
+            nowOverlay.classList.remove('controls-hidden');
+        }
     }
     function updateSeek(media){
         if(!media) return;
@@ -2163,6 +2200,28 @@
         }
     }
 
+    /* ============================================================
+       مخفی/نمایش خودکار کنترل‌های شناور روی ویدیو (مثل یوتیوب):
+       در حین پخش، بعد از چند ثانیه بی‌حرکتی محو می‌شوند تا مزاحم دید نباشند؛
+       با هر لمس/حرکت یا هنگام توقف پخش، دوباره ظاهر می‌شوند.
+    ============================================================ */
+    function scheduleControlsHide(){
+        clearTimeout(controlsHideTimer);
+        var current = queue[currentIndex];
+        if(isPlaying && current && current.type === 'video'){
+            controlsHideTimer = setTimeout(function(){
+                nowOverlay.classList.add('controls-hidden');
+            }, 3000);
+        }
+    }
+    function showControlsNow(){
+        nowOverlay.classList.remove('controls-hidden');
+        scheduleControlsHide();
+    }
+    nowOverlay.addEventListener('touchstart', showControlsNow, { passive: true });
+    nowOverlay.addEventListener('mousemove', showControlsNow);
+    nowOverlay.addEventListener('click', showControlsNow);
+
     // در فول‌اسکرین، کل صفحه‌ی «در حال پخش» (با کنترل‌های سفارشی خودمان) فول‌اسکرین می‌شود؛
     // بنابراین دیگر نیازی به کنترل‌های محدود بومی مرورگر روی خودِ تگ ویدیو نیست.
     function onFsChange(){
@@ -2289,6 +2348,8 @@
     nowCollapse.addEventListener('click', function(){
         if(isFsActive()) exitFs();
         nowOverlay.classList.remove('show');
+        clearTimeout(controlsHideTimer);
+        nowOverlay.classList.remove('controls-hidden');
     });
 
     /* ============================================================
@@ -2442,7 +2503,10 @@
         else if(e.code === 'ArrowLeft'){ var m2 = activeMedia(); if(m2) m2.currentTime = Math.max(0, m2.currentTime - 5); }
         else if(e.code === 'ArrowUp'){ e.preventDefault(); volumeBar.value = Math.min(1, parseFloat(volumeBar.value) + 0.05); volumeBar.dispatchEvent(new Event('input')); }
         else if(e.code === 'ArrowDown'){ e.preventDefault(); volumeBar.value = Math.max(0, parseFloat(volumeBar.value) - 0.05); volumeBar.dispatchEvent(new Event('input')); }
-        else if(e.key === 'Escape'){ nowOverlay.classList.remove('show'); closePanel(queuePanel); closePanel(eqPanel); }
+        else if(e.key === 'Escape'){
+            if(isFsActive()){ exitFs(); }
+            else { nowOverlay.classList.remove('show'); closePanel(queuePanel); closePanel(eqPanel); }
+        }
     });
 
     /* ============================================================
