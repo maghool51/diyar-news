@@ -1,7 +1,7 @@
 {
-  "lastUpdate": "2026-08-12T19:41:29.744Z",
-  "lastUpdatePersian": "۱۴۰۵/۵/۲۱, ۱۹:۴۱:۲۹",
-  "totalNews": 75,
+  "lastUpdate": "2026-08-12T20:43:33.980Z",
+  "lastUpdatePersian": "۱۴۰۵/۵/۲۱, ۲۰:۴۳:۳۳",
+  "totalNews": 74,
   "failedSources": [
     "تسنیم",
     "فارس",
@@ -11,29 +11,462 @@
     "رادیو فردا"
   ],
   "categories": [
-    "فرهنگی و هنری",
     "سیاسی",
-    "اقتصادی",
+    "فرهنگی و هنری",
     "متفرقه",
     "اجتماعی",
     "بین‌الملل",
-    "ورزشی"
+    "ورزشی",
+    "علمی و فناوری",
+    "اقتصادی"
   ],
   "news": [
+    {
+      "title": "ادعای رویترز: انگلیس، ایتالیا، سوئیس و اندونزی بر روند خلع سلاح در لبنان نظارت می‌کنند",
+      "link": "https://www.irna.ir/news/86234395/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%B1%D9%88%DB%8C%D8%AA%D8%B1%D8%B2-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D8%B3%D9%88%D8%A6%DB%8C%D8%B3-%D9%88-%D8%A7%D9%86%D8%AF%D9%88%D9%86%D8%B2%DB%8C-%D8%A8%D8%B1-%D8%B1%D9%88%D9%86%D8%AF-%D8%AE%D9%84%D8%B9-%D8%B3%D9%84%D8%A7%D8%AD",
+      "date": "Wed, 12 Aug 2026 20:42:02 GMT",
+      "source": "ایرنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "آخر هفته به کدام نمایشگاه‌ها سر بزنیم؟",
+      "link": "https://www.isna.ir/news/1405052112565/%D8%A2%D8%AE%D8%B1-%D9%87%D9%81%D8%AA%D9%87-%D8%A8%D9%87-%DA%A9%D8%AF%D8%A7%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7-%D8%B3%D8%B1-%D8%A8%D8%B2%D9%86%DB%8C%D9%85",
+      "date": "Wed, 12 Aug 2026 20:42:00 GMT",
+      "source": "ایسنا",
+      "category": "فرهنگی و هنری",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تجمع شبانه مردم اسلامشهر در حمایت از نیروهای مسلح",
+      "link": "https://www.mehrnews.com/news/6915352/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%85%D8%B3%D9%84%D8%AD",
+      "date": "Wed, 12 Aug 2026 20:39:07 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "برگزاری مراسم عزاداری دهه پایانی صفر در گرگان با حضور مسئولان و مردم",
+      "link": "https://www.mehrnews.com/news/6915350/%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1-%D8%AF%D8%B1-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B3%D8%A6%D9%88%D9%84%D8%A7%D9%86",
+      "date": "Wed, 12 Aug 2026 20:38:11 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "عکس| جزئیات جشن تولد لاکچری یامال در یک عمارت تاریخی!",
+      "link": "https://www.khabaronline.ir/news/2259514/%D8%B9%DA%A9%D8%B3-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D8%AC%D8%B4%D9%86-%D8%AA%D9%88%D9%84%D8%AF-%D9%84%D8%A7%DA%A9%DA%86%D8%B1%DB%8C-%DB%8C%D8%A7%D9%85%D8%A7%D9%84-%D8%AF%D8%B1-%DB%8C%DA%A9-%D8%B9%D9%85%D8%A7%D8%B1%D8%AA-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C",
+      "date": "Wed, 12 Aug 2026 20:35:00 GMT",
+      "source": "خبرآنلاین",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "خبر معاون وزیر کشور درباره تخصیص بودجه اربعین و دهه پایانی صفر",
+      "link": "https://www.khabaronline.ir/news/2259643/%D8%AE%D8%A8%D8%B1-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AA%D8%AE%D8%B5%DB%8C%D8%B5-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86-%D9%88-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1",
+      "date": "Wed, 12 Aug 2026 20:34:41 GMT",
+      "source": "خبرآنلاین",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "اسکان و پذیرایی از ۱۲۰۰ زائر پیاده در مجتمع دکتر شریعتی جهاددانشگاهی خراسان رضوی",
+      "link": "https://www.isna.ir/news/1405052212598/%D8%A7%D8%B3%DA%A9%D8%A7%D9%86-%D9%88-%D9%BE%D8%B0%DB%8C%D8%B1%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%DB%B1%DB%B2%DB%B0%DB%B0-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%AF%D8%B1-%D9%85%D8%AC%D8%AA%D9%85%D8%B9-%D8%AF%DA%A9%D8%AA%D8%B1-%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87%DB%8C",
+      "date": "Wed, 12 Aug 2026 20:33:04 GMT",
+      "source": "ایسنا",
+      "category": "اجتماعی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "عکس | کامنت عجیب بهرنگ علوی زیر پست زن رونالدو!",
+      "link": "https://www.khabaronline.ir/news/2259672/%D8%B9%DA%A9%D8%B3-%DA%A9%D8%A7%D9%85%D9%86%D8%AA-%D8%B9%D8%AC%DB%8C%D8%A8-%D8%A8%D9%87%D8%B1%D9%86%DA%AF-%D8%B9%D9%84%D9%88%DB%8C-%D8%B2%DB%8C%D8%B1-%D9%BE%D8%B3%D8%AA-%D8%B2%D9%86-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88",
+      "date": "Wed, 12 Aug 2026 20:32:49 GMT",
+      "source": "خبرآنلاین",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تجمع شبانه مردم در اسلامشهر",
+      "link": "https://www.mehrnews.com/news/6915347/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D8%B4%D9%87%D8%B1",
+      "date": "Wed, 12 Aug 2026 20:32:42 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "پاکسازی بخشی از نوار ساحلی سوزا",
+      "link": "https://www.isna.ir/news/1405052212597/%D9%BE%D8%A7%DA%A9%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D9%86%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D8%AD%D9%84%DB%8C-%D8%B3%D9%88%D8%B2%D8%A7",
+      "date": "Wed, 12 Aug 2026 20:31:05 GMT",
+      "source": "ایسنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تردید متحدان آمریکا از توانایی ترامپ برای اعمال نفوذ بر اسرائیل",
+      "link": "https://www.khabaronline.ir/news/2259588/%D8%AA%D8%B1%D8%AF%DB%8C%D8%AF-%D9%85%D8%AA%D8%AD%D8%AF%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%D8%B2-%D8%AA%D9%88%D8%A7%D9%86%D8%A7%DB%8C%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%86%D9%81%D9%88%D8%B0-%D8%A8%D8%B1-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84",
+      "date": "Wed, 12 Aug 2026 20:29:00 GMT",
+      "source": "خبرآنلاین",
+      "category": "بین‌الملل",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "شکوه حضور مردم دیار آفتاب در ایستگاه ۱۶۵ حمایت از ولایت فقیه",
+      "link": "https://www.mehrnews.com/news/6915326/%D8%B4%DA%A9%D9%88%D9%87-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1%DB%B6%DB%B5-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%81%D9%82%DB%8C%D9%87",
+      "date": "Wed, 12 Aug 2026 20:28:15 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "حدود پنج میلیون زائر  آخر صفر به مشهد مشرف شده‌اند",
+      "link": "https://www.irna.ir/news/86234376/%D8%AD%D8%AF%D9%88%D8%AF-%D9%BE%D9%86%D8%AC-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A2%D8%AE%D8%B1-%D8%B5%D9%81%D8%B1-%D8%A8%D9%87-%D9%85%D8%B4%D9%87%D8%AF-%D9%85%D8%B4%D8%B1%D9%81-%D8%B4%D8%AF%D9%87-%D8%A7%D9%86%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:27:57 GMT",
+      "source": "ایرنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تجمع شبانه مردم ورامین در حمایت از نظام جمهوری اسلامی برگزار شد",
+      "link": "https://www.mehrnews.com/news/6915344/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D8%B1%D8%A7%D9%85%DB%8C%D9%86-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%D8%B8%D8%A7%D9%85-%D8%AC%D9%85%D9%87%D9%88%D8%B1%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+      "date": "Wed, 12 Aug 2026 20:27:49 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "معدوم سازی بیش از ۳.۵ تن گوشت مرغ فاسد در قم",
+      "link": "https://www.isna.ir/news/1405052112596/%D9%85%D8%B9%D8%AF%D9%88%D9%85-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B3-%DB%B5-%D8%AA%D9%86-%DA%AF%D9%88%D8%B4%D8%AA-%D9%85%D8%B1%D8%BA-%D9%81%D8%A7%D8%B3%D8%AF-%D8%AF%D8%B1-%D9%82%D9%85",
+      "date": "Wed, 12 Aug 2026 20:26:24 GMT",
+      "source": "ایسنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "عزاداری مردم کیش در شب شهادت امام رضا(ع)",
+      "link": "https://www.mehrnews.com/news/6915322/%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%DA%A9%DB%8C%D8%B4-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+      "date": "Wed, 12 Aug 2026 20:25:30 GMT",
+      "source": "مهر",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تب مسی به شناسنامه نوزادان مکزیکی رسید!",
+      "link": "https://www.khabaronline.ir/news/2259510/%D8%AA%D8%A8-%D9%85%D8%B3%DB%8C-%D8%A8%D9%87-%D8%B4%D9%86%D8%A7%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%D8%B2%D8%A7%D8%AF%D8%A7%D9%86-%D9%85%DA%A9%D8%B2%DB%8C%DA%A9%DB%8C-%D8%B1%D8%B3%DB%8C%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:25:00 GMT",
+      "source": "خبرآنلاین",
+      "category": "بین‌الملل",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "خروش حماسی مردم انقلابی بابل",
+      "link": "https://www.mehrnews.com/news/6915327/%D8%AE%D8%B1%D9%88%D8%B4-%D8%AD%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A8%D8%A7%D8%A8%D9%84",
+      "date": "Wed, 12 Aug 2026 20:24:34 GMT",
+      "source": "مهر",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "طنین فریاد «خون‌خواهی» گلستانی‌ها در صحن گوهرشاد",
+      "link": "https://www.mehrnews.com/news/6915343/%D8%B7%D9%86%DB%8C%D9%86-%D9%81%D8%B1%DB%8C%D8%A7%D8%AF-%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%DA%AF%D9%84%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B5%D8%AD%D9%86-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:24:28 GMT",
+      "source": "مهر",
+      "category": "ورزشی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "راهپیمایی شبانه مردم انقلابی آبدان",
+      "link": "https://www.mehrnews.com/news/6915309/%D8%B1%D8%A7%D9%87%D9%BE%DB%8C%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A2%D8%A8%D8%AF%D8%A7%D9%86",
+      "date": "Wed, 12 Aug 2026 20:23:26 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "گوشی پرچم‌دار جدید گوگل معرفی شد / تمرکز غول فناوری روی هوش مصنوعی و عکاسی",
+      "link": "https://www.khabaronline.ir/live/2259669/%DA%AF%D9%88%D8%B4%DB%8C-%D9%BE%D8%B1%DA%86%D9%85-%D8%AF%D8%A7%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%AF%D9%88%DA%AF%D9%84-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B4%D8%AF-%D8%AA%D9%85%D8%B1%DA%A9%D8%B2-%D8%BA%D9%88%D9%84-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C-%D8%B1%D9%88%DB%8C-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C",
+      "date": "Wed, 12 Aug 2026 20:23:15 GMT",
+      "source": "خبرآنلاین",
+      "category": "علمی و فناوری",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ایرج؛ از «گنج قارون» تا «من یک پرنده‌م»",
+      "link": "https://www.isna.ir/news/1405052112595/%D8%A7%DB%8C%D8%B1%D8%AC-%D8%A7%D8%B2-%DA%AF%D9%86%D8%AC-%D9%82%D8%A7%D8%B1%D9%88%D9%86-%D8%AA%D8%A7-%D9%85%D9%86-%DB%8C%DA%A9-%D9%BE%D8%B1%D9%86%D8%AF%D9%87-%D9%85",
+      "date": "Wed, 12 Aug 2026 20:22:19 GMT",
+      "source": "ایسنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "مدیرعامل منطقه آزاد انزلی: زیرساخت‌های روستایی را ارتقا می‌دهیم",
+      "link": "https://www.irna.ir/news/86234112/%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C%DB%8C-%D8%B1%D8%A7-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
+      "date": "Wed, 12 Aug 2026 20:22:00 GMT",
+      "source": "ایرنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ثبت‌نام نذر و خدمت در چایخانه امام رضا(ع) ناژوان در «اصفهان من»",
+      "link": "https://www.imna.ir/news/995568/%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%86%D8%B0%D8%B1-%D9%88-%D8%AE%D8%AF%D9%85%D8%AA-%D8%AF%D8%B1-%DA%86%D8%A7%DB%8C%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D9%86%D8%A7%DA%98%D9%88%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%85%D9%86",
+      "date": "Wed, 12 Aug 2026 20:19:24 GMT",
+      "source": "ایمنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "توسعه کشاورزی خوزستان در گرو تعامل میدانی با تولیدکنندگان",
+      "link": "https://www.irna.ir/news/86234388/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%DB%8C-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%88-%D8%AA%D8%B9%D8%A7%D9%85%D9%84-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DA%A9%D9%86%D9%86%D8%AF%DA%AF%D8%A7%D9%86",
+      "date": "Wed, 12 Aug 2026 20:19:05 GMT",
+      "source": "ایرنا",
+      "category": "اقتصادی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "اضافه شدن چند بازیکن آکادمی استقلال خوزستان به تیم بزرگسالان",
+      "link": "https://www.isna.ir/news/1405052112594/%D8%A7%D8%B6%D8%A7%D9%81%D9%87-%D8%B4%D8%AF%D9%86-%DA%86%D9%86%D8%AF-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86-%D8%A2%DA%A9%D8%A7%D8%AF%D9%85%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%AA%DB%8C%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B3%D8%A7%D9%84%D8%A7%D9%86",
+      "date": "Wed, 12 Aug 2026 20:18:12 GMT",
+      "source": "ایسنا",
+      "category": "ورزشی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "خطبه‌خوانی شهادت امام رضا(ع)",
+      "link": "https://www.imna.ir/photo/995565/%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+      "date": "Wed, 12 Aug 2026 20:17:57 GMT",
+      "source": "ایمنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ببینید | خورشیدگرفتگی امشب در اسپانیا",
+      "link": "https://www.khabaronline.ir/news/2259667/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF%DA%AF%D8%B1%D9%81%D8%AA%DA%AF%DB%8C-%D8%A7%D9%85%D8%B4%D8%A8-%D8%AF%D8%B1-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7",
+      "date": "Wed, 12 Aug 2026 20:17:50 GMT",
+      "source": "خبرآنلاین",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ارائه خدمات شبانه روزی به زائران پیاده در مسیر مشهد",
+      "link": "https://www.mehrnews.com/news/6915337/%D8%A7%D8%B1%D8%A7%D8%A6%D9%87-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D8%B1%D9%88%D8%B2%DB%8C-%D8%A8%D9%87-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D9%85%D8%B4%D9%87%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:14:49 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "اسپانیا گفت‌وگو با مراکش بر سر «سئوتا» و «ملییا» را رد کرد",
+      "link": "https://www.irna.ir/news/86234392/%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88-%D8%A8%D8%A7-%D9%85%D8%B1%D8%A7%DA%A9%D8%B4-%D8%A8%D8%B1-%D8%B3%D8%B1-%D8%B3%D8%A6%D9%88%D8%AA%D8%A7-%D9%88-%D9%85%D9%84%DB%8C%DB%8C%D8%A7-%D8%B1%D8%A7-%D8%B1%D8%AF-%DA%A9%D8%B1%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:13:05 GMT",
+      "source": "ایرنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ذخیره‌سازی بیش از ۶ هزار تن کالای اساسی در البرز",
+      "link": "https://www.mehrnews.com/news/6915331/%D8%B0%D8%AE%DB%8C%D8%B1%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B6-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AA%D9%86-%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%A7%D9%84%D8%A8%D8%B1%D8%B2",
+      "date": "Wed, 12 Aug 2026 20:10:58 GMT",
+      "source": "مهر",
+      "category": "اقتصادی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "حضور مربی اسپانیایی در استقلال منتفی شد/ مذاکره با مربی کروات",
+      "link": "https://www.isna.ir/news/1405052112593/%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%A8%DB%8C-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%85%D9%86%D8%AA%D9%81%DB%8C-%D8%B4%D8%AF-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D8%A8%D8%A7-%D9%85%D8%B1%D8%A8%DB%8C-%DA%A9%D8%B1%D9%88%D8%A7%D8%AA",
+      "date": "Wed, 12 Aug 2026 20:07:55 GMT",
+      "source": "ایسنا",
+      "category": "ورزشی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "مقام ایرانی: تنگه هرمز باز نیست/ کشتی‌ها با مدیریت ایران تردد می‌کنند",
+      "link": "https://www.mehrnews.com/news/6915295/%D9%85%D9%82%D8%A7%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%A8%D8%A7%D8%B2-%D9%86%DB%8C%D8%B3%D8%AA-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%87%D8%A7-%D8%A8%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%AF%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:07:24 GMT",
+      "source": "مهر",
+      "category": "ورزشی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "علیرضا دبیر مشتی است!",
+      "link": "https://www.khabaronline.ir/news/2259562/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7-%D8%AF%D8%A8%DB%8C%D8%B1-%D9%85%D8%B4%D8%AA%DB%8C-%D8%A7%D8%B3%D8%AA",
+      "date": "Wed, 12 Aug 2026 20:05:00 GMT",
+      "source": "خبرآنلاین",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "استاندار گیلان: مشکلات کشور صادقانه برای مردم تبیین شود",
+      "link": "https://www.irna.ir/news/86234383/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B5%D8%A7%D8%AF%D9%82%D8%A7%D9%86%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%AA%D8%A8%DB%8C%DB%8C%D9%86-%D8%B4%D9%88%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:03:24 GMT",
+      "source": "ایرنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "خدمت رسانی موکب های اطراف حرم مطهر امام رضا(ع) به زائران رضوی",
+      "link": "https://www.mehrnews.com/news/6915328/%D8%AE%D8%AF%D9%85%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%DB%8C-%D9%85%D9%88%DA%A9%D8%A8-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%A8%D9%87-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C",
+      "date": "Wed, 12 Aug 2026 20:03:17 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "صبحانه چه بخوریم؟/  راهی ساده برای بهبود کیفیت تغذیه",
+      "link": "https://www.khabaronline.ir/news/2259441/%D8%B5%D8%A8%D8%AD%D8%A7%D9%86%D9%87-%DA%86%D9%87-%D8%A8%D8%AE%D9%88%D8%B1%DB%8C%D9%85-%D8%B1%D8%A7%D9%87%DB%8C-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D9%87%D8%A8%D9%88%D8%AF-%DA%A9%DB%8C%D9%81%DB%8C%D8%AA-%D8%AA%D8%BA%D8%B0%DB%8C%D9%87",
+      "date": "Wed, 12 Aug 2026 20:03:00 GMT",
+      "source": "خبرآنلاین",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تجمع شبانه مردم بوشهر در شب شهادت امام رضا(ع)",
+      "link": "https://www.mehrnews.com/news/6915315/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D9%88%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+      "date": "Wed, 12 Aug 2026 20:02:46 GMT",
+      "source": "مهر",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "حجت‌الاسلام طائب: رمز پیروزی رزمندگان اسلام در جنگ تحمیلی هشت ساله ایمان الهی بود",
+      "link": "https://www.irna.ir/news/86234371/%D8%AD%D8%AC%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B7%D8%A7%D8%A6%D8%A8-%D8%B1%D9%85%D8%B2-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%B1%D8%B2%D9%85%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AC%D9%86%DA%AF-%D8%AA%D8%AD%D9%85%DB%8C%D9%84%DB%8C-%D9%87%D8%B4%D8%AA",
+      "date": "Wed, 12 Aug 2026 20:01:27 GMT",
+      "source": "ایرنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "مردم ولایت‌مدار زابل همچنان در سنگر خیابان حضور دارند",
+      "link": "https://www.mehrnews.com/news/6915319/%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%85%D8%AF%D8%A7%D8%B1-%D8%B2%D8%A7%D8%A8%D9%84-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%A7%D8%B1%D9%86%D8%AF",
+      "date": "Wed, 12 Aug 2026 20:01:07 GMT",
+      "source": "مهر",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "سخنگوی کاخ سفید از سمت خود کناره‌گیری می‌کند",
+      "link": "https://www.irna.ir/news/86234390/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%DA%A9%D8%A7%D8%AE-%D8%B3%D9%81%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%B3%D9%85%D8%AA-%D8%AE%D9%88%D8%AF-%DA%A9%D9%86%D8%A7%D8%B1%D9%87-%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
+      "date": "Wed, 12 Aug 2026 19:59:41 GMT",
+      "source": "ایرنا",
+      "category": "بین‌الملل",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "سیاست های حمایتی و معیشتی دولت چهاردهم",
+      "link": "https://www.irna.ir/subject/86234269/%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA%DB%8C-%D9%88-%D9%85%D8%B9%DB%8C%D8%B4%D8%AA%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87%D9%85",
+      "date": "Wed, 12 Aug 2026 19:58:42 GMT",
+      "source": "ایرنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "رصد آلودگی نفتی در ۳۲ هزار مترمربع از سواحل قشم و هنگام",
+      "link": "https://www.isna.ir/news/1405052112591/%D8%B1%D8%B5%D8%AF-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%D8%AF%D8%B1-%DB%B3%DB%B2-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%AA%D8%B1%D9%85%D8%B1%D8%A8%D8%B9-%D8%A7%D8%B2-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D9%87%D9%86%DA%AF%D8%A7%D9%85",
+      "date": "Wed, 12 Aug 2026 19:51:37 GMT",
+      "source": "ایسنا",
+      "category": "اقتصادی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تعیین تکلیف ثبت‌سفارش‌های بلاتکلیف خودروهای وارداتی با تصمیم جدید صمت",
+      "link": "https://www.khabaronline.ir/news/2259574/%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%AB%D8%A8%D8%AA-%D8%B3%D9%81%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7%DB%8C-%D8%A8%D9%84%D8%A7%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF%D8%A7%D8%AA%DB%8C-%D8%A8%D8%A7-%D8%AA%D8%B5%D9%85%DB%8C%D9%85",
+      "date": "Wed, 12 Aug 2026 19:51:12 GMT",
+      "source": "خبرآنلاین",
+      "category": "اقتصادی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "پیام‌های هنرمندان برای درگذشت «پهلوان آواز»؛ هرگز نمیرد آنکه دلش زنده شد به عشق",
+      "link": "https://www.irna.ir/news/86234339/%D9%BE%DB%8C%D8%A7%D9%85-%D9%87%D8%A7%DB%8C-%D9%87%D9%86%D8%B1%D9%85%D9%86%D8%AF%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D9%BE%D9%87%D9%84%D9%88%D8%A7%D9%86-%D8%A2%D9%88%D8%A7%D8%B2-%D9%87%D8%B1%DA%AF%D8%B2-%D9%86%D9%85%DB%8C%D8%B1%D8%AF-%D8%A2%D9%86%DA%A9%D9%87",
+      "date": "Wed, 12 Aug 2026 19:50:43 GMT",
+      "source": "ایرنا",
+      "category": "فرهنگی و هنری",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "تنگه هرمز تا پذیرش شروط ایران همچنان بسته است",
+      "link": "https://www.isna.ir/news/1405052112589/%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%AA%D8%A7-%D9%BE%D8%B0%DB%8C%D8%B1%D8%B4-%D8%B4%D8%B1%D9%88%D8%B7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A8%D8%B3%D8%AA%D9%87-%D8%A7%D8%B3%D8%AA",
+      "date": "Wed, 12 Aug 2026 19:47:23 GMT",
+      "source": "ایسنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "امام جمعه بندرانزلی: سیره پیامبر بهترین الگو در کشورداری، اقتصاد و روابط خارجی است",
+      "link": "https://www.isna.ir/news/1405052112588/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A8%D9%86%D8%AF%D8%B1%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%B3%DB%8C%D8%B1%D9%87-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D9%84%DA%AF%D9%88-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF",
+      "date": "Wed, 12 Aug 2026 19:47:02 GMT",
+      "source": "ایسنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "آخرین چهارشنبه ماه صفر در ساحل بندرعباس",
+      "link": "https://www.irna.ir/photo/86234368/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%DA%86%D9%87%D8%A7%D8%B1%D8%B4%D9%86%D8%A8%D9%87-%D9%85%D8%A7%D9%87-%D8%B5%D9%81%D8%B1-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%AD%D9%84-%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3",
+      "date": "Wed, 12 Aug 2026 19:46:09 GMT",
+      "source": "ایرنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ببینید |  سقوط جنگنده اف-۱۶ ارتش ترکیه در جریان تمرین نظامی",
+      "link": "https://www.khabaronline.ir/news/2259596/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%B3%D9%82%D9%88%D8%B7-%D8%AC%D9%86%DA%AF%D9%86%D8%AF%D9%87-%D8%A7%D9%81-%DB%B1%DB%B6-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AC%D8%B1%DB%8C%D8%A7%D9%86-%D8%AA%D9%85%D8%B1%DB%8C%D9%86-%D9%86%D8%B8%D8%A7%D9%85%DB%8C",
+      "date": "Wed, 12 Aug 2026 19:44:54 GMT",
+      "source": "خبرآنلاین",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "جدول قطعی برق لرستان روز پنجشنبه ۲۲ مرداد ۱۴۰۵+ ساعات خاموشی خرم‌آباد",
+      "link": "https://www.imna.ir/news/995550/%D8%AC%D8%AF%D9%88%D9%84-%D9%82%D8%B7%D8%B9%DB%8C-%D8%A8%D8%B1%D9%82-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D9%88%D8%B2-%D9%BE%D9%86%D8%AC%D8%B4%D9%86%D8%A8%D9%87-%DB%B2%DB%B2-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA-%D8%AE%D8%A7%D9%85%D9%88%D8%B4%DB%8C",
+      "date": "Wed, 12 Aug 2026 19:44:21 GMT",
+      "source": "ایمنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "وال استریت ژورنال: ترافیک کشتیرانی در تنگه هرمز پنج برابر کاهش یافته است",
+      "link": "https://www.isna.ir/news/1405052112587/%D9%88%D8%A7%D9%84-%D8%A7%D8%B3%D8%AA%D8%B1%DB%8C%D8%AA-%DA%98%D9%88%D8%B1%D9%86%D8%A7%D9%84-%D8%AA%D8%B1%D8%A7%D9%81%DB%8C%DA%A9-%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%BE%D9%86%D8%AC-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%DA%A9%D8%A7%D9%87%D8%B4",
+      "date": "Wed, 12 Aug 2026 19:43:39 GMT",
+      "source": "ایسنا",
+      "category": "ورزشی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "ورودی‌های شیراز استانداردسازی می‌شود/تکمیل تعهدات راهداری در کمربندی شیراز تا دو ماه آینده",
+      "link": "https://www.imna.ir/news/995557/%D9%88%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%AA%D8%B9%D9%87%D8%AF%D8%A7%D8%AA-%D8%B1%D8%A7%D9%87%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1",
+      "date": "Wed, 12 Aug 2026 19:42:48 GMT",
+      "source": "ایمنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "مراسم خطبه‌خوانی شب شهادت امام رضا(ع) در حرم مطهر رضوی",
+      "link": "https://www.irna.ir/photo/86234381/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%B1%D8%B6%D9%88%DB%8C",
+      "date": "Wed, 12 Aug 2026 19:42:32 GMT",
+      "source": "ایرنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "مطالبات آدان پرداخت شد",
+      "link": "https://www.isna.ir/news/1405052112586/%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D8%A7%D8%AA-%D8%A2%D8%AF%D8%A7%D9%86-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%B4%D8%AF",
+      "date": "Wed, 12 Aug 2026 19:41:40 GMT",
+      "source": "ایسنا",
+      "category": "متفرقه",
+      "flag": "🇮🇷"
+    },
+    {
+      "title": "برگزاری آیین خطبه‌خوانی شب شهادت امام رضا(ع) در حرم رضوی",
+      "link": "https://www.imna.ir/news/995537/%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A2%DB%8C%DB%8C%D9%86-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%B1%D8%B6%D9%88%DB%8C",
+      "date": "Wed, 12 Aug 2026 19:41:24 GMT",
+      "source": "ایمنا",
+      "category": "سیاسی",
+      "flag": "🇮🇷"
+    },
     {
       "title": "فیلم|‌حرم حضرت شاهچراغ (ع) و سوگواری‌های ایام پایانی ماه صفر",
       "link": "https://www.imna.ir/news/995560/%D9%81%DB%8C%D9%84%D9%85-%D8%AD%D8%B1%D9%85-%D8%AD%D8%B6%D8%B1%D8%AA-%D8%B4%D8%A7%D9%87%DA%86%D8%B1%D8%A7%D8%BA-%D8%B9-%D9%88-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D8%A7%D9%85-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D9%85%D8%A7%D9%87-%D8%B5%D9%81%D8%B1",
       "date": "Wed, 12 Aug 2026 19:39:55 GMT",
       "source": "ایمنا",
       "category": "فرهنگی و هنری",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "مراسم خطبه خوانی شهادت امام رضا (ع)",
-      "link": "https://www.mehrnews.com/photo/6915321/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
-      "date": "Wed, 12 Aug 2026 19:39:34 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
       "flag": "🇮🇷"
     },
     {
@@ -53,27 +486,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "عزاداری شهادت امام رضا(ع) در حرم بانوی کرامت",
-      "link": "https://www.mehrnews.com/news/6915294/%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%A8%D8%A7%D9%86%D9%88%DB%8C-%DA%A9%D8%B1%D8%A7%D9%85%D8%AA",
-      "date": "Wed, 12 Aug 2026 19:38:47 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "کشف ۱۸۱ قبضه سلاح غیرمجاز در عملیات ضربتی پلیس خوزستان",
       "link": "https://www.irna.ir/news/86234385/%DA%A9%D8%B4%D9%81-%DB%B1%DB%B8%DB%B1-%D9%82%D8%A8%D8%B6%D9%87-%D8%B3%D9%84%D8%A7%D8%AD-%D8%BA%DB%8C%D8%B1%D9%85%D8%AC%D8%A7%D8%B2-%D8%AF%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B6%D8%B1%D8%A8%D8%AA%DB%8C-%D9%BE%D9%84%DB%8C%D8%B3-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86",
       "date": "Wed, 12 Aug 2026 19:37:57 GMT",
       "source": "ایرنا",
       "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "کلاته‌ رودبار در سوگ پیامبر رحمت(ص) و امام حسن مجتبی(ع)",
-      "link": "https://www.mehrnews.com/news/6915265/%DA%A9%D9%84%D8%A7%D8%AA%D9%87-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B3%D9%88%DA%AF-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%B1%D8%AD%D9%85%D8%AA-%D8%B5-%D9%88-%D8%A7%D9%85%D8%A7%D9%85-%D8%AD%D8%B3%D9%86-%D9%85%D8%AC%D8%AA%D8%A8%DB%8C-%D8%B9",
-      "date": "Wed, 12 Aug 2026 19:37:04 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
       "flag": "🇮🇷"
     },
     {
@@ -85,51 +502,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "مردم میدان‌دار باب‌الرضا(ع) در شب شهادت امام رضا(ع)",
-      "link": "https://www.mehrnews.com/news/6915278/%D9%85%D8%B1%D8%AF%D9%85-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
-      "date": "Wed, 12 Aug 2026 19:34:44 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "فیلمی از وضعیت ساحل قشم و آلودگی نفتی",
-      "link": "https://www.mehrnews.com/news/6915273/%D9%81%DB%8C%D9%84%D9%85%DB%8C-%D8%A7%D8%B2-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%B3%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C",
-      "date": "Wed, 12 Aug 2026 19:33:37 GMT",
-      "source": "مهر",
-      "category": "اقتصادی",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "جاده چالوس و آزادراه تهران–شمال دوطرفه شد",
       "link": "https://www.isna.ir/news/1405052112584/%D8%AC%D8%A7%D8%AF%D9%87-%DA%86%D8%A7%D9%84%D9%88%D8%B3-%D9%88-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84-%D8%AF%D9%88%D8%B7%D8%B1%D9%81%D9%87-%D8%B4%D8%AF",
       "date": "Wed, 12 Aug 2026 19:32:49 GMT",
       "source": "ایسنا",
       "category": "اجتماعی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "انسداد معابر فرعی بولوار قرنی و شهید رئیسی مشهد برای تسهیل تردد زائران",
-      "link": "https://www.mehrnews.com/news/6915317/%D8%A7%D9%86%D8%B3%D8%AF%D8%A7%D8%AF-%D9%85%D8%B9%D8%A7%D8%A8%D8%B1-%D9%81%D8%B1%D8%B9%DB%8C-%D8%A8%D9%88%D9%84%D9%88%D8%A7%D8%B1-%D9%82%D8%B1%D9%86%DB%8C-%D9%88-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B1%D8%A6%DB%8C%D8%B3%DB%8C-%D9%85%D8%B4%D9%87%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B3%D9%87%DB%8C%D9%84-%D8%AA%D8%B1%D8%AF%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:31:58 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "حجت‌الاسلام توکلی: قساوت قلب زمینه‌ساز تکرار جنایت‌های تاریخی است",
-      "link": "https://www.mehrnews.com/news/6915314/%D8%AD%D8%AC%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%AA%D9%88%DA%A9%D9%84%DB%8C-%D9%82%D8%B3%D8%A7%D9%88%D8%AA-%D9%82%D9%84%D8%A8-%D8%B2%D9%85%DB%8C%D9%86%D9%87-%D8%B3%D8%A7%D8%B2-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1-%D8%AC%D9%86%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C",
-      "date": "Wed, 12 Aug 2026 19:31:33 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "اجتماع بزرگ هیئت‌های عزاداری استان یزد در ایوان مقصوره مسجد گوهرشاد",
-      "link": "https://www.mehrnews.com/news/6915228/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A8%D8%B2%D8%B1%DA%AF-%D9%87%DB%8C%D8%A6%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DB%8C%D8%B2%D8%AF-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%85%D9%82%D8%B5%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%AC%D8%AF-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:31:23 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
       "flag": "🇮🇷"
     },
     {
@@ -149,14 +526,6 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "رئیس کل دادگستری قم:ساعدی‌نیا متعهد شده هیچ کافه‌ای درکشور نداشته باشد",
-      "link": "https://www.mehrnews.com/news/6915316/%D8%B1%D8%A6%DB%8C%D8%B3-%DA%A9%D9%84-%D8%AF%D8%A7%D8%AF%DA%AF%D8%B3%D8%AA%D8%B1%DB%8C-%D9%82%D9%85-%D8%B3%D8%A7%D8%B9%D8%AF%DB%8C-%D9%86%DB%8C%D8%A7-%D9%85%D8%AA%D8%B9%D9%87%D8%AF-%D8%B4%D8%AF%D9%87-%D9%87%DB%8C%DA%86-%DA%A9%D8%A7%D9%81%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1%DA%A9%D8%B4%D9%88%D8%B1-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%D9%87",
-      "date": "Wed, 12 Aug 2026 19:30:31 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "یک هیات امنیتی بلندپایه عراقی به عربستان می‌رود",
       "link": "https://www.khabaronline.ir/news/2259533/%DB%8C%DA%A9-%D9%87%DB%8C%D8%A7%D8%AA-%D8%A7%D9%85%D9%86%DB%8C%D8%AA%DB%8C-%D8%A8%D9%84%D9%86%D8%AF%D9%BE%D8%A7%DB%8C%D9%87-%D8%B9%D8%B1%D8%A7%D9%82%DB%8C-%D8%A8%D9%87-%D8%B9%D8%B1%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%DB%8C-%D8%B1%D9%88%D8%AF",
       "date": "Wed, 12 Aug 2026 19:30:00 GMT",
@@ -173,67 +542,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "جاده چالوس و آزادراه تهران - شمال دوطرفه شد",
-      "link": "https://www.mehrnews.com/news/6915313/%D8%AC%D8%A7%D8%AF%D9%87-%DA%86%D8%A7%D9%84%D9%88%D8%B3-%D9%88-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84-%D8%AF%D9%88%D8%B7%D8%B1%D9%81%D9%87-%D8%B4%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:29:01 GMT",
-      "source": "مهر",
-      "category": "اجتماعی",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "فیلم| مدیرعامل آب و فاضلاب اردبیل: پنج هزار میلیارد ریال برای فاضلاب مرکز استان تامین شد",
       "link": "https://www.irna.ir/news/86233679/%D9%81%DB%8C%D9%84%D9%85-%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%D8%A2%D8%A8-%D9%88-%D9%81%D8%A7%D8%B6%D9%84%D8%A7%D8%A8-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84-%D9%BE%D9%86%D8%AC-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF-%D8%B1%DB%8C%D8%A7%D9%84-%D8%A8%D8%B1%D8%A7%DB%8C",
       "date": "Wed, 12 Aug 2026 19:28:44 GMT",
       "source": "ایرنا",
       "category": "فرهنگی و هنری",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "جابه‌جایی بیش از ۵۴۰۰ زائر از سیستان و بلوچستان به مشهد مقدس",
-      "link": "https://www.mehrnews.com/news/6915311/%D8%AC%D8%A7%D8%A8%D9%87-%D8%AC%D8%A7%DB%8C%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B5%DB%B4%DB%B0%DB%B0-%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A7%D8%B2-%D8%B3%DB%8C%D8%B3%D8%AA%D8%A7%D9%86-%D9%88-%D8%A8%D9%84%D9%88%DA%86%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D8%B4%D9%87%D8%AF-%D9%85%D9%82%D8%AF%D8%B3",
-      "date": "Wed, 12 Aug 2026 19:28:32 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "اجتماع باشکوه اقتدار در نکا",
-      "link": "https://www.mehrnews.com/news/6915303/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A8%D8%A7%D8%B4%DA%A9%D9%88%D9%87-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%D9%86%DA%A9%D8%A7",
-      "date": "Wed, 12 Aug 2026 19:27:26 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "رشد ۷ برابری سرمایه‌گذاری خارجی در منطقه آزاد ماکو؛جذب ۵۰ میلیون یورو",
-      "link": "https://www.mehrnews.com/news/6915299/%D8%B1%D8%B4%D8%AF-%DB%B7-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1%DB%8C-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D8%AF%D8%B1-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D9%85%D8%A7%DA%A9%D9%88-%D8%AC%D8%B0%D8%A8-%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86",
-      "date": "Wed, 12 Aug 2026 19:26:19 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "روضه خوانی شب شهادت امام رضا(ع) در حرم رضوی",
-      "link": "https://www.mehrnews.com/news/6915307/%D8%B1%D9%88%D8%B6%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%B1%D8%B6%D9%88%DB%8C",
-      "date": "Wed, 12 Aug 2026 19:24:39 GMT",
-      "source": "مهر",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "سرعت طوفان در زابل به ۱۰۱ کیلومتر بر ساعت رسید",
-      "link": "https://www.mehrnews.com/news/6915305/%D8%B3%D8%B1%D8%B9%D8%AA-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B2%D8%A7%D8%A8%D9%84-%D8%A8%D9%87-%DB%B1%DB%B0%DB%B1-%DA%A9%DB%8C%D9%84%D9%88%D9%85%D8%AA%D8%B1-%D8%A8%D8%B1-%D8%B3%D8%A7%D8%B9%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:24:07 GMT",
-      "source": "مهر",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "رئیس کمیسیون امنیت ملی مجلس: نیت شوم حمله زمینی به ایران در نطفه خفه شد",
-      "link": "https://www.irna.ir/news/86234382/%D8%B1%D8%A6%DB%8C%D8%B3-%DA%A9%D9%85%DB%8C%D8%B3%DB%8C%D9%88%D9%86-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D9%84%DB%8C-%D9%85%D8%AC%D9%84%D8%B3-%D9%86%DB%8C%D8%AA-%D8%B4%D9%88%D9%85-%D8%AD%D9%85%D9%84%D9%87-%D8%B2%D9%85%DB%8C%D9%86%DB%8C-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%86%D8%B7%D9%81%D9%87",
-      "date": "Wed, 12 Aug 2026 19:20:57 GMT",
-      "source": "ایرنا",
-      "category": "سیاسی",
       "flag": "🇮🇷"
     },
     {
@@ -245,59 +558,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "نماینده کنگره خطاب به ترامپ: آمریکا را ضعیف و منزوی‌تر کرده‌اید؛ بی‌کفایت",
-      "link": "https://www.irna.ir/news/86234373/%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%D8%AE%D8%B7%D8%A7%D8%A8-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%B6%D8%B9%DB%8C%D9%81-%D9%88-%D9%85%D9%86%D8%B2%D9%88%DB%8C-%D8%AA%D8%B1-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%DB%8C%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:17:50 GMT",
-      "source": "ایرنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "رئیس جمهور لهستان: بالتیک دریای داخلی ناتو نیست",
-      "link": "https://www.irna.ir/news/86234380/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%AC%D9%85%D9%87%D9%88%D8%B1-%D9%84%D9%87%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D9%84%D8%AA%DB%8C%DA%A9-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C-%D8%AF%D8%A7%D8%AE%D9%84%DB%8C-%D9%86%D8%A7%D8%AA%D9%88-%D9%86%DB%8C%D8%B3%D8%AA",
-      "date": "Wed, 12 Aug 2026 19:16:25 GMT",
-      "source": "ایرنا",
-      "category": "بین‌الملل",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "فولادشهر دوباره سبز می‌شود/ ذوب‌آهن و فولاد با حضور تماشاگران به استقبال لیگ ۲۶ می‌روند",
-      "link": "https://www.isna.ir/news/1405052112582/%D9%81%D9%88%D9%84%D8%A7%D8%AF%D8%B4%D9%87%D8%B1-%D8%AF%D9%88%D8%A8%D8%A7%D8%B1%D9%87-%D8%B3%D8%A8%D8%B2-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%88-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DA%AF%D8%B1%D8%A7%D9%86",
-      "date": "Wed, 12 Aug 2026 19:15:16 GMT",
-      "source": "ایسنا",
-      "category": "ورزشی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "سعید کریمی رسماً به ذوب‌آهن پیوست",
-      "link": "https://www.isna.ir/news/1405052112581/%D8%B3%D8%B9%DB%8C%D8%AF-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%B1%D8%B3%D9%85%D8%A7-%D8%A8%D9%87-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA",
-      "date": "Wed, 12 Aug 2026 19:14:15 GMT",
-      "source": "ایسنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "ببینید | ازدحام جمعیت درجوار آرامگاه رهبر شهید همزمان با شب شهادت امام رضا علیه السلام",
       "link": "https://www.khabaronline.ir/news/2259634/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A7%D8%B2%D8%AF%D8%AD%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%DB%8C%D8%AA-%D8%AF%D8%B1%D8%AC%D9%88%D8%A7%D8%B1-%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA",
       "date": "Wed, 12 Aug 2026 19:13:13 GMT",
       "source": "خبرآنلاین",
       "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "تأکید وزیر آموزش و پرورش بر انتقال مکتب فکری امام شهید به نسل آینده",
-      "link": "https://www.isna.ir/news/1405052112580/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%88-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D8%A8%D8%B1-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D9%85%DA%A9%D8%AA%D8%A8-%D9%81%DA%A9%D8%B1%DB%8C-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A8%D9%87-%D9%86%D8%B3%D9%84",
-      "date": "Wed, 12 Aug 2026 19:12:15 GMT",
-      "source": "ایسنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "استقلال به دنبال دریافت جام قهرمانی/ پیگیری جدی آبی‌ها",
-      "link": "https://www.isna.ir/news/1405052112579/%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D8%AC%D8%A7%D9%85-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AC%D8%AF%DB%8C-%D8%A2%D8%A8%DB%8C-%D9%87%D8%A7",
-      "date": "Wed, 12 Aug 2026 19:12:08 GMT",
-      "source": "ایسنا",
-      "category": "ورزشی",
       "flag": "🇮🇷"
     },
     {
@@ -309,99 +574,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "واکنش کاربران خبرآنلاین به شرط گذاشتن قلعه‌نویی برای تیم‌ملی",
-      "link": "https://www.khabaronline.ir/news/2259563/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%AE%D8%A8%D8%B1%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%A8%D9%87-%D8%B4%D8%B1%D8%B7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA%D9%86-%D9%82%D9%84%D8%B9%D9%87-%D9%86%D9%88%DB%8C%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C",
-      "date": "Wed, 12 Aug 2026 19:10:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "اجتماعی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "شکستگی خط انتقال آب سد شیرین دره به بجنورد مهار شد",
-      "link": "https://www.isna.ir/news/1405052112578/%D8%B4%DA%A9%D8%B3%D8%AA%DA%AF%DB%8C-%D8%AE%D8%B7-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D8%A2%D8%A8-%D8%B3%D8%AF-%D8%B4%DB%8C%D8%B1%DB%8C%D9%86-%D8%AF%D8%B1%D9%87-%D8%A8%D9%87-%D8%A8%D8%AC%D9%86%D9%88%D8%B1%D8%AF-%D9%85%D9%87%D8%A7%D8%B1-%D8%B4%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:07:25 GMT",
-      "source": "ایسنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "زنگ خطر ال‌نینوی رکوردشکن به صدا درآمد",
-      "link": "https://www.khabaronline.ir/news/2259493/%D8%B2%D9%86%DA%AF-%D8%AE%D8%B7%D8%B1-%D8%A7%D9%84-%D9%86%DB%8C%D9%86%D9%88%DB%8C-%D8%B1%DA%A9%D9%88%D8%B1%D8%AF%D8%B4%DA%A9%D9%86-%D8%A8%D9%87-%D8%B5%D8%AF%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF",
-      "date": "Wed, 12 Aug 2026 19:07:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "نهاد مدیریت آبراه خلیج‌فارس: تنگه هرمز همچنان مسدود است",
-      "link": "https://www.irna.ir/news/86234374/%D9%86%D9%87%D8%A7%D8%AF-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D9%85%D8%B3%D8%AF%D9%88%D8%AF-%D8%A7%D8%B3%D8%AA",
-      "date": "Wed, 12 Aug 2026 19:02:06 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "معاون وزیر کشور: برای دهه پایانی صفر باید ردیف بودجه ایجاد شود",
-      "link": "https://www.isna.ir/news/1405052112576/%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%B1%D8%AF%DB%8C%D9%81-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%B4%D9%88%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:59:15 GMT",
-      "source": "ایسنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "ادعای رئیس مستعفی یمن: دیگر هیچ اقدام حوثی‌ها بدون پاسخ نخواهد بود",
-      "link": "https://www.irna.ir/news/86234366/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%B1%D8%A6%DB%8C%D8%B3-%D9%85%D8%B3%D8%AA%D8%B9%D9%81%DB%8C-%DB%8C%D9%85%D9%86-%D8%AF%DB%8C%DA%AF%D8%B1-%D9%87%DB%8C%DA%86-%D8%A7%D9%82%D8%AF%D8%A7%D9%85-%D8%AD%D9%88%D8%AB%DB%8C-%D9%87%D8%A7-%D8%A8%D8%AF%D9%88%D9%86-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:55:02 GMT",
-      "source": "ایرنا",
-      "category": "بین‌الملل",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "برپایی آیین‌های سوگواری رحلت پیامبر اکرم (ص) و شهادت امام دوم و هشتم شیعیان در پاکستان",
-      "link": "https://www.irna.ir/news/86234370/%D8%A8%D8%B1%D9%BE%D8%A7%DB%8C%DB%8C-%D8%A2%DB%8C%DB%8C%D9%86-%D9%87%D8%A7%DB%8C-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D8%B1%D8%AD%D9%84%D8%AA-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%A7%DA%A9%D8%B1%D9%85-%D8%B5-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%AF%D9%88%D9%85",
-      "date": "Wed, 12 Aug 2026 18:49:50 GMT",
-      "source": "ایرنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "مدیرکل کمیته امداد امام (ره) اردبیل: شمار واجدین شرایط خدمات مسکن به پایان رسید",
-      "link": "https://www.irna.ir/news/86233456/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%DA%A9%D9%85%DB%8C%D8%AA%D9%87-%D8%A7%D9%85%D8%AF%D8%A7%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D9%87-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84-%D8%B4%D9%85%D8%A7%D8%B1-%D9%88%D8%A7%D8%AC%D8%AF%DB%8C%D9%86-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA",
-      "date": "Wed, 12 Aug 2026 18:49:27 GMT",
-      "source": "ایرنا",
-      "category": "اجتماعی",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "ظرفیت نفتی سروستان باید به توسعه صنایع پایین‌دستی منجر شود",
       "link": "https://www.imna.ir/news/995553/%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%86%D9%81%D8%AA%DB%8C-%D8%B3%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%BE%D8%A7%DB%8C%DB%8C%D9%86-%D8%AF%D8%B3%D8%AA%DB%8C-%D9%85%D9%86%D8%AC%D8%B1-%D8%B4%D9%88%D8%AF",
       "date": "Wed, 12 Aug 2026 18:46:57 GMT",
       "source": "ایمنا",
       "category": "اقتصادی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "آیت‌الله شبیری زنجانی: «رهبر شهید» تحت تاثیر هیچ قدرتی قرار نگرفتند",
-      "link": "https://www.irna.ir/news/86234353/%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D8%B4%D8%A8%DB%8C%D8%B1%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AA%D8%AD%D8%AA-%D8%AA%D8%A7%D8%AB%DB%8C%D8%B1-%D9%87%DB%8C%DA%86-%D9%82%D8%AF%D8%B1%D8%AA%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%D9%86%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:45:43 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "360 سالمند زنجانی تحت پوشش طرح توانمند سازی قرار گرفتند",
-      "link": "https://www.irna.ir/news/86234340/360-%D8%B3%D8%A7%D9%84%D9%85%D9%86%D8%AF-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%AA%D8%AD%D8%AA-%D9%BE%D9%88%D8%B4%D8%B4-%D8%B7%D8%B1%D8%AD-%D8%AA%D9%88%D8%A7%D9%86%D9%85%D9%86%D8%AF-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:45:03 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "ایرج خودش را معرفی کرد؛ راننده باور نکرد!/ یادداشت احمد زیدآبادی به یاد ایرج و فردین",
-      "link": "https://www.khabaronline.ir/news/2259650/%D8%A7%DB%8C%D8%B1%D8%AC-%D8%AE%D9%88%D8%AF%D8%B4-%D8%B1%D8%A7-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%DA%A9%D8%B1%D8%AF-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%D9%87-%D8%A8%D8%A7%D9%88%D8%B1-%D9%86%DA%A9%D8%B1%D8%AF-%DB%8C%D8%A7%D8%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D8%AD%D9%85%D8%AF-%D8%B2%DB%8C%D8%AF%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C",
-      "date": "Wed, 12 Aug 2026 18:45:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
       "flag": "🇮🇷"
     },
     {
@@ -413,59 +590,11 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "برداشت لیموترش در خوزستان آغاز شد",
-      "link": "https://www.irna.ir/news/86234336/%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA-%D9%84%DB%8C%D9%85%D9%88%D8%AA%D8%B1%D8%B4-%D8%AF%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:41:23 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "پیشرفت ۶۰ درصدی سد آبسرده بروجرد/ تکمیل ساختمان سد ۳۴۰۰ میلیارد تومان اعتبار نیاز دارد",
-      "link": "https://www.isna.ir/news/1405052112575/%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%DB%B6%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%B3%D8%AF-%D8%A2%D8%A8%D8%B3%D8%B1%D8%AF%D9%87-%D8%A8%D8%B1%D9%88%D8%AC%D8%B1%D8%AF-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D8%B3%D8%AF-%DB%B3%DB%B4%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:40:36 GMT",
-      "source": "ایسنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "گذشت اولیای دم از قصاص یک محکوم در خوزستان همزمان با سوگواری پیامبر اکرم (ص)",
-      "link": "https://www.irna.ir/news/86234351/%DA%AF%D8%B0%D8%B4%D8%AA-%D8%A7%D9%88%D9%84%DB%8C%D8%A7%DB%8C-%D8%AF%D9%85-%D8%A7%D8%B2-%D9%82%D8%B5%D8%A7%D8%B5-%DB%8C%DA%A9-%D9%85%D8%AD%DA%A9%D9%88%D9%85-%D8%AF%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C",
-      "date": "Wed, 12 Aug 2026 18:38:45 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "وندی شرمن: ایران کنترل تنگه هرمز را در دست خواهد داشت",
-      "link": "https://www.irna.ir/news/86234369/%D9%88%D9%86%D8%AF%DB%8C-%D8%B4%D8%B1%D9%85%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%AF%D8%B3%D8%AA-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%AF%D8%A7%D8%B4%D8%AA",
-      "date": "Wed, 12 Aug 2026 18:38:29 GMT",
-      "source": "ایرنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "عکس | به یادگار از علی دایی و ایرج خواجه امیری",
-      "link": "https://www.khabaronline.ir/news/2259555/%D8%B9%DA%A9%D8%B3-%D8%A8%D9%87-%DB%8C%D8%A7%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%B9%D9%84%DB%8C-%D8%AF%D8%A7%DB%8C%DB%8C-%D9%88-%D8%A7%DB%8C%D8%B1%D8%AC-%D8%AE%D9%88%D8%A7%D8%AC%D9%87-%D8%A7%D9%85%DB%8C%D8%B1%DB%8C",
-      "date": "Wed, 12 Aug 2026 18:38:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "ایران پس از دو جنگ، در افق دیپلماسی فتح‌محور حرکت می‌کند",
       "link": "https://www.imna.ir/news/995554/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%AF%D9%88-%D8%AC%D9%86%DA%AF-%D8%AF%D8%B1-%D8%A7%D9%81%D9%82-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%81%D8%AA%D8%AD-%D9%85%D8%AD%D9%88%D8%B1-%D8%AD%D8%B1%DA%A9%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
       "date": "Wed, 12 Aug 2026 18:37:16 GMT",
       "source": "ایمنا",
       "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "آغاز عرضه بنزین با نرخ جدید چهارم از بامداد پنجشنبه در استان کرمان/جزییات",
-      "link": "https://www.khabaronline.ir/news/2259658/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D8%B1%D8%B6%D9%87-%D8%A8%D9%86%D8%B2%DB%8C%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D8%AE-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%A7%D8%B2-%D8%A8%D8%A7%D9%85%D8%AF%D8%A7%D8%AF-%D9%BE%D9%86%D8%AC%D8%B4%D9%86%D8%A8%D9%87-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86",
-      "date": "Wed, 12 Aug 2026 18:36:10 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
       "flag": "🇮🇷"
     },
     {
@@ -477,152 +606,178 @@
       "flag": "🇮🇷"
     },
     {
-      "title": "همزمان با شهادت امام رضا(ع)، هیئت‌های مذهبی اصفهان در مسجد گوهرشاد مشهد عزاداری می‌کنند",
-      "link": "https://www.isna.ir/news/1405052112573/%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D9%87%DB%8C%D8%A6%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%B0%D9%87%D8%A8%DB%8C-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D8%B3%D8%AC%D8%AF-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:30:38 GMT",
-      "source": "ایسنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
       "title": "پیام تسلیت وزیر فرهنگ و ارشاد اسلامی در پی درگذشت استاد حسین خواجه‌امیری",
       "link": "https://www.imna.ir/news/995551/%D9%BE%DB%8C%D8%A7%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D8%AA-%D9%88%D8%B2%DB%8C%D8%B1-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%88-%D8%A7%D8%B1%D8%B4%D8%A7%D8%AF-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AF%D8%B1-%D9%BE%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF-%D8%AD%D8%B3%DB%8C%D9%86",
       "date": "Wed, 12 Aug 2026 18:30:17 GMT",
       "source": "ایمنا",
       "category": "سیاسی",
       "flag": "🇮🇷"
-    },
-    {
-      "title": "فاتحه تیم‌ملی را با قلعه نویی بخوانید!",
-      "link": "https://www.khabaronline.ir/news/2259564/%D9%81%D8%A7%D8%AA%D8%AD%D9%87-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%A7-%D9%82%D9%84%D8%B9%D9%87-%D9%86%D9%88%DB%8C%DB%8C-%D8%A8%D8%AE%D9%88%D8%A7%D9%86%DB%8C%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:30:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "تداوم تحرکات رژیم اسرائیل در جنوب سوریه؛ ورود گشتی به حومه درعا",
-      "link": "https://www.khabaronline.ir/news/2259447/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AA%D8%AD%D8%B1%DA%A9%D8%A7%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%AC%D9%86%D9%88%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87-%D9%88%D8%B1%D9%88%D8%AF-%DA%AF%D8%B4%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AD%D9%88%D9%85%D9%87-%D8%AF%D8%B1%D8%B9%D8%A7",
-      "date": "Wed, 12 Aug 2026 18:30:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "جشن خرما نشاط اجتماعی را به شادگان می‌آورد",
-      "link": "https://www.isna.ir/news/1405052112572/%D8%AC%D8%B4%D9%86-%D8%AE%D8%B1%D9%85%D8%A7-%D9%86%D8%B4%D8%A7%D8%B7-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B4%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%85%DB%8C-%D8%A2%D9%88%D8%B1%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:29:46 GMT",
-      "source": "ایسنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "۸ هزار مرکز فرهنگی و مذهبی اصفهان میزبان مراسم سوگواری اهل‌البیت هستند",
-      "link": "https://www.isna.ir/news/1405052112571/%DB%B8-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%B1%DA%A9%D8%B2-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%88-%D9%85%D8%B0%D9%87%D8%A8%DB%8C-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%A8%DB%8C%D8%AA",
-      "date": "Wed, 12 Aug 2026 18:29:34 GMT",
-      "source": "ایسنا",
-      "category": "فرهنگی و هنری",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "واکنش استقلال به ادعای سپاهان و تراکتور: اگر جام ما را ندهند شکایت می‌کنیم",
-      "link": "https://www.imna.ir/news/995548/%D8%A7%DA%AF%D8%B1-%D8%AC%D8%A7%D9%85-%D9%85%D8%A7-%D8%B1%D8%A7-%D9%86%D8%AF%D9%87%D9%86%D8%AF-%D8%B4%DA%A9%D8%A7%DB%8C%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85",
-      "date": "Wed, 12 Aug 2026 18:28:39 GMT",
-      "source": "ایمنا",
-      "category": "ورزشی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "اکرمی مطرح کرد: تعبیر رهبر شهید از با شکوه‌ترین نرمش تاریخ",
-      "link": "https://www.isna.ir/news/1405052112570/%D8%A7%DA%A9%D8%B1%D9%85%DB%8C-%D9%85%D8%B7%D8%B1%D8%AD-%DA%A9%D8%B1%D8%AF-%D8%AA%D8%B9%D8%A8%DB%8C%D8%B1-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%A8%D8%A7-%D8%B4%DA%A9%D9%88%D9%87-%D8%AA%D8%B1%DB%8C%D9%86-%D9%86%D8%B1%D9%85%D8%B4-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE",
-      "date": "Wed, 12 Aug 2026 18:28:36 GMT",
-      "source": "ایسنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "کنترل ایران بر تنگه هرمز ممکن است همیشگی شود",
-      "link": "https://www.imna.ir/news/995549/%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D9%85%DA%A9%D9%86-%D8%A7%D8%B3%D8%AA-%D9%87%D9%85%DB%8C%D8%B4%DA%AF%DB%8C-%D8%B4%D9%88%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:27:39 GMT",
-      "source": "ایمنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "حماس: در انتخابات مجلس قانونگذاری با گسترده‌ترین ائتلاف ملی ممکن شرکت می‌کنیم",
-      "link": "https://www.isna.ir/news/1405052112569/%D8%AD%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D9%85%D8%AC%D9%84%D8%B3-%D9%82%D8%A7%D9%86%D9%88%D9%86%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D8%A6%D8%AA%D9%84%D8%A7%D9%81-%D9%85%D9%84%DB%8C-%D9%85%D9%85%DA%A9%D9%86",
-      "date": "Wed, 12 Aug 2026 18:24:54 GMT",
-      "source": "ایسنا",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "آنها که پاداش میلیاردی گرفته‌اند وجدان داشته باشند و به خیریه کمک کنند",
-      "link": "https://www.khabaronline.ir/news/2259558/%D8%A2%D9%86%D9%87%D8%A7-%DA%A9%D9%87-%D9%BE%D8%A7%D8%AF%D8%A7%D8%B4-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF%DB%8C-%DA%AF%D8%B1%D9%81%D8%AA%D9%87-%D8%A7%D9%86%D8%AF-%D9%88%D8%AC%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B4%D8%AA%D9%87-%D8%A8%D8%A7%D8%B4%D9%86%D8%AF-%D9%88-%D8%A8%D9%87-%D8%AE%DB%8C%D8%B1%DB%8C%D9%87",
-      "date": "Wed, 12 Aug 2026 18:15:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "ببینید | حضور عراقچی وزیر امور خارجه در حرم مطهر رضوی و مراسم خطبه خوانی شهادت امام رضا(ع)",
-      "link": "https://www.khabaronline.ir/news/2259621/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%B1%D8%B6%D9%88%DB%8C-%D9%88-%D9%85%D8%B1%D8%A7%D8%B3%D9%85",
-      "date": "Wed, 12 Aug 2026 18:10:20 GMT",
-      "source": "خبرآنلاین",
-      "category": "سیاسی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "پرسپولیس آینده را خرید!",
-      "link": "https://www.khabaronline.ir/news/2259651/%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3-%D8%A2%DB%8C%D9%86%D8%AF%D9%87-%D8%B1%D8%A7-%D8%AE%D8%B1%DB%8C%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:10:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "اقتصادی",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "مرگ مرد افغانستانی در سهروردی شمالی؛ ماجرا چیست؟",
-      "link": "https://www.khabaronline.ir/news/2259529/%D9%85%D8%B1%DA%AF-%D9%85%D8%B1%D8%AF-%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%B3%D9%87%D8%B1%D9%88%D8%B1%D8%AF%DB%8C-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D8%A7%D8%AC%D8%B1%D8%A7-%DA%86%DB%8C%D8%B3%D8%AA",
-      "date": "Wed, 12 Aug 2026 18:09:00 GMT",
-      "source": "خبرآنلاین",
-      "category": "بین‌الملل",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "پایان تلخ زندگی مادر در سفر خانوادگی آزادراه قزوین–رشت",
-      "link": "https://www.imna.ir/news/995546/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AA%D9%84%D8%AE-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%85%D8%A7%D8%AF%D8%B1-%D8%AF%D8%B1-%D8%B3%D9%81%D8%B1-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D9%82%D8%B2%D9%88%DB%8C%D9%86-%D8%B1%D8%B4%D8%AA",
-      "date": "Wed, 12 Aug 2026 18:04:00 GMT",
-      "source": "ایمنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "مشهد این روزها حال‌وهوای کربلا دارد",
-      "link": "https://www.imna.ir/news/995547/%D9%85%D8%B4%D9%87%D8%AF-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%87%D8%A7-%D8%AD%D8%A7%D9%84-%D9%88%D9%87%D9%88%D8%A7%DB%8C-%DA%A9%D8%B1%D8%A8%D9%84%D8%A7-%D8%AF%D8%A7%D8%B1%D8%AF",
-      "date": "Wed, 12 Aug 2026 18:03:11 GMT",
-      "source": "ایمنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "آغاز عرضه بنزین با نرخ پالایشگاهی در استان کرمان",
-      "link": "https://www.imna.ir/news/995541/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D8%B1%D8%B6%D9%87-%D8%A8%D9%86%D8%B2%DB%8C%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D8%AE-%D9%BE%D8%A7%D9%84%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D8%B1%D9%85%D8%A7%D9%86",
-      "date": "Wed, 12 Aug 2026 17:49:36 GMT",
-      "source": "ایمنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
-    },
-    {
-      "title": "سعید کریمی به ذوب‌آهن پیوست + عکس",
-      "link": "https://www.imna.ir/news/995545/%D8%B3%D8%B9%DB%8C%D8%AF-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%A8%D9%87-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA-%D8%B9%DA%A9%D8%B3",
-      "date": "Wed, 12 Aug 2026 17:47:35 GMT",
-      "source": "ایمنا",
-      "category": "متفرقه",
-      "flag": "🇮🇷"
     }
   ],
   "categorizedNews": {
+    "سیاسی": [
+      {
+        "title": "ادعای رویترز: انگلیس، ایتالیا، سوئیس و اندونزی بر روند خلع سلاح در لبنان نظارت می‌کنند",
+        "link": "https://www.irna.ir/news/86234395/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%B1%D9%88%DB%8C%D8%AA%D8%B1%D8%B2-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7-%D8%B3%D9%88%D8%A6%DB%8C%D8%B3-%D9%88-%D8%A7%D9%86%D8%AF%D9%88%D9%86%D8%B2%DB%8C-%D8%A8%D8%B1-%D8%B1%D9%88%D9%86%D8%AF-%D8%AE%D9%84%D8%B9-%D8%B3%D9%84%D8%A7%D8%AD",
+        "date": "Wed, 12 Aug 2026 20:42:02 GMT",
+        "source": "ایرنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "خبر معاون وزیر کشور درباره تخصیص بودجه اربعین و دهه پایانی صفر",
+        "link": "https://www.khabaronline.ir/news/2259643/%D8%AE%D8%A8%D8%B1-%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AA%D8%AE%D8%B5%DB%8C%D8%B5-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86-%D9%88-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1",
+        "date": "Wed, 12 Aug 2026 20:34:41 GMT",
+        "source": "خبرآنلاین",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "عزاداری مردم کیش در شب شهادت امام رضا(ع)",
+        "link": "https://www.mehrnews.com/news/6915322/%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%DA%A9%DB%8C%D8%B4-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+        "date": "Wed, 12 Aug 2026 20:25:30 GMT",
+        "source": "مهر",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "خروش حماسی مردم انقلابی بابل",
+        "link": "https://www.mehrnews.com/news/6915327/%D8%AE%D8%B1%D9%88%D8%B4-%D8%AD%D9%85%D8%A7%D8%B3%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A8%D8%A7%D8%A8%D9%84",
+        "date": "Wed, 12 Aug 2026 20:24:34 GMT",
+        "source": "مهر",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "خطبه‌خوانی شهادت امام رضا(ع)",
+        "link": "https://www.imna.ir/photo/995565/%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+        "date": "Wed, 12 Aug 2026 20:17:57 GMT",
+        "source": "ایمنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تجمع شبانه مردم بوشهر در شب شهادت امام رضا(ع)",
+        "link": "https://www.mehrnews.com/news/6915315/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A8%D9%88%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
+        "date": "Wed, 12 Aug 2026 20:02:46 GMT",
+        "source": "مهر",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "حجت‌الاسلام طائب: رمز پیروزی رزمندگان اسلام در جنگ تحمیلی هشت ساله ایمان الهی بود",
+        "link": "https://www.irna.ir/news/86234371/%D8%AD%D8%AC%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%B7%D8%A7%D8%A6%D8%A8-%D8%B1%D9%85%D8%B2-%D9%BE%DB%8C%D8%B1%D9%88%D8%B2%DB%8C-%D8%B1%D8%B2%D9%85%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AC%D9%86%DA%AF-%D8%AA%D8%AD%D9%85%DB%8C%D9%84%DB%8C-%D9%87%D8%B4%D8%AA",
+        "date": "Wed, 12 Aug 2026 20:01:27 GMT",
+        "source": "ایرنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "سیاست های حمایتی و معیشتی دولت چهاردهم",
+        "link": "https://www.irna.ir/subject/86234269/%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA%DB%8C-%D9%88-%D9%85%D8%B9%DB%8C%D8%B4%D8%AA%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%DA%86%D9%87%D8%A7%D8%B1%D8%AF%D9%87%D9%85",
+        "date": "Wed, 12 Aug 2026 19:58:42 GMT",
+        "source": "ایرنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "امام جمعه بندرانزلی: سیره پیامبر بهترین الگو در کشورداری، اقتصاد و روابط خارجی است",
+        "link": "https://www.isna.ir/news/1405052112588/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A8%D9%86%D8%AF%D8%B1%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%B3%DB%8C%D8%B1%D9%87-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D9%84%DA%AF%D9%88-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF",
+        "date": "Wed, 12 Aug 2026 19:47:02 GMT",
+        "source": "ایسنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ببینید |  سقوط جنگنده اف-۱۶ ارتش ترکیه در جریان تمرین نظامی",
+        "link": "https://www.khabaronline.ir/news/2259596/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%B3%D9%82%D9%88%D8%B7-%D8%AC%D9%86%DA%AF%D9%86%D8%AF%D9%87-%D8%A7%D9%81-%DB%B1%DB%B6-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D8%AF%D8%B1-%D8%AC%D8%B1%DB%8C%D8%A7%D9%86-%D8%AA%D9%85%D8%B1%DB%8C%D9%86-%D9%86%D8%B8%D8%A7%D9%85%DB%8C",
+        "date": "Wed, 12 Aug 2026 19:44:54 GMT",
+        "source": "خبرآنلاین",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "مراسم خطبه‌خوانی شب شهادت امام رضا(ع) در حرم مطهر رضوی",
+        "link": "https://www.irna.ir/photo/86234381/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%B1%D8%B6%D9%88%DB%8C",
+        "date": "Wed, 12 Aug 2026 19:42:32 GMT",
+        "source": "ایرنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "برگزاری آیین خطبه‌خوانی شب شهادت امام رضا(ع) در حرم رضوی",
+        "link": "https://www.imna.ir/news/995537/%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A2%DB%8C%DB%8C%D9%86-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%B1%D8%B6%D9%88%DB%8C",
+        "date": "Wed, 12 Aug 2026 19:41:24 GMT",
+        "source": "ایمنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "کشف ۱۸۱ قبضه سلاح غیرمجاز در عملیات ضربتی پلیس خوزستان",
+        "link": "https://www.irna.ir/news/86234385/%DA%A9%D8%B4%D9%81-%DB%B1%DB%B8%DB%B1-%D9%82%D8%A8%D8%B6%D9%87-%D8%B3%D9%84%D8%A7%D8%AD-%D8%BA%DB%8C%D8%B1%D9%85%D8%AC%D8%A7%D8%B2-%D8%AF%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B6%D8%B1%D8%A8%D8%AA%DB%8C-%D9%BE%D9%84%DB%8C%D8%B3-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86",
+        "date": "Wed, 12 Aug 2026 19:37:57 GMT",
+        "source": "ایرنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "واکنش هیأت رئیسه مجلس به اظهارات اخیر باهنر",
+        "link": "https://www.isna.ir/news/1405052112583/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%87%DB%8C%D8%A3%D8%AA-%D8%B1%D8%A6%DB%8C%D8%B3%D9%87-%D9%85%D8%AC%D9%84%D8%B3-%D8%A8%D9%87-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D8%A7%D9%87%D9%86%D8%B1",
+        "date": "Wed, 12 Aug 2026 19:18:06 GMT",
+        "source": "ایسنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ببینید | ازدحام جمعیت درجوار آرامگاه رهبر شهید همزمان با شب شهادت امام رضا علیه السلام",
+        "link": "https://www.khabaronline.ir/news/2259634/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A7%D8%B2%D8%AF%D8%AD%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%DB%8C%D8%AA-%D8%AF%D8%B1%D8%AC%D9%88%D8%A7%D8%B1-%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA",
+        "date": "Wed, 12 Aug 2026 19:13:13 GMT",
+        "source": "خبرآنلاین",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تصویب قانون «اعمال حاکمیت بر تنگه هرمز» در آستانه نهایی‌شدن",
+        "link": "https://www.imna.ir/news/995556/%D8%AA%D8%B5%D9%88%DB%8C%D8%A8-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D8%AD%D8%A7%DA%A9%D9%85%DB%8C%D8%AA-%D8%A8%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%D9%86",
+        "date": "Wed, 12 Aug 2026 19:10:29 GMT",
+        "source": "ایمنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ایران پس از دو جنگ، در افق دیپلماسی فتح‌محور حرکت می‌کند",
+        "link": "https://www.imna.ir/news/995554/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%AF%D9%88-%D8%AC%D9%86%DA%AF-%D8%AF%D8%B1-%D8%A7%D9%81%D9%82-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%81%D8%AA%D8%AD-%D9%85%D8%AD%D9%88%D8%B1-%D8%AD%D8%B1%DA%A9%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
+        "date": "Wed, 12 Aug 2026 18:37:16 GMT",
+        "source": "ایمنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "پیام تسلیت وزیر فرهنگ و ارشاد اسلامی در پی درگذشت استاد حسین خواجه‌امیری",
+        "link": "https://www.imna.ir/news/995551/%D9%BE%DB%8C%D8%A7%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D8%AA-%D9%88%D8%B2%DB%8C%D8%B1-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%88-%D8%A7%D8%B1%D8%B4%D8%A7%D8%AF-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AF%D8%B1-%D9%BE%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF-%D8%AD%D8%B3%DB%8C%D9%86",
+        "date": "Wed, 12 Aug 2026 18:30:17 GMT",
+        "source": "ایمنا",
+        "category": "سیاسی",
+        "flag": "🇮🇷"
+      }
+    ],
     "فرهنگی و هنری": [
+      {
+        "title": "آخر هفته به کدام نمایشگاه‌ها سر بزنیم؟",
+        "link": "https://www.isna.ir/news/1405052112565/%D8%A2%D8%AE%D8%B1-%D9%87%D9%81%D8%AA%D9%87-%D8%A8%D9%87-%DA%A9%D8%AF%D8%A7%D9%85-%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7-%D8%B3%D8%B1-%D8%A8%D8%B2%D9%86%DB%8C%D9%85",
+        "date": "Wed, 12 Aug 2026 20:42:00 GMT",
+        "source": "ایسنا",
+        "category": "فرهنگی و هنری",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "پیام‌های هنرمندان برای درگذشت «پهلوان آواز»؛ هرگز نمیرد آنکه دلش زنده شد به عشق",
+        "link": "https://www.irna.ir/news/86234339/%D9%BE%DB%8C%D8%A7%D9%85-%D9%87%D8%A7%DB%8C-%D9%87%D9%86%D8%B1%D9%85%D9%86%D8%AF%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D9%BE%D9%87%D9%84%D9%88%D8%A7%D9%86-%D8%A2%D9%88%D8%A7%D8%B2-%D9%87%D8%B1%DA%AF%D8%B2-%D9%86%D9%85%DB%8C%D8%B1%D8%AF-%D8%A2%D9%86%DA%A9%D9%87",
+        "date": "Wed, 12 Aug 2026 19:50:43 GMT",
+        "source": "ایرنا",
+        "category": "فرهنگی و هنری",
+        "flag": "🇮🇷"
+      },
       {
         "title": "فیلم|‌حرم حضرت شاهچراغ (ع) و سوگواری‌های ایام پایانی ماه صفر",
         "link": "https://www.imna.ir/news/995560/%D9%81%DB%8C%D9%84%D9%85-%D8%AD%D8%B1%D9%85-%D8%AD%D8%B6%D8%B1%D8%AA-%D8%B4%D8%A7%D9%87%DA%86%D8%B1%D8%A7%D8%BA-%D8%B9-%D9%88-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D9%87%D8%A7%DB%8C-%D8%A7%DB%8C%D8%A7%D9%85-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D9%85%D8%A7%D9%87-%D8%B5%D9%81%D8%B1",
@@ -646,234 +801,222 @@
         "source": "ایرنا",
         "category": "فرهنگی و هنری",
         "flag": "🇮🇷"
-      },
-      {
-        "title": "۸ هزار مرکز فرهنگی و مذهبی اصفهان میزبان مراسم سوگواری اهل‌البیت هستند",
-        "link": "https://www.isna.ir/news/1405052112571/%DB%B8-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%B1%DA%A9%D8%B2-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%88-%D9%85%D8%B0%D9%87%D8%A8%DB%8C-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D8%A7%D9%87%D9%84-%D8%A7%D9%84%D8%A8%DB%8C%D8%AA",
-        "date": "Wed, 12 Aug 2026 18:29:34 GMT",
-        "source": "ایسنا",
-        "category": "فرهنگی و هنری",
-        "flag": "🇮🇷"
-      }
-    ],
-    "سیاسی": [
-      {
-        "title": "مراسم خطبه خوانی شهادت امام رضا (ع)",
-        "link": "https://www.mehrnews.com/photo/6915321/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%AE%D8%B7%D8%A8%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
-        "date": "Wed, 12 Aug 2026 19:39:34 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "عزاداری شهادت امام رضا(ع) در حرم بانوی کرامت",
-        "link": "https://www.mehrnews.com/news/6915294/%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%A8%D8%A7%D9%86%D9%88%DB%8C-%DA%A9%D8%B1%D8%A7%D9%85%D8%AA",
-        "date": "Wed, 12 Aug 2026 19:38:47 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "کشف ۱۸۱ قبضه سلاح غیرمجاز در عملیات ضربتی پلیس خوزستان",
-        "link": "https://www.irna.ir/news/86234385/%DA%A9%D8%B4%D9%81-%DB%B1%DB%B8%DB%B1-%D9%82%D8%A8%D8%B6%D9%87-%D8%B3%D9%84%D8%A7%D8%AD-%D8%BA%DB%8C%D8%B1%D9%85%D8%AC%D8%A7%D8%B2-%D8%AF%D8%B1-%D8%B9%D9%85%D9%84%DB%8C%D8%A7%D8%AA-%D8%B6%D8%B1%D8%A8%D8%AA%DB%8C-%D9%BE%D9%84%DB%8C%D8%B3-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86",
-        "date": "Wed, 12 Aug 2026 19:37:57 GMT",
-        "source": "ایرنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "مردم میدان‌دار باب‌الرضا(ع) در شب شهادت امام رضا(ع)",
-        "link": "https://www.mehrnews.com/news/6915278/%D9%85%D8%B1%D8%AF%D9%85-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9",
-        "date": "Wed, 12 Aug 2026 19:34:44 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "انسداد معابر فرعی بولوار قرنی و شهید رئیسی مشهد برای تسهیل تردد زائران",
-        "link": "https://www.mehrnews.com/news/6915317/%D8%A7%D9%86%D8%B3%D8%AF%D8%A7%D8%AF-%D9%85%D8%B9%D8%A7%D8%A8%D8%B1-%D9%81%D8%B1%D8%B9%DB%8C-%D8%A8%D9%88%D9%84%D9%88%D8%A7%D8%B1-%D9%82%D8%B1%D9%86%DB%8C-%D9%88-%D8%B4%D9%87%DB%8C%D8%AF-%D8%B1%D8%A6%DB%8C%D8%B3%DB%8C-%D9%85%D8%B4%D9%87%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B3%D9%87%DB%8C%D9%84-%D8%AA%D8%B1%D8%AF%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:31:58 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "رشد ۷ برابری سرمایه‌گذاری خارجی در منطقه آزاد ماکو؛جذب ۵۰ میلیون یورو",
-        "link": "https://www.mehrnews.com/news/6915299/%D8%B1%D8%B4%D8%AF-%DB%B7-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1%DB%8C-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D8%AF%D8%B1-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D9%85%D8%A7%DA%A9%D9%88-%D8%AC%D8%B0%D8%A8-%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86",
-        "date": "Wed, 12 Aug 2026 19:26:19 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "روضه خوانی شب شهادت امام رضا(ع) در حرم رضوی",
-        "link": "https://www.mehrnews.com/news/6915307/%D8%B1%D9%88%D8%B6%D9%87-%D8%AE%D9%88%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%B1%D8%B6%D9%88%DB%8C",
-        "date": "Wed, 12 Aug 2026 19:24:39 GMT",
-        "source": "مهر",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "رئیس کمیسیون امنیت ملی مجلس: نیت شوم حمله زمینی به ایران در نطفه خفه شد",
-        "link": "https://www.irna.ir/news/86234382/%D8%B1%D8%A6%DB%8C%D8%B3-%DA%A9%D9%85%DB%8C%D8%B3%DB%8C%D9%88%D9%86-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D9%84%DB%8C-%D9%85%D8%AC%D9%84%D8%B3-%D9%86%DB%8C%D8%AA-%D8%B4%D9%88%D9%85-%D8%AD%D9%85%D9%84%D9%87-%D8%B2%D9%85%DB%8C%D9%86%DB%8C-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%86%D8%B7%D9%81%D9%87",
-        "date": "Wed, 12 Aug 2026 19:20:57 GMT",
-        "source": "ایرنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "واکنش هیأت رئیسه مجلس به اظهارات اخیر باهنر",
-        "link": "https://www.isna.ir/news/1405052112583/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D9%87%DB%8C%D8%A3%D8%AA-%D8%B1%D8%A6%DB%8C%D8%B3%D9%87-%D9%85%D8%AC%D9%84%D8%B3-%D8%A8%D9%87-%D8%A7%D8%B8%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D8%A7%D9%87%D9%86%D8%B1",
-        "date": "Wed, 12 Aug 2026 19:18:06 GMT",
-        "source": "ایسنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "نماینده کنگره خطاب به ترامپ: آمریکا را ضعیف و منزوی‌تر کرده‌اید؛ بی‌کفایت",
-        "link": "https://www.irna.ir/news/86234373/%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%D9%87-%DA%A9%D9%86%DA%AF%D8%B1%D9%87-%D8%AE%D8%B7%D8%A7%D8%A8-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%B1%D8%A7-%D8%B6%D8%B9%DB%8C%D9%81-%D9%88-%D9%85%D9%86%D8%B2%D9%88%DB%8C-%D8%AA%D8%B1-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A7%DB%8C%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:17:50 GMT",
-        "source": "ایرنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ببینید | ازدحام جمعیت درجوار آرامگاه رهبر شهید همزمان با شب شهادت امام رضا علیه السلام",
-        "link": "https://www.khabaronline.ir/news/2259634/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A7%D8%B2%D8%AF%D8%AD%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%DB%8C%D8%AA-%D8%AF%D8%B1%D8%AC%D9%88%D8%A7%D8%B1-%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B4%D8%A8-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA",
-        "date": "Wed, 12 Aug 2026 19:13:13 GMT",
-        "source": "خبرآنلاین",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "تأکید وزیر آموزش و پرورش بر انتقال مکتب فکری امام شهید به نسل آینده",
-        "link": "https://www.isna.ir/news/1405052112580/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%88-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D8%A8%D8%B1-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D9%85%DA%A9%D8%AA%D8%A8-%D9%81%DA%A9%D8%B1%DB%8C-%D8%A7%D9%85%D8%A7%D9%85-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A8%D9%87-%D9%86%D8%B3%D9%84",
-        "date": "Wed, 12 Aug 2026 19:12:15 GMT",
-        "source": "ایسنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "تصویب قانون «اعمال حاکمیت بر تنگه هرمز» در آستانه نهایی‌شدن",
-        "link": "https://www.imna.ir/news/995556/%D8%AA%D8%B5%D9%88%DB%8C%D8%A8-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D8%AD%D8%A7%DA%A9%D9%85%DB%8C%D8%AA-%D8%A8%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D9%86%D9%87%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF%D9%86",
-        "date": "Wed, 12 Aug 2026 19:10:29 GMT",
-        "source": "ایمنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "معاون وزیر کشور: برای دهه پایانی صفر باید ردیف بودجه ایجاد شود",
-        "link": "https://www.isna.ir/news/1405052112576/%D9%85%D8%B9%D8%A7%D9%88%D9%86-%D9%88%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%B1%D8%AF%DB%8C%D9%81-%D8%A8%D9%88%D8%AF%D8%AC%D9%87-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D8%B4%D9%88%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:59:15 GMT",
-        "source": "ایسنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "برپایی آیین‌های سوگواری رحلت پیامبر اکرم (ص) و شهادت امام دوم و هشتم شیعیان در پاکستان",
-        "link": "https://www.irna.ir/news/86234370/%D8%A8%D8%B1%D9%BE%D8%A7%DB%8C%DB%8C-%D8%A2%DB%8C%DB%8C%D9%86-%D9%87%D8%A7%DB%8C-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C-%D8%B1%D8%AD%D9%84%D8%AA-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%A7%DA%A9%D8%B1%D9%85-%D8%B5-%D9%88-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%AF%D9%88%D9%85",
-        "date": "Wed, 12 Aug 2026 18:49:50 GMT",
-        "source": "ایرنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ایران پس از دو جنگ، در افق دیپلماسی فتح‌محور حرکت می‌کند",
-        "link": "https://www.imna.ir/news/995554/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%AF%D9%88-%D8%AC%D9%86%DA%AF-%D8%AF%D8%B1-%D8%A7%D9%81%D9%82-%D8%AF%DB%8C%D9%BE%D9%84%D9%85%D8%A7%D8%B3%DB%8C-%D9%81%D8%AA%D8%AD-%D9%85%D8%AD%D9%88%D8%B1-%D8%AD%D8%B1%DA%A9%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:37:16 GMT",
-        "source": "ایمنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "همزمان با شهادت امام رضا(ع)، هیئت‌های مذهبی اصفهان در مسجد گوهرشاد مشهد عزاداری می‌کنند",
-        "link": "https://www.isna.ir/news/1405052112573/%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B4%D9%87%D8%A7%D8%AF%D8%AA-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D9%87%DB%8C%D8%A6%D8%AA-%D9%87%D8%A7%DB%8C-%D9%85%D8%B0%D9%87%D8%A8%DB%8C-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D8%B3%D8%AC%D8%AF-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:30:38 GMT",
-        "source": "ایسنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "پیام تسلیت وزیر فرهنگ و ارشاد اسلامی در پی درگذشت استاد حسین خواجه‌امیری",
-        "link": "https://www.imna.ir/news/995551/%D9%BE%DB%8C%D8%A7%D9%85-%D8%AA%D8%B3%D9%84%DB%8C%D8%AA-%D9%88%D8%B2%DB%8C%D8%B1-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%88-%D8%A7%D8%B1%D8%B4%D8%A7%D8%AF-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%AF%D8%B1-%D9%BE%DB%8C-%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF-%D8%AD%D8%B3%DB%8C%D9%86",
-        "date": "Wed, 12 Aug 2026 18:30:17 GMT",
-        "source": "ایمنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "تداوم تحرکات رژیم اسرائیل در جنوب سوریه؛ ورود گشتی به حومه درعا",
-        "link": "https://www.khabaronline.ir/news/2259447/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%AA%D8%AD%D8%B1%DA%A9%D8%A7%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D8%AF%D8%B1-%D8%AC%D9%86%D9%88%D8%A8-%D8%B3%D9%88%D8%B1%DB%8C%D9%87-%D9%88%D8%B1%D9%88%D8%AF-%DA%AF%D8%B4%D8%AA%DB%8C-%D8%A8%D9%87-%D8%AD%D9%88%D9%85%D9%87-%D8%AF%D8%B1%D8%B9%D8%A7",
-        "date": "Wed, 12 Aug 2026 18:30:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "حماس: در انتخابات مجلس قانونگذاری با گسترده‌ترین ائتلاف ملی ممکن شرکت می‌کنیم",
-        "link": "https://www.isna.ir/news/1405052112569/%D8%AD%D9%85%D8%A7%D8%B3-%D8%AF%D8%B1-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D9%85%D8%AC%D9%84%D8%B3-%D9%82%D8%A7%D9%86%D9%88%D9%86%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7-%DA%AF%D8%B3%D8%AA%D8%B1%D8%AF%D9%87-%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D8%A6%D8%AA%D9%84%D8%A7%D9%81-%D9%85%D9%84%DB%8C-%D9%85%D9%85%DA%A9%D9%86",
-        "date": "Wed, 12 Aug 2026 18:24:54 GMT",
-        "source": "ایسنا",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ببینید | حضور عراقچی وزیر امور خارجه در حرم مطهر رضوی و مراسم خطبه خوانی شهادت امام رضا(ع)",
-        "link": "https://www.khabaronline.ir/news/2259621/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AD%D8%B6%D9%88%D8%B1-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A7%D9%85%D9%88%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%B1%D8%B6%D9%88%DB%8C-%D9%88-%D9%85%D8%B1%D8%A7%D8%B3%D9%85",
-        "date": "Wed, 12 Aug 2026 18:10:20 GMT",
-        "source": "خبرآنلاین",
-        "category": "سیاسی",
-        "flag": "🇮🇷"
-      }
-    ],
-    "اقتصادی": [
-      {
-        "title": "آلودگی نفتی ۳۲ هزار مترمربع از سواحل قشم و هنگام را درگیر کرد",
-        "link": "https://www.imna.ir/news/995562/%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%DB%B3%DB%B2-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%AA%D8%B1%D9%85%D8%B1%D8%A8%D8%B9-%D8%A7%D8%B2-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%B1%D8%A7-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1-%DA%A9%D8%B1%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:39:00 GMT",
-        "source": "ایمنا",
-        "category": "اقتصادی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "فیلمی از وضعیت ساحل قشم و آلودگی نفتی",
-        "link": "https://www.mehrnews.com/news/6915273/%D9%81%DB%8C%D9%84%D9%85%DB%8C-%D8%A7%D8%B2-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%B3%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C",
-        "date": "Wed, 12 Aug 2026 19:33:37 GMT",
-        "source": "مهر",
-        "category": "اقتصادی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "پاکسازی سواحل جنوبی قشم و جزیره هنگام از آلودگی نفتی",
-        "link": "https://www.imna.ir/news/995559/%D9%BE%D8%A7%DA%A9%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%AC%D9%86%D9%88%D8%A8%DB%8C-%D9%82%D8%B4%D9%85-%D9%88-%D8%AC%D8%B2%DB%8C%D8%B1%D9%87-%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%A7%D8%B2-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C",
-        "date": "Wed, 12 Aug 2026 19:30:41 GMT",
-        "source": "ایمنا",
-        "category": "اقتصادی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ظرفیت نفتی سروستان باید به توسعه صنایع پایین‌دستی منجر شود",
-        "link": "https://www.imna.ir/news/995553/%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%86%D9%81%D8%AA%DB%8C-%D8%B3%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%BE%D8%A7%DB%8C%DB%8C%D9%86-%D8%AF%D8%B3%D8%AA%DB%8C-%D9%85%D9%86%D8%AC%D8%B1-%D8%B4%D9%88%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:46:57 GMT",
-        "source": "ایمنا",
-        "category": "اقتصادی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "پرسپولیس آینده را خرید!",
-        "link": "https://www.khabaronline.ir/news/2259651/%D9%BE%D8%B1%D8%B3%D9%BE%D9%88%D9%84%DB%8C%D8%B3-%D8%A2%DB%8C%D9%86%D8%AF%D9%87-%D8%B1%D8%A7-%D8%AE%D8%B1%DB%8C%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:10:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "اقتصادی",
-        "flag": "🇮🇷"
       }
     ],
     "متفرقه": [
       {
-        "title": "کلاته‌ رودبار در سوگ پیامبر رحمت(ص) و امام حسن مجتبی(ع)",
-        "link": "https://www.mehrnews.com/news/6915265/%DA%A9%D9%84%D8%A7%D8%AA%D9%87-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1-%D8%AF%D8%B1-%D8%B3%D9%88%DA%AF-%D9%BE%DB%8C%D8%A7%D9%85%D8%A8%D8%B1-%D8%B1%D8%AD%D9%85%D8%AA-%D8%B5-%D9%88-%D8%A7%D9%85%D8%A7%D9%85-%D8%AD%D8%B3%D9%86-%D9%85%D8%AC%D8%AA%D8%A8%DB%8C-%D8%B9",
-        "date": "Wed, 12 Aug 2026 19:37:04 GMT",
+        "title": "تجمع شبانه مردم اسلامشهر در حمایت از نیروهای مسلح",
+        "link": "https://www.mehrnews.com/news/6915352/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D8%B4%D9%87%D8%B1-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%DB%8C%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%85%D8%B3%D9%84%D8%AD",
+        "date": "Wed, 12 Aug 2026 20:39:07 GMT",
         "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "برگزاری مراسم عزاداری دهه پایانی صفر در گرگان با حضور مسئولان و مردم",
+        "link": "https://www.mehrnews.com/news/6915350/%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D9%87%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86%DB%8C-%D8%B5%D9%81%D8%B1-%D8%AF%D8%B1-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B3%D8%A6%D9%88%D9%84%D8%A7%D9%86",
+        "date": "Wed, 12 Aug 2026 20:38:11 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "عکس| جزئیات جشن تولد لاکچری یامال در یک عمارت تاریخی!",
+        "link": "https://www.khabaronline.ir/news/2259514/%D8%B9%DA%A9%D8%B3-%D8%AC%D8%B2%D8%A6%DB%8C%D8%A7%D8%AA-%D8%AC%D8%B4%D9%86-%D8%AA%D9%88%D9%84%D8%AF-%D9%84%D8%A7%DA%A9%DA%86%D8%B1%DB%8C-%DB%8C%D8%A7%D9%85%D8%A7%D9%84-%D8%AF%D8%B1-%DB%8C%DA%A9-%D8%B9%D9%85%D8%A7%D8%B1%D8%AA-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C",
+        "date": "Wed, 12 Aug 2026 20:35:00 GMT",
+        "source": "خبرآنلاین",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "عکس | کامنت عجیب بهرنگ علوی زیر پست زن رونالدو!",
+        "link": "https://www.khabaronline.ir/news/2259672/%D8%B9%DA%A9%D8%B3-%DA%A9%D8%A7%D9%85%D9%86%D8%AA-%D8%B9%D8%AC%DB%8C%D8%A8-%D8%A8%D9%87%D8%B1%D9%86%DA%AF-%D8%B9%D9%84%D9%88%DB%8C-%D8%B2%DB%8C%D8%B1-%D9%BE%D8%B3%D8%AA-%D8%B2%D9%86-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88",
+        "date": "Wed, 12 Aug 2026 20:32:49 GMT",
+        "source": "خبرآنلاین",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تجمع شبانه مردم در اسلامشهر",
+        "link": "https://www.mehrnews.com/news/6915347/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%D8%B1-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%D8%B4%D9%87%D8%B1",
+        "date": "Wed, 12 Aug 2026 20:32:42 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "پاکسازی بخشی از نوار ساحلی سوزا",
+        "link": "https://www.isna.ir/news/1405052212597/%D9%BE%D8%A7%DA%A9%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%D8%AE%D8%B4%DB%8C-%D8%A7%D8%B2-%D9%86%D9%88%D8%A7%D8%B1-%D8%B3%D8%A7%D8%AD%D9%84%DB%8C-%D8%B3%D9%88%D8%B2%D8%A7",
+        "date": "Wed, 12 Aug 2026 20:31:05 GMT",
+        "source": "ایسنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "شکوه حضور مردم دیار آفتاب در ایستگاه ۱۶۵ حمایت از ولایت فقیه",
+        "link": "https://www.mehrnews.com/news/6915326/%D8%B4%DA%A9%D9%88%D9%87-%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%AF%D9%85-%D8%AF%DB%8C%D8%A7%D8%B1-%D8%A2%D9%81%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B3%D8%AA%DA%AF%D8%A7%D9%87-%DB%B1%DB%B6%DB%B5-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%81%D9%82%DB%8C%D9%87",
+        "date": "Wed, 12 Aug 2026 20:28:15 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "حدود پنج میلیون زائر  آخر صفر به مشهد مشرف شده‌اند",
+        "link": "https://www.irna.ir/news/86234376/%D8%AD%D8%AF%D9%88%D8%AF-%D9%BE%D9%86%D8%AC-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A2%D8%AE%D8%B1-%D8%B5%D9%81%D8%B1-%D8%A8%D9%87-%D9%85%D8%B4%D9%87%D8%AF-%D9%85%D8%B4%D8%B1%D9%81-%D8%B4%D8%AF%D9%87-%D8%A7%D9%86%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:27:57 GMT",
+        "source": "ایرنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تجمع شبانه مردم ورامین در حمایت از نظام جمهوری اسلامی برگزار شد",
+        "link": "https://www.mehrnews.com/news/6915344/%D8%AA%D8%AC%D9%85%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D8%B1%D8%A7%D9%85%DB%8C%D9%86-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D9%86%D8%B8%D8%A7%D9%85-%D8%AC%D9%85%D9%87%D9%88%D8%B1%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1",
+        "date": "Wed, 12 Aug 2026 20:27:49 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "معدوم سازی بیش از ۳.۵ تن گوشت مرغ فاسد در قم",
+        "link": "https://www.isna.ir/news/1405052112596/%D9%85%D8%B9%D8%AF%D9%88%D9%85-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B3-%DB%B5-%D8%AA%D9%86-%DA%AF%D9%88%D8%B4%D8%AA-%D9%85%D8%B1%D8%BA-%D9%81%D8%A7%D8%B3%D8%AF-%D8%AF%D8%B1-%D9%82%D9%85",
+        "date": "Wed, 12 Aug 2026 20:26:24 GMT",
+        "source": "ایسنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "راهپیمایی شبانه مردم انقلابی آبدان",
+        "link": "https://www.mehrnews.com/news/6915309/%D8%B1%D8%A7%D9%87%D9%BE%DB%8C%D9%85%D8%A7%DB%8C%DB%8C-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D8%A2%D8%A8%D8%AF%D8%A7%D9%86",
+        "date": "Wed, 12 Aug 2026 20:23:26 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ایرج؛ از «گنج قارون» تا «من یک پرنده‌م»",
+        "link": "https://www.isna.ir/news/1405052112595/%D8%A7%DB%8C%D8%B1%D8%AC-%D8%A7%D8%B2-%DA%AF%D9%86%D8%AC-%D9%82%D8%A7%D8%B1%D9%88%D9%86-%D8%AA%D8%A7-%D9%85%D9%86-%DB%8C%DA%A9-%D9%BE%D8%B1%D9%86%D8%AF%D9%87-%D9%85",
+        "date": "Wed, 12 Aug 2026 20:22:19 GMT",
+        "source": "ایسنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "مدیرعامل منطقه آزاد انزلی: زیرساخت‌های روستایی را ارتقا می‌دهیم",
+        "link": "https://www.irna.ir/news/86234112/%D9%85%D8%AF%DB%8C%D8%B1%D8%B9%D8%A7%D9%85%D9%84-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C%DB%8C-%D8%B1%D8%A7-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7-%D9%85%DB%8C-%D8%AF%D9%87%DB%8C%D9%85",
+        "date": "Wed, 12 Aug 2026 20:22:00 GMT",
+        "source": "ایرنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ثبت‌نام نذر و خدمت در چایخانه امام رضا(ع) ناژوان در «اصفهان من»",
+        "link": "https://www.imna.ir/news/995568/%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%86%D8%B0%D8%B1-%D9%88-%D8%AE%D8%AF%D9%85%D8%AA-%D8%AF%D8%B1-%DA%86%D8%A7%DB%8C%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D9%86%D8%A7%DA%98%D9%88%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%85%D9%86",
+        "date": "Wed, 12 Aug 2026 20:19:24 GMT",
+        "source": "ایمنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ببینید | خورشیدگرفتگی امشب در اسپانیا",
+        "link": "https://www.khabaronline.ir/news/2259667/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF%DA%AF%D8%B1%D9%81%D8%AA%DA%AF%DB%8C-%D8%A7%D9%85%D8%B4%D8%A8-%D8%AF%D8%B1-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7",
+        "date": "Wed, 12 Aug 2026 20:17:50 GMT",
+        "source": "خبرآنلاین",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ارائه خدمات شبانه روزی به زائران پیاده در مسیر مشهد",
+        "link": "https://www.mehrnews.com/news/6915337/%D8%A7%D8%B1%D8%A7%D8%A6%D9%87-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D8%B1%D9%88%D8%B2%DB%8C-%D8%A8%D9%87-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%AF%D8%B1-%D9%85%D8%B3%DB%8C%D8%B1-%D9%85%D8%B4%D9%87%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:14:49 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "اسپانیا گفت‌وگو با مراکش بر سر «سئوتا» و «ملییا» را رد کرد",
+        "link": "https://www.irna.ir/news/86234392/%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88-%D8%A8%D8%A7-%D9%85%D8%B1%D8%A7%DA%A9%D8%B4-%D8%A8%D8%B1-%D8%B3%D8%B1-%D8%B3%D8%A6%D9%88%D8%AA%D8%A7-%D9%88-%D9%85%D9%84%DB%8C%DB%8C%D8%A7-%D8%B1%D8%A7-%D8%B1%D8%AF-%DA%A9%D8%B1%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:13:05 GMT",
+        "source": "ایرنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "علیرضا دبیر مشتی است!",
+        "link": "https://www.khabaronline.ir/news/2259562/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7-%D8%AF%D8%A8%DB%8C%D8%B1-%D9%85%D8%B4%D8%AA%DB%8C-%D8%A7%D8%B3%D8%AA",
+        "date": "Wed, 12 Aug 2026 20:05:00 GMT",
+        "source": "خبرآنلاین",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "استاندار گیلان: مشکلات کشور صادقانه برای مردم تبیین شود",
+        "link": "https://www.irna.ir/news/86234383/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B5%D8%A7%D8%AF%D9%82%D8%A7%D9%86%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%AA%D8%A8%DB%8C%DB%8C%D9%86-%D8%B4%D9%88%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:03:24 GMT",
+        "source": "ایرنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "خدمت رسانی موکب های اطراف حرم مطهر امام رضا(ع) به زائران رضوی",
+        "link": "https://www.mehrnews.com/news/6915328/%D8%AE%D8%AF%D9%85%D8%AA-%D8%B1%D8%B3%D8%A7%D9%86%DB%8C-%D9%85%D9%88%DA%A9%D8%A8-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D8%AD%D8%B1%D9%85-%D9%85%D8%B7%D9%87%D8%B1-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9-%D8%A8%D9%87-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C",
+        "date": "Wed, 12 Aug 2026 20:03:17 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "صبحانه چه بخوریم؟/  راهی ساده برای بهبود کیفیت تغذیه",
+        "link": "https://www.khabaronline.ir/news/2259441/%D8%B5%D8%A8%D8%AD%D8%A7%D9%86%D9%87-%DA%86%D9%87-%D8%A8%D8%AE%D9%88%D8%B1%DB%8C%D9%85-%D8%B1%D8%A7%D9%87%DB%8C-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D9%87%D8%A8%D9%88%D8%AF-%DA%A9%DB%8C%D9%81%DB%8C%D8%AA-%D8%AA%D8%BA%D8%B0%DB%8C%D9%87",
+        "date": "Wed, 12 Aug 2026 20:03:00 GMT",
+        "source": "خبرآنلاین",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "مردم ولایت‌مدار زابل همچنان در سنگر خیابان حضور دارند",
+        "link": "https://www.mehrnews.com/news/6915319/%D9%85%D8%B1%D8%AF%D9%85-%D9%88%D9%84%D8%A7%DB%8C%D8%AA-%D9%85%D8%AF%D8%A7%D8%B1-%D8%B2%D8%A7%D8%A8%D9%84-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D9%86%DA%AF%D8%B1-%D8%AE%DB%8C%D8%A7%D8%A8%D8%A7%D9%86-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%A7%D8%B1%D9%86%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:01:07 GMT",
+        "source": "مهر",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تنگه هرمز تا پذیرش شروط ایران همچنان بسته است",
+        "link": "https://www.isna.ir/news/1405052112589/%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%AA%D8%A7-%D9%BE%D8%B0%DB%8C%D8%B1%D8%B4-%D8%B4%D8%B1%D9%88%D8%B7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D8%A8%D8%B3%D8%AA%D9%87-%D8%A7%D8%B3%D8%AA",
+        "date": "Wed, 12 Aug 2026 19:47:23 GMT",
+        "source": "ایسنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "آخرین چهارشنبه ماه صفر در ساحل بندرعباس",
+        "link": "https://www.irna.ir/photo/86234368/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%DA%86%D9%87%D8%A7%D8%B1%D8%B4%D9%86%D8%A8%D9%87-%D9%85%D8%A7%D9%87-%D8%B5%D9%81%D8%B1-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%AD%D9%84-%D8%A8%D9%86%D8%AF%D8%B1%D8%B9%D8%A8%D8%A7%D8%B3",
+        "date": "Wed, 12 Aug 2026 19:46:09 GMT",
+        "source": "ایرنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "جدول قطعی برق لرستان روز پنجشنبه ۲۲ مرداد ۱۴۰۵+ ساعات خاموشی خرم‌آباد",
+        "link": "https://www.imna.ir/news/995550/%D8%AC%D8%AF%D9%88%D9%84-%D9%82%D8%B7%D8%B9%DB%8C-%D8%A8%D8%B1%D9%82-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D9%88%D8%B2-%D9%BE%D9%86%D8%AC%D8%B4%D9%86%D8%A8%D9%87-%DB%B2%DB%B2-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA-%D8%AE%D8%A7%D9%85%D9%88%D8%B4%DB%8C",
+        "date": "Wed, 12 Aug 2026 19:44:21 GMT",
+        "source": "ایمنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ورودی‌های شیراز استانداردسازی می‌شود/تکمیل تعهدات راهداری در کمربندی شیراز تا دو ماه آینده",
+        "link": "https://www.imna.ir/news/995557/%D9%88%D8%B1%D9%88%D8%AF%DB%8C-%D9%87%D8%A7%DB%8C-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%AA%D8%B9%D9%87%D8%AF%D8%A7%D8%AA-%D8%B1%D8%A7%D9%87%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1",
+        "date": "Wed, 12 Aug 2026 19:42:48 GMT",
+        "source": "ایمنا",
+        "category": "متفرقه",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "مطالبات آدان پرداخت شد",
+        "link": "https://www.isna.ir/news/1405052112586/%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D8%A7%D8%AA-%D8%A2%D8%AF%D8%A7%D9%86-%D9%BE%D8%B1%D8%AF%D8%A7%D8%AE%D8%AA-%D8%B4%D8%AF",
+        "date": "Wed, 12 Aug 2026 19:41:40 GMT",
+        "source": "ایسنا",
         "category": "متفرقه",
         "flag": "🇮🇷"
       },
@@ -886,268 +1029,28 @@
         "flag": "🇮🇷"
       },
       {
-        "title": "حجت‌الاسلام توکلی: قساوت قلب زمینه‌ساز تکرار جنایت‌های تاریخی است",
-        "link": "https://www.mehrnews.com/news/6915314/%D8%AD%D8%AC%D8%AA-%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85-%D8%AA%D9%88%DA%A9%D9%84%DB%8C-%D9%82%D8%B3%D8%A7%D9%88%D8%AA-%D9%82%D9%84%D8%A8-%D8%B2%D9%85%DB%8C%D9%86%D9%87-%D8%B3%D8%A7%D8%B2-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1-%D8%AC%D9%86%D8%A7%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C",
-        "date": "Wed, 12 Aug 2026 19:31:33 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "اجتماع بزرگ هیئت‌های عزاداری استان یزد در ایوان مقصوره مسجد گوهرشاد",
-        "link": "https://www.mehrnews.com/news/6915228/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A8%D8%B2%D8%B1%DA%AF-%D9%87%DB%8C%D8%A6%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DB%8C%D8%B2%D8%AF-%D8%AF%D8%B1-%D8%A7%DB%8C%D9%88%D8%A7%D9%86-%D9%85%D9%82%D8%B5%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%AC%D8%AF-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:31:23 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "رئیس کل دادگستری قم:ساعدی‌نیا متعهد شده هیچ کافه‌ای درکشور نداشته باشد",
-        "link": "https://www.mehrnews.com/news/6915316/%D8%B1%D8%A6%DB%8C%D8%B3-%DA%A9%D9%84-%D8%AF%D8%A7%D8%AF%DA%AF%D8%B3%D8%AA%D8%B1%DB%8C-%D9%82%D9%85-%D8%B3%D8%A7%D8%B9%D8%AF%DB%8C-%D9%86%DB%8C%D8%A7-%D9%85%D8%AA%D8%B9%D9%87%D8%AF-%D8%B4%D8%AF%D9%87-%D9%87%DB%8C%DA%86-%DA%A9%D8%A7%D9%81%D9%87-%D8%A7%DB%8C-%D8%AF%D8%B1%DA%A9%D8%B4%D9%88%D8%B1-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%D9%87",
-        "date": "Wed, 12 Aug 2026 19:30:31 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
         "title": "مورینیو: بازیکنان رئال مادرید لوس شده‌ بودند!",
         "link": "https://www.khabaronline.ir/news/2259515/%D9%85%D9%88%D8%B1%DB%8C%D9%86%DB%8C%D9%88-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%D8%A7%D9%86-%D8%B1%D8%A6%D8%A7%D9%84-%D9%85%D8%A7%D8%AF%D8%B1%DB%8C%D8%AF-%D9%84%D9%88%D8%B3-%D8%B4%D8%AF%D9%87-%D8%A8%D9%88%D8%AF%D9%86%D8%AF",
         "date": "Wed, 12 Aug 2026 19:30:00 GMT",
         "source": "خبرآنلاین",
         "category": "متفرقه",
         "flag": "🇮🇷"
-      },
-      {
-        "title": "جابه‌جایی بیش از ۵۴۰۰ زائر از سیستان و بلوچستان به مشهد مقدس",
-        "link": "https://www.mehrnews.com/news/6915311/%D8%AC%D8%A7%D8%A8%D9%87-%D8%AC%D8%A7%DB%8C%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B5%DB%B4%DB%B0%DB%B0-%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A7%D8%B2-%D8%B3%DB%8C%D8%B3%D8%AA%D8%A7%D9%86-%D9%88-%D8%A8%D9%84%D9%88%DA%86%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D9%85%D8%B4%D9%87%D8%AF-%D9%85%D9%82%D8%AF%D8%B3",
-        "date": "Wed, 12 Aug 2026 19:28:32 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "اجتماع باشکوه اقتدار در نکا",
-        "link": "https://www.mehrnews.com/news/6915303/%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A8%D8%A7%D8%B4%DA%A9%D9%88%D9%87-%D8%A7%D9%82%D8%AA%D8%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%D9%86%DA%A9%D8%A7",
-        "date": "Wed, 12 Aug 2026 19:27:26 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "سرعت طوفان در زابل به ۱۰۱ کیلومتر بر ساعت رسید",
-        "link": "https://www.mehrnews.com/news/6915305/%D8%B3%D8%B1%D8%B9%D8%AA-%D8%B7%D9%88%D9%81%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B2%D8%A7%D8%A8%D9%84-%D8%A8%D9%87-%DB%B1%DB%B0%DB%B1-%DA%A9%DB%8C%D9%84%D9%88%D9%85%D8%AA%D8%B1-%D8%A8%D8%B1-%D8%B3%D8%A7%D8%B9%D8%AA-%D8%B1%D8%B3%DB%8C%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:24:07 GMT",
-        "source": "مهر",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "سعید کریمی رسماً به ذوب‌آهن پیوست",
-        "link": "https://www.isna.ir/news/1405052112581/%D8%B3%D8%B9%DB%8C%D8%AF-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%B1%D8%B3%D9%85%D8%A7-%D8%A8%D9%87-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA",
-        "date": "Wed, 12 Aug 2026 19:14:15 GMT",
-        "source": "ایسنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "شکستگی خط انتقال آب سد شیرین دره به بجنورد مهار شد",
-        "link": "https://www.isna.ir/news/1405052112578/%D8%B4%DA%A9%D8%B3%D8%AA%DA%AF%DB%8C-%D8%AE%D8%B7-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D8%A2%D8%A8-%D8%B3%D8%AF-%D8%B4%DB%8C%D8%B1%DB%8C%D9%86-%D8%AF%D8%B1%D9%87-%D8%A8%D9%87-%D8%A8%D8%AC%D9%86%D9%88%D8%B1%D8%AF-%D9%85%D9%87%D8%A7%D8%B1-%D8%B4%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:07:25 GMT",
-        "source": "ایسنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "زنگ خطر ال‌نینوی رکوردشکن به صدا درآمد",
-        "link": "https://www.khabaronline.ir/news/2259493/%D8%B2%D9%86%DA%AF-%D8%AE%D8%B7%D8%B1-%D8%A7%D9%84-%D9%86%DB%8C%D9%86%D9%88%DB%8C-%D8%B1%DA%A9%D9%88%D8%B1%D8%AF%D8%B4%DA%A9%D9%86-%D8%A8%D9%87-%D8%B5%D8%AF%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:07:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "نهاد مدیریت آبراه خلیج‌فارس: تنگه هرمز همچنان مسدود است",
-        "link": "https://www.irna.ir/news/86234374/%D9%86%D9%87%D8%A7%D8%AF-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A2%D8%A8%D8%B1%D8%A7%D9%87-%D8%AE%D9%84%DB%8C%D8%AC-%D9%81%D8%A7%D8%B1%D8%B3-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%87%D9%85%DA%86%D9%86%D8%A7%D9%86-%D9%85%D8%B3%D8%AF%D9%88%D8%AF-%D8%A7%D8%B3%D8%AA",
-        "date": "Wed, 12 Aug 2026 19:02:06 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "آیت‌الله شبیری زنجانی: «رهبر شهید» تحت تاثیر هیچ قدرتی قرار نگرفتند",
-        "link": "https://www.irna.ir/news/86234353/%D8%A2%DB%8C%D8%AA-%D8%A7%D9%84%D9%84%D9%87-%D8%B4%D8%A8%DB%8C%D8%B1%DB%8C-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AA%D8%AD%D8%AA-%D8%AA%D8%A7%D8%AB%DB%8C%D8%B1-%D9%87%DB%8C%DA%86-%D9%82%D8%AF%D8%B1%D8%AA%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%D9%86%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:45:43 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "360 سالمند زنجانی تحت پوشش طرح توانمند سازی قرار گرفتند",
-        "link": "https://www.irna.ir/news/86234340/360-%D8%B3%D8%A7%D9%84%D9%85%D9%86%D8%AF-%D8%B2%D9%86%D8%AC%D8%A7%D9%86%DB%8C-%D8%AA%D8%AD%D8%AA-%D9%BE%D9%88%D8%B4%D8%B4-%D8%B7%D8%B1%D8%AD-%D8%AA%D9%88%D8%A7%D9%86%D9%85%D9%86%D8%AF-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA%D9%86%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:45:03 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ایرج خودش را معرفی کرد؛ راننده باور نکرد!/ یادداشت احمد زیدآبادی به یاد ایرج و فردین",
-        "link": "https://www.khabaronline.ir/news/2259650/%D8%A7%DB%8C%D8%B1%D8%AC-%D8%AE%D9%88%D8%AF%D8%B4-%D8%B1%D8%A7-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%DA%A9%D8%B1%D8%AF-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%D9%87-%D8%A8%D8%A7%D9%88%D8%B1-%D9%86%DA%A9%D8%B1%D8%AF-%DB%8C%D8%A7%D8%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D8%AD%D9%85%D8%AF-%D8%B2%DB%8C%D8%AF%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C",
-        "date": "Wed, 12 Aug 2026 18:45:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "برداشت لیموترش در خوزستان آغاز شد",
-        "link": "https://www.irna.ir/news/86234336/%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA-%D9%84%DB%8C%D9%85%D9%88%D8%AA%D8%B1%D8%B4-%D8%AF%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:41:23 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "پیشرفت ۶۰ درصدی سد آبسرده بروجرد/ تکمیل ساختمان سد ۳۴۰۰ میلیارد تومان اعتبار نیاز دارد",
-        "link": "https://www.isna.ir/news/1405052112575/%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%DB%B6%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%B3%D8%AF-%D8%A2%D8%A8%D8%B3%D8%B1%D8%AF%D9%87-%D8%A8%D8%B1%D9%88%D8%AC%D8%B1%D8%AF-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D8%B3%D8%AF-%DB%B3%DB%B4%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:40:36 GMT",
-        "source": "ایسنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "گذشت اولیای دم از قصاص یک محکوم در خوزستان همزمان با سوگواری پیامبر اکرم (ص)",
-        "link": "https://www.irna.ir/news/86234351/%DA%AF%D8%B0%D8%B4%D8%AA-%D8%A7%D9%88%D9%84%DB%8C%D8%A7%DB%8C-%D8%AF%D9%85-%D8%A7%D8%B2-%D9%82%D8%B5%D8%A7%D8%B5-%DB%8C%DA%A9-%D9%85%D8%AD%DA%A9%D9%88%D9%85-%D8%AF%D8%B1-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D9%87%D9%85%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B3%D9%88%DA%AF%D9%88%D8%A7%D8%B1%DB%8C",
-        "date": "Wed, 12 Aug 2026 18:38:45 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "وندی شرمن: ایران کنترل تنگه هرمز را در دست خواهد داشت",
-        "link": "https://www.irna.ir/news/86234369/%D9%88%D9%86%D8%AF%DB%8C-%D8%B4%D8%B1%D9%85%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%AF%D8%B3%D8%AA-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%AF%D8%A7%D8%B4%D8%AA",
-        "date": "Wed, 12 Aug 2026 18:38:29 GMT",
-        "source": "ایرنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "عکس | به یادگار از علی دایی و ایرج خواجه امیری",
-        "link": "https://www.khabaronline.ir/news/2259555/%D8%B9%DA%A9%D8%B3-%D8%A8%D9%87-%DB%8C%D8%A7%D8%AF%DA%AF%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%B9%D9%84%DB%8C-%D8%AF%D8%A7%DB%8C%DB%8C-%D9%88-%D8%A7%DB%8C%D8%B1%D8%AC-%D8%AE%D9%88%D8%A7%D8%AC%D9%87-%D8%A7%D9%85%DB%8C%D8%B1%DB%8C",
-        "date": "Wed, 12 Aug 2026 18:38:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "آغاز عرضه بنزین با نرخ جدید چهارم از بامداد پنجشنبه در استان کرمان/جزییات",
-        "link": "https://www.khabaronline.ir/news/2259658/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D8%B1%D8%B6%D9%87-%D8%A8%D9%86%D8%B2%DB%8C%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D8%AE-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%A7%D8%B2-%D8%A8%D8%A7%D9%85%D8%AF%D8%A7%D8%AF-%D9%BE%D9%86%D8%AC%D8%B4%D9%86%D8%A8%D9%87-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86",
-        "date": "Wed, 12 Aug 2026 18:36:10 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "فاتحه تیم‌ملی را با قلعه نویی بخوانید!",
-        "link": "https://www.khabaronline.ir/news/2259564/%D9%81%D8%A7%D8%AA%D8%AD%D9%87-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D8%B1%D8%A7-%D8%A8%D8%A7-%D9%82%D9%84%D8%B9%D9%87-%D9%86%D9%88%DB%8C%DB%8C-%D8%A8%D8%AE%D9%88%D8%A7%D9%86%DB%8C%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:30:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "جشن خرما نشاط اجتماعی را به شادگان می‌آورد",
-        "link": "https://www.isna.ir/news/1405052112572/%D8%AC%D8%B4%D9%86-%D8%AE%D8%B1%D9%85%D8%A7-%D9%86%D8%B4%D8%A7%D8%B7-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%B4%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%85%DB%8C-%D8%A2%D9%88%D8%B1%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:29:46 GMT",
-        "source": "ایسنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "اکرمی مطرح کرد: تعبیر رهبر شهید از با شکوه‌ترین نرمش تاریخ",
-        "link": "https://www.isna.ir/news/1405052112570/%D8%A7%DA%A9%D8%B1%D9%85%DB%8C-%D9%85%D8%B7%D8%B1%D8%AD-%DA%A9%D8%B1%D8%AF-%D8%AA%D8%B9%D8%A8%DB%8C%D8%B1-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%A8%D8%A7-%D8%B4%DA%A9%D9%88%D9%87-%D8%AA%D8%B1%DB%8C%D9%86-%D9%86%D8%B1%D9%85%D8%B4-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE",
-        "date": "Wed, 12 Aug 2026 18:28:36 GMT",
-        "source": "ایسنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "کنترل ایران بر تنگه هرمز ممکن است همیشگی شود",
-        "link": "https://www.imna.ir/news/995549/%DA%A9%D9%86%D8%AA%D8%B1%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D9%85%DA%A9%D9%86-%D8%A7%D8%B3%D8%AA-%D9%87%D9%85%DB%8C%D8%B4%DA%AF%DB%8C-%D8%B4%D9%88%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:27:39 GMT",
-        "source": "ایمنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "آنها که پاداش میلیاردی گرفته‌اند وجدان داشته باشند و به خیریه کمک کنند",
-        "link": "https://www.khabaronline.ir/news/2259558/%D8%A2%D9%86%D9%87%D8%A7-%DA%A9%D9%87-%D9%BE%D8%A7%D8%AF%D8%A7%D8%B4-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF%DB%8C-%DA%AF%D8%B1%D9%81%D8%AA%D9%87-%D8%A7%D9%86%D8%AF-%D9%88%D8%AC%D8%AF%D8%A7%D9%86-%D8%AF%D8%A7%D8%B4%D8%AA%D9%87-%D8%A8%D8%A7%D8%B4%D9%86%D8%AF-%D9%88-%D8%A8%D9%87-%D8%AE%DB%8C%D8%B1%DB%8C%D9%87",
-        "date": "Wed, 12 Aug 2026 18:15:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "پایان تلخ زندگی مادر در سفر خانوادگی آزادراه قزوین–رشت",
-        "link": "https://www.imna.ir/news/995546/%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AA%D9%84%D8%AE-%D8%B2%D9%86%D8%AF%DA%AF%DB%8C-%D9%85%D8%A7%D8%AF%D8%B1-%D8%AF%D8%B1-%D8%B3%D9%81%D8%B1-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%DA%AF%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D9%82%D8%B2%D9%88%DB%8C%D9%86-%D8%B1%D8%B4%D8%AA",
-        "date": "Wed, 12 Aug 2026 18:04:00 GMT",
-        "source": "ایمنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "مشهد این روزها حال‌وهوای کربلا دارد",
-        "link": "https://www.imna.ir/news/995547/%D9%85%D8%B4%D9%87%D8%AF-%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%87%D8%A7-%D8%AD%D8%A7%D9%84-%D9%88%D9%87%D9%88%D8%A7%DB%8C-%DA%A9%D8%B1%D8%A8%D9%84%D8%A7-%D8%AF%D8%A7%D8%B1%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:03:11 GMT",
-        "source": "ایمنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "آغاز عرضه بنزین با نرخ پالایشگاهی در استان کرمان",
-        "link": "https://www.imna.ir/news/995541/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B9%D8%B1%D8%B6%D9%87-%D8%A8%D9%86%D8%B2%DB%8C%D9%86-%D8%A8%D8%A7-%D9%86%D8%B1%D8%AE-%D9%BE%D8%A7%D9%84%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D8%B1%D9%85%D8%A7%D9%86",
-        "date": "Wed, 12 Aug 2026 17:49:36 GMT",
-        "source": "ایمنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "سعید کریمی به ذوب‌آهن پیوست + عکس",
-        "link": "https://www.imna.ir/news/995545/%D8%B3%D8%B9%DB%8C%D8%AF-%DA%A9%D8%B1%DB%8C%D9%85%DB%8C-%D8%A8%D9%87-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA-%D8%B9%DA%A9%D8%B3",
-        "date": "Wed, 12 Aug 2026 17:47:35 GMT",
-        "source": "ایمنا",
-        "category": "متفرقه",
-        "flag": "🇮🇷"
       }
     ],
     "اجتماعی": [
+      {
+        "title": "اسکان و پذیرایی از ۱۲۰۰ زائر پیاده در مجتمع دکتر شریعتی جهاددانشگاهی خراسان رضوی",
+        "link": "https://www.isna.ir/news/1405052212598/%D8%A7%D8%B3%DA%A9%D8%A7%D9%86-%D9%88-%D9%BE%D8%B0%DB%8C%D8%B1%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%DB%B1%DB%B2%DB%B0%DB%B0-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%AF%D8%B1-%D9%85%D8%AC%D8%AA%D9%85%D8%B9-%D8%AF%DA%A9%D8%AA%D8%B1-%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87%DB%8C",
+        "date": "Wed, 12 Aug 2026 20:33:04 GMT",
+        "source": "ایسنا",
+        "category": "اجتماعی",
+        "flag": "🇮🇷"
+      },
       {
         "title": "جاده چالوس و آزادراه تهران–شمال دوطرفه شد",
         "link": "https://www.isna.ir/news/1405052112584/%D8%AC%D8%A7%D8%AF%D9%87-%DA%86%D8%A7%D9%84%D9%88%D8%B3-%D9%88-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84-%D8%AF%D9%88%D8%B7%D8%B1%D9%81%D9%87-%D8%B4%D8%AF",
         "date": "Wed, 12 Aug 2026 19:32:49 GMT",
         "source": "ایسنا",
-        "category": "اجتماعی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "جاده چالوس و آزادراه تهران - شمال دوطرفه شد",
-        "link": "https://www.mehrnews.com/news/6915313/%D8%AC%D8%A7%D8%AF%D9%87-%DA%86%D8%A7%D9%84%D9%88%D8%B3-%D9%88-%D8%A2%D8%B2%D8%A7%D8%AF%D8%B1%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84-%D8%AF%D9%88%D8%B7%D8%B1%D9%81%D9%87-%D8%B4%D8%AF",
-        "date": "Wed, 12 Aug 2026 19:29:01 GMT",
-        "source": "مهر",
-        "category": "اجتماعی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "واکنش کاربران خبرآنلاین به شرط گذاشتن قلعه‌نویی برای تیم‌ملی",
-        "link": "https://www.khabaronline.ir/news/2259563/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%DA%A9%D8%A7%D8%B1%D8%A8%D8%B1%D8%A7%D9%86-%D8%AE%D8%A8%D8%B1%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%A8%D9%87-%D8%B4%D8%B1%D8%B7-%DA%AF%D8%B0%D8%A7%D8%B4%D8%AA%D9%86-%D9%82%D9%84%D8%B9%D9%87-%D9%86%D9%88%DB%8C%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C",
-        "date": "Wed, 12 Aug 2026 19:10:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "اجتماعی",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "مدیرکل کمیته امداد امام (ره) اردبیل: شمار واجدین شرایط خدمات مسکن به پایان رسید",
-        "link": "https://www.irna.ir/news/86233456/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%DA%A9%D9%85%DB%8C%D8%AA%D9%87-%D8%A7%D9%85%D8%AF%D8%A7%D8%AF-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D9%87-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84-%D8%B4%D9%85%D8%A7%D8%B1-%D9%88%D8%A7%D8%AC%D8%AF%DB%8C%D9%86-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA",
-        "date": "Wed, 12 Aug 2026 18:49:27 GMT",
-        "source": "ایرنا",
         "category": "اجتماعی",
         "flag": "🇮🇷"
       },
@@ -1161,6 +1064,30 @@
       }
     ],
     "بین‌الملل": [
+      {
+        "title": "تردید متحدان آمریکا از توانایی ترامپ برای اعمال نفوذ بر اسرائیل",
+        "link": "https://www.khabaronline.ir/news/2259588/%D8%AA%D8%B1%D8%AF%DB%8C%D8%AF-%D9%85%D8%AA%D8%AD%D8%AF%D8%A7%D9%86-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D8%A7%D8%B2-%D8%AA%D9%88%D8%A7%D9%86%D8%A7%DB%8C%DB%8C-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B9%D9%85%D8%A7%D9%84-%D9%86%D9%81%D9%88%D8%B0-%D8%A8%D8%B1-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84",
+        "date": "Wed, 12 Aug 2026 20:29:00 GMT",
+        "source": "خبرآنلاین",
+        "category": "بین‌الملل",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تب مسی به شناسنامه نوزادان مکزیکی رسید!",
+        "link": "https://www.khabaronline.ir/news/2259510/%D8%AA%D8%A8-%D9%85%D8%B3%DB%8C-%D8%A8%D9%87-%D8%B4%D9%86%D8%A7%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%D8%B2%D8%A7%D8%AF%D8%A7%D9%86-%D9%85%DA%A9%D8%B2%DB%8C%DA%A9%DB%8C-%D8%B1%D8%B3%DB%8C%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:25:00 GMT",
+        "source": "خبرآنلاین",
+        "category": "بین‌الملل",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "سخنگوی کاخ سفید از سمت خود کناره‌گیری می‌کند",
+        "link": "https://www.irna.ir/news/86234390/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%DA%A9%D8%A7%D8%AE-%D8%B3%D9%81%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%B3%D9%85%D8%AA-%D8%AE%D9%88%D8%AF-%DA%A9%D9%86%D8%A7%D8%B1%D9%87-%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF",
+        "date": "Wed, 12 Aug 2026 19:59:41 GMT",
+        "source": "ایرنا",
+        "category": "بین‌الملل",
+        "flag": "🇮🇷"
+      },
       {
         "title": "سی‌ان‌ان فرار «خجالت آور» ترامپ از ترکیه را به تمسخر گرفت",
         "link": "https://www.khabaronline.ir/news/2259584/%D8%B3%DB%8C-%D8%A7%D9%86-%D8%A7%D9%86-%D9%81%D8%B1%D8%A7%D8%B1-%D8%AE%D8%AC%D8%A7%D9%84%D8%AA-%D8%A2%D9%88%D8%B1-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A7%D8%B2-%D8%AA%D8%B1%DA%A9%DB%8C%D9%87-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%AA%D9%85%D8%B3%D8%AE%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA",
@@ -1178,61 +1105,121 @@
         "flag": "🇮🇷"
       },
       {
-        "title": "رئیس جمهور لهستان: بالتیک دریای داخلی ناتو نیست",
-        "link": "https://www.irna.ir/news/86234380/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%AC%D9%85%D9%87%D9%88%D8%B1-%D9%84%D9%87%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%D9%84%D8%AA%DB%8C%DA%A9-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C-%D8%AF%D8%A7%D8%AE%D9%84%DB%8C-%D9%86%D8%A7%D8%AA%D9%88-%D9%86%DB%8C%D8%B3%D8%AA",
-        "date": "Wed, 12 Aug 2026 19:16:25 GMT",
-        "source": "ایرنا",
-        "category": "بین‌الملل",
-        "flag": "🇮🇷"
-      },
-      {
-        "title": "ادعای رئیس مستعفی یمن: دیگر هیچ اقدام حوثی‌ها بدون پاسخ نخواهد بود",
-        "link": "https://www.irna.ir/news/86234366/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%B1%D8%A6%DB%8C%D8%B3-%D9%85%D8%B3%D8%AA%D8%B9%D9%81%DB%8C-%DB%8C%D9%85%D9%86-%D8%AF%DB%8C%DA%AF%D8%B1-%D9%87%DB%8C%DA%86-%D8%A7%D9%82%D8%AF%D8%A7%D9%85-%D8%AD%D9%88%D8%AB%DB%8C-%D9%87%D8%A7-%D8%A8%D8%AF%D9%88%D9%86-%D9%BE%D8%A7%D8%B3%D8%AE-%D9%86%D8%AE%D9%88%D8%A7%D9%87%D8%AF",
-        "date": "Wed, 12 Aug 2026 18:55:02 GMT",
-        "source": "ایرنا",
-        "category": "بین‌الملل",
-        "flag": "🇮🇷"
-      },
-      {
         "title": "گفت‌وگوی عراقچی با وزیر کشور پاکستان در فرودگاه مشهد",
         "link": "https://www.imna.ir/news/995552/%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A8%D8%A7-%D9%88%D8%B2%DB%8C%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D9%85%D8%B4%D9%87%D8%AF",
         "date": "Wed, 12 Aug 2026 18:32:51 GMT",
         "source": "ایمنا",
         "category": "بین‌الملل",
         "flag": "🇮🇷"
-      },
-      {
-        "title": "مرگ مرد افغانستانی در سهروردی شمالی؛ ماجرا چیست؟",
-        "link": "https://www.khabaronline.ir/news/2259529/%D9%85%D8%B1%DA%AF-%D9%85%D8%B1%D8%AF-%D8%A7%D9%81%D8%BA%D8%A7%D9%86%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%B3%D9%87%D8%B1%D9%88%D8%B1%D8%AF%DB%8C-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%D9%85%D8%A7%D8%AC%D8%B1%D8%A7-%DA%86%DB%8C%D8%B3%D8%AA",
-        "date": "Wed, 12 Aug 2026 18:09:00 GMT",
-        "source": "خبرآنلاین",
-        "category": "بین‌الملل",
-        "flag": "🇮🇷"
       }
     ],
     "ورزشی": [
       {
-        "title": "فولادشهر دوباره سبز می‌شود/ ذوب‌آهن و فولاد با حضور تماشاگران به استقبال لیگ ۲۶ می‌روند",
-        "link": "https://www.isna.ir/news/1405052112582/%D9%81%D9%88%D9%84%D8%A7%D8%AF%D8%B4%D9%87%D8%B1-%D8%AF%D9%88%D8%A8%D8%A7%D8%B1%D9%87-%D8%B3%D8%A8%D8%B2-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF-%D8%B0%D9%88%D8%A8-%D8%A2%D9%87%D9%86-%D9%88-%D9%81%D9%88%D9%84%D8%A7%D8%AF-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DA%AF%D8%B1%D8%A7%D9%86",
-        "date": "Wed, 12 Aug 2026 19:15:16 GMT",
+        "title": "طنین فریاد «خون‌خواهی» گلستانی‌ها در صحن گوهرشاد",
+        "link": "https://www.mehrnews.com/news/6915343/%D8%B7%D9%86%DB%8C%D9%86-%D9%81%D8%B1%DB%8C%D8%A7%D8%AF-%D8%AE%D9%88%D9%86-%D8%AE%D9%88%D8%A7%D9%87%DB%8C-%DA%AF%D9%84%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B5%D8%AD%D9%86-%DA%AF%D9%88%D9%87%D8%B1%D8%B4%D8%A7%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:24:28 GMT",
+        "source": "مهر",
+        "category": "ورزشی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "اضافه شدن چند بازیکن آکادمی استقلال خوزستان به تیم بزرگسالان",
+        "link": "https://www.isna.ir/news/1405052112594/%D8%A7%D8%B6%D8%A7%D9%81%D9%87-%D8%B4%D8%AF%D9%86-%DA%86%D9%86%D8%AF-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86-%D8%A2%DA%A9%D8%A7%D8%AF%D9%85%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D9%87-%D8%AA%DB%8C%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF%D8%B3%D8%A7%D9%84%D8%A7%D9%86",
+        "date": "Wed, 12 Aug 2026 20:18:12 GMT",
         "source": "ایسنا",
         "category": "ورزشی",
         "flag": "🇮🇷"
       },
       {
-        "title": "استقلال به دنبال دریافت جام قهرمانی/ پیگیری جدی آبی‌ها",
-        "link": "https://www.isna.ir/news/1405052112579/%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D8%AC%D8%A7%D9%85-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AC%D8%AF%DB%8C-%D8%A2%D8%A8%DB%8C-%D9%87%D8%A7",
-        "date": "Wed, 12 Aug 2026 19:12:08 GMT",
+        "title": "حضور مربی اسپانیایی در استقلال منتفی شد/ مذاکره با مربی کروات",
+        "link": "https://www.isna.ir/news/1405052112593/%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%D8%B1%D8%A8%DB%8C-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%85%D9%86%D8%AA%D9%81%DB%8C-%D8%B4%D8%AF-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D9%87-%D8%A8%D8%A7-%D9%85%D8%B1%D8%A8%DB%8C-%DA%A9%D8%B1%D9%88%D8%A7%D8%AA",
+        "date": "Wed, 12 Aug 2026 20:07:55 GMT",
         "source": "ایسنا",
         "category": "ورزشی",
         "flag": "🇮🇷"
       },
       {
-        "title": "واکنش استقلال به ادعای سپاهان و تراکتور: اگر جام ما را ندهند شکایت می‌کنیم",
-        "link": "https://www.imna.ir/news/995548/%D8%A7%DA%AF%D8%B1-%D8%AC%D8%A7%D9%85-%D9%85%D8%A7-%D8%B1%D8%A7-%D9%86%D8%AF%D9%87%D9%86%D8%AF-%D8%B4%DA%A9%D8%A7%DB%8C%D8%AA-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85",
-        "date": "Wed, 12 Aug 2026 18:28:39 GMT",
+        "title": "مقام ایرانی: تنگه هرمز باز نیست/ کشتی‌ها با مدیریت ایران تردد می‌کنند",
+        "link": "https://www.mehrnews.com/news/6915295/%D9%85%D9%82%D8%A7%D9%85-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D8%A8%D8%A7%D8%B2-%D9%86%DB%8C%D8%B3%D8%AA-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%87%D8%A7-%D8%A8%D8%A7-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AA%D8%B1%D8%AF%D8%AF",
+        "date": "Wed, 12 Aug 2026 20:07:24 GMT",
+        "source": "مهر",
+        "category": "ورزشی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "وال استریت ژورنال: ترافیک کشتیرانی در تنگه هرمز پنج برابر کاهش یافته است",
+        "link": "https://www.isna.ir/news/1405052112587/%D9%88%D8%A7%D9%84-%D8%A7%D8%B3%D8%AA%D8%B1%DB%8C%D8%AA-%DA%98%D9%88%D8%B1%D9%86%D8%A7%D9%84-%D8%AA%D8%B1%D8%A7%D9%81%DB%8C%DA%A9-%DA%A9%D8%B4%D8%AA%DB%8C%D8%B1%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%BE%D9%86%D8%AC-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%DA%A9%D8%A7%D9%87%D8%B4",
+        "date": "Wed, 12 Aug 2026 19:43:39 GMT",
+        "source": "ایسنا",
+        "category": "ورزشی",
+        "flag": "🇮🇷"
+      }
+    ],
+    "علمی و فناوری": [
+      {
+        "title": "گوشی پرچم‌دار جدید گوگل معرفی شد / تمرکز غول فناوری روی هوش مصنوعی و عکاسی",
+        "link": "https://www.khabaronline.ir/live/2259669/%DA%AF%D9%88%D8%B4%DB%8C-%D9%BE%D8%B1%DA%86%D9%85-%D8%AF%D8%A7%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%DA%AF%D9%88%DA%AF%D9%84-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%B4%D8%AF-%D8%AA%D9%85%D8%B1%DA%A9%D8%B2-%D8%BA%D9%88%D9%84-%D9%81%D9%86%D8%A7%D9%88%D8%B1%DB%8C-%D8%B1%D9%88%DB%8C-%D9%87%D9%88%D8%B4-%D9%85%D8%B5%D9%86%D9%88%D8%B9%DB%8C",
+        "date": "Wed, 12 Aug 2026 20:23:15 GMT",
+        "source": "خبرآنلاین",
+        "category": "علمی و فناوری",
+        "flag": "🇮🇷"
+      }
+    ],
+    "اقتصادی": [
+      {
+        "title": "توسعه کشاورزی خوزستان در گرو تعامل میدانی با تولیدکنندگان",
+        "link": "https://www.irna.ir/news/86234388/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%DB%8C-%D8%AE%D9%88%D8%B2%D8%B3%D8%AA%D8%A7%D9%86-%D8%AF%D8%B1-%DA%AF%D8%B1%D9%88-%D8%AA%D8%B9%D8%A7%D9%85%D9%84-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7-%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DA%A9%D9%86%D9%86%D8%AF%DA%AF%D8%A7%D9%86",
+        "date": "Wed, 12 Aug 2026 20:19:05 GMT",
+        "source": "ایرنا",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ذخیره‌سازی بیش از ۶ هزار تن کالای اساسی در البرز",
+        "link": "https://www.mehrnews.com/news/6915331/%D8%B0%D8%AE%DB%8C%D8%B1%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B6-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AA%D9%86-%DA%A9%D8%A7%D9%84%D8%A7%DB%8C-%D8%A7%D8%B3%D8%A7%D8%B3%DB%8C-%D8%AF%D8%B1-%D8%A7%D9%84%D8%A8%D8%B1%D8%B2",
+        "date": "Wed, 12 Aug 2026 20:10:58 GMT",
+        "source": "مهر",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "رصد آلودگی نفتی در ۳۲ هزار مترمربع از سواحل قشم و هنگام",
+        "link": "https://www.isna.ir/news/1405052112591/%D8%B1%D8%B5%D8%AF-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%D8%AF%D8%B1-%DB%B3%DB%B2-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%AA%D8%B1%D9%85%D8%B1%D8%A8%D8%B9-%D8%A7%D8%B2-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D9%87%D9%86%DA%AF%D8%A7%D9%85",
+        "date": "Wed, 12 Aug 2026 19:51:37 GMT",
+        "source": "ایسنا",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "تعیین تکلیف ثبت‌سفارش‌های بلاتکلیف خودروهای وارداتی با تصمیم جدید صمت",
+        "link": "https://www.khabaronline.ir/news/2259574/%D8%AA%D8%B9%DB%8C%DB%8C%D9%86-%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%AB%D8%A8%D8%AA-%D8%B3%D9%81%D8%A7%D8%B1%D8%B4-%D9%87%D8%A7%DB%8C-%D8%A8%D9%84%D8%A7%D8%AA%DA%A9%D9%84%DB%8C%D9%81-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D8%B1%D8%AF%D8%A7%D8%AA%DB%8C-%D8%A8%D8%A7-%D8%AA%D8%B5%D9%85%DB%8C%D9%85",
+        "date": "Wed, 12 Aug 2026 19:51:12 GMT",
+        "source": "خبرآنلاین",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "آلودگی نفتی ۳۲ هزار مترمربع از سواحل قشم و هنگام را درگیر کرد",
+        "link": "https://www.imna.ir/news/995562/%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C-%DB%B3%DB%B2-%D9%87%D8%B2%D8%A7%D8%B1-%D9%85%D8%AA%D8%B1%D9%85%D8%B1%D8%A8%D8%B9-%D8%A7%D8%B2-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D9%82%D8%B4%D9%85-%D9%88-%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%B1%D8%A7-%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1-%DA%A9%D8%B1%D8%AF",
+        "date": "Wed, 12 Aug 2026 19:39:00 GMT",
         "source": "ایمنا",
-        "category": "ورزشی",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "پاکسازی سواحل جنوبی قشم و جزیره هنگام از آلودگی نفتی",
+        "link": "https://www.imna.ir/news/995559/%D9%BE%D8%A7%DA%A9%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B3%D9%88%D8%A7%D8%AD%D9%84-%D8%AC%D9%86%D9%88%D8%A8%DB%8C-%D9%82%D8%B4%D9%85-%D9%88-%D8%AC%D8%B2%DB%8C%D8%B1%D9%87-%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%A7%D8%B2-%D8%A2%D9%84%D9%88%D8%AF%DA%AF%DB%8C-%D9%86%D9%81%D8%AA%DB%8C",
+        "date": "Wed, 12 Aug 2026 19:30:41 GMT",
+        "source": "ایمنا",
+        "category": "اقتصادی",
+        "flag": "🇮🇷"
+      },
+      {
+        "title": "ظرفیت نفتی سروستان باید به توسعه صنایع پایین‌دستی منجر شود",
+        "link": "https://www.imna.ir/news/995553/%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%86%D9%81%D8%AA%DB%8C-%D8%B3%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D9%BE%D8%A7%DB%8C%DB%8C%D9%86-%D8%AF%D8%B3%D8%AA%DB%8C-%D9%85%D9%86%D8%AC%D8%B1-%D8%B4%D9%88%D8%AF",
+        "date": "Wed, 12 Aug 2026 18:46:57 GMT",
+        "source": "ایمنا",
+        "category": "اقتصادی",
         "flag": "🇮🇷"
       }
     ]
