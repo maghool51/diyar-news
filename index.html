@@ -37,13 +37,13 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 </div>
 
 <div style="font-size:13px;margin-top:8px;opacity:.95">
-آخرین بروزرسانی: ۱۴۰۵/۵/۲۶, ۱۷:۵۷:۳۵
+آخرین بروزرسانی: ۱۴۰۵/۵/۲۶, ۱۸:۴۴:۱۰
 </div>
 
 <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:12px">
 
 <span class="count-badge">
-📰 75 خبر
+📰 74 خبر
 </span>
 
 <span class="count-badge">
@@ -59,59 +59,428 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
 
 <div class="category-tabs">
   <button class="category-tab active" onclick="filterCategory('all')">📋 همه</button>
-  <button class="category-tab" onclick="filterCategory('اقتصادی')">💰 اقتصادی</button><button class="category-tab" onclick="filterCategory('بین‌الملل')">🌍 بین‌الملل</button><button class="category-tab" onclick="filterCategory('متفرقه')">📌 متفرقه</button><button class="category-tab" onclick="filterCategory('فرهنگی و هنری')">🎭 فرهنگی و هنری</button><button class="category-tab" onclick="filterCategory('علمی و فناوری')">🔬 علمی و فناوری</button><button class="category-tab" onclick="filterCategory('ورزشی')">⚽ ورزشی</button><button class="category-tab" onclick="filterCategory('اجتماعی')">👥 اجتماعی</button><button class="category-tab" onclick="filterCategory('سیاسی')">🏛 سیاسی</button>
+  <button class="category-tab" onclick="filterCategory('ورزشی')">⚽ ورزشی</button><button class="category-tab" onclick="filterCategory('اجتماعی')">👥 اجتماعی</button><button class="category-tab" onclick="filterCategory('سیاسی')">🏛 سیاسی</button><button class="category-tab" onclick="filterCategory('علمی و فناوری')">🔬 علمی و فناوری</button><button class="category-tab" onclick="filterCategory('متفرقه')">📌 متفرقه</button><button class="category-tab" onclick="filterCategory('بین‌الملل')">🌍 بین‌الملل</button><button class="category-tab" onclick="filterCategory('فرهنگی و هنری')">🎭 فرهنگی و هنری</button><button class="category-tab" onclick="filterCategory('اقتصادی')">💰 اقتصادی</button>
 </div>
 
 <div id="news-container">
-  <div class="category-section" data-category="اقتصادی">
-    <div class="category-title">💰 اقتصادی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">4</span></div>
+  <div class="category-section" data-category="ورزشی">
+    <div class="category-title">⚽ ورزشی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">4</span></div>
     <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261730/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%D8%AE%D8%B2%D9%86-%DA%AF%D8%A7%D8%B2-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" target="_blank">ببینید | آتش‌سوزی در مخزن گاز آمریکا</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۶:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615451/%D8%AF%D8%B3%D8%AA%D9%88%D8%B1-%D8%A7%D9%84%D8%B2%DB%8C%D8%AF%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B4%DA%A9%DB%8C%D9%84-%DA%A9%D9%85%DB%8C%D8%AA%D9%87-%D8%AA%D8%AD%D9%82%DB%8C%D9%82-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D8%AD%D9%85%D9%84%D9%87-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF%DB%8C-%D8%A8%D9%87-%D8%AF%D9%81%D8%AA%D8%B1" target="_blank">دستور الزیدی برای تشکیل کمیته تحقیق درباره حمله پهپادی به دفتر بارزانی</a></div>
+      <div class="title"><a href="https://www.isna.ir/news/1405052615478/%D8%B4%DA%A9%D8%B1%D8%A7%D9%86%D9%87-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A7%D9%86%D8%AC%DB%8C%D8%B1-%D8%AF%D8%B1-%DA%AF%D9%84%D9%88%DA%AF%D8%A7%D9%87-%D8%B7%D8%B9%D9%85-%D8%B4%DB%8C%D8%B1%DB%8C%D9%86-%D8%AD%D8%A7%D8%B5%D9%84%D8%AE%DB%8C%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%B4%D8%B1%D9%82%DB%8C-%D8%AA%D8%B1%DB%8C%D9%86" target="_blank">شکرانه برداشت انجیر در گلوگاه؛ طعم شیرینِ حاصلخیزی در شرقی‌ترین نقطه مازندران</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۴:۱۶</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۴۲:۴۹</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996673/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%A8%D9%88%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D9%88%D9%87%D8%B3%D8%A7%D8%B1-%D8%B4%D9%87%D8%B1-%D8%B1%D8%A7%DB%8C%D9%86-%D8%A7%D8%B2-%D9%85%D8%AD%D9%84-%D8%B9%D9%88%D8%A7%D8%B1%D8%B6-%D8%A7%D8%B1%D8%B2%D8%B4-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%87" target="_blank">افتتاح بوستان کوهسار شهر راین از محل عوارض ارزش افزوده</a></div>
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261746/%D8%B9%DA%A9%D8%B3-%DA%AF%D9%84%D8%B1%DB%8C%D8%B2%D8%A7%D9%86-%D9%81%D9%88%D9%84%D8%A7%D8%AF%DB%8C-%D9%87%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D8%B1%D8%A7%D9%85%DB%8C%D9%86-%D8%B1%D8%B6%D8%A7%DB%8C%DB%8C%D8%A7%D9%86" target="_blank">عکس| گلریزان فولادی‌ها برای بازگشت رامین رضاییان!</a></div>
       <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۴:۲۳</span>
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۲:۱۸</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996665/%D8%AA%D9%88%D9%82%DB%8C%D9%81-%D9%86%D9%81%D8%AA%DA%A9%D8%B4-%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%DB%8C-%D8%AF%D8%B1-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2" target="_blank">توقیف نفتکش اماراتی در تنگه هرمز</a></div>
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261749/%D8%A8%D8%B1%D8%AF-%D8%AF%D8%AE%D8%AA%D8%B1%D8%A7%D9%86-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84-%D8%AE%D8%A7%D8%AA%D9%88%D9%86-%D8%A8%D9%85-%D8%AF%D8%B1-%D8%A2%D8%BA%D8%A7%D8%B2-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D9%84%DB%8C%DA%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D8%A2%D8%B3%DB%8C%D8%A7" target="_blank">برد دختران فوتبال خاتون بم در آغاز مقدماتی لیگ قهرمانان آسیا</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۳:۱۶</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996671/%D8%A8%D9%84%DB%8C%D8%B7-%D9%81%D8%B1%D9%88%D8%B4%DB%8C-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%88-%D9%86%D8%B3%D8%A7%D8%AC%DB%8C-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%84%DB%8C%D9%86%DA%A9-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A8%D9%84%DB%8C%D8%B7" target="_blank">بلیط فروشی بازی استقلال و نساجی آغاز شد + لینک سایت خرید بلیط footballeticket.ir</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۶:۵۲:۲۱</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۶:۴۲</span>
+      </div>
+    </div>
+  </div>
+  <div class="category-section" data-category="اجتماعی">
+    <div class="category-title">👥 اجتماعی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">10</span></div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238360/%D8%AD%D8%A7%D8%AC%DB%8C-%D9%85%DB%8C%D8%B1%D8%B2%D8%A7%DB%8C%DB%8C-%D8%B1%D8%A6%DB%8C%D8%B3-%D8%AD%D9%85%D9%87%D9%88%D8%B1-%D8%A7%D8%B1%D8%AA%D9%82%D8%A7%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D8%A7-%D9%85%D9%87%D9%85-%D8%AA%D8%B1%DB%8C%D9%86-%D8%A7%D9%88%D9%84%D9%88%DB%8C%D8%AA-%D8%A8%D8%B1%D8%A7%DB%8C" target="_blank">حاجی‌میرزایی: رئیس حمهور ارتقای آموزش را مهم‌ترین اولویت برای آینده کشور می‌داند</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۴۰:۵۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/photo/1405052615477/%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86" target="_blank">آتش‌سوزی در میدان شهرداری گرگان</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۸:۵۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238278/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%87%D8%B1%D9%85%D8%B2%DA%AF%D8%A7%D9%86-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%88%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D8%AA%D8%AC%D9%84%DB%8C-%D8%AD%DA%A9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%DB%8C%DA%A9%D9%BE%D8%A7%D8%B1%DA%86%D9%87-%D9%88" target="_blank">استاندار هرمزگان: شورای آموزش وپرورش، تجلی حکمرانی یکپارچه و مردم‌پایه است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۶:۳۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615474/%D8%A8%D9%87%D8%B1%D9%87-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%DB%B8%DB%B0-%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D8%A8%D8%A7-%DB%B2%DB%B9%DB%B9-%DA%A9%D9%84%D8%A7%D8%B3-%D8%AF%D8%B1-%DA%A9%D9%87%DA%AF%DB%8C%D9%84%D9%88%DB%8C%D9%87-%D9%88-%D8%A8%D9%88%DB%8C%D8%B1%D8%A7%D8%AD%D9%85%D8%AF-%D8%AF%D8%B1" target="_blank">بهره‌برداری از ۸۰ مدرسه با ۲۹۹ کلاس در کهگیلویه و بویراحمد در مهر امسال</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۳:۵۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615469/%D8%A7%D9%86%D8%AC%D8%A7%D9%85-%DB%B9%DB%B7%DB%B7-%D9%85%D8%A3%D9%85%D9%88%D8%B1%DB%8C%D8%AA-%D8%A7%D9%88%D8%B1%DA%98%D8%A7%D9%86%D8%B3%DB%8C-%D8%AF%D8%B1-%D9%BE%DB%8C-%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%B3%D9%82%D9%88%D8%B7-%D8%AF%D8%B1-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C" target="_blank">انجام ۹۷۷ مأموریت اورژانسی در پی حوادث سقوط در آذربایجان شرقی</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۶:۴۶</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238346/%D9%85%D9%87%D8%A7%D8%B1-%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%B4%D8%A8%D8%A7%D9%86%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D9%BE%D8%A7%D8%A8%D8%B1%D8%AC%D8%A7%D8%B3%D8%AA" target="_blank">مهار آتش‌سوزی میدان شهرداری؛ اجتماع شبانه مردم گرگان پابرجاست</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۶:۲۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615468/%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%DA%AF%D8%B0%D8%A7%D8%B1-%D8%A7%D8%B2-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%B3%D9%86%D8%AA%DB%8C-%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D8%A8%D9%87-%D8%B3%D9%85%D8%AA-%D8%A7%D9%82%D8%AF%D8%A7%D9%85%D8%A7%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%AF%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D9%88-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4" target="_blank">ضرورت گذار از مدیریت سنتی حوادث به سمت اقدامات پیش‌دستانه و افزایش تاب‌آوری عمومی</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۴:۴۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615467/%D9%85%D8%AD%D9%85%D8%AF%DB%8C-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D9%BE%D8%AA%D8%A7%D9%86%D8%B3%DB%8C%D9%84-%D8%AD%D8%B6%D9%88%D8%B1-%D8%A8%DB%8C%D9%86-%DB%B6-%D8%AA%DB%8C%D9%85-%D8%A8%D8%A7%D9%84%D8%A7%DB%8C-%D8%AC%D8%AF%D9%88%D9%84-%D9%84%DB%8C%DA%AF-%D8%B1%D8%A7-%D8%AF%D8%A7%D8%B1%D8%AF" target="_blank">محمدی: آلومینیوم پتانسیل حضور بین ۶ تیم بالای جدول لیگ را دارد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۱:۳۲</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919620/%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%85%D8%BA%D8%A7%D8%B2%D9%87-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D8%B4%D9%88%D8%A7%D9%87%D8%AF%DB%8C-%D8%A7%D8%B2-%D8%B9%D9%85%D8%AF%DB%8C-%D8%A8%D9%88%D8%AF%D9%86-%D8%AD%D8%B1%DB%8C%D9%82-%D9%88%D8%AC%D9%88%D8%AF" target="_blank">آتش‌سوزی گرگان از یک مغازه آغاز شد؛شواهدی از عمدی بودن حریق وجود ندارد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۶:۳۸</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996674/%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%D8%BA%D8%A7%D8%B2%D9%87-%D9%87%D8%A7%DB%8C-%D9%82%D8%AF%DB%8C%D9%85%DB%8C-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%B3%D9%82%D9%81-%D9%87%D8%A7%DB%8C-%DA%86%D9%88%D8%A8%DB%8C" target="_blank">آتش‌سوزی در مغازه‌های قدیمی میدان شهرداری گرگان/ سقف‌های چوبی بر شدت حریق افزوده است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۸:۱۵</span>
+      </div>
+    </div>
+  </div>
+  <div class="category-section" data-category="سیاسی">
+    <div class="category-title">🏛 سیاسی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">10</span></div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238358/%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%D8%A7%D9%85%DB%8C%D8%AF-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D9%85%D8%AD%D9%88%D8%B1%DB%8C%D8%AA-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%87%D8%A7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%D8%AF%D9%88%D9%84%D8%AA" target="_blank">تقویت امید اجتماعی محوریت برنامه های هفته دولت</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۹:۲۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615291/%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%A7-%D9%86%D8%AA%D8%A7%D9%86%DB%8C%D8%A7%D9%87%D9%88-%D9%86%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%B7%D8%B1%D8%AD-%D8%A8%D9%87-%D8%A7%D8%B5%D8%B7%D9%84%D8%A7%D8%AD-%D8%B5%D9%84%D8%AD%D8%B4-%D8%AF%D8%B1-%D8%BA%D8%B2%D9%87-%D8%B1%D8%A7-%D8%A7%D8%AC%D8%B1%D8%A7" target="_blank">طرح بی‌سرانجام صلح در غزه</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۷:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919636/%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D8%A2%D9%81%D8%B1%DB%8C%D9%86%DB%8C-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8%DB%8C-%D9%86%DA%A9%D8%A7" target="_blank">حماسه آفرینی مردم انقلابی نکا</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۵:۰۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919635/%D9%87%D9%81%D8%AA%D9%87-%D8%AF%D9%88%D9%84%D8%AA-%D9%81%D8%B1%D8%B5%D8%AA%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%D9%87%D9%85%D8%AF%D9%84%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C" target="_blank">هفته دولت؛ فرصتی برای تقویت همدلی اجتماعی</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۳:۰۲</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919622/%DA%A9%D8%A7%D8%B8%D9%85%DB%8C-%D9%85%D8%AC%D9%84%D8%B3-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%B4%D8%B1%DB%8C%DA%A9-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%D8%AF%D8%B1-%D8%AA%D8%AD%D9%88%D9%84-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%A7%D8%B3%D8%AA" target="_blank">کاظمی: مجلس شورای اسلامی، شریک راهبردی دولت در تحول مدارس است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۱:۴۲</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996662/%D8%AE%D8%A8%D8%B1%D9%86%DA%AF%D8%A7%D8%B1-%D8%A7%DB%8C%D9%85%D9%86%D8%A7-%D8%B1%D8%AA%D8%A8%D9%87-%D9%86%D8%AE%D8%B3%D8%AA-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%AD%D9%85%D8%A7%D8%B3%D9%87-%D9%88-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%AA-%D8%B1%D8%A7-%DA%A9%D8%B3%D8%A8-%DA%A9%D8%B1%D8%AF" target="_blank">خبرنگار ایمنا رتبه نخست جشنواره حماسه و مقاومت را کسب کرد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۸:۳۲</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615471/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%87%D8%A7%DB%8C-%D9%87%D9%81%D8%AA%D9%87-%D8%AF%D9%88%D9%84%D8%AA-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%B1%D9%88%D8%A7%DB%8C%D8%AA%DA%AF%D8%B1-%D8%AF%D8%B3%D8%AA%D8%A7%D9%88%D8%B1%D8%AF%D9%87%D8%A7%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D9%88-%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%DA%A9%D9%86%D9%86%D8%AF%D9%87" target="_blank">معاون استاندار آذربایجان شرقی: برنامه‌های هفته دولت باید روایتگر دستاوردهای کشور باشد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۷:۵۱</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615464/%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A7%D8%AD%D8%AF%D8%A7%D8%AB-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%D9%84-%D8%AE%D8%A7%D8%B1%D8%AC%DB%8C-%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87-%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-%D9%85%D8%A7%D9%84%DB%8C-%D9%BE%D8%B1%D9%88%DA%98%D9%87-%D8%A8%D8%A7" target="_blank">پیگیری احداث ترمینال خارجی فرودگاه تبریز؛ تأمین مالی پروژه با مدل BLT</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۰:۴۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261728/%D8%AF%D8%AE%D8%AA%D8%B1%D8%A7%D9%86-%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7%D9%82%D8%B1%DB%8C-%D8%AF%D8%B1-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%B1%D9%88%D8%B2-%D8%AE%D8%A8%D8%B1%D9%86%DA%AF%D8%A7%D8%B1-%D8%AF%D8%B1-%D9%85%D8%AC%D9%84%D8%B3-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-%D9%81%D8%B1%D8%B4%D8%AA%D9%87" target="_blank">دختران سردار باقری در مراسم روز خبرنگار در مجلس/ تصویر فرشته شهید در مقابل دیدگان خواهر</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۱:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238321/%D8%AA%D9%88%D8%A7%D9%81%D9%82-%D8%B1%DA%98%DB%8C%D9%85-%D8%A7%D8%B3%D8%B1%D8%A7%D8%A6%DB%8C%D9%84-%D9%88-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%B5%D9%84%D8%AD-%D8%BA%D8%B2%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%B4%DA%A9%DB%8C%D9%84-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1%D9%88%D9%87-%D8%AC%D9%87%D8%AA-%D8%AA%D9%85%D8%B1%DA%A9%D8%B2" target="_blank">توافق رژیم اسرائیل و شورای صلح غزه برای تشکیل کارگروه جهت تمرکز بر خلع سلاح حماس</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۸:۴۸</span>
+      </div>
+    </div>
+  </div>
+  <div class="category-section" data-category="علمی و فناوری">
+    <div class="category-title">🔬 علمی و فناوری <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">4</span></div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238359/%D8%AF%D8%A7%D8%AF%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B9%D9%84%DB%8C%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%86%D8%AA%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF-%D8%A8%D9%87-%D8%A7%D8%AA%D9%87%D8%A7%D9%85-%D9%86%D8%B4%D8%B1-%D8%A7%DA%A9%D8%A7%D8%B0%DB%8C%D8%A8" target="_blank">دادستانی تهران علیه برنامه اینترنتی «آزاد»به اتهام نشر اکاذیب اعلام جرم کرد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۷:۵۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238356/%D8%B1%D9%88%D8%A7%D8%A8%D8%B7-%D8%AF%D9%88%D8%AC%D8%A7%D9%86%D8%A8%D9%87-%D9%88-%D8%AA%D8%AD%D9%88%D9%84%D8%A7%D8%AA-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D9%85%D8%AD%D9%88%D8%B1-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D8%AA%D9%84%D9%81%D9%86%DB%8C-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D9%88-%D9%81%DB%8C%D8%AF%D8%A7%D9%86" target="_blank">روابط دوجانبه و تحولات منطقه، محور گفت وگوی تلفنی عراقچی و فیدان</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۴:۲۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996686/%D9%87%D8%B2%DB%8C%D9%86%D9%87-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A7%D9%86%D8%B1%DA%98%DB%8C-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%B1-%D8%AF%D9%88%D8%B4-%D9%85%D8%B1%D8%AF%D9%85-%D9%88-%D9%85%D8%AD%DB%8C%D8%B7-%D8%B2%DB%8C%D8%B3%D8%AA-%D9%82%D8%B2%D9%88%DB%8C%D9%86-%D8%A8%D8%A7%D8%B4%D8%AF" target="_blank">هزینه تولید انرژی نباید بر دوش مردم و محیط زیست قزوین باشد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۰:۲۱</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261286/%D9%85%D8%B1%D8%B2-%D9%85%DB%8C%D8%A7%D9%86-%D8%AF%D8%A7%D9%86%D8%B4-%D9%88-%D9%81%D8%B1%DB%8C%D8%A8-%D8%AF%D8%B1-%D9%BE%DA%98%D9%88%D9%87%D8%B4-%DA%86%D8%B1%D8%A7-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%BA%D8%A7%DB%8C%D8%AA-%D9%BE%DA%98%D9%88%D9%87%D8%B4-%D8%AA%D9%88%D8%AC%D9%87-%DA%A9%D9%86%DB%8C%D9%85" target="_blank">مرز میان دانش و فریب در پژوهش؛ چرا باید به غایتِ پژوهش توجه کنیم؟</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۱:۰۰</span>
+      </div>
+    </div>
+  </div>
+  <div class="category-section" data-category="متفرقه">
+    <div class="category-title">📌 متفرقه <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">21</span></div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919640/%D8%AF%D8%A7%D8%AF%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B9%D9%84%DB%8C%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D8%A8%D9%87-%D8%A7%D8%AA%D9%87%D8%A7%D9%85-%D9%86%D8%B4%D8%B1-%D8%A7%DA%A9%D8%A7%D8%B0%DB%8C%D8%A8-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%AC%D8%B1%D9%85" target="_blank">دادستانی تهران علیه برنامه «آزاد» به اتهام نشر اکاذیب اعلام جرم کرد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۷:۳۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615475/%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1-%D9%BE%DB%8C%D8%B4%D9%88%D8%A7-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8-%D8%B4%D8%AF" target="_blank">شهردار پیشوا انتخاب شد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۵:۳۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919630/%D8%B3%DB%8C%D9%86%D9%87-%D8%B2%D9%86%DB%8C-%D9%88-%D8%B9%D8%B2%D8%A7%D8%AF%D8%A7%D8%B1%DB%8C-%D8%B2%D8%A7%D8%A6%D8%B1%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D8%AF%D8%B1-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%DA%86%D9%87%D9%84%D9%85%DB%8C%D9%86-%D8%B1%D9%88%D8%B2-%D8%AA%D8%AF%D9%81%DB%8C%D9%86-%D8%B1%D9%87%D8%A8%D8%B1" target="_blank">سینه‌زنی و عزاداری زائران رضوی در مراسم چهلمین روز تدفین رهبر شهید</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۳:۰۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996685/%D8%AC%D8%AF%D9%88%D9%84-%D9%82%D8%B7%D8%B9%DB%8C-%D8%A8%D8%B1%D9%82-%D9%84%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D9%88%D8%B2-%D8%B3%D9%87-%D8%B4%D9%86%D8%A8%D9%87-%D8%A8%DB%8C%D8%B3%D8%AA-%D9%88-%D9%87%D9%81%D8%AA%D9%85-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%B3%D8%A7%D8%B9%D8%A7%D8%AA" target="_blank">جدول قطعی برق لرستان روز سه‌شنبه بیست و هفتم مرداد ۱۴۰۵+ ساعات خاموشی خرم‌آباد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۰:۴۶</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919629/%D8%B3%D8%B7%D8%AD-%DA%A9%D8%B4%D8%AA-%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A8%D9%87%D8%B4%D9%87%D8%B1-%D8%A8%D9%87-%DB%B7%DB%B0-%D9%87%DA%A9%D8%AA%D8%A7%D8%B1-%D8%B1%D8%B3%DB%8C%D8%AF-%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%DB%B1%DB%B0-%D9%87%DA%A9%D8%AA%D8%A7%D8%B1%DB%8C-%D9%85%D8%B2%D8%A7%D8%B1%D8%B9" target="_blank">سطح کشت زعفران در بهشهر به ۷۰ هکتار رسید؛ توسعه ۱۰ هکتاری مزارع جدید</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۸:۳۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919610/%D9%87%D9%85%D8%A7%DB%8C%D8%B4-%D9%85%D9%84%DB%8C-%D8%B4%DB%8C%D9%88%D9%87-%D9%87%D8%A7%DB%8C-%D8%AA%D8%A3%D9%85%DB%8C%D9%86-%D9%85%D8%A7%D9%84%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D8%B1%D8%AF%D8%A8%DB%8C%D9%84" target="_blank">همایش ملی شیوه‌های تأمین مالی استان اردبیل</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۲:۵۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919627/%D8%A8%D8%B1%D8%AE%D9%88%D8%B1%D8%AF-%D9%BE%D9%84%DB%8C%D8%B3-%D8%A8%D8%A7%D8%B9%D8%B1%D8%B6%D9%87-%D9%BE%D9%88%D8%B4%D8%A7%DA%A9-%D8%AE%D9%84%D8%A7%D9%81-%D9%85%D9%82%D8%B1%D8%B1%D8%A7%D8%AA-%D9%88%D8%A7%D8%AD%D8%AF%D8%B5%D9%86%D9%81%DB%8C-%D9%85%D8%AA%D8%AE%D9%84%D9%81-%D8%AF%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86" target="_blank">برخورد پلیس باعرضه پوشاک خلاف مقررات؛ واحدصنفی متخلف در اصفهان پلمب شد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۲:۳۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996680/%DB%B2%DB%B6-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%D8%B1%D9%88%D8%B2-%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D9%85%D8%B1%D8%AF%D8%A7%D9%86-%D8%A7%DB%8C%D8%B3%D8%AA%D8%A7%D8%AF%DA%AF%DB%8C-%D9%88-%D8%B9%D8%B2%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C" target="_blank">۲۶ مرداد؛ روز بازگشت مردان ایستادگی و عزت ایران اسلامی</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۰:۵۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919621/%D8%B7%D8%B1%D8%AD-%D9%86%D8%B4%D8%A7%D8%B7-%D9%85%D8%B9%D9%86%D9%88%DB%8C-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%A7%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D8%A7%D8%B3%D8%AD%D8%A7%D9%82-%D8%B1%D9%87-%D8%A8%D9%87-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%B1%D8%B3%DB%8C%D8%AF" target="_blank">طرح نشاط معنوی در حرم احمد بن اسحاق(ره) به پایان رسید</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۷:۴۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996679/%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%DB%B9%DB%B4-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D9%81%D8%A7%D8%B2-%D9%86%D8%AE%D8%B3%D8%AA-%D8%B7%D8%B1%D8%AD-%D9%BE%DB%8C%D8%A7%D8%AF%D9%87-%D8%B1%D9%88%D8%B3%D8%A7%D8%B2%DB%8C-%D9%87%D8%B3%D8%AA%D9%87-%D9%85%D8%B1%DA%A9%D8%B2%DB%8C-%D8%A2%D9%85%D9%84" target="_blank">اجرای ۹۴ درصدی فاز نخست طرح پیاده‌روسازی هسته مرکزی آمل</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۷:۲۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238255/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%A7%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AE%D8%AF%D9%85%D8%AA-%D8%A8%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B2-%D9%85%D8%B5%D8%A7%D8%AF%DB%8C%D9%82-%D8%A7%D9%85%D8%B1-%D8%A8%D9%87-%D9%85%D8%B9%D8%B1%D9%88%D9%81-%D8%A7%D8%B3%D8%AA" target="_blank">استاندار گیلان: خدمت به مردم از مصادیق امر به معروف است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۲:۵۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238284/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%DA%A9%D8%B1%D9%85%D8%A7%D9%86-%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF%D9%85%D8%AD%D9%88%D8%B1%DB%8C-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%AC%D8%AF%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA" target="_blank">استاندار کرمان: رویدادمحوری راهبردی جدی برای معرفی استان است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۵:۲۶</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261747/%D9%BE%D9%86%D8%AA%D8%A7%DA%AF%D9%88%D9%86-%D8%AF%D8%B1-%D8%A8%D9%86-%D8%A8%D8%B3%D8%AA-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%DA%AF%DB%8C%D8%B1-%D8%A7%D9%81%D8%AA%D8%A7%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA" target="_blank">پنتاگون در بن‌بست تنگه هرمز گیر افتاده است</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۴:۲۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996681/%D8%A7%D9%86%D9%87%D8%AF%D8%A7%D9%85-%DB%8C%DA%A9-%D8%A8%D8%A7%D9%86%D8%AF-%DB%B4-%D9%86%D9%81%D8%B1%D9%87-%D8%B3%D8%A7%D8%B1%D9%82%D8%A7%D9%86-%D8%B3%DB%8C%D9%85-%D9%88-%DA%A9%D8%A7%D8%A8%D9%84-%D8%A8%D8%B1%D9%82-%D8%AF%D8%B1-%D8%A2%D9%85%D9%84" target="_blank">انهدام یک باند ۴ نفره سارقان سیم و کابل برق در آمل</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۳:۲۴</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261618/%D9%85%D8%B1%DA%AF-%D8%AF%D8%B1%D8%AF%D9%86%D8%A7%DA%A9-%D9%85%D9%84%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1-%D9%86%D8%A8%D9%88%D8%AF%D9%86-%D9%BE%D8%A7%D8%AF%D8%B2%D9%87%D8%B1-%D9%81%D9%82%D8%B7-%DB%8C%DA%A9-%D8%B3%D8%B1%D9%85-%D8%A8%D9%87-%D8%AF%D8%AE%D8%AA%D8%B1%D9%85-%D8%AA%D8%B2%D8%B1%DB%8C%D9%82" target="_blank">مرگ دردناک ملیکا به خاطر نبودن پادزهر / فقط یک سرم به دخترم تزریق کردند!</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۲:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261739/%D8%B9%DA%A9%D8%B3-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%D8%A7%D9%86-FC27-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF%D9%86%D8%AF" target="_blank">عکس| برترین بازیکنان FC27 مشخص شدند</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۶:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261310/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D9%88%D8%AD%D8%B4%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%DA%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B3-%D8%A7%D8%B2-%D8%A7%D8%A8%D8%B1%D9%87%D8%A7%DB%8C-%D8%AE%D9%88%D9%86%DB%8C%D9%86-%D8%AF%D8%B1-%D8%A2%D8%B3%D9%85%D8%A7%D9%86" target="_blank">ببینید | وحشت مردمِ «گالراس» از «ابرهای خونین» در آسمان</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۵:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996675/%D8%AD%D8%B6%D9%88%D8%B1-%D8%AC%D8%A7%D9%86%D8%B4%DB%8C%D9%86-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%DA%A9%D9%84-%D8%B3%D9%BE%D8%A7%D9%87-%D8%AF%D8%B1-%D8%B1%D9%88%D8%A7%D9%82-%D8%AF%D8%A7%D8%B1%D8%A7%D9%84%D8%B0%DA%A9%D8%B1" target="_blank">حضور جانشین فرمانده کل سپاه در رواق دارالذکر</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۴:۰۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261740/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%AA%D8%A7%D8%AC%D8%B1%D9%86%DB%8C%D8%A7-%D8%A8%D9%87-%D8%A8%D9%86%D8%AF-%D9%81%D8%B3%D8%AE-%DB%B1%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%DB%8C-%D8%B1%D8%A7%D9%85%DB%8C%D9%86" target="_blank">واکنش تاجرنیا به بند فسخ ۱۰۰ میلیونی رامین!</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۲:۵۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996666/%D8%AC%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B2%DA%A9%DB%8C-%D9%BE%D9%88%D8%B1-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D9%87-%D9%85%D9%86-%D8%A8%D9%88%D8%AF-%D8%AA%D8%B3%D9%84%DB%8C%D9%85-%D9%86%D8%B4%D8%AF%D9%87-%D8%A7%D9%85" target="_blank">جدایی زکی‌پور خواسته من بود/ تسلیم نشده‌ام</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۷:۲۶</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996668/%D8%A2%D8%BA%D8%A7%D8%B2-%D9%88%D8%A7%DA%A9%D8%B3%DB%8C%D9%86%D8%A7%D8%B3%DB%8C%D9%88%D9%86-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B2-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D9%82%D8%B7%D8%B9%D9%87-%D8%B7%DB%8C%D9%88%D8%B1-%D8%A8%D9%88%D9%85%DB%8C-%D8%AF%D8%B1-%D9%85%D8%A7%D8%B2%D9%86%D8%AF%D8%B1%D8%A7%D9%86" target="_blank">آغاز واکسیناسیون بیش از ۲ میلیون قطعه طیور بومی در مازندران</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۷:۰۰</span>
       </div>
     </div>
   </div>
   <div class="category-section" data-category="بین‌الملل">
     <div class="category-title">🌍 بین‌الملل <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">12</span></div>
     <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238334/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%DA%AF%D9%88%D8%AA%D8%B1%D8%B4-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%B3%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D8%B0%D8%A7%DA%A9%D8%B1%D8%A7%D8%AA-%D8%A8%DB%8C%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" target="_blank">سخنگوی سازمان ملل: گوترش خواستار از سرگیری مذاکرات بین ایران و آمریکا است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۴:۵۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615450/%D8%AB%D8%A8%D8%AA-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%85%DB%8C%D8%B1%D8%A7%D8%AB-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D8%B5%D8%AF%D9%88%D8%B1-%D8%B4%D9%86%D8%A7%D8%B3%D9%86%D8%A7%D9%85%D9%87-%D8%AA%D9%85%D8%AF%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%86%D8%B8%D8%A7%D9%85-%D8%AD%D9%82%D9%88%D9%82" target="_blank">ثبت جهانی میراث فرهنگی، صدور شناسنامه‌ تمدن ایران در نظام حقوق بین‌الملل است</a></div>
+      <div class="title"><a href="https://www.isna.ir/news/1405052615476/%D8%AA%D8%A7%DA%A9%DB%8C%D8%AF-%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A8%D8%B1-%D9%87%D9%88%D8%B4%DB%8C%D8%A7%D8%B1%DB%8C-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1-%D8%AA%D9%88%D8%B7%D8%A6%D9%87-%D9%87%D8%A7%DB%8C%DB%8C-%DA%A9%D9%87-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D9%87-%D8%B1%D9%88%D8%A7%D8%A8%D8%B7" target="_blank">تاکید عراقچی بر هوشیاری برابر توطئه‌هایی که می‌تواند به روابط ایران و عراق آسیب بزند</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۱:۳۰</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۷:۱۲</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261718/%D8%B9%D8%B6%D9%88-%DA%A9%D9%85%DB%8C%D8%B3%DB%8C%D9%88%D9%86-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D9%84%DB%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D9%85%D9%82%D8%A7%D9%88%D8%AA-%D8%AF%D8%B1-%DB%8C%D9%85%D9%86-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%A7%D8%B3%D8%AA-%D8%AC%D8%A8%D9%87%D9%87-%D8%A7%DB%8C" target="_blank">عضو کمیسیون امنیت ملی: شرایط مقاوت در یمن مطلوب است/  جبهه ای مثل سوریه را از دست داده ایم اما...</a></div>
+      <div class="title"><a href="https://www.irna.ir/news/86238336/%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86-%D9%82%D8%B1%D8%A2%D9%86%DB%8C-%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D9%87%D8%A8%D8%B1-%D8%AC%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D8%B4%D9%87%D8%AF-%D8%A8%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1-%D8%B4%D8%AF-%D9%88%DB%8C%D8%AF%D8%A6%D9%88" target="_blank">اربعین قرآنی‌ترین رهبر جهان در مشهد برگزار شد+ ویدئو</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۲:۵۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615473/%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%B3%D9%81%D8%B1-%D8%B4%DB%8C-%D8%AC%DB%8C%D9%86-%D9%BE%DB%8C%D9%86%DA%AF-%D8%A8%D9%87-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF" target="_blank">تاریخ سفر شی جین‌پینگ به آمریکا مشخص شد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۱:۳۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238353/%D8%A8%D8%A7-%D8%AA%DA%A9%D8%B1%D8%A7%D8%B1-%D9%84%D9%81%D8%A7%D8%B8%DB%8C-%D9%87%D8%A7-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D9%85%D8%AF%D8%B9%DB%8C-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D9%88%D8%A7%D9%81%D9%82-%D8%B4%D8%AF" target="_blank">با تکرار لفاظی‎‌ها/ترامپ مدعی خواست ایران برای توافق شد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۰:۲۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615472/%D9%BE%D8%A7%DA%A9%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%DB%8C%D8%A7%D8%B3%D8%AA-%DA%A9%D9%86%D9%81%D8%B1%D8%A7%D9%86%D8%B3-%D8%AE%D9%84%D8%B9-%D8%B3%D9%84%D8%A7%D8%AD-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%85%D9%84%D9%84-%D8%B1%D8%A7-%D8%A8%D8%B1-%D8%B9%D9%87%D8%AF%D9%87-%DA%AF%D8%B1%D9%81%D8%AA" target="_blank">پاکستان ریاست کنفرانس خلع سلاح سازمان ملل را بر عهده گرفت</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۸:۳۹</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996678/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%BE%D8%B1%DA%86%D9%85-%D8%B3%D8%B1%D8%A8%D9%84%D9%86%D8%AF%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D9%88-%D8%B3%D8%AE%D8%AA-%D8%AA%D8%B1%DB%8C%D9%86-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D9%87%D8%A7" target="_blank">عراقچی: آزادگان پرچم سربلندی ایران را در دورترین و سخت‌ترین میدان‌ها برافراشته نگاه داشتند</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایمنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۸:۱۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238350/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A8%D8%B1-%D9%85%D9%88%D8%A7%D8%B6%D8%B9-%D8%A7%D8%B5%D9%88%D9%84%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AD%D9%85%D8%A7%DB%8C%D8%AA-%D8%A7%D8%B2-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D8%AB%D8%A8%D8%A7%D8%AA-%D9%88-%D8%AA%D9%85%D8%A7%D9%85%DB%8C%D8%AA" target="_blank">عراقچی بر مواضع اصولی ایران در حمایت از امنیت، ثبات و تمامیت ارضی عراق تاکید کرد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۷:۰۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261684/%D8%A7%DB%8C%D9%84%D8%A7%D9%86-%D9%85%D8%A7%D8%B3%DA%A9-%D9%88-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AA%D8%B1%DB%8C%D9%86-%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86-%D8%AC%D9%87%D8%A7%D9%86-%D8%B1%D8%A4%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A8%D9%87-%D9%88%D8%B3%D8%B9%D8%AA-%DB%B9-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86" target="_blank">ایلان ماسک و ساخت بزرگ‌ترین ساختمان جهان / رؤیایی به وسعت ۹ میلیون مترمربع</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۰:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261718/%D8%B9%D8%B6%D9%88-%DA%A9%D9%85%DB%8C%D8%B3%DB%8C%D9%88%D9%86-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D9%84%DB%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D9%85%D9%82%D8%A7%D9%88%D8%AA-%D8%AF%D8%B1-%DB%8C%D9%85%D9%86-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%A7%D8%B3%D8%AA-%D8%AC%D8%A8%D9%87%D9%87-%D8%A7%DB%8C" target="_blank">عضو کمیسیون امنیت ملی: شرایط مقاومت در یمن مطلوب است/  جبهه ای مثل سوریه را از دست داده ایم اما...</a></div>
       <div class="meta">
         <span class="source">🇮🇷 خبرآنلاین</span>
         <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۱:۰۰</span>
@@ -132,490 +501,114 @@ body{font-family:tahoma;background:#f0f2f5;padding:10px}
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615445/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%86%D9%82%D8%AF%D9%87-%D8%B1%D9%81%D8%B9-%D9%85%D8%B4%DA%A9%D9%84%D8%A7%D8%AA-%D8%AD%D8%B3%D9%86%D9%84%D9%88-%D9%88-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B1%D9%88%D9%86%D8%AF-%D8%AB%D8%A8%D8%AA-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7" target="_blank">فرماندار نقده: رفع مشکلات حسنلو و تکمیل روند ثبت جهانی روستا با جدیت دنبال شود</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۱:۵۹</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238327/%D8%B3%D8%AE%D9%86%DA%AF%D9%88%DB%8C-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%AE%D8%A7%D8%B1%D8%AC%D9%87-%D8%AD%D9%85%D9%84%D9%87-%D9%BE%D9%87%D9%BE%D8%A7%D8%AF%DB%8C-%D8%A8%D9%87-%D8%AF%D9%81%D8%AA%D8%B1-%D8%B1%D8%A6%DB%8C%D8%B3-%D8%A7%D9%82%D9%84%DB%8C%D9%85-%DA%A9%D8%B1%D8%AF%D8%B3%D8%AA%D8%A7%D9%86-%D8%B9%D8%B1%D8%A7%D9%82" target="_blank">سخنگوی وزارت خارجه: حمله پهپادی به دفتر رئیس اقلیم کردستان عراق بسیار مشکوک است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۶:۴۴</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261721/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%B1%D8%A6%DB%8C%D8%B3-%D8%B3%D8%A7%D8%A8%D9%82-%D8%B3%D8%AA%D8%A7%D8%AF-%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A7%D8%B1%D8%AA%D8%B4-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7-%D9%87%DB%8C%DA%86-%D8%AC%D8%A7%DB%8C-%D8%A7%D9%85%D9%86%DB%8C-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C" target="_blank">ببینید | رئیس سابق ستاد مشترک ارتش آمریکا: هیچ جای امنی در کشورهای منطقه برای نیروهای ناو آبراهام لینکلن وجود ندارد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۸:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238312/%D8%B9%D8%B1%D8%A7%D9%82%DA%86%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%BE%D8%B1%DA%86%D9%85-%D8%B3%D8%B1%D8%A8%D9%84%D9%86%D8%AF%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%AF%D8%B1-%D8%AF%D9%88%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D9%88-%D8%B3%D8%AE%D8%AA-%D8%AA%D8%B1%DB%8C%D9%86-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D9%87%D8%A7" target="_blank">عراقچی: آزادگان پرچم سربلندی ایران را در دورترین و سخت‌ترین میدان‌ها برافراشته نگاه داشتند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۳:۵۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261732/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D9%BE%DB%8C%D8%B4%D9%86%D9%87%D8%A7%D8%AF-%D8%AA%D9%84%D9%88%DB%8C%D8%AD%DB%8C-%D9%85%D8%AC%D8%B1%DB%8C-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9-%D8%A8%D9%87-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D9%81%D8%A7%D8%AF%D9%87-%D8%A7%D8%B2-%D8%A8%D9%85%D8%A8" target="_blank">ببینید | پیشنهاد تلویحی مجری نزدیک به ترامپ برای استفاده از بمب اتمی علیه ایران</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۱۵:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
       <div class="title"><a href="https://www.imna.ir/news/996672/%D8%A8%D8%B1%D8%A7%DB%8C-%D8%AA%D8%A8%D8%AF%DB%8C%D9%84-%D8%B9%D8%B1%D8%A7%D9%82-%D8%A8%D9%87-%DA%A9%D8%A7%D9%86%D9%88%D9%86-%D9%BE%DB%8C%D9%88%D9%86%D8%AF-%D9%85%D9%86%D8%A7%D9%81%D8%B9-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%AA%D9%84%D8%A7%D8%B4-%D9%85%DB%8C-%DA%A9%D9%86%DB%8C%D9%85" target="_blank">برای تبدیل عراق به کانون پیوند منافع کشورهای منطقه تلاش می‌کنیم</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایمنا</span>
         <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۹:۴۳</span>
       </div>
     </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996667/%D8%B5%D9%84%D8%AD-%D9%88-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%A7%DB%8C-%D9%88-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%AA%D9%86%DA%AF%D9%87-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D8%AD%D9%88%D8%B1-%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D8%BA%D8%B1%DB%8C%D8%A8-%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C" target="_blank">غریب‌آبادی در پکن: شکست‌های سختی به آمریکا و رژیم صهیونیستی وارد کردیم</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۶:۵۴:۵۶</span>
-      </div>
-    </div>
-  </div>
-  <div class="category-section" data-category="متفرقه">
-    <div class="category-title">📌 متفرقه <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">29</span></div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261618/%D9%85%D8%B1%DA%AF-%D8%AF%D8%B1%D8%AF%D9%86%D8%A7%DA%A9-%D9%85%D9%84%DB%8C%DA%A9%D8%A7-%D8%A8%D9%87-%D8%AE%D8%A7%D8%B7%D8%B1-%D9%86%D8%A8%D9%88%D8%AF%D9%86-%D9%BE%D8%A7%D8%AF%D8%B2%D9%87%D8%B1-%D9%81%D9%82%D8%B7-%DB%8C%DA%A9-%D8%B3%D8%B1%D9%85-%D8%A8%D9%87-%D8%AF%D8%AE%D8%AA%D8%B1%D9%85-%D8%AA%D8%B2%D8%B1%DB%8C%D9%82" target="_blank">مرگ دردناک ملیکا به خاطر نبودن پادزهر / فقط یک سرم به دخترم تزریق کردند!</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۲:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/photo/6919591/%D9%86%D8%B4%D8%B3%D8%AA-%D8%AE%D8%A8%D8%B1%DB%8C-%D8%A7%D9%86%D8%AC%D9%85%D9%86-%D8%BA%D9%84%D8%A7%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" target="_blank">نشست خبری انجمن غلات ایران</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۰:۴۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86237994/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D8%AC%D8%A7%DB%8C%DA%AF%D8%A7%D9%87-%D8%B4%D8%A7%D8%B1%DA%98-%D8%A8%D8%B1%D9%82%DB%8C-%D9%88%DB%8C%DA%98%D9%87-%D8%AA%D8%A7%DA%A9%D8%B3%DB%8C%D8%B1%D8%A7%D9%86%D8%A7%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%DB%8C" target="_blank">افتتاح اولین جایگاه شارژ برقی ویژه تاکسیرانان تهرانی</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۰:۰۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261739/%D8%B9%DA%A9%D8%B3-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86%D8%A7%D9%86-FC27-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF%D9%86%D8%AF" target="_blank">عکس| برترین بازیکنان FC27 مشخص شدند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۶:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261310/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D9%88%D8%AD%D8%B4%D8%AA-%D9%85%D8%B1%D8%AF%D9%85-%DA%AF%D8%A7%D9%84%D8%B1%D8%A7%D8%B3-%D8%A7%D8%B2-%D8%A7%D8%A8%D8%B1%D9%87%D8%A7%DB%8C-%D8%AE%D9%88%D9%86%DB%8C%D9%86-%D8%AF%D8%B1-%D8%A2%D8%B3%D9%85%D8%A7%D9%86" target="_blank">ببینید | وحشت مردمِ «گالراس» از «ابرهای خونین» در آسمان</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۵:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919589/%D8%B9%D8%A7%D8%B1%D9%81-%D8%AF%D8%B4%D9%85%D9%86-%D9%BE%D8%B3-%D8%A7%D8%B2-%D8%B4%DA%A9%D8%B3%D8%AA-%D9%86%D8%B8%D8%A7%D9%85%DB%8C-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D9%81%D8%B1%D9%88%D9%BE%D8%A7%D8%B4%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%A7%D8%B3%D8%AA" target="_blank">عارف: دشمن پس از شکست نظامی به‌دنبال فروپاشی اجتماعی است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۴:۵۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919599/%D8%AD%D8%B6%D9%88%D8%B1-%D9%82%D8%A7%D8%B1%DB%8C%D8%A7%D9%86-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C-%D9%82%D8%B1%D8%A2%D9%86-%D8%AF%D8%B1-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%A7%D8%B1%D8%A8%D8%B9%DB%8C%D9%86-%D8%AA%D8%AF%D9%81%DB%8C%D9%86-%D8%B1%D9%87%D8%A8%D8%B1-%D8%B4%D9%87%DB%8C%D8%AF-%D8%AF%D8%B1" target="_blank">حضور قاریان بین المللی قرآن در مراسم اربعین تدفین رهبر شهید در مشهد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۳:۵۸</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615448/%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%A2%D9%85%D8%A7%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B3%D8%AA%DA%AF%D8%A7%D9%87%D9%87%D8%A7-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%81%D8%B5%D9%84-%D8%A8%D8%A7%D8%B1%D8%B4%D9%87%D8%A7-%D8%AF%D8%B1-%D8%B3%D9%84%D9%85%D8%A7%D8%B3" target="_blank">ضرورت آمادگی دستگاه‌ها برای فصل بارش‌ها در سلماس</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۳:۳۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615447/%D8%B3%D8%A7%D8%B9%D8%AA-%D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%D8%AF%D8%A7%D8%AF%DA%AF%D8%B3%D8%AA%D8%B1%DB%8C-%D9%81%D8%A7%D8%B1%D8%B3-%DB%B2%DB%B7-%D9%88-%DB%B2%DB%B8-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D9%86%D9%85%DB%8C-%DA%A9%D9%86%D8%AF" target="_blank">ساعت فعالیت دادگستری فارس ۲۷ و ۲۸ مرداد تغییر نمی‌کند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۳:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919598/%D8%B9%D8%A7%D9%85%D9%84-%D8%A7%D8%B3%DB%8C%D8%AF%D9%BE%D8%A7%D8%B4%DB%8C-%D8%AF%D8%B1-%D8%A8%D9%86%D8%A7%D8%A8-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1-%D8%B4%D8%AF" target="_blank">عامل اسیدپاشی در بناب دستگیر شد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۱:۱۶</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615442/%D9%82%D8%B1%D8%A8%D8%A7%D9%86%DB%8C-%DA%86%D8%A7%D8%AF%D8%B1%D9%85%D9%84%D9%88-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%A7%D8%B2-%D8%AE%D8%A7%D9%86%D9%87-%D8%AE%D8%B7%D8%B1%D9%86%D8%A7%DA%A9-%D8%AA%D8%B1-%D8%A7%D8%B3%D8%AA" target="_blank">قربانی: چادرملو در بازی‌های خارج از خانه خطرناک‌تر است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۸:۱۷</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238220/%D8%A2%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86-%D9%85%D8%AD%D9%88%D8%B1-%D9%88%D8%AD%D8%AF%D8%AA-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D9%87%D8%B3%D8%AA%D9%86%D8%AF" target="_blank">آزادگان محور وحدت در کشور هستند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۸:۰۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615440/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%DB%B7%DB%B4-%D8%A7%D8%AA%D8%A7%D9%82-%D8%A7%D9%82%D8%A7%D9%85%D8%AA%DB%8C-%D8%A8%D9%87-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%DA%AF%D8%B1%D8%AF%D8%B4%DA%AF%D8%B1%DB%8C-%D9%85%D9%84%D8%A7%DB%8C%D8%B1-%D8%A8%D8%A7-%D8%A7%D8%AD%D8%AF%D8%A7%D8%AB-%D8%B3%D9%87-%D9%87%D8%AA%D9%84" target="_blank">افزایش ۷۴ اتاق اقامتی به ظرفیت گردشگری ملایر با احداث ۳ هتل</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۷:۵۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996675/%D8%AD%D8%B6%D9%88%D8%B1-%D8%AC%D8%A7%D9%86%D8%B4%DB%8C%D9%86-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%DA%A9%D9%84-%D8%B3%D9%BE%D8%A7%D9%87-%D8%AF%D8%B1-%D8%B1%D9%88%D8%A7%D9%82-%D8%AF%D8%A7%D8%B1%D8%A7%D9%84%D8%B0%DA%A9%D8%B1" target="_blank">حضور جانشین فرمانده کل سپاه در رواق دارالذکر</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۴:۰۷</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261740/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%AA%D8%A7%D8%AC%D8%B1%D9%86%DB%8C%D8%A7-%D8%A8%D9%87-%D8%A8%D9%86%D8%AF-%D9%81%D8%B3%D8%AE-%DB%B1%DB%B0%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%DB%8C-%D8%B1%D8%A7%D9%85%DB%8C%D9%86" target="_blank">واکنش تاجرنیا به بند فسخ ۱۰۰ میلیونی رامین!</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۲:۵۳</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615437/%D8%A2%D8%B3%D9%81%D8%A7%D9%84%D8%AA-%D8%B1%D9%88%D8%AF%D8%AE%D8%A7%D9%86%D9%87-%D8%A7%D9%84%DB%8C%DA%AF%D9%88%D8%AF%D8%B1%D8%B2-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%B4%D9%87%D8%B1-%D8%AE%D8%B7%D8%B1%D8%A2%D9%81%D8%B1%DB%8C%D9%86-%D8%A8%D8%A7%D8%B4%D8%AF" target="_blank">تبدیل رودخانه الیگودرز به «پارکینگ» می‌تواند برای شهر خطرآفرین باشد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۱:۵۸</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/photo/6917369/%D8%A7%DB%8C%D9%86%D9%81%D9%88%DA%AF%D8%B1%D8%A7%D9%81%DB%8C%DA%A9-%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%DB%B3%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%B3%DB%8C%D8%A8-%D8%AA%D8%A7%D8%A8%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D8%AF%D8%B1-%D9%85%D8%B1%D8%A7%D8%BA%D9%87" target="_blank">اینفوگرافیک؛ افزایش ۳۰ درصدی تولید سیب تابستانه در مراغه</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۱:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261723/%DA%A9%D8%A7%D9%85%D9%84-%D9%86%D9%88%D8%A7%D8%A8-%D9%81%D8%B9%D8%A7%D9%84-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%D9%86%D8%B2%D8%AF%DB%8C%DA%A9-%D8%A8%D9%87-%D9%82%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%81-%D8%A7%DA%AF%D8%B1-%D8%A7%D8%B2-%D8%AC%D9%86%D8%A7%D8%AD-%D8%AA%D9%86%D8%AF%D8%B1%D9%88-%D8%AF%D8%B1" target="_blank">فعال سیاسی نزدیک به قالیباف: اگر از جناح تندرو در مورد تفاهم اسلام‌آباد بپرسیم، عینا همان عبارات مدنظر دشمن را می‌گویند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۱:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919562/%D8%A7%D8%AF%D8%B9%D8%A7%DB%8C-%D8%B3%D9%86%D8%AA%DA%A9%D8%A7%D9%85-%D8%AF%D8%B1-%D8%AE%D8%B5%D9%88%D8%B5-%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D9%85%D8%AD%D8%A7%D8%B5%D8%B1%D9%87-%D8%AF%D8%B1%DB%8C%D8%A7%DB%8C%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" target="_blank">ادعای سنتکام در خصوص تداوم محاصره دریایی ایران</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۰:۵۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238120/%D8%AE%DB%8C%D8%B2-%D8%AF%D9%85%D8%A7%DB%8C-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%AC%D9%86%D9%88%D8%A8%DB%8C-%D8%A8%D9%87-%D9%85%D8%B1%D8%B2-%DB%B4%DB%B0-%D8%AF%D8%B1%D8%AC%D9%87-%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D9%86%D8%B3%D8%A8%D8%AA-%D8%A8%D9%87-%D9%88%D8%B2%D8%B4-%D8%A8%D8%A7%D8%AF-%D8%B4%D8%AF%DB%8C%D8%AF" target="_blank">خیز دمای خراسان جنوبی به مرز ۴۰ درجه؛ هشدار نسبت به وزش باد شدید</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۶:۰۱</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919583/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84-%D9%85%D8%B3%DB%8C%D8%B1-%D8%AA%D9%88%D8%A7%D9%86%D9%85%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D9%86%D8%B3%D9%84-%D8%A2%DB%8C%D9%86%D8%AF%D9%87-%D8%B1%D8%A7-%D8%A2%D8%BA%D8%A7%D8%B2-%DA%A9%D8%B1%D8%AF" target="_blank">«ایران دیجیتال» مسیر توانمندسازی نسل آینده را آغاز کرد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۳:۲۳</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919586/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%A8%D8%B2%D8%B1%DA%AF%D8%AF%D8%A7%D8%B4%D8%AA-%D8%A2%D9%82%D8%A7%DB%8C-%D8%B4%D9%87%DB%8C%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AD%D8%B1%D9%85-%D8%A7%D9%85%D8%A7%D9%85-%D8%B1%D8%B6%D8%A7-%D8%B9" target="_blank">مراسم بزرگداشت «آقای شهید ایران» در حرم امام رضا(ع)</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۲:۲۸</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919551/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%A8%D9%87-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%88%D8%B3%D8%A7%D8%B2%D9%87%D8%A7%DB%8C-%D8%BA%DB%8C%D8%B1%D9%85%D8%AC%D8%A7%D8%B2-%D8%AF%D8%B1-%D9%BE%D8%A7%DA%A9%D8%AF%D8%B4%D8%AA-%D8%AD%D8%B5%D8%A7%D8%B1%D8%A7%D9%85%DB%8C%D8%B1-%D9%88%D9%81%DB%8C%D9%84%D8%B3%D8%AA%D8%A7%D9%86-%D8%B2%DB%8C%D8%B1" target="_blank">هشدار به ساخت‌وسازهای غیرمجاز در پاکدشت؛حصارامیر وفیلستان زیر ذره‌ بین</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۱۸:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996666/%D8%AC%D8%AF%D8%A7%DB%8C%DB%8C-%D8%B2%DA%A9%DB%8C-%D9%BE%D9%88%D8%B1-%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%D9%87-%D9%85%D9%86-%D8%A8%D9%88%D8%AF-%D8%AA%D8%B3%D9%84%DB%8C%D9%85-%D9%86%D8%B4%D8%AF%D9%87-%D8%A7%D9%85" target="_blank">جدایی زکی‌پور خواسته من بود/ تسلیم نشده‌ام</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۷:۲۶</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996668/%D8%A2%D8%BA%D8%A7%D8%B2-%D9%88%D8%A7%DA%A9%D8%B3%DB%8C%D9%86%D8%A7%D8%B3%DB%8C%D9%88%D9%86-%D8%A8%DB%8C%D8%B4-%D8%A7%D8%B2-%DB%B2-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D9%82%D8%B7%D8%B9%D9%87-%D8%B7%DB%8C%D9%88%D8%B1-%D8%A8%D9%88%D9%85%DB%8C-%D8%AF%D8%B1-%D9%85%D8%A7%D8%B2%D9%86%D8%AF%D8%B1%D8%A7%D9%86" target="_blank">آغاز واکسیناسیون بیش از ۲ میلیون قطعه طیور بومی در مازندران</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۷:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996660/%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D8%B7%D8%B1%D8%AD-%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D8%A7%D8%B1%D8%A7%DA%A9-%D8%A8%D8%A7-%D9%82%D9%88%D8%AA-%D8%A7%D8%AF%D8%A7%D9%85%D9%87-%D8%AF%D8%A7%D8%B1%D8%AF" target="_blank">اجرای طرح‌های عمرانی اراک با قوت ادامه دارد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۶:۳۴</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996669/%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%AF%D8%B1-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D9%86%D9%88%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88-%D8%A8%D9%87%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B4%D9%87%D8%B1-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%82%D8%A7%D8%B6%DB%8C-%D8%B9%D8%B3%DA%AF%D8%B1" target="_blank">تغییر در مدیریت سازمان نوسازی و بهسازی شهر اصفهان؛ قاضی‌عسگر مدیرعامل جدید شد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۴:۳۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996664/%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%DB%8C%D8%A7%D8%B3%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D9%85%D8%B1%D9%88%D8%B2-%D8%AF%D9%88%D8%B4%D9%86%D8%A8%D9%87-%DB%B2%DB%B6-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF-%DB%B1%DB%B4%DB%B0%DB%B5" target="_blank">اخبار سیاسی ایران؛ امروز دوشنبه ۲۶ مرداد ۱۴۰۵</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۶:۵۲:۴۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996663/%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%85%DB%8C-%D8%AA%D9%88%D8%A7%D9%86%D8%AF-%DA%A9%D8%A7%D9%86%D9%88%D9%86-%DA%AF%D9%81%D8%AA-%D9%88%DA%AF%D9%88%DB%8C-%D9%85%D9%84%DB%8C-%D9%88-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D8%A7%DB%8C%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A2%DB%8C%D9%86%D8%AF%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" target="_blank">اصفهان می‌تواند کانون گفت‌وگوی ملی و تولید ایده برای آینده ایران باشد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۶:۴۰:۳۸</span>
-      </div>
-    </div>
   </div>
   <div class="category-section" data-category="فرهنگی و هنری">
-    <div class="category-title">🎭 فرهنگی و هنری <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">3</span></div>
+    <div class="category-title">🎭 فرهنگی و هنری <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">6</span></div>
     <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919596/%D8%B3%D9%82%D9%88%D8%B7-%DB%8C%DA%A9-%D8%A8%D8%A7%D9%84%DA%AF%D8%B1%D8%AF-%D8%AF%D8%B1-%DB%8C%D9%88%D9%86%D8%A7%D9%86-%DB%B3-%D9%86%D9%81%D8%B1-%DA%A9%D8%B4%D8%AA%D9%87-%D8%B4%D8%AF%D9%86%D8%AF-%D9%81%DB%8C%D9%84%D9%85" target="_blank">سقوط یک بالگرد در یونان؛ ۳ نفر کشته شدند+ فیلم</a></div>
+      <div class="title"><a href="https://www.mehrnews.com/news/6919626/%D8%A7%D8%B3%D9%85%D8%A7%D8%B9%DB%8C%D9%84%DB%8C-%D9%85%DB%8C%D8%B1%D8%A7%D8%AB-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA" target="_blank">اسماعیلی: میراث‌فرهنگی سرمایه راهبردی ایران است</a></div>
       <div class="meta">
         <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۱:۰۸</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۴:۳۳</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615449/%D9%87%D8%AC%D8%AF%D9%87%D9%85%DB%8C%D9%86-%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D9%85%D9%84%DB%8C-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D8%AF%D8%B3%D8%AA%DB%8C-%D8%AF%D8%B1-%D9%87%D9%85%D8%AF%D8%A7%D9%86-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%A8%D9%87-%DA%A9%D8%A7%D8%B1-%DA%A9%D8%B1%D8%AF" target="_blank">هجدهمین نمایشگاه ملی صنایع‌دستی در همدان آغاز به کار کرد</a></div>
+      <div class="title"><a href="https://www.mehrnews.com/news/6919634/%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%D9%85%DA%A9%D8%A7%D8%B4%D9%81%D9%87-%D8%AF%D8%B1-%D9%82%D8%A7%D8%A8-%D8%B3%DB%8C%D9%86%D9%85%D8%A7-%D8%AF%D8%B1-%D9%BE%D8%A7%D8%AA%D9%88%D9%82-%DB%B1%DB%B3%DB%B9-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86" target="_blank">رونمایی از «مکاشفه در قاب سینما» در پاتوق ۱۳۹ اصفهان</a></div>
       <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۰:۲۱</span>
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۲:۳۹</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.isna.ir/photo/1405052615443/%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D8%B5%D9%86%D8%A7%DB%8C%D8%B9-%D8%AF%D8%B3%D8%AA%DB%8C-%D9%87%D9%85%D8%AF%D8%A7%D9%86" target="_blank">نمایشگاه صنایع دستی همدان</a></div>
+      <div class="title"><a href="https://www.irna.ir/news/86238248/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D8%B3%D9%87-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1%DB%8C-%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1-%D8%AF%D9%87%DB%8C%D8%A7%D8%B1%DB%8C-%D9%87%D8%A7-%D8%B4%D8%AA%D8%A7%D8%A8-%D8%AF%D8%B1-%D8%B7%D8%B1%D8%AD-%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D9%88-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C" target="_blank">افزایش سه‌برابری اعتبار دهیاری‌ها؛ شتاب در طرح‌های عمرانی و فرهنگی ایوانکی</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۱:۵۸</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.isna.ir/news/1405052615465/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%D9%81%D8%B1%D9%87%D9%86%DA%AF-%D9%88-%D8%A7%D8%B1%D8%B4%D8%A7%D8%AF-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%D9%86%D8%B3%D8%A8%D8%AA-%D8%A8%D9%87-%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4%DB%8C-%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%D8%A7%D8%B2%D9%86%D8%AF%D8%B1%D8%A7%D9%86%DB%8C" target="_blank">هشدار مدیرکل فرهنگ و ارشاد مازندران نسبت به فراموشی زبان مازندرانی</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۹:۰۵</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۱:۰۵</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.mehrnews.com/news/6919618/%D8%AA%D8%A3%DA%A9%DB%8C%D8%AF-%D8%A8%D8%B1-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%B5%DB%8C%D8%A7%D9%86%D8%AA-%D8%A7%D8%B2-%D8%AC%D8%A7%DB%8C%DA%AF%D8%A7%D9%87-%D8%A7%D9%87%D9%84-%D8%A8%DB%8C%D8%AA-%D8%B9-%D8%AF%D8%B1-%D9%81%D8%B6%D8%A7%DB%8C-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%88-%D9%87%D9%86%D8%B1%DB%8C" target="_blank">تأکید بر ضرورت صیانت از جایگاه اهل‌بیت(ع) در فضای فرهنگی و هنری</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 مهر</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۹:۳۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238318/%D9%81%DB%8C%D9%84%D9%85-%D8%A7%D8%AE%D8%AA%D8%AA%D8%A7%D9%85%DB%8C%D9%87-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%BE%DB%8C%D8%A7%D8%AF-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86-%D8%AF%D8%B1" target="_blank">فیلم | اختتامیه نخستین دوره مسابقات المپیاد «ایران قهرمان» در سمنان</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۱۳:۳۱</span>
       </div>
     </div>
   </div>
-  <div class="category-section" data-category="علمی و فناوری">
-    <div class="category-title">🔬 علمی و فناوری <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">4</span></div>
+  <div class="category-section" data-category="اقتصادی">
+    <div class="category-title">💰 اقتصادی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">7</span></div>
     <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261286/%D9%85%D8%B1%D8%B2-%D9%85%DB%8C%D8%A7%D9%86-%D8%AF%D8%A7%D9%86%D8%B4-%D9%88-%D9%81%D8%B1%DB%8C%D8%A8-%D8%AF%D8%B1-%D9%BE%DA%98%D9%88%D9%87%D8%B4-%DA%86%D8%B1%D8%A7-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D9%87-%D8%BA%D8%A7%DB%8C%D8%AA-%D9%BE%DA%98%D9%88%D9%87%D8%B4-%D8%AA%D9%88%D8%AC%D9%87-%DA%A9%D9%86%DB%8C%D9%85" target="_blank">مرز میان دانش و فریب در پژوهش؛ چرا باید به غایتِ پژوهش توجه کنیم؟</a></div>
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261689/%D9%85%D8%B1%D8%BA-%D9%85%D9%86%D8%AC%D9%85%D8%AF-%D9%82%D8%B7%D8%B9%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D8%B4%D8%AF%D9%87-%D9%85%D8%B4%D9%85%D9%88%D9%84-%DA%A9%D8%A7%D9%84%D8%A7%D8%A8%D8%B1%DA%AF-%D8%B4%D8%AF" target="_blank">مرغ منجمد قطعه‌بندی‌شده مشمول کالابرگ شد</a></div>
       <div class="meta">
         <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۱:۰۰</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۳۱:۰۰</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615446/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%D8%B5%D9%85%D8%AA-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B1%D8%B6%D9%88%DB%8C-%D8%A8%D8%A7-%D8%AA%D8%A7%D9%85%DB%8C%D9%86-%DB%B8%DB%B5-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%A7%D9%86%D8%B1%DA%98%DB%8C-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF%DB%8C-%D8%AE%D8%A7%D9%85%D9%88%D8%B4%DB%8C" target="_blank">مدیرکل صمت خراسان رضوی: با تامین ۸۵ درصد انرژی خورشیدی خاموشی نخواهیم داشت</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۲:۰۹</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919587/%DB%B2-%D9%82%D8%A8%D8%B6%D9%87-%D8%B3%D9%84%D8%A7%D8%AD-%D8%AF%D8%B3%D8%AA-%D8%B3%D8%A7%D8%B2-%D8%BA%DB%8C%D8%B1%D9%85%D8%AC%D8%A7%D8%B2-%D8%AF%D8%B1-%D8%B4%DB%8C%D8%B1%D9%88%D8%A7%D9%86-%DA%A9%D8%B4%D9%81-%D8%B4%D8%AF" target="_blank">۲ قبضه سلاح دست‌ساز غیرمجاز در شیروان کشف شد</a></div>
+      <div class="title"><a href="https://www.mehrnews.com/news/6919625/%DB%B3%DB%B6%DB%B0-%D9%85%D9%88%D8%B1%D8%AF-%D8%B3%D8%B1%D9%82%D8%AA-%DA%AF%D8%A7%D8%B2-%D8%AF%D8%B1-%DA%A9%D8%B1%D9%85%D8%A7%D9%86%D8%B4%D8%A7%D9%87-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D8%B4%D8%AF" target="_blank">۳۶۰ مورد سرقت گاز در کرمانشاه شناسایی شد</a></div>
       <div class="meta">
         <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۵:۵۱</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۲:۱۰</span>
       </div>
     </div>
     <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996658/%D8%AF%D8%B4%D9%85%D9%86%D8%A7%D9%86-%D8%A7%D8%B2-%D8%B7%D8%B1%DB%8C%D9%82-%D9%81%D8%B6%D8%A7%DB%8C-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%AC%D8%A7%D8%AF-%D9%86%D9%81%D8%B1%D8%AA-%D8%AF%D8%B1-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-%D9%87%D8%B3%D8%AA%D9%86%D8%AF" target="_blank">دشمنان از طریق فضای مجازی به دنبال ایجاد نفرت در جامعه هستند</a></div>
+      <div class="title"><a href="https://www.isna.ir/news/1405052615466/%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C-%D8%B1%D8%AA%D8%A8%D9%87-%D9%86%D8%AE%D8%B3%D8%AA-%D8%A7%D8%B1%D8%B2%DB%8C%D8%A7%D8%A8%DB%8C-%D8%B9%D9%85%D9%84%DA%A9%D8%B1%D8%AF-%D8%B4%D9%88%D8%B1%D8%A7%D9%87%D8%A7%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%88-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4" target="_blank">آذربایجان شرقی رتبه نخست ارزیابی عملکرد شوراهای آموزش و پرورش را کسب کرد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایسنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۲۱:۲۷</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.irna.ir/news/86238330/%D8%A8%D8%A7-%D8%AD%DA%A9%D9%85-%D9%88%D8%B2%DB%8C%D8%B1-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-%D9%87%D8%A7%D8%AF%DB%8C-%D8%AE%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%D9%85%D8%B1%DA%A9%D8%B2-%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA-%D9%85%D8%A7%D9%84%DB%8C-%D8%A7%D8%A8%D9%82%D8%A7-%D8%B4%D8%AF" target="_blank">هادی خانی در مرکز اطلاعات مالی ابقا شد</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 ایرنا</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۶:۴۳</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261395/%DA%A9%D9%85%D8%A8%D9%88%D8%AF%DB%8C-%D8%AF%D8%B1-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%DA%AF%D9%88%D8%B4%D8%AA-%D9%88-%D9%85%D8%B1%D8%BA-%D9%86%DB%8C%D8%B3%D8%AA-%D9%85%D9%82%D8%AF%D8%B3%DB%8C-%DA%AF%D9%88%D8%B4%D8%AA-%D8%B1%D8%A7-%D9%86%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A8%D8%A7%D9%84%D8%A7%D8%AA%D8%B1" target="_blank">کمبودی در بازار گوشت و مرغ نیست/ مقدسی: گوشت را نباید بالاتر از این رقم بخرید</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۸:۰۰:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.khabaronline.ir/news/2261730/%D8%A8%D8%A8%DB%8C%D9%86%DB%8C%D8%AF-%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%D8%AE%D8%B2%D9%86-%DA%AF%D8%A7%D8%B2-%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" target="_blank">ببینید | آتش‌سوزی در مخزن گاز آمریکا</a></div>
+      <div class="meta">
+        <span class="source">🇮🇷 خبرآنلاین</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۵۶:۰۰</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title"><a href="https://www.imna.ir/news/996673/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%A8%D9%88%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D9%88%D9%87%D8%B3%D8%A7%D8%B1-%D8%B4%D9%87%D8%B1-%D8%B1%D8%A7%DB%8C%D9%86-%D8%A7%D8%B2-%D9%85%D8%AD%D9%84-%D8%B9%D9%88%D8%A7%D8%B1%D8%B6-%D8%A7%D8%B1%D8%B2%D8%B4-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%87" target="_blank">افتتاح بوستان کوهسار شهر راین از محل عوارض ارزش افزوده</a></div>
       <div class="meta">
         <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۶:۲۷:۴۷</span>
-      </div>
-    </div>
-  </div>
-  <div class="category-section" data-category="ورزشی">
-    <div class="category-title">⚽ ورزشی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">9</span></div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919600/%DA%AF%D9%84%D8%B4%D9%86-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF-%D8%A7%D8%B2-%D9%82%D8%B7%D8%A8-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B5%D9%84%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF-%D9%86%D9%88%D8%BA%D8%A7%D9%86-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%B3%D8%AA" target="_blank">گلشن: لنگرود از قطب‌های اصلی تولید نوغان در کشور است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۸:۱۴</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919588/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D9%87-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D8%B1%D8%A7%D8%B2-%D9%88-%D8%AC%D8%B1%DA%AF%D9%84%D8%A7%D9%86-%D9%85%D8%AA%D9%87%D9%85-%D9%82%D8%A7%DA%86%D8%A7%D9%82-%D9%85%D9%88%D8%A7%D8%AF%D9%85%D8%AE%D8%AF%D8%B1-%D8%B3%D9%86%D8%AA%DB%8C-%D8%A8%D8%A7%D8%B2%D8%AF%D8%A7%D8%B4%D8%AA" target="_blank">فرمانده انتظامی راز و جرگلان: متهم قاچاق موادمخدر سنتی بازداشت شد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۸:۳۹</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615441/%D8%B3%D9%BE%D8%A7%D9%87%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D8%AC%D8%AF%D8%A7%D9%84-%D8%A8%D8%A7-%D8%AA%D8%B1%D8%A7%DA%A9%D8%AA%D9%88%D8%B1-%D8%A8%D9%87-%D8%AF%D9%86%D8%A8%D8%A7%D9%84-%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D8%B1%DA%A9%D9%88%D8%B1%D8%AF-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE%DB%8C" target="_blank">سپاهان در آستانه جدال با تراکتور به‌دنبال تداوم رکورد تاریخی کلین‌شیت</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۸:۱۳</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238315/%D9%87%D8%AF%D9%81%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%AA%DB%8C%D9%85-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84-%D8%A2%D9%84%D9%88%D9%85%DB%8C%D9%86%DB%8C%D9%88%D9%85-%D8%A7%D8%B1%D8%A7%DA%A9-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D9%88%D9%85%DB%8C-%D8%B3%D8%A7%D8%B2%DB%8C-%DB%B8%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%AA%D8%A7" target="_blank">هدفگذاری تیم فوتبال آلومینیوم اراک برای بومی‌سازی ۸۰ درصدی تا پنج سال آینده</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۶:۵۹</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238319/%DA%A9%D8%B4%D8%AA%DB%8C-%D9%81%D8%B1%D9%86%DA%AF%DB%8C-%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86-%D8%AC%D9%87%D8%A7%D9%86-%D9%87%D8%AA%D8%B1%DB%8C%DA%A9-%D8%A8%D8%B1%D9%86%D8%B2-%D9%86%D9%85%D8%A7%DB%8C%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%A7%D8%AA%DB%8C%D8%B3%D9%84%D8%A7%D9%88%D8%A7" target="_blank">کشتی فرنگی جوانان جهان؛ هتریک برنز نمایندگان ایران در براتیسلاوا</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۹:۴۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919579/%D8%AA%DB%8C%D9%85-%DA%A9%D8%B4%D8%AA%DB%8C-%D9%BE%D9%87%D9%84%D9%88%D8%A7%D9%86%DB%8C-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84%DB%8C-%D8%B1%D8%A7%D9%87%DB%8C-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B1%D8%A7%D9%86-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B4%D8%AF" target="_blank">تیم کشتی پهلوانی خراسان‌شمالی راهی مسابقات کارگران کشور شد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۶:۴۶</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238317/%D8%B1%D8%B4%D8%AF-%D8%B3%D9%87-%D8%A8%D8%B1%D8%A7%D8%A8%D8%B1%DB%8C-%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B7%D8%B1%D8%AD-%D9%87%D8%A7%DB%8C-%D8%B9%D9%85%D8%B1%D8%A7%D9%86%DB%8C-%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D9%84%DB%8C" target="_blank">۵۰ طرح نیمه تمام ورزشی در خراسان‌شمالی وجود دارد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۳:۴۱</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261707/%DA%AF%D9%84%D8%B1%DB%8C%D8%B2%D8%A7%D9%86-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C-%D9%85%D8%B9%D9%84%D9%85-%D8%B2%D9%86%D8%AF%D8%A7%D9%86%DB%8C" target="_blank">گلریزان دانش‌آموزان برای آزادی معلم زندانی</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۱۹:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996671/%D8%A8%D9%84%DB%8C%D8%B7-%D9%81%D8%B1%D9%88%D8%B4%DB%8C-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D9%88-%D9%86%D8%B3%D8%A7%D8%AC%DB%8C-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%84%DB%8C%D9%86%DA%A9-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D8%B1%DB%8C%D8%AF-%D8%A8%D9%84%DB%8C%D8%B7" target="_blank">بلیط فروشی بازی استقلال و نساجی آغاز شد + لینک سایت خرید بلیط footballeticket.ir</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۰۶:۴۲</span>
-      </div>
-    </div>
-  </div>
-  <div class="category-section" data-category="اجتماعی">
-    <div class="category-title">👥 اجتماعی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">10</span></div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238291/%D8%B2%DB%8C%D8%B3%D8%AA-%D8%A8%D9%88%D9%85-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D8%B1%D8%B3%DB%8C-%D8%A7%D8%B2-%D9%85%D9%87%D8%B1-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%AF%D8%B1-%DB%B2%DB%B0%DB%B0-%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D8%AC%D8%B1%D8%A7" target="_blank">زیست‌بوم جدید برنامه درسی از مهر ۱۴۰۵ در ۲۰۰ مدرسه کشور اجرا می‌شود</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۲:۵۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615444/%D9%88%D8%B1%D9%88%D8%AF-%D8%AF%D8%A7%D8%AF%DA%AF%D8%B3%D8%AA%D8%B1%DB%8C-%D8%A8%D9%87-%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%AD%D8%AF%D9%88%D8%AF-%DB%B1%DB%B0%DB%B0-%D9%85%D8%BA%D8%A7%D8%B2%D9%87" target="_blank">ورود دادگستری به آتش‌سوزی در میدان شهرداری گرگان/ حدود ۱۰۰ مغازه درگیر حریق شدند</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۹:۳۴</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238325/%D9%88%D9%82%D9%88%D8%B9-%DB%B2-%D8%AA%D8%B5%D8%A7%D8%AF%D9%81-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%DA%AF%DB%8C-%D8%A8%D8%A7-%DB%B2-%DA%A9%D8%B4%D8%AA%D9%87-%D8%AF%D8%B1-%D9%86%D8%B7%D9%86%D8%B2" target="_blank">وقوع ۲ تصادف رانندگی با ۲ کشته در نطنز</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۹:۰۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615438/%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%B3%D8%A7%D8%B9%D8%AA-%DA%A9%D8%A7%D8%B1-%D9%88-%D8%AF%D9%88%D8%B1%DA%A9%D8%A7%D8%B1%DB%8C-%D8%A7%D8%AF%D8%A7%D8%B1%D8%A7%D8%AA-%D9%81%D8%A7%D8%B1%D8%B3-%D8%AF%D8%B1-%DB%B2%DB%B7-%D9%88-%DB%B2%DB%B8-%D9%85%D8%B1%D8%AF%D8%A7%D8%AF" target="_blank">تغییر ساعت کار و دورکاری ادارات فارس در ۲۷ و ۲۸ مرداد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۲:۴۷</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261733/%D8%AE%D8%A8%D8%B1-%D9%85%D9%87%D9%85-%D9%88%D8%B2%D8%A7%D8%B1%D8%AA-%D8%A8%D9%87%D8%AF%D8%A7%D8%B4%D8%AA-%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87-%D9%88%D8%A7%DA%A9%D8%B3%D9%86-%D8%A2%D9%86%D9%81%D9%84%D9%88%D8%A2%D9%86%D8%B2%D8%A7-%D9%88%D8%A7%DA%A9%D8%B3%D9%86-%D9%87%D8%A7-%DA%86%D9%87-%D8%B2%D9%85%D8%A7%D9%86%DB%8C" target="_blank">خبر مهم وزارت بهداشت درباره واکسن آنفلوآنزا؛ واکسن‌ها چه زمانی به کشور می‌رسند؟/ واکسن آنفلوآنزای گران‌تر یعنی بهتر؟</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۱:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.imna.ir/news/996674/%D8%A2%D8%AA%D8%B4-%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D9%85%D8%BA%D8%A7%D8%B2%D9%87-%D9%87%D8%A7%DB%8C-%D9%82%D8%AF%DB%8C%D9%85%DB%8C-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%DA%AF%D8%B1%DA%AF%D8%A7%D9%86-%D8%B3%D9%82%D9%81-%D9%87%D8%A7%DB%8C-%DA%86%D9%88%D8%A8%DB%8C" target="_blank">آتش‌سوزی در مغازه‌های قدیمی میدان شهرداری گرگان/ سقف‌های چوبی بر شدت حریق افزوده است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایمنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۸:۱۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86237989/%DB%B7%DB%B0-%D8%AF%D8%B1%D8%B5%D8%AF-%D8%AA%D8%B5%D8%A7%D8%AF%D9%81%D8%A7%D8%AA-%D9%81%D9%88%D8%AA%DB%8C-%D8%A8%DB%8C%D8%B1%D8%AC%D9%86%D8%AF-%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7%D9%84-%D8%B4%D9%87%D8%B1-%D8%B1%D8%AE-%D8%AF%D8%A7%D8%AF%D9%87-%D8%A7%D8%B3%D8%AA" target="_blank">۷۰ درصد تصادفات فوتی بیرجند در شمال شهر رخ داده است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۷:۱۱</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238306/%D9%85%D9%88%D9%81%D9%82%DB%8C%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D9%84%D9%85%D9%BE%DB%8C%D8%A7%D8%AF%DB%8C-%D8%AF%D8%A7%D9%86%D8%B4-%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%A7%D8%B2-%D8%B3%D8%AA%D8%A7%D8%B1%D9%87-%D8%A8%D9%87-%D8%AE%D9%88%D8%B1%D8%B4%DB%8C%D8%AF" target="_blank">موفقیت‌های المپیادی دانش‌آموزان ایران باید از «ستاره» به «خورشید» تبدیل شود</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۴:۴۵</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261567/%D9%85%D8%AF%DB%8C%D8%B1%DA%A9%D9%84-%DA%A9%D9%85%DB%8C%D8%AA%D9%87-%D8%A7%D9%85%D8%AF%D8%A7%D8%AF-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AF%D8%B1-%D8%AF%DB%8C%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF-%D9%85%D8%B7%D8%B1%D8%AD-%DA%A9%D8%B1%D8%AF-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA" target="_blank">مدیرکل کمیته امداد گیلان در دیدار با فرماندار لنگرود مطرح کرد؛ضرورت استفاده از ظرفیت‌های شهرستان برای توانمندسازی مددجویان و تأمین مسکن محرومان</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۳:۰۰</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.mehrnews.com/news/6919578/%D9%85%D9%88%D9%85%D9%86%DB%8C-%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%88-%D9%BE%D8%B1%D9%88%D8%B1%D8%B4-%D8%A8%D8%A7%DB%8C%D8%AF-%D8%AF%D8%B1-%DA%A9%D9%86%D8%A7%D8%B1-%D8%B3%D9%87-%D9%82%D9%88%D9%87-%D9%82%D9%88%D9%87-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7%D8%B4%D8%AF" target="_blank">مومنی: آموزش و پرورش باید در کنار سه قوه، «قوه چهارم» کشور باشد</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 مهر</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۱۴:۲۶</span>
-      </div>
-    </div>
-  </div>
-  <div class="category-section" data-category="سیاسی">
-    <div class="category-title">🏛 سیاسی <span style="font-size:13px;background:#fff;color:#b30000;padding:0 10px;border-radius:12px;margin-right:8px;">4</span></div>
-    <div class="card">
-      <div class="title"><a href="https://www.isna.ir/news/1405052615439/%D9%88%D8%A7%DA%A9%D9%86%D8%B4-%D8%AD%D9%85%D8%A7%D8%B3-%D8%A8%D9%87-%D8%B3%D8%AE%D9%86%D8%A7%D9%86-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE" target="_blank">واکنش حماس به سخنان ترامپ</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایسنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۶:۱۸</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86237983/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%DA%A9%D9%86%DA%AF%D8%A7%D9%88%D8%B1-%D8%A8%D8%A7-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%AE%D8%AF%D9%85%D8%AA-%D9%BE%D8%A7%D8%B3%D8%AE%DA%AF%D9%88%DB%8C%DB%8C-%D9%88-%D8%A7%D9%85%DB%8C%D8%AF%D8%A2%D9%81%D8%B1%DB%8C%D9%86%DB%8C-%D8%A8%D9%87-%D8%A7%D8%B3%D8%AA%D9%82%D8%A8%D8%A7%D9%84" target="_blank">فرماندار: کنگاور با شعار خدمت، پاسخگویی و امیدآفرینی به استقبال هفته دولت می‌رود</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۳۰:۲۲</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.irna.ir/news/86238304/%D9%85%D8%AC%D9%84%D8%B3-%D8%B4%D9%88%D8%B1%D8%A7%DB%8C-%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C-%D8%B4%D8%B1%DB%8C%DA%A9-%D8%B1%D8%A7%D9%87%D8%A8%D8%B1%D8%AF%DB%8C-%D8%AF%D9%88%D9%84%D8%AA-%D8%AF%D8%B1-%D8%AA%D8%AD%D9%88%D9%84-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%A7%D8%B3%D8%AA" target="_blank">مجلس شورای اسلامی، شریک راهبردی دولت در تحول مدارس است</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 ایرنا</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۶:۵۷</span>
-      </div>
-    </div>
-    <div class="card">
-      <div class="title"><a href="https://www.khabaronline.ir/news/2261591/%D8%AE%D8%A8%D8%B1-%D9%85%D9%87%D9%85-%D9%88%D8%B2%DB%8C%D8%B1-%D8%B1%D8%A7%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D9%85%D8%B3%DA%A9%D9%86-%D8%B2%D9%85%D8%A7%D9%86-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%AB%D8%A8%D8%AA-%D9%86%D8%A7%D9%85-%D9%85%D8%B3%DA%A9%D9%86-%D8%A7%D8%B3%D8%AA%DB%8C%D8%AC%D8%A7%D8%B1%DB%8C" target="_blank">خبر مهم وزیر راه برای بازار مسکن/ زمان آغاز ثبت‌نام مسکن استیجاری اعلام شد/ وام مسکن ملی افزایش پیدا می‌کند؟</a></div>
-      <div class="meta">
-        <span class="source">🇮🇷 خبرآنلاین</span>
-        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۲۰:۴۶</span>
+        <span class="date">🕐 ۱۴۰۵/۵/۲۶, ۱۷:۴۴:۲۳</span>
       </div>
     </div>
   </div>
 </div>
 
 <div class="footer">
-🔄 آخرین بروزرسانی: ۱۴۰۵/۵/۲۶, ۱۷:۵۷:۳۵<br>
+🔄 آخرین بروزرسانی: ۱۴۰۵/۵/۲۶, ۱۸:۴۴:۱۰<br>
 ⚠️ منابع ناموفق: تسنیم، فارس، ایلنا، بی‌بی‌سی فارسی، دویچه‌وله فارسی، رادیو فردا
 </div>
 </div>
